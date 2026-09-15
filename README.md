@@ -47,7 +47,8 @@
 - ตัวชี้วัด: แก้ `data/indicators.json`; แสดงนิยามจากข้อมูลเดียวกัน กรอก `baseline`, `baselineYear`, `target`, `targetYear` เมื่อมีข้อมูลและระบุที่มารับรองใน `source`; ค่าจะเปลี่ยนตาม JSON โดยไม่ต้องแก้ JavaScript แต่เว็บไซต์ยังไม่ตัดสินผ่าน/ไม่ผ่านอัตโนมัติ
 - เครื่องมือ: แก้ไฟล์ต้นฉบับ Markdown ใน `downloads/` และรายการ `data/downloads.json` แบบฟอร์มที่พิมพ์/บันทึกเป็น PDF ได้สร้างจาก `python3 tools/render_downloads.py`
 - ส่วนหัว เมนู ส่วนท้าย และโดเมน: แก้ `js/site.js` (และ `data/site.json` สำหรับ Giscus)
-- ผู้จัดทำ: แก้ `content/about.md`; ชื่อ/อีเมลในส่วนท้ายของ HTML ให้แก้ทั้ง 10 หน้าด้วยหากเปลี่ยนข้อมูลติดต่อ
+- ผู้จัดทำ: แก้ `content/about.md`; ภาพผู้จัดทำอยู่ที่ `assets/author.jpg` และใส่ใน `about.html` ชื่อ/อีเมลในส่วนท้ายให้แก้ `js/site.js`
+- โลโกและไอคอน: `assets/logo.png`, `assets/favicon-32.png`, `assets/apple-touch-icon.png` แสดงในส่วนหัว ส่วนท้าย และแท็บเบราว์เซอร์; `assets/og-image.png` ใช้ตอนแชร์ลิงก์
 - ที่มา: แก้ `data/sources.json` และบทความ `content/source-notes.md`; `data/provenance.json` เก็บชื่อและ SHA-256 ของไฟล์ใน Projects ที่ใช้ในการสร้างฉบับนี้ ไม่ใช่หลักฐานรับรองเนื้อหาต้นทาง
 
 ลิงก์ภายใน Markdown สำหรับแสดงบนเว็บไซต์ให้เขียนจากรากเว็บ เช่น `projects.html` เพราะแสดงเนื้อหาอยู่ในหน้า HTML ที่ราก ส่วนเอกสารอ้างอิงภายนอกควรใช้ URL เต็ม

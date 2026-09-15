@@ -18,7 +18,9 @@ def head(title, description, path, extra=""):
 <meta name="author" content="บูรพาทิศ พลอยสุวรรณ์">
 <title>{title} | อยุธยาเรียนรู้ · SDG 4</title>
 <link rel="canonical" href="{url}">
-<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="256x256" href="assets/logo.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="th_TH">
 <meta property="og:site_name" content="อยุธยาเรียนรู้ · SDG 4">
@@ -465,11 +467,28 @@ pages["forum.html"] = wrap(
     MD,
 )
 
-pages["about.html"] = md_page(
+pages["about.html"] = wrap(
     "about", "ผู้จัดทำ",
     "พื้นที่ความรู้เพื่อประโยชน์สาธารณะของชาวอยุธยาและผู้สนใจทั่วไป — SDG 4 จังหวัดพระนครศรีอยุธยา",
-    "about.html", "ผู้จัดทำ", "เกี่ยวกับผู้จัดทำ",
-    "พื้นที่ความรู้เพื่อประโยชน์สาธารณะของชาวอยุธยาและผู้สนใจทั่วไป", "content/about.md",
+    "about.html",
+    """<div class="breadcrumb">พระนครศรีอยุธยา / SDG 4 / ผู้จัดทำ</div>
+<header class="page-head">
+<p class="eyebrow">EDUCATION FOR EVERYONE</p>
+<h1>เกี่ยวกับผู้จัดทำ</h1>
+<p>พื้นที่ความรู้เพื่อประโยชน์สาธารณะของชาวอยุธยาและผู้สนใจทั่วไป</p>
+</header>
+<div class="article-tools">
+<a class="button secondary" href="content/about.md" download>ดาวน์โหลดเนื้อหา .md</a>
+<button class="print-button" type="button" data-print>พิมพ์เนื้อหา</button>
+</div>
+<div class="author-layout">
+<figure class="author-portrait">
+<img src="assets/author.jpg" alt="บูรพาทิศ พลอยสุวรรณ์ ผู้วิจัยอิสระ ผู้จัดทำเว็บไซต์อยุธยาเรียนรู้ SDG 4" width="320" height="320">
+<figcaption>บูรพาทิศ พลอยสุวรรณ์<br>ผู้วิจัยอิสระ</figcaption>
+</figure>
+<article class="prose" data-markdown="content/about.md"><p class="loading">กำลังโหลดเนื้อหา…</p></article>
+</div>""",
+    MD,
 )
 
 pages["404.html"] = f"""<!doctype html>
@@ -483,7 +502,9 @@ pages["404.html"] = f"""<!doctype html>
 <title>ไม่พบหน้า | อยุธยาเรียนรู้ · SDG 4</title>
 <link rel="canonical" href="{ORIGIN}/404.html">
 <base href="/">
-<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="256x256" href="assets/logo.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body data-page="error">

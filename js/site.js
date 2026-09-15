@@ -43,7 +43,7 @@ function renderChrome() {
     header.innerHTML =
       '<div class="topbar">' +
         '<a href="index.html" class="brand">' +
-          '<span class="brand-mark" aria-hidden="true">๔</span>' +
+          '<img class="brand-logo" src="assets/logo.png" alt="" width="48" height="48">' +
           '<span><strong>' + siteEscape(SITE.name) + '</strong><small>' + siteEscape(SITE.short) + '</small></span>' +
         '</a>' +
         '<span class="public-label">' + siteEscape(SITE.label) + '</span>' +
@@ -66,9 +66,11 @@ function renderChrome() {
   }
   if (footer) {
     footer.innerHTML =
-      '<div><strong>' + siteEscape(SITE.name) + ' · SDG 4</strong>' +
+      '<div class="footer-identity">' +
+        '<img class="footer-logo" src="assets/logo.png" alt="" width="36" height="36">' +
+        '<div><strong>' + siteEscape(SITE.name) + ' · SDG 4</strong>' +
         '<p>จัดทำโดย ' + siteEscape(SITE.author) + ' · ' + siteEscape(SITE.role) + '<br>' +
-        'เว็บไซต์เพื่อประโยชน์สาธารณะ ไม่ใช่เว็บไซต์ทางราชการ</p></div>' +
+        'เว็บไซต์เพื่อประโยชน์สาธารณะ ไม่ใช่เว็บไซต์ทางราชการ</p></div></div>' +
       '<div>' +
         '<a href="about.html">เกี่ยวกับผู้จัดทำ</a>' +
         '<a href="knowledge.html?article=source-notes">ที่มาของข้อมูล</a>' +
