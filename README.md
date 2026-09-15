@@ -1,18 +1,20 @@
 # อยุธยาเรียนรู้ · SDG 4
 
-เว็บไซต์ Static Site ภาษาไทย 10 หน้า จัดทำเพื่อ บูรพาทิศ พลอยสุวรรณ์ ผู้วิจัยอิสระ ติดต่อ burapatis@gmail.com เพื่อประโยชน์สาธารณะและสังคมแห่งการเรียนรู้
+เว็บไซต์ Static Site ภาษาไทย 10 หน้า จัดทำโดย บูรพาทิศ พลอยสุวรรณ์ ผู้วิจัยอิสระ ติดต่อ burapatis@gmail.com เพื่อประโยชน์สาธารณะและสังคมแห่งการเรียนรู้
+
+**ที่อยู่เผยแพร่:** [https://sdg.thamdee.com/](https://sdg.thamdee.com/)
 
 ## นำขึ้น GitHub Pages — ไม่ต้อง build
 
 1. แตก ZIP จะได้โฟลเดอร์ `ayutthaya_sdg_website`
 2. สร้าง public repository ใน GitHub เช่น `ayutthaya-sdg4`
-3. อัปโหลด **ไฟล์และโฟลเดอร์ข้างใน** `ayutthaya_sdg_website` ไปไว้ที่ราก repository ให้เห็น `index.html`, `css`, `js`, `data`, `content`, `downloads` โดยตรง ไม่ซ้อนโฟลเดอร์เพิ่ม
+3. อัปโหลด **ไฟล์และโฟลเดอร์ข้างใน** `ayutthaya_sdg_website` ไปไว้ที่ราก repository ให้เห็น `index.html`, `css`, `js`, `data`, `content`, `downloads`, `.nojekyll` และ `CNAME` โดยตรง ไม่ซ้อนโฟลเดอร์เพิ่ม
 4. รวมไฟล์ `.nojekyll` ด้วย หากระบบอัปโหลดไม่แสดงไฟล์ซ่อน สามารถสร้างไฟล์ชื่อ `.nojekyll` ที่ราก repository ใน GitHub ได้
 5. เปิด Settings → Pages → Build and deployment → Source: **Deploy from a branch** เลือก branch `main` และโฟลเดอร์ `/(root)` แล้วกด Save หาก repository ใช้ชื่อ branch อื่นให้เลือกชื่อนั้น
-6. รอการเผยแพร่เสร็จและเปิด URL ที่ GitHub แสดง โดยทั่วไปเป็น `https://ชื่อผู้ใช้.github.io/ชื่อ-repository/`
-7. ตรวจหน้าหลัก บทความ กราฟ และเมนูมือถือ หากเคยเปิดก่อนแก้ข้อมูล ให้โหลดหน้าใหม่
+6. ตั้ง Custom domain เป็น `sdg.thamdee.com` ให้ตรงกับไฟล์ `CNAME` และชี้ DNS ตามที่ GitHub แนะนำ
+7. รอการเผยแพร่เสร็จแล้วเปิด [https://sdg.thamdee.com/](https://sdg.thamdee.com/) ตรวจหน้าหลัก คลังความรู้ กราฟ และเมนูมือถือ หากเคยเปิดก่อนแก้ข้อมูล ให้โหลดหน้าใหม่
 
-เส้นทางภายในเป็นแบบสัมพัทธ์ ใช้ได้ทั้ง user site และ project site ไม่ต้องแก้ base URL ไม่มีเซิร์ฟเวอร์ส่วนหลัง ไม่มีฐานข้อมูลบน GitHub Pages และไม่ต้องติดตั้ง Node/Python เพื่อโฮสต์
+เส้นทางภายในเป็นแบบสัมพัทธ์ ใช้ได้ทั้งบนโดเมนนี้และเมื่อเปิดด้วยเซิร์ฟเวอร์ท้องถิ่น ไม่มีเซิร์ฟเวอร์ส่วนหลัง ไม่มีฐานข้อมูลบน GitHub Pages และไม่ต้องติดตั้ง Node เพื่อโฮสต์ การแก้ส่วนหัว เมนู และส่วนท้ายทำที่ `js/site.js` ที่เดียว ถ้าต้องสร้าง HTML ทั้งชุดใหม่ให้รัน `python3 tools/render_pages.py`
 
 คู่มือทางการ: https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site
 
@@ -42,7 +44,8 @@
 - โครงการ: แก้ `data/projects.json` และ `content/projects.md`
 - ความเชื่อมโยง: แก้ `data/alignment.json` และ `content/alignment.md`; ตัวกรองสร้างจากข้อมูลให้อัตโนมัติ
 - ตัวชี้วัด: แก้ `data/indicators.json`; แสดงนิยามจากข้อมูลเดียวกัน กรอก `baseline`, `baselineYear`, `target`, `targetYear` เมื่อมีข้อมูลและระบุที่มารับรองใน `source`; ค่าจะเปลี่ยนตาม JSON โดยไม่ต้องแก้ JavaScript แต่เว็บไซต์ยังไม่ตัดสินผ่าน/ไม่ผ่านอัตโนมัติ
-- เครื่องมือ: แก้ไฟล์ใน `downloads/` และรายการ `data/downloads.json`
+- เครื่องมือ: แก้ไฟล์ต้นฉบับ Markdown ใน `downloads/` และรายการ `data/downloads.json` แบบฟอร์มที่พิมพ์/บันทึกเป็น PDF ได้สร้างจาก `python3 tools/render_downloads.py`
+- ส่วนหัว เมนู ส่วนท้าย และโดเมน: แก้ `js/site.js` (และ `data/site.json` สำหรับ Giscus)
 - ผู้จัดทำ: แก้ `content/about.md`; ชื่อ/อีเมลในส่วนท้ายของ HTML ให้แก้ทั้ง 10 หน้าด้วยหากเปลี่ยนข้อมูลติดต่อ
 - ที่มา: แก้ `data/sources.json` และบทความ `content/source-notes.md`; `data/provenance.json` เก็บชื่อและ SHA-256 ของไฟล์ใน Projects ที่ใช้ในการสร้างฉบับนี้ ไม่ใช่หลักฐานรับรองเนื้อหาต้นทาง
 
@@ -78,11 +81,9 @@ JSON ต้องใช้เครื่องหมายคำพูดคู
 
 ## เทคโนโลยีและการเชื่อมต่อ
 
-ใช้ HTML/CSS/JavaScript, Tailwind CSS ผ่าน Play CDN ตามคำขอ, Chart.js 4.4.8, Leaflet 1.9.4, marked 15.0.12 และ DOMPurify 3.3.1 เพื่อกรอง HTML ที่แปลงจาก Markdown มี CSS หลักใน `css/style.css` รองรับการจัดหน้าหลักเมื่อ Tailwind ไม่โหลด
+ใช้ HTML/CSS/JavaScript, Chart.js 4.4.8, Leaflet 1.9.4, marked 15.0.12 และ DOMPurify 3.3.1 เพื่อกรอง HTML ที่แปลงจาก Markdown การจัดหน้าใช้ `css/style.css` เป็นหลัก ไม่ใช้ Tailwind Play CDN ในงานเผยแพร่
 
 ไลบรารี CDN, ฟอนต์ Google, แผนที่ OpenStreetMap และ Giscus ต้องใช้อินเทอร์เน็ต GitHub Pages โฮสต์ได้โดยไม่ต้อง build แต่ไม่ใช่เว็บออฟไลน์ 100% หาก Chart.js ไม่โหลดจะมีตารางแทน ถ้าแปลง Markdown ไม่ได้จะอ่านเป็นข้อความต้นฉบับ และมีข้อความแจ้งเมื่อโหลดข้อมูลไม่สำเร็จ
-
-Tailwind ระบุ Play CDN สำหรับการพัฒนา ในชุดนี้คงไว้ตามข้อกำหนดผู้ใช้; หากต้องการลดการพึ่งพาภายนอกในอนาคตสามารถสร้าง CSS ล่วงหน้าและโฮสต์ไลบรารีเองได้ โดยคงผลลัพธ์เป็น static site
 
 ให้คงเครดิต OpenStreetMap บนแผนที่ และอ่านนโยบายบริการเมื่อมีการใช้งานจำนวนมาก: https://operations.osmfoundation.org/policies/tiles/
 

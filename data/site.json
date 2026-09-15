@@ -1,4 +1,6 @@
 {
+  "origin": "https://sdg.thamdee.com",
+  "name": "อยุธยาเรียนรู้",
   "giscus": {
     "enabled": false,
     "repo": "",

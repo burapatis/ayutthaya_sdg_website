@@ -1,32 +1,38 @@
 [
   {
-    "file": "downloads/indicator-spec.md",
+    "file": "downloads/indicator-spec.html",
+    "source": "downloads/indicator-spec.md",
     "title": "แบบจัดทำรายละเอียดตัวชี้วัด",
-    "description": "กำหนดนิยาม สูตร ค่าฐาน และผู้รับรอง · ไฟล์ Markdown"
+    "description": "กำหนดนิยาม สูตร ค่าฐาน และผู้รับรอง · เปิดแล้วพิมพ์เป็น PDF ได้"
   },
   {
-    "file": "downloads/evaluation-plan.md",
+    "file": "downloads/evaluation-plan.html",
+    "source": "downloads/evaluation-plan.md",
     "title": "แผนติดตามและประเมินผลโครงการ",
-    "description": "เชื่อมคำถาม วิธีเก็บข้อมูล และการตัดสินใจ · ไฟล์ Markdown"
+    "description": "เชื่อมคำถาม วิธีเก็บข้อมูล และการตัดสินใจ · เปิดแล้วพิมพ์เป็น PDF ได้"
   },
   {
-    "file": "downloads/data-quality.md",
+    "file": "downloads/data-quality.html",
+    "source": "downloads/data-quality.md",
     "title": "แบบตรวจสอบคุณภาพข้อมูล",
-    "description": "ตรวจความครบถ้วน ความสอดคล้อง และการตรวจย้อนกลับ · ไฟล์ Markdown"
+    "description": "ตรวจความครบถ้วน ความสอดคล้อง และการตรวจย้อนกลับ · เปิดแล้วพิมพ์เป็น PDF ได้"
   },
   {
-    "file": "downloads/learner-voice.md",
+    "file": "downloads/learner-voice.html",
+    "source": "downloads/learner-voice.md",
     "title": "แนวคำถามรับฟังเสียงผู้เรียน",
-    "description": "สำรวจอุปสรรคและข้อเสนอโดยไม่เก็บชื่อในแบบสาธารณะ · ไฟล์ Markdown"
+    "description": "สำรวจอุปสรรคและข้อเสนอโดยไม่เก็บชื่อในแบบสาธารณะ · เปิดแล้วพิมพ์เป็น PDF ได้"
   },
   {
-    "file": "downloads/referral-rubric.md",
+    "file": "downloads/referral-rubric.html",
+    "source": "downloads/referral-rubric.md",
     "title": "เกณฑ์บรรยายคุณภาพการส่งต่อ",
-    "description": "ทดลองเทียบระดับหลักฐานและปรับความเข้าใจผู้ประเมิน · ไฟล์ Markdown"
+    "description": "ทดลองเทียบระดับหลักฐานและปรับความเข้าใจผู้ประเมิน · เปิดแล้วพิมพ์เป็น PDF ได้"
   },
   {
-    "file": "downloads/improvement-log.md",
+    "file": "downloads/improvement-log.html",
+    "source": "downloads/improvement-log.md",
     "title": "แบบสรุปผลและแผนปรับปรุง",
-    "description": "บันทึกผลที่พบ ผู้รับผิดชอบ และวันติดตามซ้ำ · ไฟล์ Markdown"
+    "description": "บันทึกผลที่พบ ผู้รับผิดชอบ และวันติดตามซ้ำ · เปิดแล้วพิมพ์เป็น PDF ได้"
   }
 ]
