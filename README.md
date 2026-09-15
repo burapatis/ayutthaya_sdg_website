@@ -40,7 +40,7 @@
 - อภิธานศัพท์: แก้ `data/glossary.json` คู่กับ `content/glossary.md`
 - ข้อมูล Dashboard: แก้ `data/stats.json` แยก `reference` และ `demo`; แผง `coverage` และ `watchlist` บอกสถานะหลักฐานจริง ไม่สลับตามชุดจำลอง; อย่าเติมตัวเลขที่ยังไม่ตรวจต้นฉบับลง `trend`
 - `trend.labels` และ `trend.values` ต้องยาวเท่ากัน ใช้ `null` เมื่อไม่มีข้อมูล ไม่ใช้ 0 แทนค่าที่ไม่ทราบ
-- จุดแผนที่: แก้ `map.points`, `map.layers` และ `map.status`; จุดปัจจุบันเป็นพิกัดประมาณของที่ว่าการอำเภอทั้ง 16 อำเภอ ไม่ใช่ที่ตั้งสถานศึกษา หากเปลี่ยนพิกัดต้องแก้ป้ายสถานะให้ตรง
+- แผนที่: แก้ `map.points`, `map.layers`, `map.status` และขอบเขตใน `data/ayutthaya-amphoe.geojson`; ชื่ออำเภอใน GeoJSON ต้องตรงกับ `map.points` ใช้แสดงรูปร่างจังหวัด ไม่ใช่ที่ตั้งสถานศึกษา
 - ระบบนิเวศ: แก้ `data/ecosystem.json` คง 4 องค์ประกอบให้ตรงปุ่ม หรือแก้ปุ่มใน HTML เมื่อต้องเพิ่มองค์ประกอบ
 - โครงการ: แก้ `data/projects.json`, `data/pathways.json` และ `content/projects.md`; `problemId` ต้องตรงกับรหัสใน pathways
 - ความเชื่อมโยง: แก้ `data/alignment.json` และ `content/alignment.md`; ค่า `level` ต้องตรงกับปุ่มแผนภาพใน HTML; ตัวกรองตารางสร้างจากข้อมูลให้อัตโนมัติ

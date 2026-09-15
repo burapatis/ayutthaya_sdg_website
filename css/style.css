@@ -73,8 +73,11 @@
 .watch-panel{margin:8px 0 22px;border-left:4px solid var(--gold)}
 .watch-item{padding:8px 0}
 .watch-item p{margin-bottom:.4em}
-#map{height:400px}
+#map{height:520px;overflow:hidden;border-radius:12px}
 .map-panel{min-width:0}
+#map .leaflet-container img.leaflet-tile{max-width:none!important;max-height:none!important}
+.leaflet-tooltip.map-amphoe-label{background:none;border:0;box-shadow:none;color:#2a2420;font-weight:600;font-size:.7rem;line-height:1.25;text-align:center;white-space:normal;max-width:92px;padding:0;pointer-events:none;text-shadow:0 0 4px #fff,0 1px 2px #fff}
+.leaflet-tooltip.map-amphoe-label::before{content:none}
 .map-legend{display:flex;flex-wrap:wrap;gap:10px 16px;margin:0 0 14px}
 .map-legend-item{display:inline-flex;align-items:center;gap:8px;font-size:.88rem;cursor:pointer}
 .map-legend-item input{width:18px;height:18px;accent-color:var(--terra)}

@@ -143,6 +143,7 @@ function initMap(mapData) {
       '<span class="map-swatch" style="background:' + escapeHTML(l.color) + '"></span>' + escapeHTML(l.label) + '</label>'
     ).join('');
   }
+  const byName = Object.fromEntries((mapData.points || []).map(p => [p.name, p]));
   const active = () => new Set($$('#map-legend [data-layer]:checked').map(i => i.dataset.layer));
   function layerNames(p) {
     return (p.layers || []).map(id => (layers.find(l => l.id === id) || {}).label).filter(Boolean);
@@ -151,52 +152,82 @@ function initMap(mapData) {
     const first = (p.layers || []).find(id => on.has(id));
     return (layers.find(l => l.id === first) || {color: '#8c402a'}).color;
   }
+  function isVisible(p, on) {
+    return p && (!(p.layers || []).length || (p.layers || []).some(id => on.has(id)));
+  }
   function visiblePoints(on) {
-    return mapData.points.filter(p => !(p.layers || []).length || (p.layers || []).some(id => on.has(id)));
+    return (mapData.points || []).filter(p => isVisible(p, on));
   }
   function listHTML(on) {
     const pts = visiblePoints(on);
     return pts.map(p =>
       '<li><strong>' + escapeHTML(p.name) + '</strong> — ' + escapeHTML(layerNames(p).join(' · ') || p.theme || 'ประเด็นพื้นที่') +
-      ' <span class="small muted">(' + escapeHTML(p.note || 'พิกัดประมาณ') + ')</span></li>'
+      ' <span class="small muted">(' + escapeHTML(p.note || 'ขอบเขตอำเภอเพื่อสำรวจ') + ')</span></li>'
     ).join('') || '<li>ไม่มีอำเภอในชั้นที่เลือก</li>';
+  }
+  function popupFor(p, shapeNote) {
+    const pop = document.createElement('div');
+    pop.className = 'map-popup';
+    const h = document.createElement('strong');
+    h.textContent = p.name;
+    pop.append(h);
+    const tags = document.createElement('p');
+    tags.className = 'small';
+    tags.textContent = layerNames(p).join(' · ');
+    pop.append(tags);
+    const note = document.createElement('p');
+    note.textContent = (p.note || '') + ' — ' + shapeNote;
+    pop.append(note);
+    if (p.project) {
+      const a = document.createElement('a');
+      a.href = 'projects.html#' + p.project;
+      a.textContent = 'ดูแนวทาง ' + p.project + ' →';
+      pop.append(a);
+    }
+    return pop;
   }
   $('#map-list').innerHTML = listHTML(active());
   if (!window.L) {
     $('#map').textContent = 'แผนที่โหลดไม่ได้ โปรดอ่านรายชื่อพื้นที่ด้านล่าง';
     return;
   }
-  const map = L.map('map', {scrollWheelZoom: false, keyboard: false}).setView(mapData.center, mapData.zoom);
+  const map = L.map('map', {scrollWheelZoom: false, keyboard: false, maxZoom: 13}).setView(mapData.center, mapData.zoom);
   const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 18,
+    maxZoom: 13,
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
   }).addTo(map);
   tiles.on('tileerror', () => {
     $('#map-note').textContent = mapData.status + ' • บางส่วนของแผนที่พื้นฐานโหลดไม่ได้ โปรดใช้รายชื่อพื้นที่ประกอบ';
   });
-  const markers = [];
-  function drawMarkers() {
-    const on = active();
-    markers.splice(0).forEach(m => map.removeLayer(m));
-    visiblePoints(on).forEach(p => {
-      const pop = document.createElement('div');
-      pop.className = 'map-popup';
-      const h = document.createElement('strong');
-      h.textContent = p.name;
-      pop.append(h);
-      const tags = document.createElement('p');
-      tags.className = 'small';
-      tags.textContent = layerNames(p).join(' · ');
-      pop.append(tags);
-      const note = document.createElement('p');
-      note.textContent = (p.note || '') + ' — พิกัดประมาณ ไม่ใช่ที่ตั้งสถานศึกษา';
-      pop.append(note);
-      if (p.project) {
-        const a = document.createElement('a');
-        a.href = 'projects.html#' + p.project;
-        a.textContent = 'ดูแนวทาง ' + p.project + ' →';
-        pop.append(a);
+  const drawn = [];
+  let provinceBounds = null;
+  let fitted = false;
+  let geoData = null;
+  const geoPath = mapData.geojson || 'data/ayutthaya-amphoe.geojson';
+  const shapeNote = 'ขอบเขตอำเภอเพื่อแสดงรูปร่างจังหวัด ไม่ใช่ที่ตั้งสถานศึกษา';
+
+  function clearDrawn() {
+    drawn.splice(0).forEach(layer => {
+      if (typeof layer.eachLayer === 'function') {
+        layer.eachLayer(function (item) {
+          item.unbindTooltip();
+          item.unbindPopup();
+        });
       }
+      map.removeLayer(layer);
+    });
+    $$('#map .leaflet-tooltip.map-amphoe-label').forEach(el => el.remove());
+  }
+
+  function fitProvince() {
+    if (fitted || !provinceBounds || !provinceBounds.isValid()) return;
+    map.fitBounds(provinceBounds, {padding: [18, 18], maxZoom: 11});
+    map.setMaxBounds(provinceBounds.pad(0.45));
+    fitted = true;
+  }
+
+  function drawMarkers(on) {
+    visiblePoints(on).forEach(p => {
       const m = L.circleMarker([p.lat, p.lng], {
         radius: 9,
         color: '#fff',
@@ -205,14 +236,75 @@ function initMap(mapData) {
         fillOpacity: 0.92,
         title: p.name + ' (พิกัดประมาณ)',
         alt: p.name + ' พิกัดประมาณของอำเภอ'
-      }).addTo(map).bindPopup(pop);
-      markers.push(m);
+      }).addTo(map).bindPopup(popupFor(p, 'พิกัดประมาณ ไม่ใช่ที่ตั้งสถานศึกษา'), {autoPan: false});
+      drawn.push(m);
     });
-    $('#map-list').innerHTML = listHTML(on);
   }
-  $$('#map-legend [data-layer]').forEach(i => i.addEventListener('change', drawMarkers));
-  drawMarkers();
-  requestAnimationFrame(() => map.invalidateSize());
+
+  function drawPolygons(geo, on) {
+    const layer = L.geoJSON(geo, {
+      filter(feature) {
+        return isVisible(byName[feature.properties && feature.properties.name], on);
+      },
+      style(feature) {
+        const p = byName[feature.properties.name];
+        return {
+          color: '#512c23',
+          weight: 1.2,
+          fillColor: colorFor(p, on),
+          fillOpacity: 0.72,
+          opacity: 0.9
+        };
+      },
+      onEachFeature(feature, lyr) {
+        const p = byName[feature.properties.name];
+        if (!p) return;
+        lyr.bindPopup(popupFor(p, shapeNote), {autoPan: false});
+        lyr.bindTooltip(p.name, {
+          permanent: true,
+          direction: 'center',
+          className: 'map-amphoe-label',
+          opacity: 1
+        });
+        lyr.on('mouseover', () => lyr.setStyle({weight: 2.2, fillOpacity: 0.88}));
+        lyr.on('mouseout', () => lyr.setStyle({weight: 1.2, fillOpacity: 0.72}));
+      }
+    }).addTo(map);
+    drawn.push(layer);
+  }
+
+  function redraw(geo) {
+    const on = active();
+    clearDrawn();
+    if (geo && geo.features && geo.features.length) {
+      drawPolygons(geo, on);
+    } else {
+      drawMarkers(on);
+    }
+    $('#map-list').innerHTML = listHTML(on);
+    fitProvince();
+  }
+
+  $$('#map-legend [data-layer]').forEach(i => i.addEventListener('change', () => redraw(geoData)));
+
+  get(geoPath).then(geo => {
+    const names = new Set((geo.features || []).map(f => f.properties && f.properties.name));
+    const missing = (mapData.points || []).filter(p => !names.has(p.name)).map(p => p.name);
+    if (missing.length) throw new Error('ขอบเขตไม่ครบ: ' + missing.join(', '));
+    geoData = geo;
+    const all = L.geoJSON(geo);
+    provinceBounds = all.getBounds();
+    redraw(geo);
+    requestAnimationFrame(() => { map.invalidateSize(); fitProvince(); });
+  }).catch(() => {
+    geoData = null;
+    const pts = mapData.points || [];
+    if (pts.length) {
+      provinceBounds = L.latLngBounds(pts.map(p => [p.lat, p.lng]));
+    }
+    redraw(null);
+    requestAnimationFrame(() => { map.invalidateSize(); fitProvince(); });
+  });
 }
 
 async function knowledge() {
