@@ -1,0 +1,32 @@
+[
+  {
+    "source_file": "02_กฎหมายและแผน.md",
+    "sha256": "9d041f25e58b36c0af3f3131a76e3f8b665440b7cd943d8d6c5be39b6b7337ae",
+    "read_date": "2026-09-15",
+    "treatment": "read-only; synthesize selected relevant content"
+  },
+  {
+    "source_file": "03_สถานการณ์และฐานข้อมูล.md",
+    "sha256": "9f3e6b73c9b2295ee76eb93e88b78b7038161131ad166d455f6533898cfb1686",
+    "read_date": "2026-09-15",
+    "treatment": "read-only; synthesize selected relevant content"
+  },
+  {
+    "source_file": "16_บันทึกตรวจเอกสารจังหวัดฉบับเต็มและข้อเสนอใช้ประโยชน์.md",
+    "sha256": "ba204f1f609427b4501917a04815a5b3726e6d0c8ad8d81944410fa514860a5a",
+    "read_date": "2026-09-15",
+    "treatment": "read-only; synthesize selected relevant content"
+  },
+  {
+    "source_file": "17_บันทึกปรับร่างและเว็บไซต์ตามหลักฐานจังหวัด.md",
+    "sha256": "27063ab961f1801ab245000ce849528338fbfeb026ff2d63298a8310c325a31a",
+    "read_date": "2026-09-15",
+    "treatment": "read-only; synthesize selected relevant content"
+  },
+  {
+    "source_file": "ayutthaya-education-site/assets/projects.json",
+    "sha256": "a022502b7f2a456217aa7a867d3de2b9704b31a2e02c305eaef155f551cbd586",
+    "read_date": "2026-09-15",
+    "treatment": "read-only; synthesize selected relevant content"
+  }
+]

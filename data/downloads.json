@@ -1,0 +1,32 @@
+[
+  {
+    "file": "downloads/indicator-spec.md",
+    "title": "แบบจัดทำรายละเอียดตัวชี้วัด",
+    "description": "กำหนดนิยาม สูตร ค่าฐาน และผู้รับรอง · ไฟล์ Markdown"
+  },
+  {
+    "file": "downloads/evaluation-plan.md",
+    "title": "แผนติดตามและประเมินผลโครงการ",
+    "description": "เชื่อมคำถาม วิธีเก็บข้อมูล และการตัดสินใจ · ไฟล์ Markdown"
+  },
+  {
+    "file": "downloads/data-quality.md",
+    "title": "แบบตรวจสอบคุณภาพข้อมูล",
+    "description": "ตรวจความครบถ้วน ความสอดคล้อง และการตรวจย้อนกลับ · ไฟล์ Markdown"
+  },
+  {
+    "file": "downloads/learner-voice.md",
+    "title": "แนวคำถามรับฟังเสียงผู้เรียน",
+    "description": "สำรวจอุปสรรคและข้อเสนอโดยไม่เก็บชื่อในแบบสาธารณะ · ไฟล์ Markdown"
+  },
+  {
+    "file": "downloads/referral-rubric.md",
+    "title": "เกณฑ์บรรยายคุณภาพการส่งต่อ",
+    "description": "ทดลองเทียบระดับหลักฐานและปรับความเข้าใจผู้ประเมิน · ไฟล์ Markdown"
+  },
+  {
+    "file": "downloads/improvement-log.md",
+    "title": "แบบสรุปผลและแผนปรับปรุง",
+    "description": "บันทึกผลที่พบ ผู้รับผิดชอบ และวันติดตามซ้ำ · ไฟล์ Markdown"
+  }
+]

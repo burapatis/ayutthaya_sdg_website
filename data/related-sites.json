@@ -1,0 +1,40 @@
+[
+  {
+    "id": "AY1",
+    "title": "แหล่งเรียนรู้ยุทธศาสตร์การศึกษาอยุธยา",
+    "url": "https://ayeduplan1.thamdee.com/",
+    "description": "ชุดเตรียมแผนปี 2570 ร่าง E1–E6 และเครื่องมือเรียนรู้",
+    "status": "พื้นที่เรียนรู้อิสระ · ร่างและสื่อประกอบการพิจารณา",
+    "links": [
+      {
+        "label": "ชุดเตรียมแผนปี 2570",
+        "url": "https://ayeduplan1.thamdee.com/workshop-2570.html"
+      },
+      {
+        "label": "แบบประเมินตนเองก่อน–หลัง",
+        "url": "https://ayeduplan1.thamdee.com/assessment.html"
+      }
+    ]
+  },
+  {
+    "id": "AY2",
+    "title": "ยุทธศาสตร์การศึกษาอยุธยา — พื้นที่แลกเปลี่ยนเรียนรู้",
+    "url": "https://ayeduplan2.thamdee.com/",
+    "description": "วิธีจัดทำแผน ตัวอย่างตรวจย้อนกลับ ข้อมูลจังหวัด และข้อจำกัด",
+    "status": "กรณีศึกษาและข้อเสนอ · ตรวจฉบับและช่วงเวลาก่อนใช้",
+    "links": [
+      {
+        "label": "วิธีจัดทำยุทธศาสตร์",
+        "url": "https://ayeduplan2.thamdee.com/method.html"
+      },
+      {
+        "label": "ตัวอย่างตรวจย้อนกลับ",
+        "url": "https://ayeduplan2.thamdee.com/traceability.html"
+      },
+      {
+        "label": "ข้อมูลจังหวัดและข้อจำกัด",
+        "url": "https://ayeduplan2.thamdee.com/data.html"
+      }
+    ]
+  }
+]
