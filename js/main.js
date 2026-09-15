@@ -106,30 +106,113 @@ async function dashboard() {
       $('.chart-wrap').hidden = true;
     }
   }
+  const cov = $('#sdg-coverage');
+  if (cov && s.coverage) {
+    cov.innerHTML = s.coverage.map(c =>
+      '<article class="coverage-card status-' + escapeHTML(c.status) + '">' +
+      '<span class="badge">' + escapeHTML(c.id) + '</span>' +
+      '<h3>' + escapeHTML(c.title) + '</h3>' +
+      '<p class="coverage-status">' + escapeHTML(c.statusLabel) + '</p>' +
+      '<p>' + escapeHTML(c.detail) + '</p>' +
+      '<a href="' + escapeHTML(c.link) + '">' + escapeHTML(c.linkLabel) + ' →</a></article>'
+    ).join('');
+  }
+  const watch = $('#watchlist');
+  if (watch && s.watchlist) {
+    watch.innerHTML = s.watchlist.map(w =>
+      '<div class="watch-item"><span class="badge">' + escapeHTML(w.status) + '</span>' +
+      '<p><strong>' + escapeHTML(w.label) + '</strong> · ค่าที่พบ: ' + escapeHTML(w.value) + '</p>' +
+      '<p class="small muted">' + escapeHTML(w.note) + '</p>' +
+      (w.url ? '<a href="' + escapeHTML(safeURL(w.url)) + '" target="_blank" rel="noopener">' + escapeHTML(w.urlLabel || 'เปิดแหล่ง') + ' ↗</a>' : '') +
+      '</div>'
+    ).join('');
+  }
   $('#dataset').value = s.defaultDataset;
   $('#dataset').addEventListener('change', draw);
   draw();
-  $('#map-note').textContent = s.map.status;
-  $('#map-list').innerHTML = s.map.points.map(p =>
-    '<li>' + escapeHTML(p.name) + ' — ' + escapeHTML(p.theme) + ' (ตัวอย่าง)</li>'
-  ).join('');
-  if (window.L) {
-    const map = L.map('map', {scrollWheelZoom: false}).setView(s.map.center, s.map.zoom);
-    const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      maxZoom: 18,
-      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-    }).addTo(map);
-    tiles.on('tileerror', () => {
-      $('#map-note').textContent = s.map.status + ' • บางส่วนของแผนที่พื้นฐานโหลดไม่ได้ โปรดใช้รายชื่อพื้นที่ประกอบ';
-    });
-    s.map.points.forEach(p => {
-      const pop = document.createElement('div');
-      pop.textContent = p.name + ' • ' + p.theme + ' — จุดประมาณเพื่อสาธิต';
-      L.marker([p.lat, p.lng], {title: p.name + ' (ตัวอย่าง)', alt: p.name + ' (ตัวอย่าง)'}).addTo(map).bindPopup(pop);
-    });
-  } else {
-    $('#map').textContent = 'แผนที่โหลดไม่ได้ โปรดอ่านรายชื่อพื้นที่ด้านล่าง';
+  initMap(s.map);
+}
+
+function initMap(mapData) {
+  $('#map-note').textContent = mapData.status;
+  const layers = mapData.layers || [];
+  const legend = $('#map-legend');
+  if (legend) {
+    legend.innerHTML = layers.map(l =>
+      '<label class="map-legend-item"><input type="checkbox" data-layer="' + escapeHTML(l.id) + '" checked> ' +
+      '<span class="map-swatch" style="background:' + escapeHTML(l.color) + '"></span>' + escapeHTML(l.label) + '</label>'
+    ).join('');
   }
+  const active = () => new Set($$('#map-legend [data-layer]:checked').map(i => i.dataset.layer));
+  function layerNames(p) {
+    return (p.layers || []).map(id => (layers.find(l => l.id === id) || {}).label).filter(Boolean);
+  }
+  function colorFor(p, on) {
+    const first = (p.layers || []).find(id => on.has(id));
+    return (layers.find(l => l.id === first) || {color: '#8c402a'}).color;
+  }
+  function visiblePoints(on) {
+    return mapData.points.filter(p => !(p.layers || []).length || (p.layers || []).some(id => on.has(id)));
+  }
+  function listHTML(on) {
+    const pts = visiblePoints(on);
+    return pts.map(p =>
+      '<li><strong>' + escapeHTML(p.name) + '</strong> — ' + escapeHTML(layerNames(p).join(' · ') || p.theme || 'ประเด็นพื้นที่') +
+      ' <span class="small muted">(' + escapeHTML(p.note || 'พิกัดประมาณ') + ')</span></li>'
+    ).join('') || '<li>ไม่มีอำเภอในชั้นที่เลือก</li>';
+  }
+  $('#map-list').innerHTML = listHTML(active());
+  if (!window.L) {
+    $('#map').textContent = 'แผนที่โหลดไม่ได้ โปรดอ่านรายชื่อพื้นที่ด้านล่าง';
+    return;
+  }
+  const map = L.map('map', {scrollWheelZoom: false}).setView(mapData.center, mapData.zoom);
+  const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 18,
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+  }).addTo(map);
+  tiles.on('tileerror', () => {
+    $('#map-note').textContent = mapData.status + ' • บางส่วนของแผนที่พื้นฐานโหลดไม่ได้ โปรดใช้รายชื่อพื้นที่ประกอบ';
+  });
+  const markers = [];
+  function drawMarkers() {
+    const on = active();
+    markers.splice(0).forEach(m => map.removeLayer(m));
+    visiblePoints(on).forEach(p => {
+      const pop = document.createElement('div');
+      pop.className = 'map-popup';
+      const h = document.createElement('strong');
+      h.textContent = p.name;
+      pop.append(h);
+      const tags = document.createElement('p');
+      tags.className = 'small';
+      tags.textContent = layerNames(p).join(' · ');
+      pop.append(tags);
+      const note = document.createElement('p');
+      note.textContent = (p.note || '') + ' — พิกัดประมาณ ไม่ใช่ที่ตั้งสถานศึกษา';
+      pop.append(note);
+      if (p.project) {
+        const a = document.createElement('a');
+        a.href = 'projects.html#' + p.project;
+        a.textContent = 'ดูแนวทาง ' + p.project + ' →';
+        pop.append(a);
+      }
+      const m = L.circleMarker([p.lat, p.lng], {
+        radius: 9,
+        color: '#fff',
+        weight: 2,
+        fillColor: colorFor(p, on),
+        fillOpacity: 0.92,
+        title: p.name + ' (พิกัดประมาณ)',
+        alt: p.name + ' พิกัดประมาณของอำเภอ'
+      }).addTo(map).bindPopup(pop);
+      markers.push(m);
+    });
+    $('#map-list').innerHTML = listHTML(on);
+  }
+  $$('#map-legend [data-layer]').forEach(i => i.addEventListener('change', drawMarkers));
+  drawMarkers();
+  requestAnimationFrame(() => map.invalidateSize());
 }
 
 async function knowledge() {
@@ -244,23 +327,67 @@ async function knowledge() {
 
 async function projects() {
   const list = await get('data/projects.json');
-  $('#project-list').innerHTML = list.map(p =>
-    '<section class="panel project-card" id="' + escapeHTML(p.id) + '">' +
-    '<span class="badge">' + escapeHTML(p.id) + ' · ตัวอย่างเพื่อประยุกต์ใช้</span>' +
-    '<h2>' + escapeHTML(p.title) + '</h2>' +
-    '<p>' + escapeHTML(p.objective) + '</p>' +
-    '<p class="small muted"><b>กลุ่มเป้าหมาย:</b> ' + escapeHTML(p.target) + '</p>' +
-    '<details><summary>กิจกรรม ผู้รับผิดชอบ และการติดตาม</summary><ul>' +
-    p.activities.map(a => '<li>' + escapeHTML(a) + '</li>').join('') + '</ul>' +
-    '<p><b>เจ้าภาพที่เสนอ:</b> ' + escapeHTML(p.owner) + '</p>' +
-    '<p><b>ภาคี:</b> ' + escapeHTML(p.partners) + '</p>' +
-    '<p><b>ผลผลิต:</b> ' + escapeHTML(p.output) + '</p>' +
-    '<p><b>ผลลัพธ์:</b> ' + escapeHTML(p.outcome) + '</p>' +
-    '<p><b>ระยะเวลาเสนอ:</b> ' + escapeHTML(p.duration) + '</p>' +
-    '<p><b>ทรัพยากร:</b> ' + escapeHTML(p.resources) + '</p>' +
-    '<p><b>ตัวชี้วัด:</b> ' + escapeHTML(p.indicators.join(', ')) + ' · SDG ' + escapeHTML(p.sdg) + '</p>' +
-    '<a href="evaluation.html">ดูนิยามและเครื่องมือประเมิน →</a></details></section>'
-  ).join('');
+  const pathways = await get('data/pathways.json').catch(() => []);
+  const bar = $('#project-pathways');
+  let current = new URLSearchParams(location.search).get('problem') || 'all';
+  function render() {
+    const hash = location.hash.slice(1);
+    const target = hash && list.find(p => p.id === hash);
+    if (target && current !== 'all' && current !== target.problemId) current = target.problemId;
+    const shown = current === 'all' ? list : list.filter(p => p.problemId === current);
+    $('#project-path-status').textContent = current === 'all'
+      ? 'แสดงโครงการตัวอย่างทั้ง ' + list.length + ' รายการ'
+      : 'แสดงแนวทางที่ตรงกับปัญหาที่เลือก ' + shown.length + ' รายการ';
+    $('#project-list').innerHTML = shown.map(p =>
+      '<section class="panel project-card" id="' + escapeHTML(p.id) + '">' +
+      '<span class="badge">' + escapeHTML(p.id) + ' · ตัวอย่างเพื่อประยุกต์ใช้</span>' +
+      '<h2>' + escapeHTML(p.title) + '</h2>' +
+      '<p>' + escapeHTML(p.objective) + '</p>' +
+      '<p class="small muted"><b>กลุ่มเป้าหมาย:</b> ' + escapeHTML(p.target) + '</p>' +
+      '<p class="small"><a href="evaluation.html#' + escapeHTML((p.indicators || [])[0] || '') + '">ตัวชี้วัด ' +
+      escapeHTML((p.indicators || []).join(', ')) + '</a></p>' +
+      '<details><summary>กิจกรรม ผู้รับผิดชอบ และการติดตาม</summary><ul>' +
+      p.activities.map(a => '<li>' + escapeHTML(a) + '</li>').join('') + '</ul>' +
+      '<p><b>เจ้าภาพที่เสนอ:</b> ' + escapeHTML(p.owner) + '</p>' +
+      '<p><b>ภาคี:</b> ' + escapeHTML(p.partners) + '</p>' +
+      '<p><b>ผลผลิต:</b> ' + escapeHTML(p.output) + '</p>' +
+      '<p><b>ผลลัพธ์:</b> ' + escapeHTML(p.outcome) + '</p>' +
+      '<p><b>ระยะเวลาเสนอ:</b> ' + escapeHTML(p.duration) + '</p>' +
+      '<p><b>ทรัพยากร:</b> ' + escapeHTML(p.resources) + '</p>' +
+      '<p><b>ตัวชี้วัด:</b> ' + escapeHTML(p.indicators.join(', ')) + ' · SDG ' + escapeHTML(p.sdg) + '</p>' +
+      '<a href="evaluation.html#' + escapeHTML((p.indicators || [])[0] || '') + '">ดูนิยามและเครื่องมือประเมิน →</a></details></section>'
+    ).join('') || '<p class="notice">ไม่มีโครงการที่ตรงกับปัญหานี้</p>';
+    if (bar) {
+      $$('#project-pathways [data-path]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.path === current)));
+    }
+    const card = hash && document.getElementById(hash);
+    if (card) {
+      card.classList.add('is-target');
+      const det = card.querySelector('details');
+      if (det) det.open = true;
+      card.scrollIntoView({block: 'start', behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'});
+    }
+  }
+  if (bar) {
+    bar.innerHTML = '<button type="button" class="tag-chip" data-path="all" aria-pressed="' + String(current === 'all') + '">ดูทั้งหมด</button>' +
+      pathways.map(p =>
+        '<button type="button" class="tag-chip" data-path="' + escapeHTML(p.id) + '" aria-pressed="' +
+        String(current === p.id) + '">' + escapeHTML(p.label) + '</button>'
+      ).join('');
+    bar.addEventListener('click', e => {
+      const btn = e.target.closest('[data-path]');
+      if (!btn) return;
+      current = btn.dataset.path;
+      const u = new URL(location.href);
+      if (current === 'all') u.searchParams.delete('problem');
+      else u.searchParams.set('problem', current);
+      u.hash = '';
+      history.replaceState({}, '', u);
+      render();
+    });
+  }
+  render();
+  addEventListener('hashchange', render);
 }
 
 async function alignment() {
@@ -271,11 +398,24 @@ async function alignment() {
     $(selector).insertAdjacentHTML('beforeend', items.map(x => '<option>' + escapeHTML(x) + '</option>').join(''));
     $(selector).addEventListener('change', draw);
   });
+  $$('[data-align-level]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const level = btn.dataset.alignLevel;
+      const sel = $('#alignment-level');
+      if (sel) sel.value = level === 'all' ? 'all' : [...sel.options].some(o => o.value === level) ? level : 'all';
+      draw();
+      $('#alignment-list')?.scrollIntoView({block: 'start', behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'});
+    });
+  });
   function draw() {
     const filtered = rows.filter(r => sets.every(([sel, key]) =>
       $(sel).value === 'all' || (Array.isArray(r[key]) ? r[key].includes($(sel).value) : r[key] === $(sel).value)
     ));
     $('#alignment-status').textContent = 'แสดง ' + filtered.length + ' ความเชื่อมโยง';
+    const selectedLevel = $('#alignment-level')?.value || 'all';
+    $$('[data-align-level]').forEach(btn => {
+      btn.setAttribute('aria-pressed', String(btn.dataset.alignLevel === selectedLevel || (selectedLevel === 'all' && btn.dataset.alignLevel === 'all')));
+    });
     $('#alignment-list').innerHTML = filtered.length
       ? '<div class="table-scroll"><table><caption>ตารางเชื่อมโยงเป้าหมายและภารกิจ</caption><thead><tr><th>เป้าหมาย / ระดับ</th><th>ภารกิจและหน่วยงาน</th><th>กิจกรรม / พื้นที่</th><th>สถานะและหลักฐาน</th></tr></thead><tbody>' +
         filtered.map(r =>
@@ -309,15 +449,33 @@ async function ecosystem() {
   show(0);
 }
 
+function indicatorStatus(x) {
+  if (x.baseline != null && x.target != null) return {key: 'ready', label: 'มีค่าฐานและเป้าหมาย'};
+  if (x.baseline != null) return {key: 'partial', label: 'มีค่าฐาน ยังไม่มีเป้าหมาย'};
+  return {key: 'pending', label: 'ยังไม่มีค่าฐาน'};
+}
+
 async function evaluation() {
   const indicators = await get('data/indicators.json');
   const cats = [...new Set(indicators.map(x => x.theme))];
   $('#indicator-filter').insertAdjacentHTML('beforeend', cats.map(x => '<option>' + escapeHTML(x) + '</option>').join(''));
+  const board = $('#indicator-board');
   function draw() {
     const list = indicators.filter(x => $('#indicator-filter').value === 'all' || x.theme === $('#indicator-filter').value);
-    $('#indicator-list').innerHTML = list.map(x =>
-      '<details id="' + escapeHTML(x.id) + '"><summary>' + escapeHTML(x.id + ' · ' + x.title) + '</summary>' +
-      '<p class="badge">ตัวชี้วัดเสนอ · ' + escapeHTML(x.baseline == null || x.target == null ? 'ข้อมูลฐาน/เป้าหมายยังไม่ครบ' : 'ค่าที่ผู้ดูแลระบุ โปรดอ่านที่มา') + '</p><dl>' +
+    if (board) {
+      board.innerHTML = list.map(x => {
+        const st = indicatorStatus(x);
+        return '<a class="indicator-chip status-' + st.key + '" href="#' + escapeHTML(x.id) + '">' +
+          '<strong>' + escapeHTML(x.id) + '</strong> ' + escapeHTML(x.title) +
+          '<span class="badge">' + escapeHTML(st.label) + '</span>' +
+          '<small>' + escapeHTML(x.project) + ' · ' + escapeHTML(x.theme) + '</small></a>';
+      }).join('');
+    }
+    $('#indicator-list').innerHTML = list.map(x => {
+      const st = indicatorStatus(x);
+      return '<details id="' + escapeHTML(x.id) + '"><summary>' + escapeHTML(x.id + ' · ' + x.title) + '</summary>' +
+      '<p class="badge status-' + st.key + '">ตัวชี้วัดเสนอ · ' + escapeHTML(st.label) + '</p>' +
+      '<p><a href="projects.html#' + escapeHTML(x.project) + '">เปิดโครงการ ' + escapeHTML(x.project) + ' →</a></p><dl>' +
       [
         ['SDG / โครงการ', x.sdg + ' / ' + x.project],
         ['นิยาม', x.definition],
@@ -330,11 +488,18 @@ async function evaluation() {
         ['การจำแนก', x.disaggregation],
         ['เกณฑ์และข้อจำกัด', x.limit]
       ].map(([k, v]) => '<dt>' + escapeHTML(k) + '</dt><dd>' + escapeHTML(v) + '</dd>').join('') +
-      '</dl></details>'
-    ).join('');
+      '</dl></details>';
+    }).join('');
+    const hash = location.hash.slice(1);
+    const open = hash && document.getElementById(hash);
+    if (open && open.tagName === 'DETAILS') {
+      open.open = true;
+      open.scrollIntoView({block: 'start'});
+    }
   }
   $('#indicator-filter').addEventListener('change', draw);
   draw();
+  addEventListener('hashchange', draw);
   const downloads = await get('data/downloads.json');
   $('#download-list').innerHTML = downloads.map(d =>
     '<article class="download-card">' +
@@ -358,40 +523,119 @@ async function evaluation() {
   });
 }
 
-async function forum() {
-  const {giscus: c} = await get('data/site.json');
-  const valid = c.enabled && /^[A-Za-z0-9_.-]+\/[A-Za-z0-9_.-]+$/.test(c.repo) && c.repoId && c.category && c.categoryId;
-  if (!valid) {
-    $('#forum-status').textContent = 'พื้นที่สนทนายังไม่เปิดใช้งาน ผู้จัดทำกำลังเตรียมการเชื่อมต่อ GitHub Discussions ระหว่างนี้เสนอแนะได้ทางอีเมลในหน้าเกี่ยวกับผู้จัดทำ';
-    return;
+function bindContributeForm() {
+  const form = $('#contribute-form');
+  if (!form || form.dataset.bound) return;
+  form.dataset.bound = '1';
+  const extra = $('#error-fields');
+  const kind = $('#contribute-kind');
+  function toggleExtra() {
+    if (extra) extra.hidden = kind.value !== 'data-error';
   }
-  $('#forum-status').textContent = 'การเปิดพื้นที่สนทนาจะเชื่อมต่อบริการ Giscus และ GitHub การแสดงความคิดเห็นต้องเข้าสู่ระบบ GitHub โปรดหลีกเลี่ยงข้อมูลส่วนบุคคลของผู้เรียน';
-  const b = $('#load-discussion');
-  b.hidden = false;
-  b.addEventListener('click', () => {
-    b.disabled = true;
-    const script = document.createElement('script');
-    script.src = 'https://giscus.app/client.js';
-    const attrs = {
-      'data-repo': c.repo,
-      'data-repo-id': c.repoId,
-      'data-category': c.category,
-      'data-category-id': c.categoryId,
-      'data-mapping': 'pathname',
-      'data-strict': '1',
-      'data-reactions-enabled': '1',
-      'data-emit-metadata': '0',
-      'data-input-position': 'top',
-      'data-theme': 'light',
-      'data-lang': 'th',
-      'crossorigin': 'anonymous'
-    };
-    Object.entries(attrs).forEach(([k, v]) => script.setAttribute(k, v));
-    script.async = true;
-    script.onerror = () => { $('#forum-status').textContent = 'เชื่อมต่อพื้นที่สนทนาไม่ได้ โปรดลองโหลดหน้าใหม่'; };
-    script.onload = () => { $('#forum-status').textContent = 'โหลดส่วนสนทนาแล้ว หากช่องสนทนาไม่ปรากฏ โปรดตรวจการเชื่อมต่อและการตั้งค่า Giscus'; };
-    $('#giscus-container').append(script);
-  }, {once: true});
+  kind?.addEventListener('change', toggleExtra);
+  toggleExtra();
+  function compose() {
+    const data = Object.fromEntries(new FormData(form).entries());
+    const lines = [
+      'ประเภท: ' + (data.kind || ''),
+      'ชื่อ (ไม่บังคับ): ' + (data.name || 'ไม่ระบุ'),
+      'อีเมลติดต่อกลับ: ' + (data.email || 'ไม่ระบุ'),
+      'หน้าเว็บ: ' + (data.page || ''),
+      data.kind === 'data-error' ? 'รายการข้อมูล: ' + (data.item || '') : '',
+      data.kind === 'data-error' ? 'แหล่งที่ควรใช้: ' + (data.source || '') : '',
+      '',
+      data.message || '',
+      '',
+      'ส่งจากแบบฟอร์ม sdg.thamdee.com/forum.html',
+      'ผู้ส่งยืนยันว่าไม่ใส่ชื่อ ภาพ หรือข้อมูลที่ระบุตัวผู้เรียน'
+    ].filter(v => v !== '');
+    return lines.join('\n');
+  }
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    if (!$('#contribute-consent')?.checked) {
+      $('#contribute-result').textContent = 'กรุณายืนยันว่าจะไม่ส่งข้อมูลที่ระบุตัวผู้เรียน';
+      return;
+    }
+    if (!$('#contribute-message')?.value.trim()) {
+      $('#contribute-result').textContent = 'กรุณากรอกข้อความ';
+      return;
+    }
+    const subject = encodeURIComponent('[SDG 4 อยุธยา] ' + ($('#contribute-kind')?.selectedOptions[0]?.text || 'ข้อเสนอ'));
+    const body = encodeURIComponent(compose());
+    location.href = 'mailto:burapatis@gmail.com?subject=' + subject + '&body=' + body;
+    $('#contribute-result').textContent = 'กำลังเปิดโปรแกรมอีเมล หากไม่เปิดขึ้น ให้ใช้ปุ่มคัดลอกข้อความ';
+  });
+  $('#copy-contribute')?.addEventListener('click', async () => {
+    if (!$('#contribute-consent')?.checked) {
+      $('#contribute-result').textContent = 'กรุณายืนยันว่าจะไม่ส่งข้อมูลที่ระบุตัวผู้เรียน';
+      return;
+    }
+    if (!$('#contribute-message')?.value.trim()) {
+      $('#contribute-result').textContent = 'กรุณากรอกข้อความ';
+      return;
+    }
+    const text = compose();
+    try {
+      await navigator.clipboard.writeText(text);
+      $('#contribute-result').textContent = 'คัดลอกข้อความแล้ว วางในอีเมลถึง burapatis@gmail.com ได้เลย';
+    } catch {
+      const ta = document.createElement('textarea');
+      ta.value = text;
+      ta.setAttribute('readonly', '');
+      ta.style.position = 'fixed';
+      ta.style.left = '-9999px';
+      document.body.append(ta);
+      ta.select();
+      const ok = document.execCommand('copy');
+      ta.remove();
+      $('#contribute-result').textContent = ok
+        ? 'คัดลอกข้อความแล้ว วางในอีเมลถึง burapatis@gmail.com ได้เลย'
+        : 'คัดลอกอัตโนมัติไม่ได้ โปรดเลือกข้อความในช่องแล้วคัดลอกเอง';
+    }
+  });
+}
+
+async function forum() {
+  bindContributeForm();
+  const status = $('#forum-status');
+  try {
+    const {giscus: c} = await get('data/site.json');
+    const valid = c.enabled && /^[A-Za-z0-9_.-]+\/[A-Za-z0-9_.-]+$/.test(c.repo) && c.repoId && c.category && c.categoryId;
+    if (!valid) {
+      if (status) status.textContent = 'กระดาน Giscus ยังไม่เปิด ใช้แบบฟอร์มอีเมลด้านบนได้ทันที โดยไม่ต้องมีบัญชี GitHub';
+      return;
+    }
+    if (status) status.textContent = 'การเปิดพื้นที่สนทนาจะเชื่อมต่อบริการ Giscus และ GitHub การแสดงความคิดเห็นต้องเข้าสู่ระบบ GitHub โปรดหลีกเลี่ยงข้อมูลส่วนบุคคลของผู้เรียน';
+    const b = $('#load-discussion');
+    b.hidden = false;
+    b.addEventListener('click', () => {
+      b.disabled = true;
+      const script = document.createElement('script');
+      script.src = 'https://giscus.app/client.js';
+      const attrs = {
+        'data-repo': c.repo,
+        'data-repo-id': c.repoId,
+        'data-category': c.category,
+        'data-category-id': c.categoryId,
+        'data-mapping': 'pathname',
+        'data-strict': '1',
+        'data-reactions-enabled': '1',
+        'data-emit-metadata': '0',
+        'data-input-position': 'top',
+        'data-theme': 'light',
+        'data-lang': 'th',
+        'crossorigin': 'anonymous'
+      };
+      Object.entries(attrs).forEach(([k, v]) => script.setAttribute(k, v));
+      script.async = true;
+      script.onerror = () => { status.textContent = 'เชื่อมต่อพื้นที่สนทนาไม่ได้ โปรดใช้แบบฟอร์มอีเมลด้านบน'; };
+      script.onload = () => { status.textContent = 'โหลดส่วนสนทนาแล้ว หากช่องสนทนาไม่ปรากฏ โปรดตรวจการเชื่อมต่อและการตั้งค่า Giscus'; };
+      $('#giscus-container').append(script);
+    }, {once: true});
+  } catch (e) {
+    if (status) fail(status, e);
+  }
 }
 
 async function relatedSites() {

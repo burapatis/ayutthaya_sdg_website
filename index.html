@@ -92,6 +92,14 @@
 </div>
 <div id="data-notice" class="notice" role="status">กำลังโหลดข้อมูล…</div>
 <div id="stats-cards" class="stats-grid" aria-live="polite"></div>
+<div class="section-title"><h2>สถานะข้อมูลตามเป้าหมาย SDG 4</h2></div>
+<p class="small muted">แผงนี้บอกว่าเว็บไซต์มีหลักฐานชนิดใด ไม่เปลี่ยนตามชุดข้อมูลจำลอง และไม่ใช่คะแนนผลงานจังหวัด</p>
+<div id="sdg-coverage" class="coverage-grid"></div>
+<section class="panel watch-panel" aria-labelledby="watch-title">
+<h2 id="watch-title">รายการรอตรวจตารางต้นฉบับ</h2>
+<p class="sub">ยังไม่เติมลงกราฟหลัก จนกว่าจะเปิดตารางต้นฉบับและยืนยันนิยามปี</p>
+<div id="watchlist"></div>
+</section>
 <div class="grid-two">
 <section class="panel">
 <h2 id="chart-title">แนวโน้มการศึกษา</h2>
@@ -104,14 +112,25 @@
 </details>
 </section>
 <section class="panel">
-<h2>พื้นที่แห่งการเรียนรู้</h2>
-<p class="sub">สำรวจตัวอย่างประเด็นการพัฒนาในอยุธยา</p>
-<div id="map" aria-label="แผนที่แสดงพื้นที่ตัวอย่างจังหวัดพระนครศรีอยุธยา"></div>
-<p class="map-note" id="map-note"></p>
-<details><summary>รายชื่อพื้นที่ในแผนที่</summary><ul id="map-list"></ul></details>
+<h2>แยกจำนวนออกจากอัตรา</h2>
+<p class="sub">กราฟซ้ายเป็นจำนวนคน ไม่ใช่ร้อยละ และไม่ใช่เด็กนอกระบบทุกกลุ่ม</p>
+<ul>
+<li>ตัวเลขปี 2562–2566 ใช้ได้เฉพาะขอบเขตตารางต้นทาง</li>
+<li>ปี 2567 อยู่ในรายการรอตรวจด้านบน</li>
+<li>การย้ายตามครอบครัวไม่เท่ากับการไม่มีที่เรียนปลายทาง</li>
+</ul>
+<p><a href="knowledge.html?article=source-notes">อ่านบันทึกที่มาและข้อจำกัด →</a></p>
 </section>
 </div>
 <p id="data-source" class="data-status"></p>
+<section class="panel map-panel" style="margin-top:22px">
+<h2>พื้นที่แห่งการเรียนรู้ทั้ง 16 อำเภอ</h2>
+<p class="sub">เลือกชั้นประเด็นเพื่อกรองจุด พิกัดเป็นประมาณของที่ว่าการอำเภอ ไม่ใช่ที่ตั้งสถานศึกษา</p>
+<div id="map-legend" class="map-legend" role="group" aria-label="ชั้นข้อมูลแผนที่"></div>
+<div id="map" aria-label="แผนที่แสดง 16 อำเภอจังหวัดพระนครศรีอยุธยา"></div>
+<p class="map-note" id="map-note"></p>
+<details><summary>รายชื่ออำเภอตามชั้นที่เลือก</summary><ul id="map-list"></ul></details>
+</section>
 <a href="knowledge.html?article=source-notes" class="small">อ่านบันทึกตรวจสอบและข้อจำกัดของข้อมูล →</a>
 <div class="section-title"><h2>จากข้อมูล สู่การลงมือทำ</h2></div>
 <div class="link-grid">

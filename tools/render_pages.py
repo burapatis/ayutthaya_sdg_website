@@ -124,6 +124,14 @@ pages["index.html"] = wrap(
 </div>
 <div id="data-notice" class="notice" role="status">กำลังโหลดข้อมูล…</div>
 <div id="stats-cards" class="stats-grid" aria-live="polite"></div>
+<div class="section-title"><h2>สถานะข้อมูลตามเป้าหมาย SDG 4</h2></div>
+<p class="small muted">แผงนี้บอกว่าเว็บไซต์มีหลักฐานชนิดใด ไม่เปลี่ยนตามชุดข้อมูลจำลอง และไม่ใช่คะแนนผลงานจังหวัด</p>
+<div id="sdg-coverage" class="coverage-grid"></div>
+<section class="panel watch-panel" aria-labelledby="watch-title">
+<h2 id="watch-title">รายการรอตรวจตารางต้นฉบับ</h2>
+<p class="sub">ยังไม่เติมลงกราฟหลัก จนกว่าจะเปิดตารางต้นฉบับและยืนยันนิยามปี</p>
+<div id="watchlist"></div>
+</section>
 <div class="grid-two">
 <section class="panel">
 <h2 id="chart-title">แนวโน้มการศึกษา</h2>
@@ -136,14 +144,25 @@ pages["index.html"] = wrap(
 </details>
 </section>
 <section class="panel">
-<h2>พื้นที่แห่งการเรียนรู้</h2>
-<p class="sub">สำรวจตัวอย่างประเด็นการพัฒนาในอยุธยา</p>
-<div id="map" aria-label="แผนที่แสดงพื้นที่ตัวอย่างจังหวัดพระนครศรีอยุธยา"></div>
-<p class="map-note" id="map-note"></p>
-<details><summary>รายชื่อพื้นที่ในแผนที่</summary><ul id="map-list"></ul></details>
+<h2>แยกจำนวนออกจากอัตรา</h2>
+<p class="sub">กราฟซ้ายเป็นจำนวนคน ไม่ใช่ร้อยละ และไม่ใช่เด็กนอกระบบทุกกลุ่ม</p>
+<ul>
+<li>ตัวเลขปี 2562–2566 ใช้ได้เฉพาะขอบเขตตารางต้นทาง</li>
+<li>ปี 2567 อยู่ในรายการรอตรวจด้านบน</li>
+<li>การย้ายตามครอบครัวไม่เท่ากับการไม่มีที่เรียนปลายทาง</li>
+</ul>
+<p><a href="knowledge.html?article=source-notes">อ่านบันทึกที่มาและข้อจำกัด →</a></p>
 </section>
 </div>
 <p id="data-source" class="data-status"></p>
+<section class="panel map-panel" style="margin-top:22px">
+<h2>พื้นที่แห่งการเรียนรู้ทั้ง 16 อำเภอ</h2>
+<p class="sub">เลือกชั้นประเด็นเพื่อกรองจุด พิกัดเป็นประมาณของที่ว่าการอำเภอ ไม่ใช่ที่ตั้งสถานศึกษา</p>
+<div id="map-legend" class="map-legend" role="group" aria-label="ชั้นข้อมูลแผนที่"></div>
+<div id="map" aria-label="แผนที่แสดง 16 อำเภอจังหวัดพระนครศรีอยุธยา"></div>
+<p class="map-note" id="map-note"></p>
+<details><summary>รายชื่ออำเภอตามชั้นที่เลือก</summary><ul id="map-list"></ul></details>
+</section>
 <a href="knowledge.html?article=source-notes" class="small">อ่านบันทึกตรวจสอบและข้อจำกัดของข้อมูล →</a>
 <div class="section-title"><h2>จากข้อมูล สู่การลงมือทำ</h2></div>
 <div class="link-grid">
@@ -268,6 +287,21 @@ pages["alignment.html"] = wrap(
 <a href="projects.html">กิจกรรม</a><i aria-hidden="true">→</i>
 <a href="evaluation.html">ผลลัพธ์</a>
 </div>
+<section class="panel" aria-labelledby="align-map-title">
+<h2 id="align-map-title">แผนภาพระดับนโยบาย</h2>
+<p class="sub">กดระดับเพื่อกรองตารางด้านล่าง ลูกศรแสดงทิศทางประสาน ไม่ใช่สายบังคับบัญชาเดียว</p>
+<div class="align-diagram">
+<button type="button" data-align-level="all" aria-pressed="true">ทุกระดับ</button>
+<span class="align-arrow" aria-hidden="true">↓</span>
+<button type="button" data-align-level="กระทรวง / ต้นสังกัด">กระทรวง / ต้นสังกัด</button>
+<span class="align-arrow" aria-hidden="true">↓</span>
+<button type="button" data-align-level="ระดับภาค">สำนักงานศึกษาธิการภาค 1</button>
+<span class="align-arrow" aria-hidden="true">↓</span>
+<button type="button" data-align-level="ระหว่างจังหวัด">ความร่วมมือระหว่างจังหวัด</button>
+<span class="align-arrow" aria-hidden="true">↓</span>
+<button type="button" data-align-level="ระดับจังหวัด">จังหวัดและพื้นที่</button>
+</div>
+</section>
 <div class="toolbar">
 <div class="field"><label for="alignment-level">ระดับความเชื่อมโยง</label><select id="alignment-level"><option value="all">ทุกระดับ</option></select></div>
 <div class="field"><label for="alignment-province">พื้นที่ที่เกี่ยวข้อง</label><select id="alignment-province"><option value="all">ทุกพื้นที่</option></select></div>
@@ -292,8 +326,11 @@ pages["projects.html"] = wrap(
 <header class="page-head">
 <p class="eyebrow">EDUCATION FOR EVERYONE</p>
 <h1>ตัวอย่างโครงการและกิจกรรมสำคัญ</h1>
-<p>หกแนวทางสำหรับนำไปปรับใช้กับบริบทของพื้นที่</p>
+<p>เลือกปัญหาที่เผชิญ แล้วดูแนวทางตัวอย่างที่จะนำไปปรับใช้ ไม่ใช่โครงการที่อนุมัติแล้ว</p>
 </header>
+<p class="small muted">ปัญหาของคุณคืออะไร</p>
+<div id="project-pathways" class="tag-row" role="group" aria-label="เลือกปัญหาเพื่อกรองโครงการ"></div>
+<p id="project-path-status" class="small muted" role="status"></p>
 <div id="project-list" class="project-list"></div>
 <div class="article-tools">
 <a class="button secondary" href="content/projects.md" download>ดาวน์โหลดเนื้อหา .md</a>
@@ -332,8 +369,10 @@ pages["evaluation.html"] = wrap(
 <article class="prose" data-markdown="content/evaluation.md"><p class="loading">กำลังโหลดเนื้อหา…</p></article>
 <section aria-labelledby="indicators-title">
 <div class="section-title"><h2 id="indicators-title">ทะเบียนตัวชี้วัดเสนอสำหรับพื้นที่</h2></div>
+<p class="small muted">สถานะอ่านจากค่าฐานและเป้าหมายในข้อมูลเดียวกัน ยังไม่มีการตัดสินผ่าน/ไม่ผ่านอัตโนมัติ</p>
 <label for="indicator-filter">เลือกประเด็น</label>
 <select id="indicator-filter"><option value="all">ทุกประเด็น</option></select>
+<div id="indicator-board" class="indicator-board"></div>
 <div id="indicator-list" class="indicator-list"></div>
 </section>
 <section class="panel">
@@ -369,11 +408,48 @@ pages["forum.html"] = wrap(
 </div>
 <article class="prose" data-markdown="content/forum.md"><p class="loading">กำลังโหลดเนื้อหา…</p></article>
 <section class="panel" style="margin-top:24px">
-<h2>ร่วมแลกเปลี่ยนความคิดเห็น</h2>
+<h2>ส่งข้อเสนอหรือแจ้งข้อมูลคลาดเคลื่อน</h2>
+<p class="sub">เปิดโปรแกรมอีเมลบนเครื่องคุณ ไม่มีการเก็บแบบฟอร์มบนเซิร์ฟเวอร์ และไม่ต้องมีบัญชี GitHub</p>
+<form id="contribute-form" class="contribute-form">
+<div class="field"><label for="contribute-kind">ประเภท</label>
+<select id="contribute-kind" name="kind">
+<option value="suggestion">ข้อเสนอหรือประสบการณ์</option>
+<option value="data-error">แจ้งข้อมูลคลาดเคลื่อน</option>
+<option value="question">คำถาม</option>
+</select></div>
+<div class="field"><label for="contribute-name">ชื่อ (ไม่บังคับ)</label><input id="contribute-name" name="name" type="text" autocomplete="name"></div>
+<div class="field"><label for="contribute-email">อีเมลติดต่อกลับ (ไม่บังคับ)</label><input id="contribute-email" name="email" type="email" autocomplete="email"></div>
+<div class="field"><label for="contribute-page">หน้าที่เกี่ยวข้อง</label>
+<select id="contribute-page" name="page">
+<option value="ภาพรวม">ภาพรวม</option>
+<option value="คลังความรู้">คลังความรู้</option>
+<option value="ระบบนิเวศ">ระบบนิเวศ</option>
+<option value="หน่วยงาน">หน่วยงาน</option>
+<option value="ความเชื่อมโยง">ความเชื่อมโยง</option>
+<option value="โครงการ">โครงการ</option>
+<option value="กลไกขับเคลื่อน">กลไกขับเคลื่อน</option>
+<option value="วัดและประเมินผล">วัดและประเมินผล</option>
+<option value="ร่วมแลกเปลี่ยน">ร่วมแลกเปลี่ยน</option>
+<option value="ผู้จัดทำ">ผู้จัดทำ</option>
+</select></div>
+<div id="error-fields" hidden>
+<div class="field"><label for="contribute-item">รายการข้อมูลที่พบว่าคลาดเคลื่อน</label><input id="contribute-item" name="item" type="text" placeholder="เช่น จำนวนออกกลางคันปี 2566"></div>
+<div class="field"><label for="contribute-source">แหล่งที่ควรใช้ประกอบการแก้</label><input id="contribute-source" name="source" type="text" placeholder="ชื่อเอกสาร ปี หน้าหรือตาราง"></div>
+</div>
+<div class="field"><label for="contribute-message">ข้อความ</label><textarea id="contribute-message" name="message" rows="6" required></textarea></div>
+<label class="consent"><input id="contribute-consent" type="checkbox" required> ยืนยันว่าจะไม่ส่งชื่อ ภาพ เลขประจำตัว หรือรายละเอียดที่ระบุตัวผู้เรียน</label>
+<div class="contribute-actions">
+<button class="button" type="submit">เปิดอีเมลถึงผู้จัดทำ</button>
+<button class="button secondary" id="copy-contribute" type="button">คัดลอกข้อความ</button>
+</div>
+<p id="contribute-result" class="small muted" role="status"></p>
+</form>
+</section>
+<section class="panel" style="margin-top:24px">
+<h2>กระดานสาธารณะ (ทางเลือก)</h2>
 <p id="forum-status" role="status">กำลังตรวจสอบพื้นที่สนทนา…</p>
 <button id="load-discussion" class="button" type="button" hidden>เปิดพื้นที่สนทนา Giscus</button>
 <div class="giscus" id="giscus-container"></div>
-<p class="small muted">ระหว่างรอพื้นที่สนทนา สามารถส่งข้อเสนอได้ที่ <a href="mailto:burapatis@gmail.com">burapatis@gmail.com</a></p>
 </section>""",
     MD,
 )

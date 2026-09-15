@@ -47,11 +47,48 @@
 </div>
 <article class="prose" data-markdown="content/forum.md"><p class="loading">กำลังโหลดเนื้อหา…</p></article>
 <section class="panel" style="margin-top:24px">
-<h2>ร่วมแลกเปลี่ยนความคิดเห็น</h2>
+<h2>ส่งข้อเสนอหรือแจ้งข้อมูลคลาดเคลื่อน</h2>
+<p class="sub">เปิดโปรแกรมอีเมลบนเครื่องคุณ ไม่มีการเก็บแบบฟอร์มบนเซิร์ฟเวอร์ และไม่ต้องมีบัญชี GitHub</p>
+<form id="contribute-form" class="contribute-form">
+<div class="field"><label for="contribute-kind">ประเภท</label>
+<select id="contribute-kind" name="kind">
+<option value="suggestion">ข้อเสนอหรือประสบการณ์</option>
+<option value="data-error">แจ้งข้อมูลคลาดเคลื่อน</option>
+<option value="question">คำถาม</option>
+</select></div>
+<div class="field"><label for="contribute-name">ชื่อ (ไม่บังคับ)</label><input id="contribute-name" name="name" type="text" autocomplete="name"></div>
+<div class="field"><label for="contribute-email">อีเมลติดต่อกลับ (ไม่บังคับ)</label><input id="contribute-email" name="email" type="email" autocomplete="email"></div>
+<div class="field"><label for="contribute-page">หน้าที่เกี่ยวข้อง</label>
+<select id="contribute-page" name="page">
+<option value="ภาพรวม">ภาพรวม</option>
+<option value="คลังความรู้">คลังความรู้</option>
+<option value="ระบบนิเวศ">ระบบนิเวศ</option>
+<option value="หน่วยงาน">หน่วยงาน</option>
+<option value="ความเชื่อมโยง">ความเชื่อมโยง</option>
+<option value="โครงการ">โครงการ</option>
+<option value="กลไกขับเคลื่อน">กลไกขับเคลื่อน</option>
+<option value="วัดและประเมินผล">วัดและประเมินผล</option>
+<option value="ร่วมแลกเปลี่ยน">ร่วมแลกเปลี่ยน</option>
+<option value="ผู้จัดทำ">ผู้จัดทำ</option>
+</select></div>
+<div id="error-fields" hidden>
+<div class="field"><label for="contribute-item">รายการข้อมูลที่พบว่าคลาดเคลื่อน</label><input id="contribute-item" name="item" type="text" placeholder="เช่น จำนวนออกกลางคันปี 2566"></div>
+<div class="field"><label for="contribute-source">แหล่งที่ควรใช้ประกอบการแก้</label><input id="contribute-source" name="source" type="text" placeholder="ชื่อเอกสาร ปี หน้าหรือตาราง"></div>
+</div>
+<div class="field"><label for="contribute-message">ข้อความ</label><textarea id="contribute-message" name="message" rows="6" required></textarea></div>
+<label class="consent"><input id="contribute-consent" type="checkbox" required> ยืนยันว่าจะไม่ส่งชื่อ ภาพ เลขประจำตัว หรือรายละเอียดที่ระบุตัวผู้เรียน</label>
+<div class="contribute-actions">
+<button class="button" type="submit">เปิดอีเมลถึงผู้จัดทำ</button>
+<button class="button secondary" id="copy-contribute" type="button">คัดลอกข้อความ</button>
+</div>
+<p id="contribute-result" class="small muted" role="status"></p>
+</form>
+</section>
+<section class="panel" style="margin-top:24px">
+<h2>กระดานสาธารณะ (ทางเลือก)</h2>
 <p id="forum-status" role="status">กำลังตรวจสอบพื้นที่สนทนา…</p>
 <button id="load-discussion" class="button" type="button" hidden>เปิดพื้นที่สนทนา Giscus</button>
 <div class="giscus" id="giscus-container"></div>
-<p class="small muted">ระหว่างรอพื้นที่สนทนา สามารถส่งข้อเสนอได้ที่ <a href="mailto:burapatis@gmail.com">burapatis@gmail.com</a></p>
 </section>
 </main>
 </div>

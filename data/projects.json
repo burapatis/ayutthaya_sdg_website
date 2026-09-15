@@ -20,6 +20,7 @@
       "I02"
     ],
     "sdg": "4.1, 4.5",
+    "problemId": "continuity",
     "duration": "หนึ่งภาคเรียนและติดตามต่อเนื่อง",
     "resources": "ผู้ประสานงาน เวลาเยี่ยมติดตาม การเดินทาง และช่องทางสื่อสาร",
     "status": "illustrative-proposal-not-approved",
@@ -46,6 +47,7 @@
       "I04"
     ],
     "sdg": "4.1, 4.5, 4.c",
+    "problemId": "literacy",
     "duration": "หนึ่งภาคเรียน",
     "resources": "เวลาครู สื่อที่เข้าถึงได้ และผู้ช่วยตรวจคุณภาพเครื่องมือ",
     "status": "illustrative-proposal-not-approved",
@@ -71,6 +73,7 @@
       "I05"
     ],
     "sdg": "4.3, 4.4",
+    "problemId": "skills",
     "duration": "เตรียมหนึ่งภาคเรียน ติดตามหลังจบ 6 และ 12 เดือน",
     "resources": "พี่เลี้ยง อุปกรณ์ฝึก การเดินทางปลอดภัย และเวลาติดตามผู้สำเร็จ",
     "status": "illustrative-proposal-not-approved",
@@ -97,6 +100,7 @@
       "I07"
     ],
     "sdg": "4.a, 4.7",
+    "problemId": "safety",
     "duration": "หนึ่งปีการศึกษา ทบทวนทุกภาคเรียน",
     "resources": "ผู้ประสานดูแล/แนะแนว การซ้อมแผน และสื่อการเรียนสำรอง",
     "status": "illustrative-proposal-not-approved",
@@ -123,6 +127,7 @@
       "I09"
     ],
     "sdg": "4.2, 4.5, 4.6, 4.a",
+    "problemId": "equity",
     "duration": "สำรวจหนึ่งไตรมาส ทดลองหนึ่งภาคเรียน",
     "resources": "ผู้เชี่ยวชาญเคลื่อนที่ อุปกรณ์ การบำรุงรักษา และการเดินทาง",
     "status": "illustrative-proposal-not-approved",
@@ -148,6 +153,7 @@
       "I10"
     ],
     "sdg": "สนับสนุนการติดตาม SDG 4",
+    "problemId": "data",
     "duration": "เริ่มต้น 90 วัน แล้วทบทวนรายไตรมาส",
     "resources": "ผู้ดูแลข้อมูล เวลาตรวจทาน และระบบเก็บข้อมูลภายในที่เหมาะสม",
     "status": "illustrative-proposal-not-approved",
