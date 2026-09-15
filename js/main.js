@@ -191,9 +191,9 @@ function initMap(mapData) {
     $('#map').textContent = 'แผนที่โหลดไม่ได้ โปรดอ่านรายชื่อพื้นที่ด้านล่าง';
     return;
   }
-  const map = L.map('map', {scrollWheelZoom: false, keyboard: false, maxZoom: 13}).setView(mapData.center, mapData.zoom);
+  const map = L.map('map', {scrollWheelZoom: false, keyboard: false, zoomSnap: 0.25, zoomDelta: 0.5}).setView(mapData.center, mapData.zoom);
   const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 13,
+    maxZoom: 18,
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
   }).addTo(map);
   tiles.on('tileerror', () => {
@@ -201,7 +201,6 @@ function initMap(mapData) {
   });
   const drawn = [];
   let provinceBounds = null;
-  let fitted = false;
   let geoData = null;
   const geoPath = mapData.geojson || 'data/ayutthaya-amphoe.geojson';
   const shapeNote = 'ขอบเขตอำเภอเพื่อแสดงรูปร่างจังหวัด ไม่ใช่ที่ตั้งสถานศึกษา';
@@ -219,11 +218,18 @@ function initMap(mapData) {
     $$('#map .leaflet-tooltip.map-amphoe-label').forEach(el => el.remove());
   }
 
-  function fitProvince() {
-    if (fitted || !provinceBounds || !provinceBounds.isValid()) return;
-    map.fitBounds(provinceBounds, {padding: [18, 18], maxZoom: 11});
-    map.setMaxBounds(provinceBounds.pad(0.45));
-    fitted = true;
+  function sizeAndFit() {
+    const el = $('#map');
+    if (!el) return;
+    const w = el.clientWidth;
+    if (w < 40) return;
+    el.style.height = Math.round(Math.min(880, Math.max(400, w * 0.94))) + 'px';
+    map.invalidateSize({animate: false, pan: false});
+    if (provinceBounds && provinceBounds.isValid()) {
+      map.fitBounds(provinceBounds, {padding: [16, 16], animate: false});
+    } else {
+      map.setView(mapData.center, mapData.zoom, {animate: false});
+    }
   }
 
   function drawMarkers(on) {
@@ -282,10 +288,16 @@ function initMap(mapData) {
       drawMarkers(on);
     }
     $('#map-list').innerHTML = listHTML(on);
-    fitProvince();
   }
 
   $$('#map-legend [data-layer]').forEach(i => i.addEventListener('change', () => redraw(geoData)));
+
+  function afterLayout() {
+    requestAnimationFrame(() => {
+      sizeAndFit();
+      requestAnimationFrame(sizeAndFit);
+    });
+  }
 
   get(geoPath).then(geo => {
     const names = new Set((geo.features || []).map(f => f.properties && f.properties.name));
@@ -295,7 +307,7 @@ function initMap(mapData) {
     const all = L.geoJSON(geo);
     provinceBounds = all.getBounds();
     redraw(geo);
-    requestAnimationFrame(() => { map.invalidateSize(); fitProvince(); });
+    afterLayout();
   }).catch(() => {
     geoData = null;
     const pts = mapData.points || [];
@@ -303,7 +315,12 @@ function initMap(mapData) {
       provinceBounds = L.latLngBounds(pts.map(p => [p.lat, p.lng]));
     }
     redraw(null);
-    requestAnimationFrame(() => { map.invalidateSize(); fitProvince(); });
+    afterLayout();
+  });
+
+  window.addEventListener('resize', () => {
+    clearTimeout(sizeAndFit._t);
+    sizeAndFit._t = setTimeout(sizeAndFit, 150);
   });
 }
 
