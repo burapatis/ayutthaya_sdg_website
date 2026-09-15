@@ -73,11 +73,15 @@
 .watch-panel{margin:8px 0 22px;border-left:4px solid var(--gold)}
 .watch-item{padding:8px 0}
 .watch-item p{margin-bottom:.4em}
-#map{width:100%;height:480px;border-radius:12px;background:#eeeee7;z-index:0}
+#map.province-map{width:100%;height:auto;aspect-ratio:1000/971;max-height:none;background:#f3efe7;border:1px solid var(--line);border-radius:12px;z-index:0}
 .map-panel{min-width:0}
-#map.leaflet-container img.leaflet-tile{max-width:none!important;max-height:none!important}
-.leaflet-tooltip.map-amphoe-label{background:none;border:0;box-shadow:none;color:#2a2420;font-weight:600;font-size:.7rem;line-height:1.25;text-align:center;white-space:normal;max-width:92px;padding:0;pointer-events:none;text-shadow:0 0 4px #fff,0 1px 2px #fff}
-.leaflet-tooltip.map-amphoe-label::before{content:none}
+.province-map svg{width:100%;height:100%;display:block}
+.province-map path{stroke-width:1.6;cursor:pointer;fill-opacity:.88}
+.province-map path:hover,.province-map path:focus-visible{fill-opacity:1;stroke-width:2.4}
+.province-map path[aria-current=true]{stroke:#8c402a;stroke-width:2.8}
+.province-map path.is-dim{fill-opacity:.45}
+.province-map .map-amphoe-text{font-size:15px;font-weight:600;fill:#2a2420;stroke:#fff;stroke-width:3.5px;paint-order:stroke;pointer-events:none}
+.map-detail{margin:12px 0 0;padding:12px 14px;background:#f7f3ec;border-radius:10px;font-size:.92rem}
 .map-legend{display:flex;flex-wrap:wrap;gap:10px 16px;margin:0 0 14px}
 .map-legend-item{display:inline-flex;align-items:center;gap:8px;font-size:.88rem;cursor:pointer}
 .map-legend-item input{width:18px;height:18px;accent-color:var(--terra)}

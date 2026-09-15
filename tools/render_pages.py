@@ -61,9 +61,7 @@ def wrap(page, title, description, path, main, extra_head=""):
 
 MD = '''<script defer src="vendor/marked.min.js" integrity="sha384-948ahk4ZmxYVYOc+rxN1H2gM1EJ2Duhp7uHtZ4WSLkV4Vtx5MUqnV+l7u9B+jFv+" crossorigin="anonymous"></script>
 <script defer src="vendor/purify.min.js" integrity="sha384-80VlBZnyAwkkqtSfg5NhPyZff6nU4K/qniLBL8Jnm4KDv6jZhLiYtJbhglg/i9ww" crossorigin="anonymous"></script>'''
-INDEX_LIBS = '''<link rel="stylesheet" href="vendor/leaflet/leaflet.css" integrity="sha384-sHL9NAb7lN7rfvG5lfHpm643Xkcjzp4jFvuavGOndn6pjVqS6ny56CAt3nsEVT4H" crossorigin="anonymous">
-<script defer src="vendor/chart.umd.min.js" integrity="sha384-T/4KgSWuZEPozpPz7rnnp/5lDSnpY1VPJCojf1S81uTHS1E38qgLfMgVsAeRCWc4" crossorigin="anonymous"></script>
-<script defer src="vendor/leaflet/leaflet.js" integrity="sha384-cxOPjt7s7Iz04uaHJceBmS+qpjv2JkIHNVcuOrM+YHwZOmJGBXI00mdUXEq65HTH" crossorigin="anonymous"></script>
+INDEX_LIBS = '''<script defer src="vendor/chart.umd.min.js" integrity="sha384-T/4KgSWuZEPozpPz7rnnp/5lDSnpY1VPJCojf1S81uTHS1E38qgLfMgVsAeRCWc4" crossorigin="anonymous"></script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"อยุธยาเรียนรู้ · SDG 4","url":"https://sdg.thamdee.com/","inLanguage":"th","description":"พื้นที่ความรู้สาธารณะด้าน SDG 4 จังหวัดพระนครศรีอยุธยา","author":{"@type":"Person","name":"บูรพาทิศ พลอยสุวรรณ์","email":"mailto:burapatis@gmail.com"}}</script>'''
 
 pages = {}
@@ -161,10 +159,11 @@ pages["index.html"] = wrap(
 <p id="data-source" class="data-status"></p>
 <section class="panel map-panel" style="margin-top:22px">
 <h2>พื้นที่แห่งการเรียนรู้ทั้ง 16 อำเภอ</h2>
-<p class="sub">เลือกชั้นประเด็นเพื่อกรองจุด พิกัดเป็นประมาณของที่ว่าการอำเภอ ไม่ใช่ที่ตั้งสถานศึกษา</p>
+<p class="sub">เลือกชั้นประเด็นเพื่อกรองสี ขอบเขต 16 อำเภอต่อกันเป็นรูปร่างจังหวัดเต็มกรอบ ไม่ใช่ที่ตั้งสถานศึกษา</p>
 <p class="small"><a href="#map-list">ข้ามแผนที่ไปใช้รายชื่ออำเภอ</a> หากใช้แป้นพิมพ์หรือโปรแกรมอ่านหน้าจอ</p>
 <div id="map-legend" class="map-legend" role="group" aria-label="ชั้นข้อมูลแผนที่"></div>
-<div id="map" role="region" aria-label="แผนที่แสดง 16 อำเภอจังหวัดพระนครศรีอยุธยา" aria-describedby="map-note"></div>
+<div id="map" class="province-map" role="region" aria-label="แผนที่แสดง 16 อำเภอจังหวัดพระนครศรีอยุธยา" aria-describedby="map-note"></div>
+<p id="map-detail" class="map-detail" hidden></p>
 <p class="map-note" id="map-note"></p>
 <details open><summary>รายชื่ออำเภอตามชั้นที่เลือก</summary><ul id="map-list"></ul></details>
 </section>

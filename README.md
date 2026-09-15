@@ -40,7 +40,7 @@
 - อภิธานศัพท์: แก้ `data/glossary.json` คู่กับ `content/glossary.md`
 - ข้อมูล Dashboard: แก้ `data/stats.json` แยก `reference` และ `demo`; แผง `coverage` และ `watchlist` บอกสถานะหลักฐานจริง ไม่สลับตามชุดจำลอง; อย่าเติมตัวเลขที่ยังไม่ตรวจต้นฉบับลง `trend`
 - `trend.labels` และ `trend.values` ต้องยาวเท่ากัน ใช้ `null` เมื่อไม่มีข้อมูล ไม่ใช้ 0 แทนค่าที่ไม่ทราบ
-- แผนที่: แก้ `map.points`, `map.layers`, `map.status` และขอบเขตใน `data/ayutthaya-amphoe.geojson`; ชื่ออำเภอใน GeoJSON ต้องตรงกับ `map.points` ใช้แสดงรูปร่างจังหวัด ไม่ใช่ที่ตั้งสถานศึกษา
+- แผนที่: แก้ `map.points`, `map.layers`, `map.status` และไฟล์ `data/ayutthaya-map.json` (เส้นขอบเขต SVG) ชื่ออำเภอต้องตรงกับ `map.points` ใช้แสดงรูปร่างจังหวัด ไม่ใช่ที่ตั้งสถานศึกษา
 - ระบบนิเวศ: แก้ `data/ecosystem.json` คง 4 องค์ประกอบให้ตรงปุ่ม หรือแก้ปุ่มใน HTML เมื่อต้องเพิ่มองค์ประกอบ
 - โครงการ: แก้ `data/projects.json`, `data/pathways.json` และ `content/projects.md`; `problemId` ต้องตรงกับรหัสใน pathways
 - ความเชื่อมโยง: แก้ `data/alignment.json` และ `content/alignment.md`; ค่า `level` ต้องตรงกับปุ่มแผนภาพใน HTML; ตัวกรองตารางสร้างจากข้อมูลให้อัตโนมัติ
@@ -82,11 +82,9 @@ JSON ต้องใช้เครื่องหมายคำพูดคู
 
 ## เทคโนโลยีและการเชื่อมต่อ
 
-ใช้ HTML/CSS/JavaScript, Chart.js 4.4.8, Leaflet 1.9.4, marked 15.0.12 และ DOMPurify 3.3.1 จากโฟลเดอร์ `vendor/` พร้อมค่า SRI การจัดหน้าใช้ `css/style.css` และฟอนต์ Noto Sans Thai ใน `vendor/fonts` ไม่ใช้ Tailwind Play CDN และไม่ดึงไลบรารีหลักจาก CDN ในหน้าเผยแพร่
+ใช้ HTML/CSS/JavaScript, Chart.js 4.4.8, marked 15.0.12 และ DOMPurify 3.3.1 จากโฟลเดอร์ `vendor/` พร้อมค่า SRI การจัดหน้าใช้ `css/style.css` และฟอนต์ Noto Sans Thai ใน `vendor/fonts` ไม่ใช้ Tailwind Play CDN และไม่ดึงไลบรารีหลักจาก CDN ในหน้าเผยแพร่
 
-แผนที่พื้นหลัง OpenStreetMap และ Giscus (เมื่อเปิดใช้) ยังต้องใช้อินเทอร์เน็ต GitHub Pages โฮสต์ได้โดยไม่ต้อง build หาก Chart.js ไม่โหลดจะมีตารางแทน ถ้าแปลง Markdown ไม่ได้จะอ่านเป็นข้อความต้นฉบับ
-
-ให้คงเครดิต OpenStreetMap บนแผนที่ และอ่านนโยบายบริการเมื่อมีการใช้งานจำนวนมาก: https://operations.osmfoundation.org/policies/tiles/
+แผนที่ 16 อำเภอเป็นภาพ SVG จาก `data/ayutthaya-map.json` ไม่ใช้ Leaflet หรือแผ่นแผนที่ OpenStreetMap จึงไม่กระจัดกระจายเมื่อสไตล์ภายนอกโหลดไม่ครบ Giscus (เมื่อเปิดใช้) ยังต้องใช้อินเทอร์เน็ต GitHub Pages โฮสต์ได้โดยไม่ต้อง build หาก Chart.js ไม่โหลดจะมีตารางแทน ถ้าแปลง Markdown ไม่ได้จะอ่านเป็นข้อความต้นฉบับ
 
 คู่มือไลบรารี: https://www.chartjs.org/docs/latest/ · https://leafletjs.com/ · https://marked.js.org/ · https://github.com/cure53/DOMPurify
 

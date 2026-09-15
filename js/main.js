@@ -165,162 +165,87 @@ function initMap(mapData) {
       ' <span class="small muted">(' + escapeHTML(p.note || 'ขอบเขตอำเภอเพื่อสำรวจ') + ')</span></li>'
     ).join('') || '<li>ไม่มีอำเภอในชั้นที่เลือก</li>';
   }
-  function popupFor(p, shapeNote) {
-    const pop = document.createElement('div');
-    pop.className = 'map-popup';
-    const h = document.createElement('strong');
-    h.textContent = p.name;
-    pop.append(h);
-    const tags = document.createElement('p');
-    tags.className = 'small';
-    tags.textContent = layerNames(p).join(' · ');
-    pop.append(tags);
-    const note = document.createElement('p');
-    note.textContent = (p.note || '') + ' — ' + shapeNote;
-    pop.append(note);
-    if (p.project) {
-      const a = document.createElement('a');
-      a.href = 'projects.html#' + p.project;
-      a.textContent = 'ดูแนวทาง ' + p.project + ' →';
-      pop.append(a);
-    }
-    return pop;
+  function detailHTML(p) {
+    return '<strong>' + escapeHTML(p.name) + '</strong> — ' + escapeHTML(layerNames(p).join(' · ')) +
+      '<br>' + escapeHTML((p.note || '') + ' ขอบเขตอำเภอเพื่อแสดงรูปร่างจังหวัด ไม่ใช่ที่ตั้งสถานศึกษา') +
+      (p.project ? ' <a href="projects.html#' + encodeURIComponent(p.project) + '">ดูแนวทาง ' + escapeHTML(p.project) + ' →</a>' : '');
   }
+
+  const host = $('#map');
+  host.classList.add('province-map');
+  host.textContent = 'กำลังโหลดแผนที่…';
   $('#map-list').innerHTML = listHTML(active());
-  if (!window.L) {
-    $('#map').textContent = 'แผนที่โหลดไม่ได้ โปรดอ่านรายชื่อพื้นที่ด้านล่าง';
-    return;
-  }
-  const map = L.map('map', {scrollWheelZoom: false, keyboard: false, zoomSnap: 0.25, zoomDelta: 0.5}).setView(mapData.center, mapData.zoom);
-  const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 18,
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-  }).addTo(map);
-  tiles.on('tileerror', () => {
-    $('#map-note').textContent = mapData.status + ' • บางส่วนของแผนที่พื้นฐานโหลดไม่ได้ โปรดใช้รายชื่อพื้นที่ประกอบ';
-  });
-  const drawn = [];
-  let provinceBounds = null;
-  let geoData = null;
-  const geoPath = mapData.geojson || 'data/ayutthaya-amphoe.geojson';
-  const shapeNote = 'ขอบเขตอำเภอเพื่อแสดงรูปร่างจังหวัด ไม่ใช่ที่ตั้งสถานศึกษา';
+  const svgNS = 'http://www.w3.org/2000/svg';
+  const specPath = mapData.svg || 'data/ayutthaya-map.json';
 
-  function clearDrawn() {
-    drawn.splice(0).forEach(layer => {
-      if (typeof layer.eachLayer === 'function') {
-        layer.eachLayer(function (item) {
-          item.unbindTooltip();
-          item.unbindPopup();
-        });
-      }
-      map.removeLayer(layer);
-    });
-    $$('#map .leaflet-tooltip.map-amphoe-label').forEach(el => el.remove());
-  }
-
-  function sizeAndFit() {
-    const el = $('#map');
-    if (!el) return;
-    const w = el.clientWidth;
-    if (w < 40) return;
-    el.style.height = Math.round(Math.min(880, Math.max(400, w * 0.94))) + 'px';
-    map.invalidateSize({animate: false, pan: false});
-    if (provinceBounds && provinceBounds.isValid()) {
-      map.fitBounds(provinceBounds, {padding: [16, 16], animate: false});
-    } else {
-      map.setView(mapData.center, mapData.zoom, {animate: false});
-    }
-  }
-
-  function drawMarkers(on) {
-    visiblePoints(on).forEach(p => {
-      const m = L.circleMarker([p.lat, p.lng], {
-        radius: 9,
-        color: '#fff',
-        weight: 2,
-        fillColor: colorFor(p, on),
-        fillOpacity: 0.92,
-        title: p.name + ' (พิกัดประมาณ)',
-        alt: p.name + ' พิกัดประมาณของอำเภอ'
-      }).addTo(map).bindPopup(popupFor(p, 'พิกัดประมาณ ไม่ใช่ที่ตั้งสถานศึกษา'), {autoPan: false});
-      drawn.push(m);
-    });
-  }
-
-  function drawPolygons(geo, on) {
-    const layer = L.geoJSON(geo, {
-      filter(feature) {
-        return isVisible(byName[feature.properties && feature.properties.name], on);
-      },
-      style(feature) {
-        const p = byName[feature.properties.name];
-        return {
-          color: '#512c23',
-          weight: 1.2,
-          fillColor: colorFor(p, on),
-          fillOpacity: 0.72,
-          opacity: 0.9
-        };
-      },
-      onEachFeature(feature, lyr) {
-        const p = byName[feature.properties.name];
-        if (!p) return;
-        lyr.bindPopup(popupFor(p, shapeNote), {autoPan: false});
-        lyr.bindTooltip(p.name, {
-          permanent: true,
-          direction: 'center',
-          className: 'map-amphoe-label',
-          opacity: 1
-        });
-        lyr.on('mouseover', () => lyr.setStyle({weight: 2.2, fillOpacity: 0.88}));
-        lyr.on('mouseout', () => lyr.setStyle({weight: 1.2, fillOpacity: 0.72}));
-      }
-    }).addTo(map);
-    drawn.push(layer);
-  }
-
-  function redraw(geo) {
-    const on = active();
-    clearDrawn();
-    if (geo && geo.features && geo.features.length) {
-      drawPolygons(geo, on);
-    } else {
-      drawMarkers(on);
-    }
-    $('#map-list').innerHTML = listHTML(on);
-  }
-
-  $$('#map-legend [data-layer]').forEach(i => i.addEventListener('change', () => redraw(geoData)));
-
-  function afterLayout() {
-    requestAnimationFrame(() => {
-      sizeAndFit();
-      requestAnimationFrame(sizeAndFit);
-    });
-  }
-
-  get(geoPath).then(geo => {
-    const names = new Set((geo.features || []).map(f => f.properties && f.properties.name));
+  get(specPath).then(spec => {
+    const names = new Set((spec.features || []).map(f => f.name));
     const missing = (mapData.points || []).filter(p => !names.has(p.name)).map(p => p.name);
     if (missing.length) throw new Error('ขอบเขตไม่ครบ: ' + missing.join(', '));
-    geoData = geo;
-    const all = L.geoJSON(geo);
-    provinceBounds = all.getBounds();
-    redraw(geo);
-    afterLayout();
-  }).catch(() => {
-    geoData = null;
-    const pts = mapData.points || [];
-    if (pts.length) {
-      provinceBounds = L.latLngBounds(pts.map(p => [p.lat, p.lng]));
+    host.replaceChildren();
+    const svg = document.createElementNS(svgNS, 'svg');
+    svg.setAttribute('viewBox', spec.viewBox);
+    svg.setAttribute('role', 'img');
+    svg.setAttribute('aria-label', 'แผนที่ขอบเขต 16 อำเภอจังหวัดพระนครศรีอยุธยา');
+    svg.setAttribute('preserveAspectRatio', 'xMidYMid meet');
+    const title = document.createElementNS(svgNS, 'title');
+    title.textContent = 'จังหวัดพระนครศรีอยุธยา 16 อำเภอ';
+    svg.append(title);
+    spec.features.forEach(f => {
+      const p = byName[f.name];
+      if (!p) return;
+      const g = document.createElementNS(svgNS, 'g');
+      const path = document.createElementNS(svgNS, 'path');
+      path.setAttribute('d', f.d);
+      path.setAttribute('data-name', f.name);
+      path.setAttribute('tabindex', '0');
+      path.setAttribute('role', 'button');
+      path.setAttribute('aria-label', f.name);
+      const tip = document.createElementNS(svgNS, 'title');
+      tip.textContent = f.name;
+      path.append(tip);
+      const label = document.createElementNS(svgNS, 'text');
+      label.setAttribute('x', f.label[0]);
+      label.setAttribute('y', f.label[1]);
+      label.setAttribute('text-anchor', 'middle');
+      label.setAttribute('dominant-baseline', 'middle');
+      label.setAttribute('class', 'map-amphoe-text');
+      label.textContent = f.name;
+      g.append(path, label);
+      svg.append(g);
+      function openDetail() {
+        svg.querySelectorAll('path[aria-current]').forEach(el => el.removeAttribute('aria-current'));
+        path.setAttribute('aria-current', 'true');
+        const box = $('#map-detail');
+        if (!box) return;
+        box.hidden = false;
+        box.innerHTML = detailHTML(p);
+      }
+      path.addEventListener('click', openDetail);
+      path.addEventListener('keydown', e => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          openDetail();
+        }
+      });
+    });
+    host.append(svg);
+    function paint() {
+      const on = active();
+      svg.querySelectorAll('path[data-name]').forEach(path => {
+        const p = byName[path.dataset.name];
+        const onLayer = isVisible(p, on);
+        path.style.fill = onLayer ? colorFor(p, on) : '#e6e0d6';
+        path.style.stroke = onLayer ? '#512c23' : '#c4bdb3';
+        path.classList.toggle('is-dim', !onLayer);
+      });
+      $('#map-list').innerHTML = listHTML(on);
     }
-    redraw(null);
-    afterLayout();
-  });
-
-  window.addEventListener('resize', () => {
-    clearTimeout(sizeAndFit._t);
-    sizeAndFit._t = setTimeout(sizeAndFit, 150);
+    $$('#map-legend [data-layer]').forEach(i => i.addEventListener('change', paint));
+    paint();
+  }).catch(() => {
+    host.textContent = 'โหลดขอบเขตอำเภอไม่สำเร็จ โปรดอ่านรายชื่อพื้นที่ด้านล่าง';
+    $('#map-list').innerHTML = listHTML(active());
   });
 }
 
