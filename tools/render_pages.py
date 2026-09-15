@@ -59,8 +59,12 @@ def wrap(page, title, description, path, main, extra_head=""):
 </html>
 """
 
-MD = '<script defer src="https://cdn.jsdelivr.net/npm/marked@15.0.12/marked.min.js"></script>\n<script defer src="https://cdn.jsdelivr.net/npm/dompurify@3.3.1/dist/purify.min.js"></script>'
-INDEX_LIBS = '<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">\n<script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.8/dist/chart.umd.min.js"></script>\n<script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>\n<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"อยุธยาเรียนรู้ · SDG 4","url":"https://sdg.thamdee.com/","inLanguage":"th","description":"พื้นที่ความรู้สาธารณะด้าน SDG 4 จังหวัดพระนครศรีอยุธยา","author":{"@type":"Person","name":"บูรพาทิศ พลอยสุวรรณ์","email":"mailto:burapatis@gmail.com"}}</script>'
+MD = '''<script defer src="vendor/marked.min.js" integrity="sha384-948ahk4ZmxYVYOc+rxN1H2gM1EJ2Duhp7uHtZ4WSLkV4Vtx5MUqnV+l7u9B+jFv+" crossorigin="anonymous"></script>
+<script defer src="vendor/purify.min.js" integrity="sha384-80VlBZnyAwkkqtSfg5NhPyZff6nU4K/qniLBL8Jnm4KDv6jZhLiYtJbhglg/i9ww" crossorigin="anonymous"></script>'''
+INDEX_LIBS = '''<link rel="stylesheet" href="vendor/leaflet/leaflet.css" integrity="sha384-sHL9NAb7lN7rfvG5lfHpm643Xkcjzp4jFvuavGOndn6pjVqS6ny56CAt3nsEVT4H" crossorigin="anonymous">
+<script defer src="vendor/chart.umd.min.js" integrity="sha384-T/4KgSWuZEPozpPz7rnnp/5lDSnpY1VPJCojf1S81uTHS1E38qgLfMgVsAeRCWc4" crossorigin="anonymous"></script>
+<script defer src="vendor/leaflet/leaflet.js" integrity="sha384-cxOPjt7s7Iz04uaHJceBmS+qpjv2JkIHNVcuOrM+YHwZOmJGBXI00mdUXEq65HTH" crossorigin="anonymous"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"อยุธยาเรียนรู้ · SDG 4","url":"https://sdg.thamdee.com/","inLanguage":"th","description":"พื้นที่ความรู้สาธารณะด้าน SDG 4 จังหวัดพระนครศรีอยุธยา","author":{"@type":"Person","name":"บูรพาทิศ พลอยสุวรรณ์","email":"mailto:burapatis@gmail.com"}}</script>'''
 
 pages = {}
 
@@ -158,10 +162,11 @@ pages["index.html"] = wrap(
 <section class="panel map-panel" style="margin-top:22px">
 <h2>พื้นที่แห่งการเรียนรู้ทั้ง 16 อำเภอ</h2>
 <p class="sub">เลือกชั้นประเด็นเพื่อกรองจุด พิกัดเป็นประมาณของที่ว่าการอำเภอ ไม่ใช่ที่ตั้งสถานศึกษา</p>
+<p class="small"><a href="#map-list">ข้ามแผนที่ไปใช้รายชื่ออำเภอ</a> หากใช้แป้นพิมพ์หรือโปรแกรมอ่านหน้าจอ</p>
 <div id="map-legend" class="map-legend" role="group" aria-label="ชั้นข้อมูลแผนที่"></div>
-<div id="map" aria-label="แผนที่แสดง 16 อำเภอจังหวัดพระนครศรีอยุธยา"></div>
+<div id="map" role="region" aria-label="แผนที่แสดง 16 อำเภอจังหวัดพระนครศรีอยุธยา" aria-describedby="map-note"></div>
 <p class="map-note" id="map-note"></p>
-<details><summary>รายชื่ออำเภอตามชั้นที่เลือก</summary><ul id="map-list"></ul></details>
+<details open><summary>รายชื่ออำเภอตามชั้นที่เลือก</summary><ul id="map-list"></ul></details>
 </section>
 <a href="knowledge.html?article=source-notes" class="small">อ่านบันทึกตรวจสอบและข้อจำกัดของข้อมูล →</a>
 <div class="section-title"><h2>จากข้อมูล สู่การลงมือทำ</h2></div>
@@ -192,12 +197,19 @@ pages["knowledge.html"] = wrap(
 <div class="search-bar">
 <div class="field">
 <label for="article-q">ค้นหาบทความ</label>
-<input id="article-q" type="search" placeholder="เช่น การเรียนรวม, ข้อมูล, พ.ร.บ." autocomplete="off">
+<input id="article-q" type="search" placeholder="เช่น น้ำท่วม, อาชีวะ, UDL" autocomplete="off" aria-controls="article-cards">
 </div>
 </div>
 <div id="article-tags" class="tag-row" role="group" aria-label="กรองตามแท็ก"></div>
-<p id="article-count" class="small muted">กำลังโหลดรายการบทความ…</p>
+<p id="article-count" class="small muted" aria-live="polite">กำลังโหลดรายการบทความ…</p>
 <div id="article-cards" class="article-grid"></div>
+<section class="panel" id="glossary-panel" aria-labelledby="glossary-title">
+<h2 id="glossary-title">อภิธานศัพท์สั้น</h2>
+<p class="sub">คำที่ใช้ซ้ำบนเว็บนี้ ค้นได้ทันที หรือเปิด<a href="knowledge.html?article=glossary">บทความฉบับเต็ม</a></p>
+<label class="sr-only" for="glossary-q">ค้นอภิธานศัพท์</label>
+<input id="glossary-q" type="search" placeholder="เช่น ตัวตั้ง, ออกกลางคัน, UDL" autocomplete="off">
+<dl id="glossary-list" class="glossary-list"></dl>
+</section>
 <section id="article-reader" hidden>
 <div class="article-tools">
 <a class="button secondary" href="knowledge.html" id="article-back">← กลับไปรายการ</a>
@@ -369,7 +381,7 @@ pages["evaluation.html"] = wrap(
 <article class="prose" data-markdown="content/evaluation.md"><p class="loading">กำลังโหลดเนื้อหา…</p></article>
 <section aria-labelledby="indicators-title">
 <div class="section-title"><h2 id="indicators-title">ทะเบียนตัวชี้วัดเสนอสำหรับพื้นที่</h2></div>
-<p class="small muted">สถานะอ่านจากค่าฐานและเป้าหมายในข้อมูลเดียวกัน ยังไม่มีการตัดสินผ่าน/ไม่ผ่านอัตโนมัติ</p>
+<p class="small muted">สถานะอ่านจากค่าฐานและเป้าหมายในข้อมูลเดียวกัน ยังไม่มีการตัดสินผ่าน/ไม่ผ่านอัตโนมัติ อ่าน<a href="knowledge.html?article=glossary">อภิธานศัพท์ตัวตั้ง ตัวหาร และค่าฐาน</a></p>
 <label for="indicator-filter">เลือกประเด็น</label>
 <select id="indicator-filter"><option value="all">ทุกประเด็น</option></select>
 <div id="indicator-board" class="indicator-board"></div>
@@ -409,7 +421,7 @@ pages["forum.html"] = wrap(
 <article class="prose" data-markdown="content/forum.md"><p class="loading">กำลังโหลดเนื้อหา…</p></article>
 <section class="panel" style="margin-top:24px">
 <h2>ส่งข้อเสนอหรือแจ้งข้อมูลคลาดเคลื่อน</h2>
-<p class="sub">เปิดโปรแกรมอีเมลบนเครื่องคุณ ไม่มีการเก็บแบบฟอร์มบนเซิร์ฟเวอร์ และไม่ต้องมีบัญชี GitHub</p>
+<p class="sub">เปิดโปรแกรมอีเมลบนเครื่องคุณ ไม่มีการเก็บแบบฟอร์มบนเซิร์ฟเวอร์ และไม่ต้องมีบัญชี GitHub อ่าน<a href="about.html#privacy">แนวทางความเป็นส่วนตัว</a></p>
 <form id="contribute-form" class="contribute-form">
 <div class="field"><label for="contribute-kind">ประเภท</label>
 <select id="contribute-kind" name="kind">

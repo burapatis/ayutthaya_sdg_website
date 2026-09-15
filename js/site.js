@@ -72,6 +72,8 @@ function renderChrome() {
       '<div>' +
         '<a href="about.html">เกี่ยวกับผู้จัดทำ</a>' +
         '<a href="knowledge.html?article=source-notes">ที่มาของข้อมูล</a>' +
+        '<a href="knowledge.html?article=updates">อะไรเปลี่ยนในรอบนี้</a>' +
+        '<a href="about.html#privacy">ความเป็นส่วนตัว</a>' +
         '<a href="mailto:' + siteEscape(SITE.email) + '">ติดต่อ</a>' +
         '<p class="footer-related">เว็บไซต์ที่เกี่ยวข้อง: ' +
           SITE.related.map(r =>

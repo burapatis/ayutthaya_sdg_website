@@ -23,8 +23,8 @@
 <meta name="twitter:description" content="บทความ นโยบาย และแหล่งอ้างอิงสำหรับการพัฒนาการศึกษาที่ยั่งยืนในอยุธยา — SDG 4">
 <meta name="twitter:image" content="https://sdg.thamdee.com/assets/og-image.png">
 <link rel="stylesheet" href="css/style.css">
-<script defer src="https://cdn.jsdelivr.net/npm/marked@15.0.12/marked.min.js"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/dompurify@3.3.1/dist/purify.min.js"></script>
+<script defer src="vendor/marked.min.js" integrity="sha384-948ahk4ZmxYVYOc+rxN1H2gM1EJ2Duhp7uHtZ4WSLkV4Vtx5MUqnV+l7u9B+jFv+" crossorigin="anonymous"></script>
+<script defer src="vendor/purify.min.js" integrity="sha384-80VlBZnyAwkkqtSfg5NhPyZff6nU4K/qniLBL8Jnm4KDv6jZhLiYtJbhglg/i9ww" crossorigin="anonymous"></script>
 </head>
 <body data-page="knowledge">
 <a class="skip" href="#main">ข้ามไปยังเนื้อหา</a>
@@ -44,12 +44,19 @@
 <div class="search-bar">
 <div class="field">
 <label for="article-q">ค้นหาบทความ</label>
-<input id="article-q" type="search" placeholder="เช่น การเรียนรวม, ข้อมูล, พ.ร.บ." autocomplete="off">
+<input id="article-q" type="search" placeholder="เช่น น้ำท่วม, อาชีวะ, UDL" autocomplete="off" aria-controls="article-cards">
 </div>
 </div>
 <div id="article-tags" class="tag-row" role="group" aria-label="กรองตามแท็ก"></div>
-<p id="article-count" class="small muted">กำลังโหลดรายการบทความ…</p>
+<p id="article-count" class="small muted" aria-live="polite">กำลังโหลดรายการบทความ…</p>
 <div id="article-cards" class="article-grid"></div>
+<section class="panel" id="glossary-panel" aria-labelledby="glossary-title">
+<h2 id="glossary-title">อภิธานศัพท์สั้น</h2>
+<p class="sub">คำที่ใช้ซ้ำบนเว็บนี้ ค้นได้ทันที หรือเปิด<a href="knowledge.html?article=glossary">บทความฉบับเต็ม</a></p>
+<label class="sr-only" for="glossary-q">ค้นอภิธานศัพท์</label>
+<input id="glossary-q" type="search" placeholder="เช่น ตัวตั้ง, ออกกลางคัน, UDL" autocomplete="off">
+<dl id="glossary-list" class="glossary-list"></dl>
+</section>
 <section id="article-reader" hidden>
 <div class="article-tools">
 <a class="button secondary" href="knowledge.html" id="article-back">← กลับไปรายการ</a>

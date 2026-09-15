@@ -36,7 +36,7 @@ async function markdown(el, file) {
     return;
   }
   el.style.whiteSpace = '';
-  el.innerHTML = DOMPurify.sanitize(marked.parse(text), {USE_PROFILES: {html: true}});
+  el.innerHTML = DOMPurify.sanitize(marked.parse(text), {USE_PROFILES: {html: true}, ADD_ATTR: ['id']});
   el.querySelectorAll('table').forEach(t => {
     const w = document.createElement('div');
     w.className = 'table-scroll';
@@ -166,7 +166,7 @@ function initMap(mapData) {
     $('#map').textContent = 'แผนที่โหลดไม่ได้ โปรดอ่านรายชื่อพื้นที่ด้านล่าง';
     return;
   }
-  const map = L.map('map', {scrollWheelZoom: false}).setView(mapData.center, mapData.zoom);
+  const map = L.map('map', {scrollWheelZoom: false, keyboard: false}).setView(mapData.center, mapData.zoom);
   const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 18,
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -312,6 +312,7 @@ async function knowledge() {
   addEventListener('popstate', () => show(new URLSearchParams(location.search).get('article')));
   drawTags();
   await show(new URLSearchParams(location.search).get('article'));
+  glossaryPanel();
 
   const sources = await get('data/sources.json');
   const registry = $('#source-registry');
@@ -323,6 +324,33 @@ async function knowledge() {
       '</li>'
     ).join('');
   }
+}
+
+async function glossaryPanel() {
+  const listEl = $('#glossary-list');
+  if (!listEl) return;
+  let terms = [];
+  try {
+    terms = await get('data/glossary.json');
+  } catch (e) {
+    fail(listEl, e);
+    return;
+  }
+  const qEl = $('#glossary-q');
+  function draw() {
+    const q = (qEl?.value || '').trim().toLowerCase();
+    const shown = terms.filter(t => !q || [t.term, t.short, t.detail].join(' ').toLowerCase().includes(q));
+    listEl.innerHTML = shown.map(t =>
+      '<div class="glossary-item">' +
+      '<dt>' + escapeHTML(t.term) + '</dt>' +
+      '<dd><p>' + escapeHTML(t.short) + '</p>' +
+      '<p class="small muted">' + escapeHTML(t.detail) + '</p>' +
+      (t.link ? '<a href="' + escapeHTML(t.link) + '">' + escapeHTML(t.linkLabel || 'อ่านต่อ') + '</a>' : '') +
+      '</dd></div>'
+    ).join('') || '<p class="notice">ไม่พบคำที่ตรงกัน ลองล้างช่องค้น</p>';
+  }
+  qEl?.addEventListener('input', draw);
+  draw();
 }
 
 async function projects() {
