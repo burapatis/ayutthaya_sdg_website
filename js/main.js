@@ -36,7 +36,7 @@ async function markdown(el, file) {
     return;
   }
   el.style.whiteSpace = '';
-  el.innerHTML = DOMPurify.sanitize(marked.parse(text), {USE_PROFILES: {html: true}, ADD_ATTR: ['id']});
+  el.innerHTML = DOMPurify.sanitize(marked.parse(text), {USE_PROFILES: {html: true}, ADD_ATTR: ['id', 'class']});
   el.querySelectorAll('table').forEach(t => {
     const w = document.createElement('div');
     w.className = 'table-scroll';
@@ -48,9 +48,50 @@ async function markdown(el, file) {
     h2.innerHTML = h.innerHTML;
     h.replaceWith(h2);
   });
+  bindCiteCopy(el);
 }
 
 $$('[data-print]').forEach(b => b.addEventListener('click', () => window.print()));
+
+async function copyText(text) {
+  try {
+    await navigator.clipboard.writeText(text);
+    return true;
+  } catch {
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.setAttribute('readonly', '');
+    ta.style.position = 'fixed';
+    ta.style.left = '-9999px';
+    document.body.append(ta);
+    ta.select();
+    const ok = document.execCommand('copy');
+    ta.remove();
+    return ok;
+  }
+}
+
+function bindCiteCopy(root = document) {
+  root.querySelectorAll('.cite-block').forEach(pre => {
+    if (pre.dataset.copyBound) return;
+    pre.dataset.copyBound = '1';
+    const tools = document.createElement('div');
+    tools.className = 'cite-tools';
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'button secondary';
+    btn.textContent = 'คัดลอกรายการนี้';
+    const status = document.createElement('span');
+    status.className = 'small muted';
+    status.setAttribute('role', 'status');
+    tools.append(btn, status);
+    pre.after(tools);
+    btn.addEventListener('click', async () => {
+      const ok = await copyText(pre.textContent.replace(/\s+/g, ' ').trim());
+      status.textContent = ok ? 'คัดลอกแล้ว' : 'เลือกข้อความในกรอบแล้วคัดลอกเอง';
+    });
+  });
+}
 
 async function dashboard() {
   const s = await get('data/stats.json');

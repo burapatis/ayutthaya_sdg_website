@@ -25,6 +25,44 @@
 
 **อีเมล: [burapatis@gmail.com](mailto:burapatis@gmail.com)**
 
+<a id="cite"></a>
+
+### การอ้างอิงเว็บไซต์นี้ตาม APA 7
+
+รายการด้านล่างจัดตาม *Publication Manual of the American Psychological Association* (7th ed.) สำหรับหน้าเว็บที่มีผู้แต่งและวันที่ตรวจเนื้อหา ผู้จัดทำทับศัพท์ชื่อเป็น Burapatis Ploysuwan ตามที่ใช้อีเมลสาธารณะ การอ้างเว็บนี้ไม่ทำให้แหล่งที่อ้างกลายเป็นเอกสารราชการหรือมติอนุมัติ
+
+วันที่ในรายการคือวันตรวจเนื้อหาที่ระบุบนเว็บไซต์ (22 กันยายน 2569 / 22 September 2026) เนื้อหาทบทวนทุกภาคเรียน หากสถาบันกำหนดให้ใส่วันที่เข้าถึง เพราะเนื้อหาอาจเปลี่ยน ให้เติมท้ายรายการ เช่น `สืบค้นเมื่อ 22 กันยายน 2569, จาก https://sdg.thamdee.com/` หรือ `Retrieved September 22, 2026, from https://sdg.thamdee.com/`
+
+APA 7 ข้อ 8.22 ระบุว่าหากกล่าวถึงเว็บไซต์ทั้งแห่งในเนื้อหา โดยไม่ใช่หน้าใดหน้าหนึ่ง อาจใส่ URL ในเนื้อหาได้โดยไม่มีรายการท้ายเรื่อง สถาบันในไทยมักยังขอรายการเอกสารอ้างอิง จึงจัดทั้งสองแบบไว้
+
+**การอ้างในเนื้อหา (ภาษาไทย)**
+
+- แบบวงเล็บ: (พลอยสุวรรณ์, 2569)
+- แบบเล่าเรื่อง: พลอยสุวรรณ์ (2569)
+
+**การอ้างในเนื้อหา (English)**
+
+- Parenthetical: (Ploysuwan, 2026)
+- Narrative: Ploysuwan (2026)
+
+**รายการเอกสารอ้างอิง — เว็บไซต์ทั้งแห่ง (ภาษาไทย)**
+
+<p class="cite-block" id="cite-th">พลอยสุวรรณ์, บูรพาทิศ. (2569, 22 กันยายน). <em>อยุธยาเรียนรู้: พื้นที่ความรู้สาธารณะด้าน SDG 4 จังหวัดพระนครศรีอยุธยา</em>. https://sdg.thamdee.com/</p>
+
+**รายการเอกสารอ้างอิง — entire website (English)**
+
+<p class="cite-block" id="cite-en">Ploysuwan, B. (2026, September 22). <em>Ayutthaya Learning: Public knowledge on SDG 4 in Phra Nakhon Si Ayutthaya</em>. https://sdg.thamdee.com/</p>
+
+**เมื่ออ้างหน้าเฉพาะ** ให้ใช้ชื่อหน้าเป็นชื่อเรื่อง และใส่ชื่อเว็บไซต์ต่อท้ายหากต่างจากชื่อเรื่อง ตัวอย่างหน้ากลไกขับเคลื่อน:
+
+<p class="cite-block" id="cite-page-th">พลอยสุวรรณ์, บูรพาทิศ. (2569, 22 กันยายน). <em>กลไกขับเคลื่อนและเงื่อนไขความสำเร็จ</em>. อยุธยาเรียนรู้ · SDG 4. https://sdg.thamdee.com/implementation.html</p>
+
+<p class="cite-block" id="cite-page-en">Ploysuwan, B. (2026, September 22). <em>Implementation mechanism and conditions for success</em>. Ayutthaya Learning · SDG 4. https://sdg.thamdee.com/implementation.html</p>
+
+ตัวอย่างบทความข้อเสนอตามหน้าที่คณะทำงาน: https://sdg.thamdee.com/knowledge.html?article=sdg4-duty-proposals — เปลี่ยนชื่อเรื่องและ URL ให้ตรงหน้าที่ยกมา และตรวจวันที่บนหน้านั้นก่อนส่งงาน
+
+ข้อความที่คัดลอกเป็นตัวอักษรล้วน ชื่อเรื่องบนหน้านี้แสดงเป็นตัวเอนตาม APA 7 เมื่อวางในโปรแกรมจัดการเอกสาร ให้ตั้งตัวเอนที่ชื่อเรื่องอีกครั้งหากการจัดรูปแบบหายไป
+
 <a id="privacy"></a>
 
 ### ความเป็นส่วนตัวและการคุ้มครองข้อมูลส่วนบุคคล
