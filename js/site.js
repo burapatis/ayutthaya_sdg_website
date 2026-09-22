@@ -8,7 +8,7 @@ const SITE = {
   author: 'บูรพาทิศ พลอยสุวรรณ์',
   role: 'ผู้วิจัยอิสระ',
   email: 'burapatis@gmail.com',
-  reviewed: '15 กันยายน 2569',
+  reviewed: '22 กันยายน 2569',
   navHeading: 'สำรวจและร่วมพัฒนา',
   nav: [
     {id: 'index', href: 'index.html', n: '01', label: 'ภาพรวม'},
@@ -20,7 +20,8 @@ const SITE = {
     {id: 'implementation', href: 'implementation.html', n: '07', label: 'กลไกขับเคลื่อน'},
     {id: 'evaluation', href: 'evaluation.html', n: '08', label: 'วัดและประเมินผล'},
     {id: 'forum', href: 'forum.html', n: '09', label: 'ร่วมแลกเปลี่ยน'},
-    {id: 'about', href: 'about.html', n: '10', label: 'ผู้จัดทำ'}
+    {id: 'slides', href: 'slides.html', n: '10', label: 'สไลด์นำเสนอ'},
+    {id: 'about', href: 'about.html', n: '11', label: 'ผู้จัดทำ'}
   ],
   related: [
     {href: 'https://ayeduplan1.thamdee.com/', label: 'ayeduplan1.thamdee.com'},
@@ -72,6 +73,7 @@ function renderChrome() {
         '<p>จัดทำโดย ' + siteEscape(SITE.author) + ' · ' + siteEscape(SITE.role) + '<br>' +
         'เว็บไซต์เพื่อประโยชน์สาธารณะ ไม่ใช่เว็บไซต์ทางราชการ</p></div></div>' +
       '<div>' +
+        '<a href="slides.html">สไลด์นำเสนอ</a>' +
         '<a href="about.html">เกี่ยวกับผู้จัดทำ</a>' +
         '<a href="knowledge.html?article=source-notes">ที่มาของข้อมูล</a>' +
         '<a href="knowledge.html?article=updates">อะไรเปลี่ยนในรอบนี้</a>' +

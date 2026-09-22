@@ -41,7 +41,7 @@ def head(title, description, path, extra=""):
 
 def wrap(page, title, description, path, main, extra_head=""):
     noscript = """<noscript><p class="notice">เว็บไซต์ใช้ JavaScript เพื่อโหลดข้อมูล เมนู และบทความ โปรดเปิดใช้งาน หรือเปิดไฟล์ในโฟลเดอร์ content และ data</p>
-<nav aria-label="เมนูสำรอง"><a href="index.html">ภาพรวม</a> · <a href="knowledge.html">คลังความรู้</a> · <a href="about.html">ผู้จัดทำ</a></nav>
+<nav aria-label="เมนูสำรอง"><a href="index.html">ภาพรวม</a> · <a href="knowledge.html">คลังความรู้</a> · <a href="slides.html">สไลด์นำเสนอ</a> · <a href="about.html">ผู้จัดทำ</a></nav>
 <a href="content/source-notes.md">บันทึกแหล่งข้อมูล</a></noscript>"""
     scripts = extra_head
     return head(title, description, path, scripts) + f"""<body data-page="{page}">
@@ -175,6 +175,7 @@ pages["index.html"] = wrap(
 <a class="link-card" href="ecosystem.html"><span class="card-number">01 / เข้าใจภาพรวม</span><b>เชื่อมระบบนิเวศการเรียนรู้ →</b><p>สำรวจองค์ประกอบที่ช่วยให้ผู้เรียนก้าวต่อได้</p></a>
 <a class="link-card" href="projects.html"><span class="card-number">02 / ออกแบบการทำงาน</span><b>เลือกแนวทางโครงการ →</b><p>ตัวอย่างกิจกรรม เจ้าภาพ และผลลัพธ์ที่คาดหวัง</p></a>
 <a class="link-card" href="evaluation.html"><span class="card-number">03 / เรียนรู้จากผลลัพธ์</span><b>วัดผลเพื่อพัฒนา →</b><p>ตัวชี้วัด กระบวนการ และเครื่องมือพร้อมปรับใช้</p></a>
+<a class="link-card" href="slides.html"><span class="card-number">04 / เล่าให้ผู้อื่นฟัง</span><b>เปิดสไลด์นำเสนอ →</b><p>ชุดสไลด์แนะนำเว็บไซต์ และข้อเสนอนโยบาย SDG 4</p></a>
 </div>
 <section class="related-sites" aria-label="เว็บไซต์เรียนรู้ที่เกี่ยวข้อง">
 <div class="section-title"><h2>เรียนรู้ต่อจากเว็บไซต์ที่เกี่ยวข้อง</h2></div>
@@ -443,6 +444,7 @@ pages["forum.html"] = wrap(
 <option value="กลไกขับเคลื่อน">กลไกขับเคลื่อน</option>
 <option value="วัดและประเมินผล">วัดและประเมินผล</option>
 <option value="ร่วมแลกเปลี่ยน">ร่วมแลกเปลี่ยน</option>
+<option value="สไลด์นำเสนอ">สไลด์นำเสนอ</option>
 <option value="ผู้จัดทำ">ผู้จัดทำ</option>
 </select></div>
 <div id="error-fields" hidden>
@@ -465,6 +467,46 @@ pages["forum.html"] = wrap(
 <div class="giscus" id="giscus-container"></div>
 </section>""",
     MD,
+)
+
+pages["slides.html"] = wrap(
+    "slides",
+    "สไลด์นำเสนอ",
+    "ชุดสไลด์แนะนำเว็บไซต์อยุธยาเรียนรู้ และข้อเสนอเชื่อม SDG 4 กับการจัดสรรทรัพยากร — ไม่ใช่เว็บราชการและไม่ใช่มติอนุมัติ",
+    "slides.html",
+    """<div class="breadcrumb">พระนครศรีอยุธยา / SDG 4 / สไลด์นำเสนอ</div>
+<header class="page-head">
+<p class="eyebrow">EDUCATION FOR EVERYONE</p>
+<h1>สไลด์นำเสนอเนื้อหาเว็บไซต์</h1>
+<p>เปิดนำเสนอเต็มจอได้ทันที ทั้งชุดเล่าเว็บไซต์นี้ และชุดข้อเสนอนโยบายระดับประเทศที่อยู่คนละกรอบกับข้อมูลอ้างอิงจังหวัด</p>
+</header>
+<p class="notice">ชุดสไลด์ใช้เล่าเรื่องและแลกเปลี่ยน ไม่ใช่เว็บราชการ ข้อเสนอในสไลด์ยังไม่ใช่มติอนุมัติ และตัวเลขในชุดนโยบายไม่ใช่สถิติอ้างอิงของจังหวัดพระนครศรีอยุธยาบนหน้าแรก</p>
+<div class="deck-pick">
+<a class="deck-pick-card" href="sdg-thamdee-slides.html">
+<span class="eyebrow">01 · แนะนำเว็บไซต์</span>
+<h2>sdg.thamdee.com</h2>
+<p>10 สไลด์ เล่าว่าเว็บนี้เป็นพื้นที่ความรู้สาธารณะด้าน SDG 4 ใช้อย่างไร และชวนกลับไปดูหน้าจริง</p>
+<p class="small muted">บางข้อความเป็นการเล่ากรอบคิดหรือทิศทาง ยังไม่ใช่คุณลักษณะที่เปิดใช้ครบทุกหน้า</p>
+<span class="deck-pick-action">เปิดนำเสนอ →</span>
+</a>
+<a class="deck-pick-card" href="sdg4-slides.html">
+<span class="eyebrow">02 · ข้อเสนอนโยบาย</span>
+<h2>SDG 4 และสูตรจัดสรร</h2>
+<p>10 สไลด์ เชื่อมเป้าหมายการศึกษาที่มีคุณภาพกับแนวคิด Weighted Student Funding และการทดลองแบบขั้นบันได</p>
+<p class="small muted">เป็นข้อเสนอเพื่อแลกเปลี่ยน ไม่ใช่สูตรที่หน่วยงานรับรอง และไม่แทนที่ข้อมูลอ้างอิงจังหวัด</p>
+<span class="deck-pick-action">เปิดนำเสนอ →</span>
+</a>
+</div>
+<section class="panel" style="margin-top:24px">
+<h2>วิธีใช้ตอนนำเสนอ</h2>
+<ul>
+<li>ปุ่มลูกศรซ้าย–ขวา หรือปุ่มก่อนหน้า/ถัดไป เพื่อเลื่อนสไลด์</li>
+<li>กด <kbd>N</kbd> เพื่อเปิดบทพูดของผู้บรรยาย กด <kbd>F</kbd> เพื่อขยายเต็มจอ</li>
+<li>บนมือถือปัดซ้าย–ขวาได้ ลิงก์มุมบนกลับไปหน้านี้หรือหน้าแรกได้ตลอด</li>
+<li>พิมพ์จากเบราว์เซอร์จะได้สไลด์ครบชุดต่อหน้า หากต้องการไฟล์ PDF</li>
+</ul>
+<p>ต้องการดูตัวเลขจังหวัด โครงการตัวอย่าง หรือที่มาของข้อมูล ให้กลับไป<a href="index.html">หน้าภาพรวม</a> <a href="projects.html">หน้าโครงการ</a> และ<a href="knowledge.html?article=source-notes">บันทึกที่มา</a></p>
+</section>""",
 )
 
 pages["about.html"] = wrap(
