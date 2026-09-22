@@ -34,6 +34,7 @@
 | slides.html | ทางเข้าชุดสไลด์นำเสนอ |
 | sdg-thamdee-slides.html | สไลด์แนะนำเว็บไซต์ 10 แผ่น โหมดนำเสนอเต็มจอ |
 | sdg4-slides.html | สไลด์ SDG 4 ในอยุธยา 10 แผ่น เชื่อมเป้าหมายย่อยกับหลักฐานและข้อเสนอบนเว็บนี้ |
+| sdg4-duty-slides.html | สไลด์ข้อเสนอตามหน้าที่คณะทำงาน 12 แผ่น พร้อมบทพูดรายข้อ 2.1–2.7 |
 | about.html | ผู้จัดทำและการติดต่อ |
 
 ## แก้ไขเนื้อหาโดยไม่แก้ HTML
@@ -53,7 +54,7 @@
 - ส่วนหัว เมนู ส่วนท้าย และโดเมน: แก้ `js/site.js` (และ `data/site.json` สำหรับ Giscus)
 - ผู้จัดทำ: แก้ `content/about.md`; ภาพผู้จัดทำอยู่ที่ `assets/author.jpg` และใส่ใน `about.html` ชื่อ/อีเมลในส่วนท้ายให้แก้ `js/site.js`
 - โลโกและไอคอน: `assets/logo.png`, `assets/favicon-32.png`, `assets/apple-touch-icon.png` แสดงในส่วนหัว ส่วนท้าย และแท็บเบราว์เซอร์; `assets/og-image.png` ใช้ตอนแชร์ลิงก์
-- สไลด์นำเสนอ: แก้เนื้อหาใน `sdg-thamdee-slides.html` และ `sdg4-slides.html`; หน้าทางเข้าคือ `slides.html`; สไตล์และปุ่มเลื่อนอยู่ที่ `css/slides.css` กับ `js/slides.js`
+- สไลด์นำเสนอ: แก้เนื้อหาใน `sdg-thamdee-slides.html`, `sdg4-slides.html` และ `sdg4-duty-slides.html`; หน้าทางเข้าคือ `slides.html`; สไตล์และปุ่มเลื่อนอยู่ที่ `css/slides.css` กับ `js/slides.js`
 - ที่มา: แก้ `data/sources.json` และบทความ `content/source-notes.md`; `data/provenance.json` เก็บชื่อและ SHA-256 ของไฟล์ใน Projects ที่ใช้ในการสร้างฉบับนี้ ไม่ใช่หลักฐานรับรองเนื้อหาต้นทาง
 
 ลิงก์ภายใน Markdown สำหรับแสดงบนเว็บไซต์ให้เขียนจากรากเว็บ เช่น `projects.html` เพราะแสดงเนื้อหาอยู่ในหน้า HTML ที่ราก ส่วนเอกสารอ้างอิงภายนอกควรใช้ URL เต็ม

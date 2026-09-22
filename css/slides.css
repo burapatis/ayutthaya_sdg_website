@@ -46,6 +46,13 @@ html[data-deck="thamdee"] {
   --navy-600: #3d7364;
 }
 
+html[data-deck="duty"] {
+  --deck-accent: #8c402a;
+  --deck-accent-soft: rgba(140, 64, 42, .14);
+  --navy-700: #512c23;
+  --navy-600: #8c402a;
+}
+
 * { box-sizing: border-box; }
 html, body { margin: 0; }
 body.deck-body {
