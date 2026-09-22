@@ -246,10 +246,12 @@ button { font: inherit; }
 }
 .deck-hint { font-size: .82rem; font-weight: 500; color: var(--text-2); text-align: center; }
 
+.s-year-row{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}
 @media (max-width: 900px) {
   .deck-brand-text small { display: none; }
   .deck-stage { padding: 12px; }
   .s-grid-2, .s-grid-3 { grid-template-columns: 1fr; gap: 12px; }
+  .s-year-row{grid-template-columns:repeat(3,minmax(0,1fr))}
   .slide {
     aspect-ratio: auto;
     height: auto;
@@ -264,6 +266,7 @@ button { font: inherit; }
   .deck-stage { margin-top: 58px; overflow: auto; place-items: start center; }
   .slide { padding: 18px; width: 100%; }
   .deck-hint { display: none; }
+  .s-year-row{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
 @media (prefers-reduced-motion: reduce) {
   .slide, .notes-drawer { transition: none; }
