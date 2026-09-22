@@ -28,5 +28,11 @@
     "sha256": "a022502b7f2a456217aa7a867d3de2b9704b31a2e02c305eaef155f551cbd586",
     "read_date": "2026-09-15",
     "treatment": "read-only; synthesize selected relevant content"
+  },
+  {
+    "source_file": "documents/order-sdg4-working-group-ayutthaya-32-2568.docx",
+    "sha256": "4027ba0b5cddf3180dccb8841dcc035d5deb7e350cf695ceea2647c724d70ac0",
+    "read_date": "2026-09-22",
+    "treatment": "transcribe duties 2.1–2.7 and group positions; do not publish named staff list; site is not the committee reporting channel"
   }
 ]

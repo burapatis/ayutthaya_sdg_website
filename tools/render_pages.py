@@ -108,7 +108,7 @@ pages["index.html"] = wrap(
 <a class="role-card" href="agencies.html">
 <span class="eyebrow">03 · ผู้ประสานงาน</span>
 <h2>ตรวจบทบาทและอำนาจ</h2>
-<p>เชื่อมหน่วยงาน ความสอดคล้องของแผน และกลไก 90 วันสำหรับทดลองทำงานร่วม</p>
+<p>เชื่อมหน่วยงาน ความสอดคล้องของแผน คณะทำงานตามคำสั่ง และกลไก 90 วันที่เป็นข้อเสนอ</p>
 </a>
 <a class="role-card" href="evaluation.html">
 <span class="eyebrow">04 · ผู้ใช้ข้อมูล</span>
@@ -199,7 +199,7 @@ pages["knowledge.html"] = wrap(
 <div class="search-bar">
 <div class="field">
 <label for="article-q">ค้นหาบทความ</label>
-<input id="article-q" type="search" placeholder="เช่น น้ำท่วม, อาชีวะ, UDL" autocomplete="off" aria-controls="article-cards">
+<input id="article-q" type="search" placeholder="เช่น น้ำท่วม, อาชีวะ, คณะทำงาน" autocomplete="off" aria-controls="article-cards">
 </div>
 </div>
 <div id="article-tags" class="tag-row" role="group" aria-label="กรองตามแท็ก"></div>
@@ -356,9 +356,19 @@ pages["projects.html"] = wrap(
 
 pages["implementation.html"] = md_page(
     "implementation", "กลไกขับเคลื่อน",
-    "ทำให้แผนมีผู้รับผิดชอบ ทรัพยากร และวงจรเรียนรู้ร่วมกัน — SDG 4 จังหวัดพระนครศรีอยุธยา",
+    "หน้าที่คณะทำงาน SDG ด้านการศึกษาตามคำสั่งที่ 32/2568 และข้อเสนอกระบวนการทำงาน — SDG 4 จังหวัดพระนครศรีอยุธยา",
     "implementation.html", "กลไกขับเคลื่อน", "กลไกขับเคลื่อนและเงื่อนไขความสำเร็จ",
-    "ทำให้แผนมีผู้รับผิดชอบ ทรัพยากร และวงจรเรียนรู้ร่วมกัน", "content/implementation.md",
+    "แสดงหน้าที่ตามคำสั่งแต่งตั้งคณะทำงานระดับจังหวัด และข้อเสนอวงจรทำงานสำหรับพัฒนาต่อ",
+    "content/implementation.md",
+    """<div class="flow">
+<span>คณะกรรมการฯ ระดับกระทรวง</span><i aria-hidden="true">→</i>
+<span>คณะทำงานระดับจังหวัด</span><i aria-hidden="true">→</i>
+<span>หน้าที่ 2.1–2.7</span><i aria-hidden="true">→</i>
+<span>ข้อเสนอกระบวนการบนเว็บนี้</span>
+</div>
+<p class="notice">หน้าที่ตามคำสั่งเป็นกลไกที่มีอยู่แล้ว วงจร 90 วันในหน้านี้เป็นข้อเสนอ ไม่ใช่ปฏิทินบังคับ และเว็บไซต์นี้ไม่ใช่ระบบรายงานของคณะกรรมการ</p>
+<p><a class="button" href="documents/order-sdg4-working-group-ayutthaya-32-2568.docx" download>ดาวน์โหลดสำเนาคำสั่ง .docx</a></p>
+""",
 )
 
 pages["evaluation.html"] = wrap(
