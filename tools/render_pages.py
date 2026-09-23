@@ -100,10 +100,10 @@ pages["index.html"] = wrap(
 <h2>เลือกแนวทางช่วยผู้เรียน</h2>
 <p>อ่านคลังความรู้ ตัวอย่างโครงการ และการวัดผลที่เริ่มจากหลักฐานชั้นเรียน</p>
 </a>
-<a class="role-card" href="ecosystem.html">
+<a class="role-card" href="community.html">
 <span class="eyebrow">02 · ครอบครัวและชุมชน</span>
-<h2>ดูว่ารอยต่ออยู่ที่ไหน</h2>
-<p>สำรวจระบบนิเวศการเรียนรู้ และพื้นที่แลกเปลี่ยนโดยไม่เปิดเผยข้อมูลรายบุคคล</p>
+<h2>อ่านฉบับชาวบ้าน</h2>
+<p>เล่า SDG 4 เป็นภาษาคนทั่วไป มีรายการเริ่มทำได้เลย และแผ่นพับพิมพ์แจกหมู่บ้าน</p>
 </a>
 <a class="role-card" href="agencies.html">
 <span class="eyebrow">03 · ผู้ประสานงาน</span>
@@ -176,6 +176,7 @@ pages["index.html"] = wrap(
 <a class="link-card" href="projects.html"><span class="card-number">02 / ออกแบบการทำงาน</span><b>เลือกแนวทางโครงการ →</b><p>ตัวอย่างกิจกรรม เจ้าภาพ และผลลัพธ์ที่คาดหวัง</p></a>
 <a class="link-card" href="evaluation.html"><span class="card-number">03 / เรียนรู้จากผลลัพธ์</span><b>วัดผลเพื่อพัฒนา →</b><p>ตัวชี้วัด กระบวนการ และเครื่องมือพร้อมปรับใช้</p></a>
 <a class="link-card" href="slides.html"><span class="card-number">04 / เล่าให้ผู้อื่นฟัง</span><b>เปิดสไลด์นำเสนอ →</b><p>ชุดแนะนำเว็บไซต์ SDG 4 ในอยุธยา และข้อเสนอตามหน้าที่คณะทำงาน</p></a>
+<a class="link-card" href="community.html"><span class="card-number">05 / อ่านง่าย</span><b>เปิดฉบับชาวบ้าน →</b><p>ภาษาคนทั่วไป รายการเริ่มทำได้เลย และแผ่นพับพิมพ์แจก</p></a>
 </div>
 <section class="related-sites" aria-label="เว็บไซต์เรียนรู้ที่เกี่ยวข้อง">
 <div class="section-title"><h2>เรียนรู้ต่อจากเว็บไซต์ที่เกี่ยวข้อง</h2></div>
@@ -523,6 +524,45 @@ pages["slides.html"] = wrap(
 <li>พิมพ์จากเบราว์เซอร์จะได้สไลด์ครบชุดต่อหน้า หากต้องการไฟล์ PDF</li>
 </ul>
 <p>ต้องการดูตัวเลขจังหวัด โครงการตัวอย่าง หน้าที่ตามคำสั่ง หรือที่มาของข้อมูล ให้กลับไป<a href="index.html">หน้าภาพรวม</a> <a href="projects.html">หน้าโครงการ</a> <a href="implementation.html">หน้ากลไกขับเคลื่อน</a> <a href="knowledge.html?article=sdg4-duty-proposals">บทความข้อเสนอรายข้อ</a> และ<a href="knowledge.html?article=source-notes">บันทึกที่มา</a></p>
+</section>""",
+)
+
+pages["community.html"] = wrap(
+    "community",
+    "ฉบับชาวบ้าน",
+    "ฉบับภาษาชาวบ้านและแผ่นพับพิมพ์แจก เรื่อง SDG 4 จังหวัดพระนครศรีอยุธยา — ไม่ใช่เว็บราชการและไม่ใช่มติอนุมัติ",
+    "community.html",
+    """<div class="breadcrumb">พระนครศรีอยุธยา / SDG 4 / ฉบับชาวบ้าน</div>
+<header class="page-head">
+<p class="eyebrow">EDUCATION FOR EVERYONE</p>
+<h1>ฉบับชาวบ้าน: อ่านง่าย ทำได้จริง</h1>
+<p>หน้าเหล่านี้เล่า SDG 4 เป็นภาษาคนทั่วไป สำหรับพ่อแม่ คนในหมู่บ้าน และผู้ที่อยากช่วยโรงเรียนใกล้บ้าน โดยไม่ต้องรอศัพท์ราชการ</p>
+</header>
+<p class="notice">ไม่ใช่เว็บราชการ และไม่ใช่เอกสารแจกของหน่วยงาน ตัวเลขที่ใช้เป็นชุดอ้างอิงเดียวกับหน้าแรก เรื่องครูจิ๋มเป็นตัวอย่างสมมติเพื่อให้เห็นภาพ ไม่ใช่รายงานโรงเรียนใดโรงเรียนหนึ่ง</p>
+<div class="deck-pick">
+<a class="deck-pick-card" href="ayutthaya-sdg4.html">
+<span class="eyebrow">01 · อ่านบนจอ</span>
+<h2>โรงเรียนบ้านเรา</h2>
+<p>เล่าว่า SDG 4 คืออะไร ที่อยุธยาบ้านเราเป็นยังไง และคนธรรมดาช่วยอะไรได้บ้าง มีรายการ 10 ข้อให้ติ๊กบนเครื่องท่าน</p>
+<p class="small muted">ตัวหนังสือใหญ่ได้ พิมพ์แจกได้ และไม่เก็บรายการติ๊กไว้บนเซิร์ฟเวอร์</p>
+<span class="deck-pick-action">เปิดฉบับชาวบ้าน →</span>
+</a>
+<a class="deck-pick-card" href="ayutthaya-flyer.html">
+<span class="eyebrow">02 · พิมพ์แจก</span>
+<h2>แผ่นพับพับสามตอน</h2>
+<p>กระดาษ A4 แนวนอน พับสามตอน สรุปปัญหาตัวอย่าง และสิ่งที่ชุมชนเริ่มได้ทันที</p>
+<p class="small muted">สั่งพิมพ์จากเบราว์เซอร์ ซ่อนแถบเครื่องมือตอนพิมพ์ ไม่ใส่เบอร์ที่ยังไม่ตรวจ</p>
+<span class="deck-pick-action">เปิดแผ่นพับ →</span>
+</a>
+</div>
+<section class="panel" style="margin-top:24px">
+<h2>วิธีใช้ให้เหมาะกับชาวบ้าน</h2>
+<ul>
+<li>อ่านฉบับชาวบ้านบนมือถือได้เลย กดตัวหนังสือใหญ่ถ้าตัวเล็กไป</li>
+<li>พิมพ์แผ่นพับแล้วพับตามเส้นประ แจกในที่ประชุมผู้ปกครอง ศาลาวัด หรือร้านน้ำชา</li>
+<li>อย่าเติมตัวเลขเอง ถ้าจะพูดต่อให้ใช้ชุดอ้างอิงหน้าแรกและบอกปีที่มา</li>
+<li>อยากดูระบบนิเวศ หน่วยงาน หรือตัวเลขเต็ม ให้กลับไป<a href="ecosystem.html">หน้าระบบนิเวศ</a> <a href="agencies.html">หน้าหน่วยงาน</a> และ<a href="knowledge.html?article=source-notes">บันทึกที่มา</a></li>
+</ul>
 </section>""",
 )
 

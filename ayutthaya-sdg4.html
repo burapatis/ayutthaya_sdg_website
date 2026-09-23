@@ -1,24 +1,34 @@
 <!DOCTYPE html>
-<html lang="th" data-theme="light">
+<html lang="th">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>โรงเรียนบ้านเรา — เรื่องง่าย ๆ ที่คนอยุธยาช่วยกันได้</title>
-<meta name="description" content="เด็กอยุธยาทุกคนควรได้เรียนดี ๆ หน้านี้เล่าว่าตอนนี้เป็นยังไง และเราคนธรรมดาช่วยอะไรได้บ้าง อ่านง่าย ทำได้จริง">
+<title>ฉบับชาวบ้าน | อยุธยาเรียนรู้ · SDG 4</title>
+<meta name="description" content="เล่า SDG 4 เป็นภาษาคนทั่วไป ว่าคนอยุธยาช่วยเรื่องโรงเรียนบ้านเราได้อย่างไร ไม่ใช่เว็บราชการ และไม่ใช่มติอนุมัติ">
+<meta name="theme-color" content="#8c402a">
+<meta name="author" content="บูรพาทิศ พลอยสุวรรณ์">
+<link rel="canonical" href="https://sdg.thamdee.com/ayutthaya-sdg4.html">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="256x256" href="assets/logo.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="th_TH">
-<meta property="og:title" content="โรงเรียนบ้านเรา — เรื่องง่าย ๆ ที่คนอยุธยาช่วยกันได้">
-<meta name="theme-color" content="#1a2b4c">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏫</text></svg>">
+<meta property="og:site_name" content="อยุธยาเรียนรู้ · SDG 4">
+<meta property="og:title" content="ฉบับชาวบ้าน | อยุธยาเรียนรู้ · SDG 4">
+<meta property="og:description" content="เล่า SDG 4 เป็นภาษาคนทั่วไป ว่าคนอยุธยาช่วยเรื่องโรงเรียนบ้านเราได้อย่างไร ไม่ใช่เว็บราชการ และไม่ใช่มติอนุมัติ">
+<meta property="og:url" content="https://sdg.thamdee.com/ayutthaya-sdg4.html">
+<meta property="og:image" content="https://sdg.thamdee.com/assets/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ฉบับชาวบ้าน | อยุธยาเรียนรู้ · SDG 4">
+<meta name="twitter:description" content="เล่า SDG 4 เป็นภาษาคนทั่วไป ว่าคนอยุธยาช่วยเรื่องโรงเรียนบ้านเราได้อย่างไร ไม่ใช่เว็บราชการ และไม่ใช่มติอนุมัติ">
+<meta name="twitter:image" content="https://sdg.thamdee.com/assets/og-image.png">
 
 <style>
-/* ============================================================
-   หน้าสำหรับชาวบ้าน — เน้นตัวใหญ่ อ่านง่าย สีสบายตา
-   ============================================================ */
+@font-face{font-family:'Noto Sans Thai';font-style:normal;font-weight:400;font-display:swap;src:url('vendor/fonts/NotoSansThai-400.ttf') format('truetype')}
+@font-face{font-family:'Noto Sans Thai';font-style:normal;font-weight:500;font-display:swap;src:url('vendor/fonts/NotoSansThai-500.ttf') format('truetype')}
+@font-face{font-family:'Noto Sans Thai';font-style:normal;font-weight:600;font-display:swap;src:url('vendor/fonts/NotoSansThai-600.ttf') format('truetype')}
+@font-face{font-family:'Noto Sans Thai';font-style:normal;font-weight:700;font-display:swap;src:url('vendor/fonts/NotoSansThai-700.ttf') format('truetype')}
+/* หน้าสำหรับชาวบ้าน — เน้นตัวใหญ่ อ่านง่าย สีสบายตา */
 :root{
   --v-cream:#fdfaf4;
   --v-paper:#ffffff;
@@ -39,12 +49,14 @@ body.village{
   margin:0;
   background:var(--v-cream);
   color:var(--v-ink);
-  font-family:"IBM Plex Sans Thai",sans-serif;
+  font-family:"Noto Sans Thai",sans-serif;
   font-size:19px;
   line-height:1.85;
   -webkit-text-size-adjust:100%;
 }
 
+.skip{position:absolute;top:-100px;left:20px;z-index:9999;background:#fff;padding:10px;color:var(--v-blue)}
+.skip:focus{top:10px}
 .wrap{width:min(100% - 32px,880px);margin-inline:auto}
 
 /* ---------- แถบบนสุด ---------- */
@@ -57,12 +69,16 @@ body.village{
 .v-top-in{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
 .v-top strong{font-size:.95rem}
 .v-top-btns{display:flex;gap:8px}
+.v-brand{display:flex;align-items:center;gap:10px;color:#fff;text-decoration:none}
+.v-brand:hover{text-decoration:none;color:#fff}
+.v-brand img{width:32px;height:32px;border-radius:8px;background:#fff}
 .v-tbtn{
   background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3);
-  color:#fff;padding:6px 14px;border-radius:999px;
-  font:600 .82rem/1 "IBM Plex Sans Thai",sans-serif;cursor:pointer;
+  color:#fff;padding:8px 14px;border-radius:999px;
+  font:600 .82rem/1 "Noto Sans Thai",sans-serif;cursor:pointer;
+  min-height:44px;display:inline-flex;align-items:center;text-decoration:none;
 }
-.v-tbtn:hover{background:rgba(255,255,255,.26)}
+.v-tbtn:hover{background:rgba(255,255,255,.26);text-decoration:none;color:#fff}
 
 /* ---------- หัวเรื่อง ---------- */
 .v-hero{
@@ -246,7 +262,8 @@ p.v-p.big{font-size:1.12rem;color:var(--v-ink)}
 .v-sbtn{
   background:#f7c977;color:#3d2a06;border:none;
   padding:12px 24px;border-radius:999px;
-  font:700 1rem/1 "IBM Plex Sans Thai",sans-serif;cursor:pointer;
+  font:700 1rem/1 "Noto Sans Thai",sans-serif;cursor:pointer;
+  min-height:44px;
 }
 .v-sbtn.ghost{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.4)}
 
@@ -262,7 +279,7 @@ body.big-text .v-todo .txt strong{font-size:1.18rem}
 
 /* ---------- พิมพ์ ---------- */
 @media print{
-  .v-top,.v-share,.v-progress{display:none!important}
+  .v-top,.v-share,.v-progress,.skip{display:none!important}
   body.village{background:#fff;font-size:12pt}
   .v-hero,.v-end{background:#12233f!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
   .v-faq details{border:1px solid #ccc}
@@ -277,22 +294,28 @@ body.big-text .v-todo .txt strong{font-size:1.18rem}
 </head>
 
 <body class="village">
+<a class="skip" href="#v-main" style="position:absolute;top:-100px;left:20px;z-index:9999;background:#fff;padding:10px">ข้ามไปยังเนื้อหา</a>
 
 <!-- ========== แถบบน ========== -->
 <div class="v-top">
   <div class="wrap v-top-in">
-    <strong>🏫 โรงเรียนบ้านเรา · จังหวัดพระนครศรีอยุธยา</strong>
+    <a class="v-brand" href="index.html">
+      <img src="assets/logo.png" alt="" width="32" height="32">
+      <strong>อยุธยาเรียนรู้ · ฉบับชาวบ้าน</strong>
+    </a>
     <div class="v-top-btns">
-      <button class="v-tbtn" id="btnBig">🔍 ตัวหนังสือใหญ่</button>
-      <button class="v-tbtn" id="btnPrint">🖨️ พิมพ์แจก</button>
+      <a class="v-tbtn" href="community.html">ทางเข้า</a>
+      <a class="v-tbtn" href="ayutthaya-flyer.html">แผ่นพับ</a>
+      <button class="v-tbtn" id="btnBig" type="button">ตัวหนังสือใหญ่</button>
+      <button class="v-tbtn" id="btnPrint" type="button">พิมพ์แจก</button>
     </div>
   </div>
 </div>
 
 <!-- ========== หัวเรื่อง ========== -->
-<header class="v-hero">
+<header class="v-hero" id="v-main">
   <div class="wrap">
-    <span class="badge">เรื่องของลูกหลานเรา · อ่าน 7 นาที</span>
+    <span class="badge">เรื่องของลูกหลานเรา · อ่านประมาณ 7 นาที · ไม่ใช่เว็บราชการ</span>
     <h1>เด็กอยุธยาทุกคน<br>ควรได้เรียน<em>ดี ๆ เหมือนกัน</em></h1>
     <p>หน้านี้ไม่มีศัพท์ยาก ไม่ต้องเป็นครูก็อ่านรู้เรื่อง<br>และบอกชัด ๆ ว่า <strong>เราคนธรรมดาช่วยอะไรได้บ้าง</strong></p>
   </div>
@@ -363,29 +386,29 @@ body.big-text .v-todo .txt strong{font-size:1.18rem}
 
     <div class="v-stats" style="margin-top:20px">
       <div class="v-stat">
-        <b>158</b>
-        <span>โรงเรียนประถม ในเขต 2<br>(7 อำเภอฝั่งตะวันออก)</span>
+        <b>148,373</b>
+        <span>ผู้เรียน ปีการศึกษา 2568<br>นับหลายประเภท ไม่ใช่เฉพาะโรงเรียน</span>
       </div>
       <div class="v-stat">
-        <b>29</b>
-        <span>โรงเรียนมัธยม<br>ทั้งจังหวัด</span>
+        <b>737</b>
+        <span>สถานศึกษาและ<br>ศูนย์การเรียนรู้</span>
       </div>
       <div class="v-stat">
-        <b>26,419</b>
-        <span>เด็กมัธยม<br>ทั้งจังหวัด</span>
+        <b>9,072</b>
+        <span>ครูและผู้บริหาร<br>ปีการศึกษา 2568</span>
       </div>
-      <div class="v-stat todo">
-        <b>เติมตรงนี้</b>
-        <span>จำนวนโรงเรียนประถม<br>ในเขต 1</span>
+      <div class="v-stat">
+        <b>154</b>
+        <span>ออกกลางคันตามรายงาน ปี 2566<br>เป็นจำนวนคน ไม่ใช่ร้อยละ</span>
       </div>
     </div>
 
     <div class="v-fill-note">
-      <strong>📌 ถึงคนที่เอาหน้านี้ไปใช้:</strong>
-      ช่องสีเหลืองคือตัวเลขที่ยังต้องขอจากสำนักงานเขตพื้นที่การศึกษาก่อน
-      (สพป.อยุธยา เขต 1 · เขต 2 · สพม.อยุธยา)
-      <br>กรุณาอย่าเดาตัวเลขเอง เพราะหน้านี้ชาวบ้านจะเอาไปพูดต่อ
-      ถ้าตัวเลขผิดจะเสียความน่าเชื่อถือทันที
+      <strong>ตัวเลขชุดนี้มาจากหน้าภาพรวมของเว็บนี้</strong>
+      ใช้ได้เฉพาะขอบเขตเอกสารต้นทาง จำนวนออกกลางคันปี 2567 ยังรอตรวจตาราง จึงไม่เอามาพูดต่อ
+      ตัวเลขแยกรายเขตหรือจำนวนโรงเรียนประถมแยกเขตยังไม่มีบนเว็บนี้
+      <a href="knowledge.html?article=source-notes">อ่านที่มา</a>
+      · <a href="index.html">ดูหน้าภาพรวม</a>
     </div>
 
     <h3 style="margin:30px 0 12px;font-size:1.25rem">สิ่งที่มักเจอในโรงเรียนเล็ก</h3>
@@ -431,8 +454,8 @@ body.big-text .v-todo .txt strong{font-size:1.18rem}
       <div class="who">
         <span class="face">👩‍🏫</span>
         <div>
-          <strong>ครูจิ๋ม</strong>
-          <small>ครูโรงเรียนเล็กแห่งหนึ่ง ริมคลองในอยุธยา</small>
+          <strong>ครูจิ๋ม (ตัวอย่างสมมติ)</strong>
+          <small>เรื่องนี้แต่งขึ้นเพื่อให้เห็นภาพ ไม่ใช่ครูหรือโรงเรียนจริงในจังหวัด</small>
         </div>
       </div>
       <p>
@@ -676,20 +699,20 @@ body.big-text .v-todo .txt strong{font-size:1.18rem}
           <p>สิ่งที่เด็กต้องการที่สุดคือ <strong>มีคนสนใจ</strong>
           แค่ถามว่าวันนี้เรียนอะไร แค่นั่งฟังเด็กอ่านหนังสือให้ฟัง
           แค่พาไปโรงเรียนให้ตรงเวลา สามอย่างนี้มีผลต่อเด็กมากกว่าที่คิด</p>
-          <p>งานวิจัยทั่วโลกตรงกันว่า เด็กที่ผู้ใหญ่ที่บ้านสนใจการเรียน
-          จะเรียนดีกว่าเด็กที่ไม่มีใครถามเลย</p>
+          <p>หลายครอบครัวพบว่า เด็กที่ผู้ใหญ่ที่บ้านสนใจการเรียน
+          จะมีกำลังใจมากกว่าเด็กที่ไม่มีใครถามเลย นี่เป็นข้อสังเกตจากชีวิตจริง ไม่ใช่ผลวิจัยของจังหวัด</p>
         </div>
       </details>
 
       <details>
         <summary>ทำไมโรงเรียนเล็กถึงมีครูไม่พอ ในเมื่อเด็กก็น้อยอยู่แล้ว</summary>
         <div class="ans">
-          <p>เพราะวิธีแจกครูคิดจาก <strong>จำนวนเด็ก</strong> ครับ
+          <p>หลายคนคุ้นว่าวิธีนับครูคิดจาก <strong>จำนวนเด็ก</strong>
           ไม่ได้คิดจาก <strong>จำนวนห้องที่ต้องเปิด</strong></p>
-          <p>โรงเรียนที่มีเด็ก 48 คน ได้ครูประมาณ 2 คนกว่า
+          <p>ตัวอย่างสมมติ: โรงเรียนที่มีเด็ก 48 คน อาจได้ครูประมาณ 2 คนกว่า
           แต่ต้องเปิดสอน 6 ชั้น เพราะเด็ก ป.1 กับ ป.6 เรียนด้วยกันไม่ได้</p>
-          <p>นี่คือเรื่องที่คนทำนโยบายกำลังพยายามแก้อยู่ครับ
-          คือเปลี่ยนจากนับหัวเด็ก มาเป็นนับห้องเรียนด้วย</p>
+          <p>นี่เป็นข้อสังเกตเพื่อให้เข้าใจปัญหา ไม่ใช่สูตรที่เว็บนี้ประกาศใช้
+          และไม่ใช่คำสั่งราชการ ถ้าจะพูดต่อให้ถามโรงเรียนใกล้บ้านว่ามีกี่ห้อง กี่ครู</p>
         </div>
       </details>
 
@@ -759,10 +782,9 @@ body.big-text .v-todo .txt strong{font-size:1.18rem}
     </div>
 
     <div class="v-fill-note" style="margin-top:18px">
-      <strong>📌 สำหรับคนที่นำหน้านี้ไปใช้:</strong>
-      ควรเติมเบอร์โทรและที่อยู่ของเขตพื้นที่ทั้งสามแห่ง
-      และชื่อผู้ประสานงานในตำบลลงตรงนี้ด้วย
-      เพราะชาวบ้านจะได้ติดต่อได้จริงโดยไม่ต้องไปหาเอง
+      เว็บนี้ยังไม่มีเบอร์โทรของเขตพื้นที่ เพราะยังไม่ตรวจต้นฉบับสาธารณะที่จะใส่แล้วไม่ผิด
+      เริ่มจากครูใกล้บ้านก่อน แล้วดูบทบาทหน่วยงานได้ที่
+      <a href="agencies.html">หน้าหน่วยงาน</a>
     </div>
   </div>
 </section>
@@ -782,11 +804,17 @@ body.big-text .v-todo .txt strong{font-size:1.18rem}
 <footer class="v-foot">
   <div class="wrap">
     <p style="margin:0 0 6px">
-      หน้านี้จัดทำเพื่อสื่อสารกับประชาชนทั่วไป ไม่ใช่เอกสารราชการ
+      จัดทำโดย บูรพาทิศ พลอยสุวรรณ์ ผู้วิจัยอิสระ · เพื่อประโยชน์สาธารณะ ไม่ใช่เว็บราชการ
+    </p>
+    <p style="margin:0 0 6px">
+      รายการติ๊กและขนาดตัวหนังสือจำไว้บนเครื่องท่าน ไม่ส่งไปเซิร์ฟเวอร์ ·
+      ตรวจเนื้อหา 23 กันยายน 2569
     </p>
     <p style="margin:0">
-      ข้อมูลโรงเรียนอ้างอิงจากหน่วยงานในพื้นที่ ·
-      <a href="index.html">ดูข้อมูลฉบับละเอียด</a>
+      <a href="index.html">หน้าภาพรวม</a> ·
+      <a href="ayutthaya-flyer.html">แผ่นพับพิมพ์แจก</a> ·
+      <a href="knowledge.html?article=source-notes">ที่มาของข้อมูล</a> ·
+      <a href="about.html">ผู้จัดทำ</a>
     </p>
   </div>
 </footer>
@@ -801,7 +829,7 @@ body.big-text .v-todo .txt strong{font-size:1.18rem}
 
   function applyBig(on){
     document.body.classList.toggle('big-text', on);
-    btnBig.textContent = on ? '🔍 ตัวหนังสือปกติ' : '🔍 ตัวหนังสือใหญ่';
+    btnBig.textContent = on ? 'ตัวหนังสือปกติ' : 'ตัวหนังสือใหญ่';
   }
 
   try{
@@ -869,8 +897,8 @@ body.big-text .v-todo .txt strong{font-size:1.18rem}
   /* ---------- แชร์ ---------- */
   document.getElementById('btnShare').addEventListener('click', function(){
     var data = {
-      title: 'โรงเรียนบ้านเรา — เรื่องง่าย ๆ ที่คนอยุธยาช่วยกันได้',
-      text: 'เด็กอยุธยาทุกคนควรได้เรียนดี ๆ เหมือนกัน ลองอ่านดูว่าเราช่วยอะไรได้บ้าง',
+      title: 'ฉบับชาวบ้าน — อยุธยาเรียนรู้ SDG 4',
+      text: 'เด็กอยุธยาทุกคนควรได้เรียนดี ๆ เหมือนกัน ลองอ่านดูว่าเราช่วยอะไรได้บ้าง ไม่ใช่เว็บราชการ',
       url: window.location.href
     };
     if(navigator.share){

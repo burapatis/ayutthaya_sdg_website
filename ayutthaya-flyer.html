@@ -1,22 +1,31 @@
 <!DOCTYPE html>
-<html lang="th" data-theme="light">
+<html lang="th">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>แผ่นพับชุมชน: โรงเรียนบ้านเรา เด็กอยุธยาต้องได้เรียนดี</title>
-<meta name="description" content="แผ่นพับพับสามตอน สรุปเรื่องโรงเรียนขนาดเล็กและความเสมอภาคทางการศึกษา สำหรับแจกในชุมชนจังหวัดพระนครศรีอยุธยา">
-<meta name="theme-color" content="#1a2b4c">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css">
+<title>แผ่นพับชุมชน | อยุธยาเรียนรู้ · SDG 4</title>
+<meta name="description" content="แผ่นพับพับสามตอน สรุปเรื่องโรงเรียนบ้านเราเป็นภาษาคนทั่วไป สำหรับพิมพ์แจกในชุมชน ไม่ใช่เอกสารราชการ">
+<meta name="theme-color" content="#8c402a">
+<meta name="author" content="บูรพาทิศ พลอยสุวรรณ์">
+<link rel="canonical" href="https://sdg.thamdee.com/ayutthaya-flyer.html">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="256x256" href="assets/logo.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="th_TH">
+<meta property="og:site_name" content="อยุธยาเรียนรู้ · SDG 4">
+<meta property="og:title" content="แผ่นพับชุมชน | อยุธยาเรียนรู้ · SDG 4">
+<meta property="og:description" content="แผ่นพับพับสามตอน สรุปเรื่องโรงเรียนบ้านเราเป็นภาษาคนทั่วไป สำหรับพิมพ์แจกในชุมชน ไม่ใช่เอกสารราชการ">
+<meta property="og:url" content="https://sdg.thamdee.com/ayutthaya-flyer.html">
+<meta property="og:image" content="https://sdg.thamdee.com/assets/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
 
 <style>
-/* ============================================================
-   TRIFOLD BROCHURE STYLES (A4 Landscape)
-   พับสามตอน: กระดาษ A4 แนวนอน (297 มม. × 210 มม.)
-   แบ่งเป็น 3 คอลัมน์ คอลัมน์ละ 99 มม.
-   ============================================================ */
+@font-face{font-family:'Noto Sans Thai';font-style:normal;font-weight:400;font-display:swap;src:url('vendor/fonts/NotoSansThai-400.ttf') format('truetype')}
+@font-face{font-family:'Noto Sans Thai';font-style:normal;font-weight:500;font-display:swap;src:url('vendor/fonts/NotoSansThai-500.ttf') format('truetype')}
+@font-face{font-family:'Noto Sans Thai';font-style:normal;font-weight:600;font-display:swap;src:url('vendor/fonts/NotoSansThai-600.ttf') format('truetype')}
+@font-face{font-family:'Noto Sans Thai';font-style:normal;font-weight:700;font-display:swap;src:url('vendor/fonts/NotoSansThai-700.ttf') format('truetype')}
+/* แผ่นพับพับสามตอน A4 แนวนอน */
 :root {
   --f-bg: #f4f6f9;
   --f-paper: #ffffff;
@@ -36,7 +45,7 @@ body.flyer-body {
   margin: 0;
   background: var(--f-bg);
   color: var(--f-ink);
-  font-family: "IBM Plex Sans Thai", sans-serif;
+  font-family: "Noto Sans Thai", sans-serif;
   font-size: 14px;
   line-height: 1.6;
 }
@@ -53,9 +62,19 @@ body.flyer-body {
 .f-print-btn {
   background: var(--f-amber); color: #3d2a06; border: none;
   padding: 8px 18px; border-radius: 999px; font-weight: 700; cursor: pointer;
-  font-family: "IBM Plex Sans Thai", sans-serif;
+  font-family: "Noto Sans Thai", sans-serif;
+  min-height: 44px;
 }
 .f-print-btn:hover { background: #f7c977; }
+.f-nav {
+  display: flex; gap: 8px; flex-wrap: wrap; align-items: center;
+}
+.f-nav a {
+  color: #fff; text-decoration: none; border: 1px solid rgba(255,255,255,.35);
+  padding: 8px 14px; border-radius: 999px; min-height: 44px;
+  display: inline-flex; align-items: center; font-size: .85rem;
+}
+.f-nav a:hover { background: rgba(255,255,255,.14); text-decoration: none; }
 
 /* พื้นที่จำลองแผ่นพับบนจอ */
 .preview-container {
@@ -65,6 +84,7 @@ body.flyer-body {
   flex-direction: column;
   gap: 40px;
   padding: 0 16px;
+  overflow-x: auto;
 }
 
 .sheet-label {
@@ -158,7 +178,7 @@ body.flyer-body {
 
 @media print {
   body.flyer-body { background: #fff; }
-  .flyer-toolbar { display: none !important; }
+  .flyer-toolbar, .skip { display: none !important; }
   .preview-container { display: block; margin: 0; padding: 0; max-width: none; }
   .sheet-label { display: none !important; }
 
@@ -183,15 +203,20 @@ body.flyer-body {
 </head>
 
 <body class="flyer-body">
+<a class="skip" href="#flyer" style="position:absolute;left:20px;top:-100px;z-index:9999;background:#fff;padding:10px">ข้ามไปยังแผ่นพับ</a>
 
 <div class="flyer-toolbar">
-  <div class="wrap" style="display:flex; justify-content:space-between; width:100%; align-items:center; max-width:1100px; margin:0 auto;">
-    <strong>📄 ตัวอย่างแผ่นพับพับสามตอน (A4 แนวนอน) · พร้อมพิมพ์แจกชุมชน</strong>
-    <button class="f-print-btn" onclick="window.print()">🖨️ สั่งพิมพ์แผ่นพับ (Print)</button>
+  <div class="wrap" style="display:flex; justify-content:space-between; width:100%; align-items:center; max-width:1100px; margin:0 auto; gap:12px; flex-wrap:wrap;">
+    <strong>แผ่นพับพับสามตอน (A4 แนวนอน) · พิมพ์แจกชุมชนได้ · ไม่ใช่เอกสารราชการ</strong>
+    <div class="f-nav">
+      <a href="community.html">ทางเข้า</a>
+      <a href="ayutthaya-sdg4.html">ฉบับชาวบ้าน</a>
+      <button class="f-print-btn" type="button" onclick="window.print()">สั่งพิมพ์แผ่นพับ</button>
+    </div>
   </div>
 </div>
 
-<div class="preview-container">
+<div class="preview-container" id="flyer">
 
   <!-- ================= หน้าที่ 1: แผ่นด้านนอก (Outer Side) ================= -->
   <div>
@@ -209,25 +234,24 @@ body.flyer-body {
           <p>ถ้าต้องการถามข้อมูล หรืออยากช่วยโรงเรียนใกล้บ้าน ติดต่อได้ที่:</p>
 
           <div style="background:#fff; border:1px solid #cbd5e1; border-radius:8px; padding:10px; margin-top:10px; font-size:.85rem;">
-            <b>🏫 สพป.พระนครศรีอยุธยา เขต 1</b><br>
-            <span style="color:#64748b;">(อำเภอเมือง ท่าเรือ นครหลวง บางปะหัน ฯลฯ)</span><br>
-            📞 โทร: [เติมเบอร์โทรเขต 1]
+            <b>ครูประจำชั้น และผู้อำนวยการโรงเรียนใกล้บ้าน</b><br>
+            <span style="color:#64748b;">เริ่มตรงนี้ก่อนเสมอ เพราะรู้ปัญหาจริงของเด็กในละแวก</span>
           </div>
 
           <div style="background:#fff; border:1px solid #cbd5e1; border-radius:8px; padding:10px; margin-top:8px; font-size:.85rem;">
-            <b>🏫 สพป.พระนครศรีอยุธยา เขต 2</b><br>
-            <span style="color:#64748b;">(เสนา บางปะอิน บางบาล บางไทร ฯลฯ)</span><br>
-            📞 โทร: [เติมเบอร์โทรเขต 2]
+            <b>อบต. หรือเทศบาลในตำบล</b><br>
+            <span style="color:#64748b;">เรื่องถนน รถรับส่ง ไฟทาง น้ำท่วม</span>
           </div>
 
           <div style="background:#fff; border:1px solid #cbd5e1; border-radius:8px; padding:10px; margin-top:8px; font-size:.85rem;">
-            <b>🏛️ สำนักงานเขตพื้นที่การศึกษามัธยมศึกษา (สพม.) อยุธยา</b><br>
-            📞 โทร: [เติมเบอร์มัธยม]
+            <b>สำนักงานเขตพื้นที่การศึกษา</b><br>
+            <span style="color:#64748b;">สพป.อยุธยา เขต 1 · เขต 2 · สพม.อยุธยา</span><br>
+            เว็บนี้ยังไม่ใส่เบอร์ เพราะยังไม่ตรวจต้นฉบับที่จะไม่ผิด
           </div>
         </div>
 
         <div style="border-top:1px solid #e2e8f1; padding-top:8px; font-size:.75rem; color:#64748b; text-align:center;">
-          จัดทำเพื่อเผยแพร่ความรู้สู่ชุมชน<br>โครงการขับเคลื่อนความเสมอภาคทางการศึกษา
+          อยุธยาเรียนรู้ · SDG 4 · ไม่ใช่เอกสารราชการ<br>จัดทำโดย บูรพาทิศ พลอยสุวรรณ์ ผู้วิจัยอิสระ
         </div>
       </div>
 
@@ -244,16 +268,16 @@ body.flyer-body {
             การช่วยโรงเรียนให้มีครูครบชั้น และเด็กอ่านออกเขียนได้ คือการสร้างภูมิคุ้มกันที่ดีที่สุดให้กับลูกหลานของเราเอง
           </div>
 
-          <h3>ช่องทางติดตามข้อมูล</h3>
-          <p style="font-size:.85rem;">สแกนคิวอาร์โค้ด หรือเข้าเว็บไซต์เพื่อดูรายละเอียดรายงานฉบับเต็มและเครื่องมือจำลองนโยบาย</p>
+          <h3>อ่านฉบับเต็มบนเว็บ</h3>
+          <p style="font-size:.85rem;">เปิด sdg.thamdee.com เพื่อดูตัวเลขอ้างอิง ฉบับชาวบ้าน และที่มาของข้อมูล</p>
           <div style="text-align:center; margin:10px 0; background:#f1f5f9; padding:12px; border-radius:8px; font-weight:700; font-size:.8rem; color:#334155;">
-            [ วาง QR Code เว็บไซต์ที่นี่ ]<br>
-            <span style="font-weight:400; font-size:.75rem;">equity-edu-th.github.io</span>
+            sdg.thamdee.com<br>
+            <span style="font-weight:400; font-size:.75rem;">ฉบับชาวบ้าน: sdg.thamdee.com/ayutthaya-sdg4.html</span>
           </div>
         </div>
 
         <div style="font-size:.75rem; color:#64748b; text-align:center;">
-          แผ่นพับชุมชน · ฉบับประชาชน
+          แผ่นพับชุมชน · ฉบับประชาชน · ไม่ใช่เอกสารราชการ
         </div>
       </div>
 
@@ -265,7 +289,7 @@ body.flyer-body {
           <p style="margin-top:14px;">เรื่องง่าย ๆ ที่คนในชุมชน พ่อแม่ และเพื่อนบ้าน ช่วยกันได้ทันทีโดยไม่ต้องรอราชการ</p>
         </div>
         <div style="font-size:.8rem; color:rgba(255,255,255,.7); margin-top:20px;">
-          📍 จังหวัดพระนครศรีอยุธยา<br>ปีการศึกษา 2569
+          📍 จังหวัดพระนครศรีอยุธยา<br>ตรวจเนื้อหา 23 กันยายน 2569 · ไม่ใช่เว็บราชการ
         </div>
       </div>
 
@@ -294,19 +318,19 @@ body.flyer-body {
           </div>
 
           <h3>ครูคนเดียว ต้องแบ่งร่าง?</h3>
-          <p>โรงเรียนมีเด็ก 48 คน แต่ต้องเปิดสอน 6 ชั้น (ป.1 ถึง ป.6) ตามหลักสูตร ทำให้ได้ครูแค่ 2 คนกว่า ๆ</p>
-          <p><b>ผลลัพธ์:</b> ครูต้องสอนควบชั้น 2-3 ห้องพร้อมกัน สอนไม่ไหว คุณภาพเด็กก็ตกลง</p>
+          <p>ตัวอย่างสมมติ: โรงเรียนมีเด็ก 48 คน แต่ต้องเปิดสอน 6 ชั้น (ป.1 ถึง ป.6) ตามหลักสูตร จึงอาจได้ครูไม่พอต่อห้อง</p>
+          <p><b>ผลที่มักเจอ:</b> ครูต้องสอนควบชั้น 2-3 ห้องพร้อมกัน สอนไม่ไหว คุณภาพเด็กก็ตกลง</p>
         </div>
         <div style="font-size:.78rem; color:#64748b; border-top:1px solid #e2e8f1; padding-top:6px;">
-          ข้อมูลจาก สพฐ. ปี 2569
+          ตัวอย่างเพื่ออธิบาย ไม่ใช่สถิติจากรายงาน สพฐ.
         </div>
       </div>
 
       <!-- Panel 2: ด้านในกลาง (เรื่องเล่าครูจิ๋ม) -->
       <div class="panel" style="background:#fcfbf9;">
         <div>
-          <h2>2. เรื่องจริงจากห้องเรียน</h2>
-          <p>ลองนึกภาพ <b>"ครูจิ๋ม"</b> สอนโรงเรียนริมคลองในอยุธยา มีเด็ก 48 คน ทั้งโรงเรียน</p>
+          <h2>2. เรื่องสมมติจากห้องเรียน</h2>
+          <p>ลองนึกภาพ <b>"ครูจิ๋ม"</b> (ตัวอย่างสมมติ ไม่ใช่บุคคลจริง) สอนโรงเรียนริมคลองในอยุธยา มีเด็ก 48 คน ทั้งโรงเรียน</p>
           
           <p style="font-size:.88rem; margin-top:6px;">
             ฟังดูเหมือนดูแล 48 คนนี้น่าจะง่าย แต่เพราะต้องเปิดครบ 6 ชั้น ครูจิ๋มจึงต้องยืนเขียนกระดานสอน ป.1 พร้อมกับหันไปบอกงาน ป.3 และดูแลเด็ก ป.6 ในห้องเดียวกัน
@@ -318,11 +342,11 @@ body.flyer-body {
           </div>
 
           <p style="font-size:.88rem; margin-top:6px;">
-            ถ้าเราไม่ช่วยกันแก้สูตรจัดสรร โรงเรียนเหล่านี้จะค่อย ๆ อ่อนแอลง และเด็กจะยิ่งเสียโอกาส
+            ถ้าชุมชนไม่ช่วยประคอง โรงเรียนเหล่านี้อาจอ่อนแอลง และเด็กจะยิ่งเสียโอกาส
           </p>
         </div>
         <div style="font-size:.78rem; color:#64748b; border-top:1px solid #e2e8f1; padding-top:6px;">
-          เสียงสะท้อนจากพื้นที่
+          ตัวอย่างสมมติ เพื่อให้เห็นภาพ ไม่ใช่รายงานโรงเรียนใดโรงเรียนหนึ่ง
         </div>
       </div>
 
