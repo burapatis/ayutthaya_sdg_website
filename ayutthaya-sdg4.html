@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="th" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>โรงเรียนบ้านเรา — เรื่องง่าย ๆ ที่คนอยุธยาช่วยกันได้</title>
+<meta name="description" content="เด็กอยุธยาทุกคนควรได้เรียนดี ๆ หน้านี้เล่าว่าตอนนี้เป็นยังไง และเราคนธรรมดาช่วยอะไรได้บ้าง อ่านง่าย ทำได้จริง">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="th_TH">
+<meta property="og:title" content="โรงเรียนบ้านเรา — เรื่องง่าย ๆ ที่คนอยุธยาช่วยกันได้">
+<meta name="theme-color" content="#1a2b4c">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏫</text></svg>">
+
+<style>
+/* ============================================================
+   หน้าสำหรับชาวบ้าน — เน้นตัวใหญ่ อ่านง่าย สีสบายตา
+   ============================================================ */
+:root{
+  --v-cream:#fdfaf4;
+  --v-paper:#ffffff;
+  --v-ink:#1f2937;
+  --v-ink-soft:#4b5563;
+  --v-line:#e7e2d8;
+  --v-green:#2e8b57;
+  --v-green-soft:#e8f5ed;
+  --v-amber:#e8a33d;
+  --v-amber-soft:#fff5e3;
+  --v-red:#c9483c;
+  --v-red-soft:#fdeceb;
+  --v-blue:#1a2b4c;
+  --v-blue-soft:#eaf0f8;
+}
+
+body.village{
+  margin:0;
+  background:var(--v-cream);
+  color:var(--v-ink);
+  font-family:"IBM Plex Sans Thai",sans-serif;
+  font-size:19px;
+  line-height:1.85;
+  -webkit-text-size-adjust:100%;
+}
+
+.wrap{width:min(100% - 32px,880px);margin-inline:auto}
+
+/* ---------- แถบบนสุด ---------- */
+.v-top{
+  position:sticky;top:0;z-index:50;
+  background:var(--v-blue);color:#fff;
+  padding:10px 0;
+  box-shadow:0 2px 10px rgba(0,0,0,.14);
+}
+.v-top-in{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.v-top strong{font-size:.95rem}
+.v-top-btns{display:flex;gap:8px}
+.v-tbtn{
+  background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3);
+  color:#fff;padding:6px 14px;border-radius:999px;
+  font:600 .82rem/1 "IBM Plex Sans Thai",sans-serif;cursor:pointer;
+}
+.v-tbtn:hover{background:rgba(255,255,255,.26)}
+
+/* ---------- หัวเรื่อง ---------- */
+.v-hero{
+  background:linear-gradient(160deg,#12233f,#2a4771);
+  color:#fff;padding:54px 0 48px;text-align:center;
+}
+.v-hero .badge{
+  display:inline-block;background:rgba(255,255,255,.14);
+  border:1px solid rgba(255,255,255,.26);
+  padding:6px 18px;border-radius:999px;font-size:.88rem;margin-bottom:18px;
+}
+.v-hero h1{
+  font-size:clamp(2rem,6vw,3.1rem);line-height:1.25;margin:0 0 16px;
+  letter-spacing:-.02em;
+}
+.v-hero h1 em{color:#f7c977;font-style:normal}
+.v-hero p{
+  font-size:clamp(1.05rem,2.4vw,1.25rem);
+  color:rgba(255,255,255,.9);max-width:34ch;margin:0 auto;
+}
+
+/* ---------- บล็อกเนื้อหา ---------- */
+section.v-sec{padding:44px 0}
+section.v-sec.alt{background:var(--v-paper);border-block:1px solid var(--v-line)}
+
+.v-num{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:40px;height:40px;border-radius:50%;
+  background:var(--v-amber);color:#3d2a06;
+  font-weight:700;font-size:1.1rem;margin-bottom:12px;
+}
+h2.v-h{
+  font-size:clamp(1.5rem,4vw,2.1rem);line-height:1.35;margin:0 0 14px;
+  letter-spacing:-.01em;
+}
+p.v-p{margin:0 0 16px;color:var(--v-ink-soft)}
+p.v-p.big{font-size:1.12rem;color:var(--v-ink)}
+
+.v-quote{
+  background:var(--v-amber-soft);border-left:6px solid var(--v-amber);
+  padding:18px 22px;border-radius:0 12px 12px 0;
+  font-size:1.12rem;font-weight:600;color:#6b4a0c;margin:22px 0;
+}
+
+/* ---------- การ์ด ---------- */
+.v-cards{display:grid;gap:16px}
+.v-cards.two{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.v-cards.three{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.v-card{
+  background:var(--v-paper);border:1px solid var(--v-line);
+  border-radius:16px;padding:22px;
+}
+.v-card .ico{font-size:2rem;line-height:1;margin-bottom:10px}
+.v-card h3{font-size:1.15rem;margin:0 0 8px}
+.v-card p{margin:0;font-size:.98rem;color:var(--v-ink-soft);line-height:1.7}
+
+/* ---------- ตัวเลขจังหวัด ---------- */
+.v-stats{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(180px,1fr))}
+.v-stat{
+  background:var(--v-paper);border:1px solid var(--v-line);
+  border-radius:16px;padding:20px;text-align:center;
+}
+.v-stat b{
+  display:block;font-size:2.1rem;line-height:1.1;
+  color:var(--v-blue);font-weight:700;letter-spacing:-.02em;
+}
+.v-stat span{display:block;margin-top:6px;font-size:.92rem;color:var(--v-ink-soft)}
+.v-stat.todo b{color:#b48a2d;font-size:1.5rem}
+.v-stat.todo{background:var(--v-amber-soft);border-color:#f0d8a8;border-style:dashed}
+
+.v-fill-note{
+  background:var(--v-amber-soft);border:1px dashed #e2bd72;
+  border-radius:12px;padding:14px 18px;margin-top:18px;
+  font-size:.95rem;color:#6b4a0c;
+}
+
+/* ---------- เรื่องเล่า ---------- */
+.v-story{
+  background:var(--v-paper);border:1px solid var(--v-line);
+  border-radius:18px;padding:26px;margin-top:8px;
+}
+.v-story .who{
+  display:flex;align-items:center;gap:12px;margin-bottom:14px;
+  padding-bottom:14px;border-bottom:1px solid var(--v-line);
+}
+.v-story .who .face{font-size:2.2rem}
+.v-story .who div strong{display:block;font-size:1.05rem}
+.v-story .who div small{color:var(--v-ink-soft)}
+.v-story p{margin:0 0 12px;font-size:1.06rem}
+.v-story p:last-child{margin-bottom:0}
+
+/* ---------- รายการติ๊ก ---------- */
+.v-progress{
+  position:sticky;top:60px;z-index:20;
+  background:var(--v-green-soft);border:1px solid #b9e0c9;
+  border-radius:14px;padding:14px 18px;margin-bottom:20px;
+}
+.v-progress-top{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:8px}
+.v-progress-top strong{font-size:1rem;color:#1c5c3a}
+.v-progress-top span{font-size:.9rem;color:#2e7d52;font-weight:600}
+.v-bar{height:12px;background:#fff;border-radius:999px;overflow:hidden}
+.v-bar i{display:block;height:100%;width:0;background:var(--v-green);border-radius:999px;transition:width .35s ease}
+
+.v-todo{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.v-todo li{
+  background:var(--v-paper);border:1px solid var(--v-line);
+  border-radius:14px;overflow:hidden;
+}
+.v-todo label{
+  display:flex;gap:14px;align-items:flex-start;
+  padding:18px 20px;cursor:pointer;
+}
+.v-todo input{
+  width:26px;height:26px;margin:2px 0 0;flex:none;
+  accent-color:var(--v-green);cursor:pointer;
+}
+.v-todo .txt strong{display:block;font-size:1.06rem;margin-bottom:4px}
+.v-todo .txt span{font-size:.95rem;color:var(--v-ink-soft);line-height:1.65}
+.v-todo li.done{background:var(--v-green-soft);border-color:#b9e0c9}
+.v-todo li.done .txt strong{text-decoration:line-through;opacity:.65}
+
+/* ---------- ใครทำอะไร ---------- */
+.v-role{
+  background:var(--v-paper);border:1px solid var(--v-line);
+  border-radius:16px;padding:22px;margin-bottom:14px;
+}
+.v-role-head{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+.v-role-head .ico{font-size:1.9rem}
+.v-role-head h3{margin:0;font-size:1.2rem}
+.v-role ul{margin:0;padding-left:22px}
+.v-role li{margin-bottom:8px;color:var(--v-ink-soft)}
+.v-role li:last-child{margin-bottom:0}
+.v-role li b{color:var(--v-ink)}
+
+/* ---------- ปฏิทิน ---------- */
+.v-cal{display:grid;gap:12px}
+.v-cal-row{
+  display:grid;grid-template-columns:110px 1fr;gap:16px;
+  background:var(--v-paper);border:1px solid var(--v-line);
+  border-radius:14px;padding:16px 20px;align-items:start;
+}
+.v-cal-row b{color:var(--v-blue);font-size:1rem}
+.v-cal-row p{margin:0;font-size:.98rem;color:var(--v-ink-soft)}
+
+/* ---------- ถาม-ตอบ ---------- */
+.v-faq{display:grid;gap:10px}
+.v-faq details{
+  background:var(--v-paper);border:1px solid var(--v-line);
+  border-radius:14px;overflow:hidden;
+}
+.v-faq summary{
+  padding:18px 20px;cursor:pointer;font-weight:600;font-size:1.05rem;
+  list-style:none;display:flex;justify-content:space-between;gap:12px;align-items:center;
+}
+.v-faq summary::-webkit-details-marker{display:none}
+.v-faq summary::after{content:"＋";font-size:1.3rem;color:var(--v-amber);flex:none}
+.v-faq details[open] summary::after{content:"－"}
+.v-faq .ans{padding:0 20px 20px;color:var(--v-ink-soft)}
+.v-faq .ans p{margin:0 0 10px}
+.v-faq .ans p:last-child{margin-bottom:0}
+
+/* ---------- ติดต่อ ---------- */
+.v-contact{
+  background:var(--v-blue);color:#fff;border-radius:18px;padding:28px;
+}
+.v-contact h3{margin:0 0 14px;color:#f7c977;font-size:1.25rem}
+.v-contact ol{margin:0;padding-left:22px}
+.v-contact li{margin-bottom:12px;color:rgba(255,255,255,.9)}
+.v-contact li:last-child{margin-bottom:0}
+.v-contact b{color:#fff}
+
+/* ---------- ปิดท้าย ---------- */
+.v-end{
+  background:linear-gradient(160deg,#12233f,#2a4771);
+  color:#fff;padding:50px 0;text-align:center;
+}
+.v-end h2{font-size:clamp(1.5rem,4.2vw,2.2rem);margin:0 0 14px;line-height:1.35}
+.v-end h2 em{color:#f7c977;font-style:normal}
+.v-end p{color:rgba(255,255,255,.85);max-width:40ch;margin:0 auto 22px}
+.v-share{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.v-sbtn{
+  background:#f7c977;color:#3d2a06;border:none;
+  padding:12px 24px;border-radius:999px;
+  font:700 1rem/1 "IBM Plex Sans Thai",sans-serif;cursor:pointer;
+}
+.v-sbtn.ghost{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.4)}
+
+footer.v-foot{
+  background:#0d1a30;color:rgba(255,255,255,.6);
+  padding:24px 0;font-size:.85rem;text-align:center;
+}
+footer.v-foot a{color:#f7c977}
+
+/* ---------- ตัวหนังสือใหญ่ ---------- */
+body.big-text{font-size:23px}
+body.big-text .v-todo .txt strong{font-size:1.18rem}
+
+/* ---------- พิมพ์ ---------- */
+@media print{
+  .v-top,.v-share,.v-progress{display:none!important}
+  body.village{background:#fff;font-size:12pt}
+  .v-hero,.v-end{background:#12233f!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .v-faq details{border:1px solid #ccc}
+  .v-faq details[open] .ans,.v-faq .ans{display:block!important}
+  section.v-sec{padding:18px 0;break-inside:avoid}
+}
+
+@media (max-width:560px){
+  .v-cal-row{grid-template-columns:1fr;gap:6px}
+}
+</style>
+</head>
+
+<body class="village">
+
+<!-- ========== แถบบน ========== -->
+<div class="v-top">
+  <div class="wrap v-top-in">
+    <strong>🏫 โรงเรียนบ้านเรา · จังหวัดพระนครศรีอยุธยา</strong>
+    <div class="v-top-btns">
+      <button class="v-tbtn" id="btnBig">🔍 ตัวหนังสือใหญ่</button>
+      <button class="v-tbtn" id="btnPrint">🖨️ พิมพ์แจก</button>
+    </div>
+  </div>
+</div>
+
+<!-- ========== หัวเรื่อง ========== -->
+<header class="v-hero">
+  <div class="wrap">
+    <span class="badge">เรื่องของลูกหลานเรา · อ่าน 7 นาที</span>
+    <h1>เด็กอยุธยาทุกคน<br>ควรได้เรียน<em>ดี ๆ เหมือนกัน</em></h1>
+    <p>หน้านี้ไม่มีศัพท์ยาก ไม่ต้องเป็นครูก็อ่านรู้เรื่อง<br>และบอกชัด ๆ ว่า <strong>เราคนธรรมดาช่วยอะไรได้บ้าง</strong></p>
+  </div>
+</header>
+
+<!-- ========== 1. SDG4 คืออะไร ========== -->
+<section class="v-sec">
+  <div class="wrap">
+    <div class="v-num">1</div>
+    <h2 class="v-h">มีสัญญาข้อหนึ่งที่ทั้งโลกให้ไว้ร่วมกัน</h2>
+
+    <p class="v-p big">
+      เมื่อหลายปีก่อน ประเทศต่าง ๆ เกือบทั้งโลก รวมทั้งประเทศไทย
+      ได้ตกลงกันไว้ 17 เรื่อง ว่าจะช่วยกันทำให้โลกดีขึ้น
+      เขาเรียกกันว่า <strong>“เป้าหมายการพัฒนาที่ยั่งยืน”</strong>
+    </p>
+
+    <p class="v-p">
+      ฟังดูเป็นเรื่องไกลตัวใช่ไหมครับ แต่จริง ๆ แล้ว
+      <strong>ข้อที่ 4</strong> ในนั้นคือเรื่องใกล้ตัวที่สุดของบ้านเรา
+    </p>
+
+    <div class="v-quote">
+      ข้อที่ 4 บอกไว้ง่าย ๆ ว่า —<br>
+      “เด็กทุกคนต้องได้เรียนหนังสือ และต้องได้เรียนแบบมีคุณภาพ
+      ไม่ว่าจะเกิดที่ไหน บ้านรวยหรือบ้านจน”
+    </div>
+
+    <p class="v-p">
+      สังเกตคำว่า <strong>“มีคุณภาพ”</strong> นะครับ
+      เพราะแค่มีโรงเรียนให้ไปนั่ง ยังไม่พอ
+      ต้องมีครูสอนครบ มีหนังสือ มีคนดูแล และเด็กต้องอ่านออกเขียนได้จริง
+    </p>
+
+    <div class="v-cards three" style="margin-top:22px">
+      <div class="v-card">
+        <div class="ico">🚸</div>
+        <h3>ได้ไปเรียน</h3>
+        <p>เด็กทุกคนในละแวกบ้านเราได้เข้าโรงเรียน ไม่มีใครต้องออกกลางคัน</p>
+      </div>
+      <div class="v-card">
+        <div class="ico">👩‍🏫</div>
+        <h3>มีครูสอนครบ</h3>
+        <p>ทุกห้องมีครูประจำ ไม่ใช่ครูคนเดียววิ่งสอนสามห้องพร้อมกัน</p>
+      </div>
+      <div class="v-card">
+        <div class="ico">📖</div>
+        <h3>เรียนแล้วได้จริง</h3>
+        <p>จบ ป.3 แล้วต้องอ่านออกเขียนได้ คิดเลขเป็น ไม่ใช่แค่ผ่านชั้นไป</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 2. อยุธยาเป็นยังไง ========== -->
+<section class="v-sec alt">
+  <div class="wrap">
+    <div class="v-num">2</div>
+    <h2 class="v-h">แล้วที่อยุธยาบ้านเรา ตอนนี้เป็นยังไง</h2>
+
+    <p class="v-p">
+      อยุธยามีทั้งโรงเรียนใหญ่ในเมือง และโรงเรียนเล็ก ๆ ตามตำบลริมน้ำ
+      ทั้งฝั่ง <strong>เขต 1</strong> (พระนครศรีอยุธยา ท่าเรือ นครหลวง บางปะหัน
+      บ้านแพรก ภาชี มหาราช วังน้อย อุทัย)
+      และฝั่ง <strong>เขต 2</strong> (บางซ้าย บางไทร บางบาล บางปะอิน ผักไห่
+      ลาดบัวหลวง เสนา)
+    </p>
+
+    <div class="v-stats" style="margin-top:20px">
+      <div class="v-stat">
+        <b>158</b>
+        <span>โรงเรียนประถม ในเขต 2<br>(7 อำเภอฝั่งตะวันออก)</span>
+      </div>
+      <div class="v-stat">
+        <b>29</b>
+        <span>โรงเรียนมัธยม<br>ทั้งจังหวัด</span>
+      </div>
+      <div class="v-stat">
+        <b>26,419</b>
+        <span>เด็กมัธยม<br>ทั้งจังหวัด</span>
+      </div>
+      <div class="v-stat todo">
+        <b>เติมตรงนี้</b>
+        <span>จำนวนโรงเรียนประถม<br>ในเขต 1</span>
+      </div>
+    </div>
+
+    <div class="v-fill-note">
+      <strong>📌 ถึงคนที่เอาหน้านี้ไปใช้:</strong>
+      ช่องสีเหลืองคือตัวเลขที่ยังต้องขอจากสำนักงานเขตพื้นที่การศึกษาก่อน
+      (สพป.อยุธยา เขต 1 · เขต 2 · สพม.อยุธยา)
+      <br>กรุณาอย่าเดาตัวเลขเอง เพราะหน้านี้ชาวบ้านจะเอาไปพูดต่อ
+      ถ้าตัวเลขผิดจะเสียความน่าเชื่อถือทันที
+    </div>
+
+    <h3 style="margin:30px 0 12px;font-size:1.25rem">สิ่งที่มักเจอในโรงเรียนเล็ก</h3>
+
+    <div class="v-cards two">
+      <div class="v-card" style="border-left:5px solid var(--v-red)">
+        <div class="ico">🔄</div>
+        <h3>ครูคนเดียว สอนหลายชั้น</h3>
+        <p>โรงเรียนที่เด็กน้อย จะได้ครูน้อยตามไปด้วย
+        สุดท้ายครูหนึ่งคนต้องดูแลเด็กสองสามชั้นพร้อมกัน
+        ไม่ใช่เพราะครูขี้เกียจ แต่เพราะคนไม่พอจริง ๆ</p>
+      </div>
+      <div class="v-card" style="border-left:5px solid var(--v-red)">
+        <div class="ico">💡</div>
+        <h3>ค่าน้ำค่าไฟไม่ได้ลดตามเด็ก</h3>
+        <p>ต่อให้เด็กเหลือ 40 คน โรงเรียนก็ยังต้องจ่ายค่าไฟ ค่าน้ำ
+        ดูแลอาคารเท่าเดิม แต่เงินที่ได้คิดตามหัวเด็ก จึงมักไม่พอใช้</p>
+      </div>
+      <div class="v-card" style="border-left:5px solid var(--v-red)">
+        <div class="ico">🚌</div>
+        <h3>บ้านไกล ไปโรงเรียนลำบาก</h3>
+        <p>บางตำบลเด็กต้องนั่งรถไกล หรือข้ามน้ำ
+        พอหน้าฝนหรือช่วงน้ำมาก การมาโรงเรียนยิ่งยาก</p>
+      </div>
+      <div class="v-card" style="border-left:5px solid var(--v-red)">
+        <div class="ico">📉</div>
+        <h3>พอคุณภาพตก คนก็ย้ายลูกออก</h3>
+        <p>พ่อแม่ที่พอมีทางเลือก จะย้ายลูกไปโรงเรียนในเมือง
+        ทำให้โรงเรียนใกล้บ้านยิ่งเด็กน้อยลง แล้วก็ยิ่งได้ครูน้อยลงอีก
+        วนไปแบบนี้</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 3. เรื่องเล่า ========== -->
+<section class="v-sec">
+  <div class="wrap">
+    <div class="v-num">3</div>
+    <h2 class="v-h">ลองนึกภาพตามนะครับ</h2>
+
+    <div class="v-story">
+      <div class="who">
+        <span class="face">👩‍🏫</span>
+        <div>
+          <strong>ครูจิ๋ม</strong>
+          <small>ครูโรงเรียนเล็กแห่งหนึ่ง ริมคลองในอยุธยา</small>
+        </div>
+      </div>
+      <p>
+        โรงเรียนของครูจิ๋มมีเด็กทั้งหมด 48 คน
+        แบ่งเป็น ป.1 ถึง ป.6 ชั้นละประมาณ 8 คน
+      </p>
+      <p>
+        ฟังดูสบายใช่ไหมครับ เด็กน้อยน่าจะดูแลง่าย
+      </p>
+      <p>
+        แต่ปัญหาคือ — โรงเรียนต้องเปิดสอน <strong>ครบทั้ง 6 ชั้น</strong>
+        เพราะเด็ก ป.1 กับ ป.6 เรียนด้วยกันไม่ได้
+        ในขณะที่ครูที่ได้มามีแค่ <strong>2 คนกว่า ๆ</strong>
+        เพราะเขาคิดจำนวนครูจากหัวเด็ก
+      </p>
+      <p>
+        ผลคือครูจิ๋มต้องสอน ป.1 ป.2 ป.3 ในห้องเดียวกัน
+        เขียนกระดานสามฝั่ง สลับไปมาทั้งวัน
+      </p>
+      <p style="font-weight:600;color:var(--v-red)">
+        ครูจิ๋มไม่ได้สอนไม่เก่ง — แต่คนเดียวมันแบ่งร่างไม่ได้จริง ๆ ครับ
+      </p>
+    </div>
+
+    <div class="v-quote" style="margin-top:24px">
+      เพราะฉะนั้น เวลาเห็นข่าวว่า “โรงเรียนเล็กคุณภาพไม่ดี”
+      อย่าเพิ่งโทษครูครับ<br>
+      ลองถามก่อนว่า <strong>โรงเรียนนั้นมีครูกี่คน ต่อกี่ห้อง</strong>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 4. ทำอะไรได้ ========== -->
+<section class="v-sec alt">
+  <div class="wrap">
+    <div class="v-num">4</div>
+    <h2 class="v-h">แล้วเราช่วยอะไรได้บ้าง</h2>
+    <p class="v-p big">
+      ข่าวดีคือ หลายเรื่อง <strong>ไม่ต้องใช้เงิน</strong>
+      และไม่ต้องรอราชการสั่ง เริ่มได้เลยจากตัวเราเอง
+      ลองดูว่าเราตรงกับข้อไหนครับ
+    </p>
+
+    <!-- พ่อแม่ -->
+    <div class="v-role">
+      <div class="v-role-head">
+        <span class="ico">👨‍👩‍👧</span>
+        <h3>ถ้าเป็นพ่อแม่ ปู่ย่าตายาย</h3>
+      </div>
+      <ul>
+        <li><b>ถามลูกหลานทุกวันว่าวันนี้เรียนอะไร</b> — แค่ 5 นาทีตอนกินข้าว เด็กจะรู้สึกว่ามีคนสนใจ</li>
+        <li><b>ให้เด็กอ่านหนังสือออกเสียงให้ฟังวันละหน้า</b> — ถ้าเราอ่านไม่คล่องก็ฟังเฉย ๆ ได้ เด็กได้ฝึกแล้ว</li>
+        <li><b>อย่าให้ขาดเรียนถ้าไม่จำเป็น</b> — ขาดบ่อยแล้วตามไม่ทัน แล้วจะเบื่อจนอยากเลิกเรียน</li>
+        <li><b>ไปประชุมผู้ปกครองทุกครั้ง</b> — เป็นโอกาสเดียวที่จะได้คุยกับครูตรง ๆ</li>
+        <li><b>ถ้าลูกอ่านไม่ออกให้รีบบอกครู</b> — อย่าอายครับ ยิ่งรู้เร็วยิ่งแก้ทัน</li>
+      </ul>
+    </div>
+
+    <!-- คนในชุมชน -->
+    <div class="v-role">
+      <div class="v-role-head">
+        <span class="ico">🏘️</span>
+        <h3>ถ้าเป็นคนในหมู่บ้าน ในตำบล</h3>
+      </div>
+      <ul>
+        <li><b>ไปช่วยงานโรงเรียนปีละครั้งก็ยังดี</b> — ทาสี ตัดหญ้า ซ่อมรั้ว ช่วยงานกีฬาสี</li>
+        <li><b>ใครมีวิชาติดตัว ไปสอนเด็กได้</b> — ทำขนม ช่างไม้ ปลูกผัก ทำบัญชี ดนตรีไทย เด็กชอบมาก</li>
+        <li><b>ช่วยเป็นหูเป็นตาเรื่องเด็กหลุดจากระบบ</b> — ถ้าเห็นเด็กวัยเรียนอยู่บ้านตอนกลางวันบ่อย ๆ ให้บอกครูหรือผู้ใหญ่บ้าน</li>
+        <li><b>ช่วยเรื่องการเดินทาง</b> — ถ้าไปทางเดียวกัน รับเด็กบ้านใกล้ไปด้วยได้</li>
+        <li><b>พูดถึงโรงเรียนในทางที่ดี</b> — คำพูดลบ ๆ ทำให้คนย้ายลูกออก แล้วโรงเรียนยิ่งแย่ลง</li>
+      </ul>
+    </div>
+
+    <!-- ร้านค้า -->
+    <div class="v-role">
+      <div class="v-role-head">
+        <span class="ico">🏪</span>
+        <h3>ถ้ามีร้าน มีกิจการ มีโรงงาน</h3>
+      </div>
+      <ul>
+        <li><b>ช่วยมื้อเช้าเด็ก</b> — เด็กท้องว่างเรียนไม่รู้เรื่อง ร้านอาหารช่วยได้ตรงจุดมาก</li>
+        <li><b>สนับสนุนของที่โรงเรียนขาดจริง ๆ</b> — ถามครูก่อนว่าขาดอะไร อย่าเดาเอง</li>
+        <li><b>เปิดร้านให้เด็กมาดูงาน</b> — เด็กจะเห็นว่าเรียนไปทำไม</li>
+        <li><b>รับเด็กจบใหม่ในพื้นที่เข้าทำงาน</b> — เด็กจะได้เห็นอนาคตในบ้านเกิด</li>
+      </ul>
+    </div>
+
+    <!-- วัด -->
+    <div class="v-role">
+      <div class="v-role-head">
+        <span class="ico">🛕</span>
+        <h3>ถ้าเป็นวัด หรือกลุ่มในชุมชน</h3>
+      </div>
+      <ul>
+        <li><b>เปิดพื้นที่ให้เด็กอ่านหนังสือ</b> — ศาลาวัดตอนเย็นหรือวันหยุด ใช้ได้ดีมาก</li>
+        <li><b>ตั้งกองผ้าป่าเพื่อการศึกษา</b> — เจาะจงว่าเอาไปทำอะไร เช่น ค่ารถรับส่งเด็ก</li>
+        <li><b>ช่วยเด็กที่ครอบครัวมีปัญหา</b> — บางบ้านพ่อแม่ไปทำงานต่างจังหวัด เด็กอยู่กับตายาย</li>
+      </ul>
+    </div>
+
+    <!-- อบต -->
+    <div class="v-role">
+      <div class="v-role-head">
+        <span class="ico">🏛️</span>
+        <h3>ถ้าอยู่ใน อบต. เทศบาล หรือเป็น กรรมการสถานศึกษา</h3>
+      </div>
+      <ul>
+        <li><b>ถามในที่ประชุมว่า “โรงเรียนในตำบลเรา ครูครบชั้นไหม”</b> — คำถามนี้ทรงพลังกว่าที่คิด</li>
+        <li><b>ช่วยเรื่องที่โรงเรียนทำเองไม่ได้</b> — ถนนเข้าโรงเรียน ไฟทาง รถรับส่ง น้ำท่วมขัง</li>
+        <li><b>เอาข้อมูลจริงไปคุย</b> — ไม่ใช่แค่บ่น แต่บอกตัวเลขว่ามีกี่ห้อง มีครูกี่คน</li>
+        <li><b>ผลักดันให้การช่วยโรงเรียนเป็นแผนประจำ</b> — ไม่ใช่ทำทีเดียวแล้วเลิก</li>
+      </ul>
+    </div>
+
+    <!-- เยาวชน -->
+    <div class="v-role">
+      <div class="v-role-head">
+        <span class="ico">🎓</span>
+        <h3>ถ้าเป็นเด็กโต นักศึกษา หรือคนรุ่นใหม่</h3>
+      </div>
+      <ul>
+        <li><b>กลับไปติวน้องที่โรงเรียนเก่า</b> — ช่วงปิดเทอมสักอาทิตย์ก็มีค่า</li>
+        <li><b>สอนผู้ใหญ่ใช้มือถือ</b> — พ่อแม่ที่ใช้เป็น จะติดตามการเรียนลูกได้</li>
+        <li><b>ช่วยโรงเรียนทำเพจ ทำคลิป</b> — ให้คนเห็นว่าโรงเรียนบ้านเราก็ดี</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 5. รายการติ๊ก ========== -->
+<section class="v-sec">
+  <div class="wrap">
+    <div class="v-num">5</div>
+    <h2 class="v-h">10 อย่างที่เริ่มได้ตั้งแต่พรุ่งนี้</h2>
+    <p class="v-p">ติ๊กได้เลยครับ เครื่องจะจำไว้ให้เอง ไม่ต้องสมัครอะไร</p>
+
+    <div class="v-progress">
+      <div class="v-progress-top">
+        <strong>ทำไปแล้ว</strong>
+        <span id="pgText">0 จาก 10 ข้อ</span>
+      </div>
+      <div class="v-bar"><i id="pgBar"></i></div>
+    </div>
+
+    <ul class="v-todo" id="todoList">
+      <li><label><input type="checkbox" data-k="t1">
+        <span class="txt"><strong>ถามเด็กที่บ้านว่า “วันนี้เรียนอะไรมา”</strong>
+        <span>วันนี้เลย ตอนกินข้าวเย็น แค่นี้ก็เริ่มแล้วครับ</span></span></label></li>
+
+      <li><label><input type="checkbox" data-k="t2">
+        <span class="txt"><strong>ให้เด็กอ่านหนังสือออกเสียงให้ฟัง 1 หน้า</strong>
+        <span>ถ้าอ่านติด ๆ ขัด ๆ แปลว่าต้องรีบช่วย อย่าปล่อยไว้</span></span></label></li>
+
+      <li><label><input type="checkbox" data-k="t3">
+        <span class="txt"><strong>รู้ชื่อครูประจำชั้นของเด็กที่บ้าน</strong>
+        <span>ถ้ายังไม่รู้ ถามเด็กได้เลย แล้วขอเบอร์ไว้ติดต่อ</span></span></label></li>
+
+      <li><label><input type="checkbox" data-k="t4">
+        <span class="txt"><strong>ไปประชุมผู้ปกครองครั้งหน้า</strong>
+        <span>ถ้าไปไม่ได้ ฝากญาติไปแทน อย่าปล่อยให้ว่าง</span></span></label></li>
+
+      <li><label><input type="checkbox" data-k="t5">
+        <span class="txt"><strong>ถามครูว่า “โรงเรียนเราครูครบทุกชั้นไหม”</strong>
+        <span>คำถามง่าย ๆ ข้อนี้ จะทำให้เราเห็นปัญหาจริง</span></span></label></li>
+
+      <li><label><input type="checkbox" data-k="t6">
+        <span class="txt"><strong>ถามครูว่าโรงเรียนขาดอะไรที่เราพอช่วยได้</strong>
+        <span>บางทีไม่ใช่เงิน แต่เป็นแรง หรือเป็นของที่เรามีอยู่แล้ว</span></span></label></li>
+
+      <li><label><input type="checkbox" data-k="t7">
+        <span class="txt"><strong>ชวนเพื่อนบ้านอีก 1 คนมาอ่านหน้านี้</strong>
+        <span>คนเดียวทำได้น้อย หลายคนทำได้เยอะ</span></span></label></li>
+
+      <li><label><input type="checkbox" data-k="t8">
+        <span class="txt"><strong>ถ้าเห็นเด็กวัยเรียนไม่ได้ไปโรงเรียน ให้บอกครูหรือผู้ใหญ่บ้าน</strong>
+        <span>ไม่ใช่การฟ้อง แต่เป็นการช่วยให้เด็กกลับเข้าระบบทัน</span></span></label></li>
+
+      <li><label><input type="checkbox" data-k="t9">
+        <span class="txt"><strong>ไปช่วยงานโรงเรียนสักครั้งในปีนี้</strong>
+        <span>งานกีฬาสี วันเด็ก ทำความสะอาด อะไรก็ได้ที่เราไปได้</span></span></label></li>
+
+      <li><label><input type="checkbox" data-k="t10">
+        <span class="txt"><strong>พูดถึงโรงเรียนใกล้บ้านในทางที่ดีสักครั้ง</strong>
+        <span>เพราะคำพูดของเรา มีผลต่อการตัดสินใจของพ่อแม่คนอื่น</span></span></label></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ========== 6. ปฏิทิน ========== -->
+<section class="v-sec alt">
+  <div class="wrap">
+    <div class="v-num">6</div>
+    <h2 class="v-h">ช่วงไหน ทำอะไรได้บ้าง</h2>
+
+    <div class="v-cal">
+      <div class="v-cal-row">
+        <b>ก่อนเปิดเทอม</b>
+        <p>ช่วยดูว่าเด็กในละแวกบ้านได้ไปสมัครเรียนครบไหม โดยเฉพาะเด็กที่เพิ่งย้ายมา
+        หรือเด็กที่อยู่กับตายาย</p>
+      </div>
+      <div class="v-cal-row">
+        <b>เปิดเทอมใหม่ ๆ</b>
+        <p>ไปช่วยทำความสะอาดโรงเรียน ทาสี ตัดหญ้า ซ่อมโต๊ะเก้าอี้
+        เป็นช่วงที่โรงเรียนต้องการแรงมากที่สุด</p>
+      </div>
+      <div class="v-cal-row">
+        <b>ระหว่างเทอม</b>
+        <p>ไปประชุมผู้ปกครอง ถามเรื่องการอ่านของเด็ก
+        และถามว่าห้องไหนยังไม่มีครูประจำ</p>
+      </div>
+      <div class="v-cal-row">
+        <b>หน้าน้ำ</b>
+        <p>อยุธยาเป็นพื้นที่น้ำ ช่วงน้ำมากให้ช่วยดูเรื่องการเดินทางของเด็ก
+        และความปลอดภัยริมน้ำ</p>
+      </div>
+      <div class="v-cal-row">
+        <b>ปิดเทอม</b>
+        <p>เด็กมักลืมสิ่งที่เรียนมาช่วงปิดเทอมยาว
+        ชวนเด็กอ่านหนังสือ หรือให้รุ่นพี่มาติวน้องที่วัดหรือศาลากลางบ้าน</p>
+      </div>
+      <div class="v-cal-row">
+        <b>ตอนทำแผนตำบล</b>
+        <p>ช่วงที่ อบต. หรือเทศบาลทำแผนประจำปี
+        เป็นจังหวะดีที่สุดที่จะเสนอเรื่องโรงเรียนเข้าไปในแผน</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 7. ถาม-ตอบ ========== -->
+<section class="v-sec">
+  <div class="wrap">
+    <div class="v-num">7</div>
+    <h2 class="v-h">คำถามที่คนถามกันบ่อย</h2>
+
+    <div class="v-faq">
+      <details open>
+        <summary>เราไม่ได้เรียนสูง จะไปช่วยเรื่องการเรียนของเด็กได้ยังไง</summary>
+        <div class="ans">
+          <p>ช่วยได้เยอะมากครับ และไม่ต้องเรียนสูงเลย</p>
+          <p>สิ่งที่เด็กต้องการที่สุดคือ <strong>มีคนสนใจ</strong>
+          แค่ถามว่าวันนี้เรียนอะไร แค่นั่งฟังเด็กอ่านหนังสือให้ฟัง
+          แค่พาไปโรงเรียนให้ตรงเวลา สามอย่างนี้มีผลต่อเด็กมากกว่าที่คิด</p>
+          <p>งานวิจัยทั่วโลกตรงกันว่า เด็กที่ผู้ใหญ่ที่บ้านสนใจการเรียน
+          จะเรียนดีกว่าเด็กที่ไม่มีใครถามเลย</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>ทำไมโรงเรียนเล็กถึงมีครูไม่พอ ในเมื่อเด็กก็น้อยอยู่แล้ว</summary>
+        <div class="ans">
+          <p>เพราะวิธีแจกครูคิดจาก <strong>จำนวนเด็ก</strong> ครับ
+          ไม่ได้คิดจาก <strong>จำนวนห้องที่ต้องเปิด</strong></p>
+          <p>โรงเรียนที่มีเด็ก 48 คน ได้ครูประมาณ 2 คนกว่า
+          แต่ต้องเปิดสอน 6 ชั้น เพราะเด็ก ป.1 กับ ป.6 เรียนด้วยกันไม่ได้</p>
+          <p>นี่คือเรื่องที่คนทำนโยบายกำลังพยายามแก้อยู่ครับ
+          คือเปลี่ยนจากนับหัวเด็ก มาเป็นนับห้องเรียนด้วย</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>ถ้าโรงเรียนใกล้บ้านเด็กน้อย จะโดนยุบไหม</summary>
+        <div class="ans">
+          <p>เป็นห่วงที่ตรงประเด็นมากครับ</p>
+          <p>หลักการที่ควรเป็นคือ ถ้าโรงเรียนอยู่ไกลจากโรงเรียนอื่นมาก
+          หรือเด็กเดินทางลำบาก <strong>ก็ควรรักษาไว้และให้ทรัพยากรให้พอ</strong>
+          ไม่ใช่ปล่อยให้อ่อนแอลงเรื่อย ๆ จนต้องปิดไปเอง</p>
+          <p>สิ่งที่ชุมชนช่วยได้คือ ทำให้โรงเรียนยังมีชีวิต
+          มีเด็ก มีคนมาช่วย และมีเสียงจากชุมชนที่ดังพอ</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>ช่วยแล้วมันจะเปลี่ยนอะไรได้จริงเหรอ ในเมื่อเป็นเรื่องใหญ่ระดับประเทศ</summary>
+        <div class="ans">
+          <p>เรื่องใหญ่ต้องแก้ด้วยนโยบาย จริงครับ</p>
+          <p>แต่ระหว่างที่นโยบายยังไม่เปลี่ยน เด็กที่อยู่ ป.3 วันนี้
+          เขารอไม่ได้ อีกสามปีเขาก็จบประถมแล้ว</p>
+          <p>สิ่งที่ชุมชนทำได้คือ <strong>ประคองไม่ให้เด็กรุ่นนี้หลุด</strong>
+          และเป็นเสียงที่ทำให้คนข้างบนเห็นว่าปัญหานี้มีจริง</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>อยากช่วยแต่ไม่มีเงิน ทำยังไงดี</summary>
+        <div class="ans">
+          <p>ข้อดีคือ เรื่องที่ได้ผลที่สุดมักไม่ต้องใช้เงินครับ</p>
+          <p>เวลา แรง ความรู้ที่ติดตัว และการเอาใจใส่
+          สี่อย่างนี้มีค่ากับโรงเรียนมากกว่าเงินบริจาคก้อนเดียวแล้วหายไป</p>
+          <p>ลองกลับไปดูรายการ 10 ข้อด้านบน จะเห็นว่าเกือบทั้งหมดไม่ต้องจ่ายเงินเลย</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>จะรู้ได้ยังไงว่าโรงเรียนใกล้บ้านเราเป็นยังไงบ้าง</summary>
+        <div class="ans">
+          <p>ง่ายที่สุดคือเดินไปถามครูใหญ่ตรง ๆ ครับ ถาม 3 คำถามนี้</p>
+          <p>1. โรงเรียนเรามีกี่ห้องเรียน และมีครูกี่คน<br>
+          2. มีห้องไหนที่ยังไม่มีครูประจำไหม<br>
+          3. ตอนนี้โรงเรียนขาดอะไรที่ชุมชนพอช่วยได้</p>
+          <p>ครูส่วนใหญ่ยินดีตอบมากครับ เพราะแปลว่ามีคนสนใจ</p>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 8. ติดต่อใคร ========== -->
+<section class="v-sec alt">
+  <div class="wrap">
+    <div class="v-num">8</div>
+    <h2 class="v-h">ถ้าจะเริ่ม ติดต่อใครดี</h2>
+
+    <div class="v-contact">
+      <h3>ไล่จากใกล้ตัวที่สุดไปหาไกลที่สุด</h3>
+      <ol>
+        <li><b>ครูประจำชั้นของเด็กที่บ้าน</b> — ใกล้ที่สุด รู้ปัญหาดีที่สุด เริ่มตรงนี้ก่อนเสมอ</li>
+        <li><b>ผู้อำนวยการโรงเรียน</b> — ถ้าอยากช่วยระดับทั้งโรงเรียน</li>
+        <li><b>คณะกรรมการสถานศึกษา</b> — มีตัวแทนชุมชนอยู่แล้ว ถามว่าใครเป็นตัวแทนหมู่บ้านเรา</li>
+        <li><b>ผู้ใหญ่บ้าน กำนัน</b> — ถ้าเป็นเรื่องเด็กหลุดจากระบบ หรือเรื่องความปลอดภัย</li>
+        <li><b>อบต. หรือเทศบาลในตำบล</b> — ถ้าเป็นเรื่องถนน รถรับส่ง ไฟทาง น้ำท่วม</li>
+        <li><b>สำนักงานเขตพื้นที่การศึกษา</b> — สพป.อยุธยา เขต 1 หรือ เขต 2 ตามอำเภอที่อยู่ ถ้าเป็นเรื่องครูไม่พอในภาพรวม</li>
+      </ol>
+    </div>
+
+    <div class="v-fill-note" style="margin-top:18px">
+      <strong>📌 สำหรับคนที่นำหน้านี้ไปใช้:</strong>
+      ควรเติมเบอร์โทรและที่อยู่ของเขตพื้นที่ทั้งสามแห่ง
+      และชื่อผู้ประสานงานในตำบลลงตรงนี้ด้วย
+      เพราะชาวบ้านจะได้ติดต่อได้จริงโดยไม่ต้องไปหาเอง
+    </div>
+  </div>
+</section>
+
+<!-- ========== ปิดท้าย ========== -->
+<div class="v-end">
+  <div class="wrap">
+    <h2>เด็กที่เรียนอยู่วันนี้<br><em>คือคนที่จะดูแลอยุธยาในอีก 20 ปี</em></h2>
+    <p>ไม่ต้องรอใครสั่ง ไม่ต้องรองบประมาณ<br>เริ่มจากข้อเดียวที่เราทำได้ ก็เปลี่ยนได้แล้วครับ</p>
+    <div class="v-share">
+      <button class="v-sbtn" id="btnShare">📤 ส่งต่อให้คนอื่น</button>
+      <button class="v-sbtn ghost" id="btnPrint2">🖨️ พิมพ์แจกในหมู่บ้าน</button>
+    </div>
+  </div>
+</div>
+
+<footer class="v-foot">
+  <div class="wrap">
+    <p style="margin:0 0 6px">
+      หน้านี้จัดทำเพื่อสื่อสารกับประชาชนทั่วไป ไม่ใช่เอกสารราชการ
+    </p>
+    <p style="margin:0">
+      ข้อมูลโรงเรียนอ้างอิงจากหน่วยงานในพื้นที่ ·
+      <a href="index.html">ดูข้อมูลฉบับละเอียด</a>
+    </p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  'use strict';
+
+  /* ---------- ตัวหนังสือใหญ่ ---------- */
+  var KEY_BIG = 'ayutthaya_sdg4_bigtext';
+  var btnBig = document.getElementById('btnBig');
+
+  function applyBig(on){
+    document.body.classList.toggle('big-text', on);
+    btnBig.textContent = on ? '🔍 ตัวหนังสือปกติ' : '🔍 ตัวหนังสือใหญ่';
+  }
+
+  try{
+    applyBig(localStorage.getItem(KEY_BIG) === '1');
+  }catch(e){}
+
+  btnBig.addEventListener('click', function(){
+    var on = !document.body.classList.contains('big-text');
+    applyBig(on);
+    try{ localStorage.setItem(KEY_BIG, on ? '1' : '0'); }catch(e){}
+  });
+
+  /* ---------- รายการติ๊ก ---------- */
+  var KEY_TODO = 'ayutthaya_sdg4_todo';
+  var boxes = Array.prototype.slice.call(
+    document.querySelectorAll('#todoList input[type=checkbox]')
+  );
+  var pgBar = document.getElementById('pgBar');
+  var pgText = document.getElementById('pgText');
+
+  function loadState(){
+    try{
+      return JSON.parse(localStorage.getItem(KEY_TODO) || '{}');
+    }catch(e){ return {}; }
+  }
+
+  function saveState(){
+    var s = {};
+    boxes.forEach(function(b){ s[b.dataset.k] = b.checked; });
+    try{ localStorage.setItem(KEY_TODO, JSON.stringify(s)); }catch(e){}
+  }
+
+  function render(){
+    var done = 0;
+    boxes.forEach(function(b){
+      var li = b.closest('li');
+      li.classList.toggle('done', b.checked);
+      if(b.checked) done++;
+    });
+    var pct = boxes.length ? (done / boxes.length * 100) : 0;
+    pgBar.style.width = pct + '%';
+    pgText.textContent = done + ' จาก ' + boxes.length + ' ข้อ';
+    if(done === boxes.length && boxes.length){
+      pgText.textContent = '✨ ครบทั้ง ' + boxes.length + ' ข้อแล้ว ขอบคุณครับ';
+    }
+  }
+
+  var saved = loadState();
+  boxes.forEach(function(b){
+    if(saved[b.dataset.k]) b.checked = true;
+    b.addEventListener('change', function(){ saveState(); render(); });
+  });
+  render();
+
+  /* ---------- พิมพ์ ---------- */
+  function doPrint(){
+    document.querySelectorAll('.v-faq details').forEach(function(d){
+      d.open = true;
+    });
+    window.print();
+  }
+  document.getElementById('btnPrint').addEventListener('click', doPrint);
+  document.getElementById('btnPrint2').addEventListener('click', doPrint);
+
+  /* ---------- แชร์ ---------- */
+  document.getElementById('btnShare').addEventListener('click', function(){
+    var data = {
+      title: 'โรงเรียนบ้านเรา — เรื่องง่าย ๆ ที่คนอยุธยาช่วยกันได้',
+      text: 'เด็กอยุธยาทุกคนควรได้เรียนดี ๆ เหมือนกัน ลองอ่านดูว่าเราช่วยอะไรได้บ้าง',
+      url: window.location.href
+    };
+    if(navigator.share){
+      navigator.share(data).catch(function(){});
+    }else if(navigator.clipboard){
+      navigator.clipboard.writeText(window.location.href).then(function(){
+        alert('คัดลอกลิงก์แล้วครับ นำไปวางในไลน์หรือเฟซบุ๊กได้เลย');
+      });
+    }else{
+      alert('คัดลอกลิงก์จากแถบที่อยู่ด้านบนได้เลยครับ');
+    }
+  });
+})();
+</script>
+</body>
+</html>

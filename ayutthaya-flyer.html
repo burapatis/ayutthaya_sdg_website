@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="th" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>แผ่นพับชุมชน: โรงเรียนบ้านเรา เด็กอยุธยาต้องได้เรียนดี</title>
+<meta name="description" content="แผ่นพับพับสามตอน สรุปเรื่องโรงเรียนขนาดเล็กและความเสมอภาคทางการศึกษา สำหรับแจกในชุมชนจังหวัดพระนครศรีอยุธยา">
+<meta name="theme-color" content="#1a2b4c">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+
+<style>
+/* ============================================================
+   TRIFOLD BROCHURE STYLES (A4 Landscape)
+   พับสามตอน: กระดาษ A4 แนวนอน (297 มม. × 210 มม.)
+   แบ่งเป็น 3 คอลัมน์ คอลัมน์ละ 99 มม.
+   ============================================================ */
+:root {
+  --f-bg: #f4f6f9;
+  --f-paper: #ffffff;
+  --f-ink: #1f2937;
+  --f-ink-soft: #4b5563;
+  --f-blue: #12233f;
+  --f-amber: #e8a33d;
+  --f-amber-soft: #fff5e3;
+  --f-red: #c9483c;
+  --f-red-soft: #fdeceb;
+  --f-green: #2e8b57;
+  --f-green-soft: #e8f5ed;
+  --f-line: #cbd5e1;
+}
+
+body.flyer-body {
+  margin: 0;
+  background: var(--f-bg);
+  color: var(--f-ink);
+  font-family: "IBM Plex Sans Thai", sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* แถบเครื่องมือบนจอ */
+.flyer-toolbar {
+  position: sticky; top: 0; z-index: 100;
+  background: var(--f-blue); color: #fff;
+  padding: 12px 20px;
+  display: flex; justify-content: space-between; align-items: center;
+  box-shadow: 0 2px 10px rgba(0,0,0,.2);
+}
+.flyer-toolbar strong { font-size: 1rem; }
+.f-print-btn {
+  background: var(--f-amber); color: #3d2a06; border: none;
+  padding: 8px 18px; border-radius: 999px; font-weight: 700; cursor: pointer;
+  font-family: "IBM Plex Sans Thai", sans-serif;
+}
+.f-print-btn:hover { background: #f7c977; }
+
+/* พื้นที่จำลองแผ่นพับบนจอ */
+.preview-container {
+  max-width: 1100px;
+  margin: 30px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 0 16px;
+}
+
+.sheet-label {
+  font-weight: 700; color: var(--f-blue); margin-bottom: 8px;
+  display: flex; justify-content: space-between; align-items: center;
+}
+
+/* แผ่น A4 แนวนอน */
+.a4-sheet {
+  width: 297mm;
+  min-height: 210mm;
+  background: var(--f-paper);
+  box-shadow: 0 10px 30px rgba(0,0,0,.15);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  box-sizing: border-box;
+  overflow: hidden;
+  position: relative;
+}
+
+/* แต่ละหน้าพับ (Panel) */
+.panel {
+  padding: 12mm 10mm;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-right: 1px dashed var(--f-line);
+  position: relative;
+  background: #fff;
+}
+.panel:last-child { border-right: none; }
+
+/* เส้นพับจาง ๆ บนหน้าจอแนะนำตำแหน่งพับ */
+.panel::after {
+  content: ""; position: absolute; top: 0; right: 0; bottom: 0; width: 1px;
+  background: linear-gradient(to bottom, transparent, rgba(0,0,0,.08) 50%, transparent);
+  pointer-events: none;
+}
+
+/* เนื้อหาภายใน Panel */
+.panel h2 { font-size: 1.25rem; color: var(--f-blue); margin: 0 0 10px; line-height: 1.3; }
+.panel h3 { font-size: 1.05rem; color: var(--f-ink); margin: 10px 0 6px; }
+.panel p { margin: 0 0 8px; color: var(--f-ink-soft); font-size: .92rem; }
+.panel ul { margin: 4px 0 8px; padding-left: 18px; color: var(--f-ink-soft); font-size: .9rem; }
+.panel li { margin-bottom: 4px; }
+
+/* ตกแต่งหน้าปก (Panel หน้าสุดด้านขวาของแผ่นนอก) */
+.cover-panel {
+  background: linear-gradient(160deg, #12233f, #2a4771);
+  color: #fff;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+.cover-panel h1 { font-size: 1.8rem; line-height: 1.25; margin: 12px 0; color: #fff; }
+.cover-panel h1 em { color: #f7c977; font-style: normal; }
+.cover-panel p { color: rgba(255,255,255,.85); font-size: .95rem; }
+.cover-badge {
+  background: rgba(255,255,255,.15); border: 1px solid rgba(255,255,255,.3);
+  padding: 4px 12px; border-radius: 999px; font-size: .8rem;
+}
+
+/* กล่องข้อความพิเศษในแผ่นพับ */
+.f-box {
+  background: var(--f-amber-soft); border-left: 4px solid var(--f-amber);
+  padding: 8px 10px; border-radius: 0 6px 6px 0; font-size: .85rem; margin: 8px 0;
+  color: #6b4a0c;
+}
+.f-box.red {
+  background: var(--f-red-soft); border-left-color: var(--f-red); color: #7f1d1d;
+}
+.f-box.green {
+  background: var(--f-green-soft); border-left-color: var(--f-green); color: #14532d;
+}
+
+.step-num {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 22px; height: 22px; background: var(--f-blue); color: #fff;
+  border-radius: 50%; font-size: .75rem; font-weight: 700; margin-right: 4px;
+}
+
+/* ============================================================
+   พิมพ์ออกเครื่องพิมพ์ (Print Rules)
+   ============================================================ */
+@page {
+  size: A4 landscape;
+  margin: 0;
+}
+
+@media print {
+  body.flyer-body { background: #fff; }
+  .flyer-toolbar { display: none !important; }
+  .preview-container { display: block; margin: 0; padding: 0; max-width: none; }
+  .sheet-label { display: none !important; }
+
+  .a4-sheet {
+    width: 297mm;
+    height: 210mm;
+    page-break-after: always;
+    break-after: page;
+    box-shadow: none;
+    margin: 0;
+  }
+  .a4-sheet:last-child {
+    page-break-after: avoid;
+    break-after: avoid;
+  }
+  * {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}
+</style>
+</head>
+
+<body class="flyer-body">
+
+<div class="flyer-toolbar">
+  <div class="wrap" style="display:flex; justify-content:space-between; width:100%; align-items:center; max-width:1100px; margin:0 auto;">
+    <strong>📄 ตัวอย่างแผ่นพับพับสามตอน (A4 แนวนอน) · พร้อมพิมพ์แจกชุมชน</strong>
+    <button class="f-print-btn" onclick="window.print()">🖨️ สั่งพิมพ์แผ่นพับ (Print)</button>
+  </div>
+</div>
+
+<div class="preview-container">
+
+  <!-- ================= หน้าที่ 1: แผ่นด้านนอก (Outer Side) ================= -->
+  <div>
+    <div class="sheet-label">
+      <span>แผ่นที่ 1: ด้านนอก (พิมพ์หน้าแรกของกระดาษ)</span>
+      <span style="font-size:.85rem; color:#64748b;">ประกอบด้วย: หลังปก (ซ้าย) · ปีกพับ/ข้อมูลเสริม (กลาง) · หน้าปก (ขวา)</span>
+    </div>
+
+    <div class="a4-sheet">
+
+      <!-- Panel 5: ปกหลัง (ซ้ายสุดเมื่อกางออก) -->
+      <div class="panel" style="background:#f8fafc;">
+        <div>
+          <h2>ติดต่อ-สอบถาม<br><span style="font-size:.9rem; color:#64748b; font-weight:400;">ช่วยเหลือโรงเรียนในอยุธยา</span></h2>
+          <p>ถ้าต้องการถามข้อมูล หรืออยากช่วยโรงเรียนใกล้บ้าน ติดต่อได้ที่:</p>
+
+          <div style="background:#fff; border:1px solid #cbd5e1; border-radius:8px; padding:10px; margin-top:10px; font-size:.85rem;">
+            <b>🏫 สพป.พระนครศรีอยุธยา เขต 1</b><br>
+            <span style="color:#64748b;">(อำเภอเมือง ท่าเรือ นครหลวง บางปะหัน ฯลฯ)</span><br>
+            📞 โทร: [เติมเบอร์โทรเขต 1]
+          </div>
+
+          <div style="background:#fff; border:1px solid #cbd5e1; border-radius:8px; padding:10px; margin-top:8px; font-size:.85rem;">
+            <b>🏫 สพป.พระนครศรีอยุธยา เขต 2</b><br>
+            <span style="color:#64748b;">(เสนา บางปะอิน บางบาล บางไทร ฯลฯ)</span><br>
+            📞 โทร: [เติมเบอร์โทรเขต 2]
+          </div>
+
+          <div style="background:#fff; border:1px solid #cbd5e1; border-radius:8px; padding:10px; margin-top:8px; font-size:.85rem;">
+            <b>🏛️ สำนักงานเขตพื้นที่การศึกษามัธยมศึกษา (สพม.) อยุธยา</b><br>
+            📞 โทร: [เติมเบอร์มัธยม]
+          </div>
+        </div>
+
+        <div style="border-top:1px solid #e2e8f1; padding-top:8px; font-size:.75rem; color:#64748b; text-align:center;">
+          จัดทำเพื่อเผยแพร่ความรู้สู่ชุมชน<br>โครงการขับเคลื่อนความเสมอภาคทางการศึกษา
+        </div>
+      </div>
+
+      <!-- Panel 6: พื้นที่เสริม / ข้อความเชิญชวน (กลางเมื่อกางออก) -->
+      <div class="panel">
+        <div>
+          <h2>ทำไมเรื่องนี้<br>ถึงสำคัญกับเรา?</h2>
+          <p>หลายคนอาจคิดว่าเรื่องโรงเรียนเป็นหน้าที่ของกระทรวง แต่ความจริงคือ <b>"โรงเรียนคือหัวใจของชุมชน"</b></p>
+          <p>หากโรงเรียนในตำบลอ่อนแอลง คนหนุ่มสาวจะพาลูกหลานย้ายไปอยู่ 
+          ชุมชนจะเงียบเหงา และหมู่บ้านจะขาดอนาคต</p>
+
+          <div class="f-box green">
+            <b>💡 ข้อคิดสำหรับชุมชน:</b><br>
+            การช่วยโรงเรียนให้มีครูครบชั้น และเด็กอ่านออกเขียนได้ คือการสร้างภูมิคุ้มกันที่ดีที่สุดให้กับลูกหลานของเราเอง
+          </div>
+
+          <h3>ช่องทางติดตามข้อมูล</h3>
+          <p style="font-size:.85rem;">สแกนคิวอาร์โค้ด หรือเข้าเว็บไซต์เพื่อดูรายละเอียดรายงานฉบับเต็มและเครื่องมือจำลองนโยบาย</p>
+          <div style="text-align:center; margin:10px 0; background:#f1f5f9; padding:12px; border-radius:8px; font-weight:700; font-size:.8rem; color:#334155;">
+            [ วาง QR Code เว็บไซต์ที่นี่ ]<br>
+            <span style="font-weight:400; font-size:.75rem;">equity-edu-th.github.io</span>
+          </div>
+        </div>
+
+        <div style="font-size:.75rem; color:#64748b; text-align:center;">
+          แผ่นพับชุมชน · ฉบับประชาชน
+        </div>
+      </div>
+
+      <!-- Panel 4: หน้าปก (ขวาสุดเมื่อกางออก - พับมาอยู่หน้าสุด) -->
+      <div class="panel cover-panel">
+        <div>
+          <span class="cover-badge">แผ่นพับชุมชน · อยุธยา</span>
+          <h1>โรงเรียนบ้านเรา<br><em>เด็กอยุธยา</em><br>ต้องได้เรียนดี</h1>
+          <p style="margin-top:14px;">เรื่องง่าย ๆ ที่คนในชุมชน พ่อแม่ และเพื่อนบ้าน ช่วยกันได้ทันทีโดยไม่ต้องรอราชการ</p>
+        </div>
+        <div style="font-size:.8rem; color:rgba(255,255,255,.7); margin-top:20px;">
+          📍 จังหวัดพระนครศรีอยุธยา<br>ปีการศึกษา 2569
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- ================= หน้าที่ 2: แผ่นด้านใน (Inner Side) ================= -->
+  <div>
+    <div class="sheet-label">
+      <span>แผ่นที่ 2: ด้านใน (พิมพ์ด้านหลังของกระดาษแผ่นเดิม)</span>
+      <span style="font-size:.85rem; color:#64748b;">ประกอบด้วย: ด้านในซ้าย (ปัญหา) · ด้านในกลาง (เรื่องเล่า) · ด้านในขวา (วิธีช่วย)</span>
+    </div>
+
+    <div class="a4-sheet">
+
+      <!-- Panel 1: ด้านในซ้าย (ปัญหาโรงเรียนเล็ก) -->
+      <div class="panel">
+        <div>
+          <h2>1. ทำไมโรงเรียนเล็ก<br>ถึงน่าเป็นห่วง?</h2>
+          <p>เด็กเกิดน้อยลง โรงเรียนตามตำบลริมน้ำหรือพื้นที่ห่างไกลมีเด็กนักเรียนลดลงเรื่อย ๆ</p>
+          
+          <div class="f-box red">
+            <b>⚠️ กับดักสูตรรายหัว:</b><br>
+            ระบบให้เงินและครูตามจำนวนเด็ก โรงเรียนเด็กน้อยจึงได้ครูน้อยตามไปด้วย
+          </div>
+
+          <h3>ครูคนเดียว ต้องแบ่งร่าง?</h3>
+          <p>โรงเรียนมีเด็ก 48 คน แต่ต้องเปิดสอน 6 ชั้น (ป.1 ถึง ป.6) ตามหลักสูตร ทำให้ได้ครูแค่ 2 คนกว่า ๆ</p>
+          <p><b>ผลลัพธ์:</b> ครูต้องสอนควบชั้น 2-3 ห้องพร้อมกัน สอนไม่ไหว คุณภาพเด็กก็ตกลง</p>
+        </div>
+        <div style="font-size:.78rem; color:#64748b; border-top:1px solid #e2e8f1; padding-top:6px;">
+          ข้อมูลจาก สพฐ. ปี 2569
+        </div>
+      </div>
+
+      <!-- Panel 2: ด้านในกลาง (เรื่องเล่าครูจิ๋ม) -->
+      <div class="panel" style="background:#fcfbf9;">
+        <div>
+          <h2>2. เรื่องจริงจากห้องเรียน</h2>
+          <p>ลองนึกภาพ <b>"ครูจิ๋ม"</b> สอนโรงเรียนริมคลองในอยุธยา มีเด็ก 48 คน ทั้งโรงเรียน</p>
+          
+          <p style="font-size:.88rem; margin-top:6px;">
+            ฟังดูเหมือนดูแล 48 คนนี้น่าจะง่าย แต่เพราะต้องเปิดครบ 6 ชั้น ครูจิ๋มจึงต้องยืนเขียนกระดานสอน ป.1 พร้อมกับหันไปบอกงาน ป.3 และดูแลเด็ก ป.6 ในห้องเดียวกัน
+          </p>
+
+          <div class="f-box">
+            <b>🗣️ ข้อคิด:</b><br>
+            อย่าเพิ่งด่วนโทษครูว่าสอนไม่ดี เพราะข้อจำกัดทางเลขคณิตทำให้คนคนเดียวแบ่งร่างไม่ได้จริง ๆ
+          </div>
+
+          <p style="font-size:.88rem; margin-top:6px;">
+            ถ้าเราไม่ช่วยกันแก้สูตรจัดสรร โรงเรียนเหล่านี้จะค่อย ๆ อ่อนแอลง และเด็กจะยิ่งเสียโอกาส
+          </p>
+        </div>
+        <div style="font-size:.78rem; color:#64748b; border-top:1px solid #e2e8f1; padding-top:6px;">
+          เสียงสะท้อนจากพื้นที่
+        </div>
+      </div>
+
+      <!-- Panel 3: ด้านในขวา (สิ่งที่เราช่วยได้) -->
+      <div class="panel">
+        <div>
+          <h2>3. เราคนธรรมดา<br>ช่วยอะไรได้บ้าง?</h2>
+          <p style="font-size:.85rem; margin-bottom:6px;">เริ่มได้เลย ไม่ต้องใช้เงิน:</p>
+
+          <ul>
+            <li><span class="step-num">1</span> <b>ถามลูกหลาน:</b> วันนี้เรียนอะไรมาบ้าง คุยกัน 5 นาทีทุกเย็น</li>
+            <li><span class="step-num">2</span> <b>ฝึกอ่านหนังสือ:</b> ให้เด็กอ่านออกเสียงให้ฟังวันละ 1 หน้า</li>
+            <li><span class="step-num">3</span> <b>ไปประชุมผู้ปกครอง:</b> ไปรับรู้ปัญหาและให้กำลังใจครู</li>
+            <li><span class="step-num">4</span> <b>ถามไถ่โรงเรียน:</b> ลองถามครูว่า "โรงเรียนขาดแคลนอะไรที่เราพอช่วยแรงได้บ้าง"</li>
+            <li><span class="step-num">5</span> <b>พูดถึงในแง่ดี:</b> ช่วยกันสนับสนุนโรงเรียนใกล้บ้าน อย่าปล่อยให้คนย้ายลูกออกหมด</li>
+          </ul>
+
+          <div class="f-box green" style="margin-top:6px; font-size:.8rem;">
+            <b>✨ พลังชุมชน:</b><br>
+            เด็กที่เรียนอยู่วันนี้ คือคนที่จะดูแลอยุธยาในอนาคต
+          </div>
+        </div>
+        <div style="font-size:.78rem; color:#64748b; border-top:1px solid #e2e8f1; padding-top:6px;">
+          สภากาแฟ / ชุมชนเข้มแข็ง
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
