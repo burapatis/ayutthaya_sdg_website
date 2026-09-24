@@ -26,7 +26,8 @@ const SITE = {
   ],
   related: [
     {href: 'https://ayeduplan1.thamdee.com/', label: 'ayeduplan1.thamdee.com'},
-    {href: 'https://ayeduplan2.thamdee.com/', label: 'ayeduplan2.thamdee.com'}
+    {href: 'https://ayeduplan2.thamdee.com/', label: 'ayeduplan2.thamdee.com'},
+    {href: 'https://ayedudata.thamdee.com/', label: 'ayedudata.thamdee.com'}
   ]
 };
 

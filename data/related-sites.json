@@ -36,5 +36,26 @@
         "url": "https://ayeduplan2.thamdee.com/data.html"
       }
     ]
+  },
+  {
+    "id": "AYD",
+    "title": "ศูนย์ข้อมูลการศึกษาจังหวัดพระนครศรีอยุธยา",
+    "url": "https://ayedudata.thamdee.com/",
+    "description": "ภาพรวม รายอำเภอ โรงเรียน นักเรียน ครู และการออกกลางคัน จากรายงานสถิติปีการศึกษา 2567",
+    "status": "ชุดตารางโรงเรียนทุกสังกัด · คนละปีและคนละขอบเขตกับยอดอ้างอิงปี 2568 บนหน้าแรก",
+    "links": [
+      {
+        "label": "เปรียบเทียบรายอำเภอ",
+        "url": "https://ayedudata.thamdee.com/districts"
+      },
+      {
+        "label": "การเข้าถึงและออกกลางคัน",
+        "url": "https://ayedudata.thamdee.com/access-and-dropout"
+      },
+      {
+        "label": "วิธีการและแหล่งข้อมูล",
+        "url": "https://ayedudata.thamdee.com/methodology"
+      }
+    ]
   }
 ]
