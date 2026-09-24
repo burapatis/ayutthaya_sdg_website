@@ -22,7 +22,7 @@
 .story-panel h2{margin-bottom:10px}
 .story-panel .story-aside{background:var(--soft);border-radius:14px;padding:20px}
 .story-panel .story-aside p{margin-bottom:.6em}
-.role-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin:8px 0 28px}
+.role-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px;margin:8px 0 28px}
 .role-card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px;text-decoration:none;color:var(--ink);display:block;min-height:100%}
 .role-card:hover{border-color:var(--terra);text-decoration:none}
 .role-card .eyebrow{margin-bottom:8px}

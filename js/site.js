@@ -21,7 +21,7 @@ const SITE = {
     {id: 'evaluation', href: 'evaluation.html', n: '08', label: 'วัดและประเมินผล'},
     {id: 'forum', href: 'forum.html', n: '09', label: 'ร่วมแลกเปลี่ยน'},
     {id: 'slides', href: 'slides.html', n: '10', label: 'สไลด์นำเสนอ'},
-    {id: 'community', href: 'community.html', n: '11', label: 'ฉบับชาวบ้าน'},
+    {id: 'community', href: 'community.html', n: '11', label: 'ฉบับอ่านง่าย'},
     {id: 'about', href: 'about.html', n: '12', label: 'ผู้จัดทำ'}
   ],
   related: [
@@ -75,7 +75,7 @@ function renderChrome() {
         'เว็บไซต์เพื่อประโยชน์สาธารณะ ไม่ใช่เว็บไซต์ทางราชการ</p></div></div>' +
       '<div>' +
         '<a href="slides.html">สไลด์นำเสนอ</a>' +
-        '<a href="community.html">ฉบับชาวบ้าน</a>' +
+        '<a href="community.html">ฉบับอ่านง่าย</a>' +
         '<a href="about.html">เกี่ยวกับผู้จัดทำ</a>' +
         '<a href="knowledge.html?article=source-notes">ที่มาของข้อมูล</a>' +
         '<a href="knowledge.html?article=updates">อะไรเปลี่ยนในรอบนี้</a>' +
