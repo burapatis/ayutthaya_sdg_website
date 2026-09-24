@@ -1,0 +1,1280 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ชุดเครื่องมือครู | อยุธยาเรียนรู้ · SDG 4</title>
+<meta name="description" content="เครื่องมือสำหรับครูและผู้บริหาร คำนวณช่องว่างครูต่อห้อง แบบสำรวจ แผ่นสรุป และร่างข้อความ — ไม่ใช่เว็บราชการและไม่ใช่เกณฑ์อัตรากำลังอย่างเป็นทางการ">
+<meta name="theme-color" content="#8c402a">
+<meta name="author" content="บูรพาทิศ พลอยสุวรรณ์">
+<link rel="canonical" href="https://sdg.thamdee.com/ayutthaya-teacher-toolkit.html">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="256x256" href="assets/logo.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="th_TH">
+<meta property="og:site_name" content="อยุธยาเรียนรู้ · SDG 4">
+<meta property="og:title" content="ชุดเครื่องมือครู | อยุธยาเรียนรู้ · SDG 4">
+<meta property="og:description" content="เครื่องมือสำหรับครูและผู้บริหาร คำนวณช่องว่างครูต่อห้อง แบบสำรวจ แผ่นสรุป และร่างข้อความ — ไม่ใช่เว็บราชการและไม่ใช่เกณฑ์อัตรากำลังอย่างเป็นทางการ">
+<meta property="og:url" content="https://sdg.thamdee.com/ayutthaya-teacher-toolkit.html">
+<meta property="og:image" content="https://sdg.thamdee.com/assets/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ชุดเครื่องมือครู | อยุธยาเรียนรู้ · SDG 4">
+<meta name="twitter:description" content="เครื่องมือสำหรับครูและผู้บริหาร คำนวณช่องว่างครูต่อห้อง แบบสำรวจ แผ่นสรุป และร่างข้อความ — ไม่ใช่เว็บราชการและไม่ใช่เกณฑ์อัตรากำลังอย่างเป็นทางการ">
+<meta name="twitter:image" content="https://sdg.thamdee.com/assets/og-image.png">
+
+<style>
+@font-face{font-family:'Noto Sans Thai';font-style:normal;font-weight:400;font-display:swap;src:url('vendor/fonts/NotoSansThai-400.ttf') format('truetype')}
+@font-face{font-family:'Noto Sans Thai';font-style:normal;font-weight:500;font-display:swap;src:url('vendor/fonts/NotoSansThai-500.ttf') format('truetype')}
+@font-face{font-family:'Noto Sans Thai';font-style:normal;font-weight:600;font-display:swap;src:url('vendor/fonts/NotoSansThai-600.ttf') format('truetype')}
+@font-face{font-family:'Noto Sans Thai';font-style:normal;font-weight:700;font-display:swap;src:url('vendor/fonts/NotoSansThai-700.ttf') format('truetype')}
+/* ชุดเครื่องมือครู — กรอกได้ พิมพ์ได้ คัดลอกได้ จำบนเครื่องท่าน */
+:root{
+  --t-bg:#f5f7fa;
+  --t-paper:#ffffff;
+  --t-ink:#16202f;
+  --t-soft:#51607a;
+  --t-line:#dfe6f0;
+  --t-navy:#12233f;
+  --t-blue:#2563c9;
+  --t-blue-soft:#eaf1fd;
+  --t-amber:#e8a33d;
+  --t-amber-soft:#fff5e3;
+  --t-green:#2e8b57;
+  --t-green-soft:#e8f5ed;
+  --t-red:#c9483c;
+  --t-red-soft:#fdecea;
+  --t-violet:#6b4fa8;
+  --t-violet-soft:#f1ecfa;
+}
+
+body.toolkit{
+  margin:0;background:var(--t-bg);color:var(--t-ink);
+  font-family:"Noto Sans Thai",sans-serif;font-size:16px;line-height:1.75;
+}
+.skip{position:absolute;top:-100px;left:20px;z-index:9999;background:#fff;padding:10px;color:var(--t-navy)}
+.skip:focus{top:10px}
+.wrap{width:min(100% - 28px,1060px);margin-inline:auto}
+.t-brand{display:flex;align-items:center;gap:10px;color:#fff;text-decoration:none}
+.t-brand:hover{text-decoration:none;color:#fff}
+.t-brand img{width:32px;height:32px;border-radius:8px;background:#fff}
+
+/* ---------- แถบบน ---------- */
+.t-top{
+  position:sticky;top:0;z-index:70;background:var(--t-navy);color:#fff;
+  padding:10px 0;box-shadow:0 2px 12px rgba(0,0,0,.18);
+}
+.t-top-in{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.t-top strong{font-size:.94rem}
+.t-top-btns{display:flex;gap:8px;flex-wrap:wrap}
+.t-tbtn{
+  background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3);color:#fff;
+  padding:8px 14px;border-radius:999px;cursor:pointer;
+  font:600 .8rem/1 "Noto Sans Thai",sans-serif;
+  min-height:44px;display:inline-flex;align-items:center;text-decoration:none;
+}
+.t-tbtn:hover{background:rgba(255,255,255,.26);text-decoration:none;color:#fff}
+
+/* ---------- Hero ---------- */
+.t-hero{
+  background:
+    radial-gradient(circle at 88% 14%,rgba(232,163,61,.24),transparent 44%),
+    linear-gradient(160deg,#12233f,#28466f);
+  color:#fff;padding:48px 0 42px;
+}
+.t-hero .badge{
+  display:inline-block;background:rgba(255,255,255,.14);
+  border:1px solid rgba(255,255,255,.28);padding:6px 18px;border-radius:999px;
+  font-size:.84rem;margin-bottom:14px;
+}
+.t-hero h1{font-size:clamp(1.8rem,4.8vw,2.7rem);line-height:1.24;margin:0 0 12px;letter-spacing:-.02em}
+.t-hero h1 em{color:#f7c977;font-style:normal}
+.t-hero p{color:rgba(255,255,255,.88);max-width:52ch;margin:0;font-size:1.02rem}
+
+/* ---------- สารบัญเครื่องมือ ---------- */
+.t-index{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));margin-top:24px}
+.t-index a{
+  display:block;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);
+  border-radius:12px;padding:12px 16px;color:#fff;text-decoration:none;transition:.2s;
+}
+.t-index a:hover{background:rgba(255,255,255,.2);transform:translateY(-2px)}
+.t-index a b{display:block;font-size:.95rem}
+.t-index a span{font-size:.8rem;color:rgba(255,255,255,.72)}
+
+/* ---------- Section ---------- */
+section.t-sec{padding:42px 0;scroll-margin-top:66px}
+section.t-sec.alt{background:var(--t-paper);border-block:1px solid var(--t-line)}
+.t-tool-head{display:flex;align-items:center;gap:14px;margin-bottom:8px;flex-wrap:wrap}
+.t-tool-no{
+  width:44px;height:44px;border-radius:13px;background:var(--t-amber);color:#3d2a06;
+  display:grid;place-items:center;font-weight:700;font-size:1.15rem;flex:none;
+}
+h2.t-h{font-size:clamp(1.35rem,3.2vw,1.85rem);margin:0;line-height:1.35}
+p.t-p{margin:10px 0 16px;color:var(--t-soft)}
+p.t-p.big{font-size:1.04rem;color:var(--t-ink)}
+
+.t-note{
+  background:var(--t-amber-soft);border-left:5px solid var(--t-amber);
+  padding:14px 18px;border-radius:0 10px 10px 0;margin:16px 0;
+  font-size:.94rem;color:#6b4a0c;
+}
+.t-note.blue{background:var(--t-blue-soft);border-left-color:var(--t-blue);color:#12386f}
+.t-note.green{background:var(--t-green-soft);border-left-color:var(--t-green);color:#14532d}
+.t-note.red{background:var(--t-red-soft);border-left-color:var(--t-red);color:#7f1d1d}
+
+/* ---------- การ์ดเครื่องมือ ---------- */
+.t-card{
+  background:var(--t-paper);border:1px solid var(--t-line);border-radius:16px;padding:24px;
+}
+.t-card + .t-card{margin-top:16px}
+
+/* ---------- ฟอร์ม ---------- */
+.t-form{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(190px,1fr))}
+.t-field label{display:block;font-size:.88rem;font-weight:600;margin-bottom:5px;color:var(--t-soft)}
+.t-field input,.t-field select,.t-field textarea{
+  width:100%;box-sizing:border-box;padding:11px 14px;font-size:1rem;
+  border:1px solid var(--t-line);border-radius:10px;
+  font-family:"Noto Sans Thai",sans-serif;background:#fff;color:var(--t-ink);
+}
+.t-field input:focus,.t-field textarea:focus,.t-field select:focus{
+  outline:3px solid #126d9a;outline-offset:2px;border-color:var(--t-blue);box-shadow:0 0 0 3px var(--t-blue-soft);
+}
+.t-field small{display:block;margin-top:4px;font-size:.78rem;color:#8b97a8}
+
+/* ---------- ผลลัพธ์เครื่องคำนวณ ---------- */
+.t-results{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(165px,1fr));margin-top:20px}
+.t-res{
+  background:#fbfcfe;border:1px solid var(--t-line);border-radius:14px;
+  padding:16px;text-align:center;
+}
+.t-res b{display:block;font-size:1.8rem;line-height:1.15;color:var(--t-navy);letter-spacing:-.02em}
+.t-res span{display:block;margin-top:4px;font-size:.84rem;color:var(--t-soft);line-height:1.45}
+.t-res.good{background:var(--t-green-soft);border-color:#b9e0c9}
+.t-res.good b{color:#1c6b42}
+.t-res.warn{background:var(--t-amber-soft);border-color:#f0d8a8}
+.t-res.warn b{color:#9a6a11}
+.t-res.bad{background:var(--t-red-soft);border-color:#f2bcb6}
+.t-res.bad b{color:#a3342a}
+
+.t-verdict{
+  margin-top:18px;padding:18px 20px;border-radius:14px;
+  background:var(--t-blue-soft);border:1px solid #c3d8f7;
+}
+.t-verdict h4{margin:0 0 8px;font-size:1.05rem;color:var(--t-navy)}
+.t-verdict p{margin:0 0 8px;font-size:.95rem;color:var(--t-soft)}
+.t-verdict p:last-child{margin-bottom:0}
+.t-verdict.is-bad{background:var(--t-red-soft);border-color:#f2bcb6}
+.t-verdict.is-good{background:var(--t-green-soft);border-color:#b9e0c9}
+
+/* ---------- ปุ่ม ---------- */
+.t-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.t-btn{
+  border:none;border-radius:10px;padding:11px 20px;cursor:pointer;
+  font:600 .92rem/1 "Noto Sans Thai",sans-serif;transition:.2s;
+  min-height:44px;
+}
+.t-btn.primary{background:var(--t-navy);color:#fff}
+.t-btn.primary:hover{background:#1d3660}
+.t-btn.ghost{background:#fff;color:var(--t-navy);border:1px solid var(--t-line)}
+.t-btn.ghost:hover{border-color:var(--t-navy)}
+.t-btn.amber{background:var(--t-amber);color:#3d2a06}
+.t-btn.amber:hover{background:#f2b657}
+
+/* ---------- ตารางกรอก ---------- */
+.t-table-wrap{overflow-x:auto;border:1px solid var(--t-line);border-radius:14px;background:#fff}
+table.t-table{width:100%;border-collapse:collapse;min-width:640px}
+table.t-table th,table.t-table td{
+  padding:10px 12px;text-align:left;border-bottom:1px solid var(--t-line);font-size:.92rem;
+}
+table.t-table th{background:#f3f6fb;font-weight:600;color:var(--t-soft);font-size:.85rem}
+table.t-table tr:last-child td{border-bottom:none}
+table.t-table input,table.t-table select{
+  width:100%;box-sizing:border-box;padding:7px 10px;font-size:.9rem;
+  border:1px solid var(--t-line);border-radius:8px;
+  font-family:"Noto Sans Thai",sans-serif;background:#fff;
+}
+.t-row-del{
+  background:var(--t-red-soft);color:var(--t-red);border:1px solid #f2bcb6;min-height:44px;
+  border-radius:8px;padding:6px 12px;cursor:pointer;font-size:.82rem;font-weight:600;
+  font-family:"Noto Sans Thai",sans-serif;
+}
+
+/* ---------- แผ่นสรุปโรงเรียน ---------- */
+.t-onepager{
+  background:#fff;border:2px solid var(--t-navy);border-radius:14px;
+  padding:26px;margin-top:18px;
+}
+.t-op-head{
+  display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+  padding-bottom:14px;margin-bottom:16px;border-bottom:2px solid var(--t-navy);
+}
+.t-op-head h3{margin:0;font-size:1.3rem;color:var(--t-navy)}
+.t-op-head small{color:var(--t-soft);font-size:.85rem}
+.t-op-grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(140px,1fr))}
+.t-op-cell{background:#f7f9fc;border-radius:10px;padding:13px;text-align:center}
+.t-op-cell b{display:block;font-size:1.45rem;color:var(--t-navy);line-height:1.2}
+.t-op-cell span{font-size:.8rem;color:var(--t-soft)}
+.t-op-ask{
+  margin-top:16px;padding:14px 18px;background:var(--t-amber-soft);
+  border-radius:10px;border:1px solid #f0d8a8;
+}
+.t-op-ask h4{margin:0 0 6px;font-size:.95rem;color:#6b4a0c}
+.t-op-ask p{margin:0;font-size:.92rem;color:#6b4a0c}
+
+/* ---------- สคริปต์ ---------- */
+.t-script{
+  background:#fbfcfe;border:1px solid var(--t-line);border-left:5px solid var(--t-violet);
+  border-radius:0 12px 12px 0;padding:18px 20px;margin-bottom:14px;
+}
+.t-script h4{margin:0 0 4px;font-size:1.02rem;color:var(--t-violet)}
+.t-script .when{font-size:.82rem;color:#8b97a8;margin-bottom:10px}
+.t-script .body{font-size:.97rem;color:var(--t-ink);line-height:1.8}
+.t-script .body p{margin:0 0 10px}
+.t-script .body p:last-child{margin-bottom:0}
+.t-copy{
+  margin-top:12px;background:var(--t-violet-soft);color:#4b3480;border:1px solid #d6c9f0;
+  border-radius:8px;padding:7px 14px;cursor:pointer;font-size:.84rem;font-weight:600;
+  font-family:"Noto Sans Thai",sans-serif;min-height:44px;
+}
+.t-copy:hover{background:#e6ddf7}
+.t-copy.done{background:var(--t-green-soft);color:#14532d;border-color:#b9e0c9}
+
+/* ---------- เช็กลิสต์ ---------- */
+.t-check{display:grid;gap:9px;list-style:none;margin:0;padding:0}
+.t-check li{background:#fff;border:1px solid var(--t-line);border-radius:12px;overflow:hidden}
+.t-check label{display:flex;gap:13px;align-items:flex-start;padding:14px 18px;cursor:pointer}
+.t-check input{width:22px;height:22px;margin:3px 0 0;flex:none;accent-color:var(--t-green);cursor:pointer}
+.t-check .txt strong{display:block;font-size:.98rem;margin-bottom:2px}
+.t-check .txt span{font-size:.88rem;color:var(--t-soft);line-height:1.6}
+.t-check li.done{background:var(--t-green-soft);border-color:#b9e0c9}
+.t-check li.done .txt strong{text-decoration:line-through;opacity:.62}
+
+.t-phase-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+.t-ptab{
+  background:#fff;border:1px solid var(--t-line);color:var(--t-soft);
+  padding:9px 18px;border-radius:999px;cursor:pointer;
+  font:600 .88rem/1 "Noto Sans Thai",sans-serif;
+  min-height:44px;
+}
+.t-ptab.on{background:var(--t-navy);border-color:var(--t-navy);color:#fff}
+.t-phase{display:none}
+.t-phase.on{display:block}
+
+/* ---------- สัญญาณเตือน ---------- */
+.t-signals{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+.t-signal{
+  background:#fff;border:1px solid var(--t-line);border-radius:14px;padding:18px;
+  border-top:5px solid var(--t-red);
+}
+.t-signal.mid{border-top-color:var(--t-amber)}
+.t-signal.low{border-top-color:var(--t-blue)}
+.t-signal .ico{font-size:1.6rem;margin-bottom:6px}
+.t-signal h4{margin:0 0 6px;font-size:1rem}
+.t-signal p{margin:0;font-size:.88rem;color:var(--t-soft);line-height:1.62}
+.t-signal .do{
+  margin-top:10px;padding-top:10px;border-top:1px dashed var(--t-line);
+  font-size:.86rem;font-weight:600;color:var(--t-green);
+}
+
+/* ---------- หนังสือราชการ ---------- */
+.t-letter{
+  background:#fff;border:1px solid var(--t-line);border-radius:12px;padding:22px;
+  font-size:.95rem;line-height:1.9;white-space:pre-wrap;color:var(--t-ink);
+}
+
+/* ---------- FAQ ---------- */
+.t-faq{display:grid;gap:10px}
+.t-faq details{background:#fff;border:1px solid var(--t-line);border-radius:13px;overflow:hidden}
+.t-faq summary{
+  padding:15px 20px;cursor:pointer;font-weight:600;font-size:.99rem;list-style:none;
+  display:flex;justify-content:space-between;gap:12px;align-items:center;
+}
+.t-faq summary::-webkit-details-marker{display:none}
+.t-faq summary::after{content:"＋";font-size:1.2rem;color:var(--t-amber);flex:none}
+.t-faq details[open] summary::after{content:"－"}
+.t-faq .ans{padding:0 20px 17px;color:var(--t-soft);font-size:.94rem}
+.t-faq .ans p{margin:0 0 9px}
+.t-faq .ans p:last-child{margin-bottom:0}
+
+/* ---------- ปิดท้าย ---------- */
+.t-end{background:linear-gradient(160deg,#12233f,#28466f);color:#fff;padding:46px 0;text-align:center}
+.t-end h2{font-size:clamp(1.4rem,3.6vw,2rem);margin:0 0 12px;line-height:1.38}
+.t-end h2 em{color:#f7c977;font-style:normal}
+.t-end p{color:rgba(255,255,255,.86);max-width:46ch;margin:0 auto 20px}
+
+footer.t-foot{background:#0b1626;color:rgba(255,255,255,.6);padding:22px 0;font-size:.84rem;text-align:center}
+footer.t-foot a{color:#f7c977}
+
+/* ---------- พิมพ์ ---------- */
+@media print{
+  .t-top,.t-index,.t-actions,.t-copy,.t-phase-tabs,.t-row-del,.t-end .t-btn,.skip{display:none!important}
+  body.toolkit{background:#fff;font-size:11.5pt}
+  .t-hero,.t-end{background:#12233f!important}
+  .t-phase{display:block!important}
+  .t-faq .ans{display:block!important}
+  section.t-sec{padding:14px 0;break-inside:avoid}
+  .t-card,.t-onepager,.t-table-wrap{break-inside:avoid}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  @page{size:A4;margin:12mm}
+}
+
+@media (max-width:640px){
+  .t-tool-head{gap:10px}
+  .t-onepager{padding:18px}
+}
+@media (prefers-reduced-motion:reduce){
+  .t-index a:hover{transform:none}
+}
+</style>
+</head>
+
+<body class="toolkit">
+<a class="skip" href="#t-main">ข้ามไปยังเนื้อหา</a>
+
+<!-- ================= แถบบน ================= -->
+<div class="t-top">
+  <div class="wrap t-top-in">
+    <a class="t-brand" href="index.html">
+      <img src="assets/logo.png" alt="" width="32" height="32">
+      <strong>อยุธยาเรียนรู้ · ชุดเครื่องมือครู</strong>
+    </a>
+    <div class="t-top-btns">
+      <a class="t-tbtn" href="community.html">ทางเข้า</a>
+      <a class="t-tbtn" href="knowledge.html">คลังความรู้</a>
+      <button class="t-tbtn" id="btnSaveAll" type="button">บันทึกบนเครื่องนี้</button>
+      <button class="t-tbtn" id="btnPrint" type="button">พิมพ์ทั้งชุด</button>
+      <button class="t-tbtn" id="btnClear" type="button">ล้างข้อมูล</button>
+    </div>
+  </div>
+</div>
+
+<!-- ================= HERO ================= -->
+<header class="t-hero" id="t-main">
+  <div class="wrap">
+    <span class="badge">สำหรับครู · ผู้อำนวยการ · คณะกรรมการสถานศึกษา · ไม่ใช่เว็บราชการ</span>
+    <h1>เครื่องมือ 7 ชิ้น<br>ที่หยิบใช้แล้ว<em>ได้ของออกมาเลย</em></h1>
+    <p>
+      กรอกแล้วพิมพ์ได้ คัดลอกได้ และเครื่องท่านจำค่าไว้ให้
+      ใช้ช่วยคิดก่อนคุยกับชุมชนหรือเขตพื้นที่
+      ไม่ใช่เกณฑ์อัตรากำลังราชการ และไม่ใช่ช่องทางส่งเรื่องไปยังหน่วยงาน
+    </p>
+
+    <nav class="t-index">
+      <a href="#tool1"><b>1 · เครื่องคำนวณครูครบชั้น</b><span>เทียบช่องว่างครูต่อห้อง</span></a>
+      <a href="#tool2"><b>2 · แบบสำรวจห้องไม่มีครู</b><span>เก็บหลักฐานเป็นตาราง</span></a>
+      <a href="#tool3"><b>3 · แผ่นสรุปโรงเรียน 1 หน้า</b><span>ใช้คุยกับ อบต. และชุมชน</span></a>
+      <a href="#tool4"><b>4 · สคริปต์คุยกับชุมชน</b><span>5 สถานการณ์ คัดลอกได้</span></a>
+      <a href="#tool5"><b>5 · ร่างหนังสือถึงเขตพื้นที่</b><span>ตัวตั้งต้นจากข้อ 1 ไม่ใช่ยื่นเรื่อง</span></a>
+      <a href="#tool6"><b>6 · สัญญาณเด็กเสี่ยงหลุด</b><span>รู้ก่อน แก้ทัน</span></a>
+      <a href="#tool7"><b>7 · เช็กลิสต์ตามช่วงเทอม</b><span>ต้นเทอม กลางเทอม ปลายเทอม</span></a>
+    </nav>
+  </div>
+</header>
+
+<!-- ================= เครื่องมือ 1 ================= -->
+<section class="t-sec" id="tool1">
+  <div class="wrap">
+    <div class="t-tool-head">
+      <div class="t-tool-no">1</div>
+      <h2 class="t-h">เครื่องคำนวณ “โรงเรียนเราครูครบชั้นไหม”</h2>
+    </div>
+    <p class="t-p big">
+      กรอก 4 ช่อง แล้วหน้านี้จะเทียบให้เห็นความต่างระหว่าง
+      <strong>การคิดจากหัวนักเรียน (ตั้งอัตราส่วนเองเพื่อสาธิต)</strong> กับ
+      <strong>จำนวนห้องที่เปิดสอนจริง ตามข้อสมมติหนึ่งครูต่อหนึ่งห้อง</strong>
+      ตัวเลขนี้ช่วยเรียบเรียงประโยค ไม่ใช่เกณฑ์ที่เขตพื้นที่ต้องใช้ และไม่ใช่ช่องทางส่งเรื่อง
+    </p>
+
+    <div class="t-card">
+      <div class="t-form">
+        <div class="t-field">
+          <label for="f_school">ชื่อโรงเรียน</label>
+          <input type="text" id="f_school" data-save placeholder="เช่น โรงเรียนวัด...">
+        </div>
+        <div class="t-field">
+          <label for="f_area">สังกัด / เขตพื้นที่</label>
+          <select id="f_area" data-save>
+            <option value="สพป.พระนครศรีอยุธยา เขต 1">สพป.พระนครศรีอยุธยา เขต 1</option>
+            <option value="สพป.พระนครศรีอยุธยา เขต 2">สพป.พระนครศรีอยุธยา เขต 2</option>
+            <option value="สพม.พระนครศรีอยุธยา">สพม.พระนครศรีอยุธยา</option>
+            <option value="สังกัดอื่น">สังกัดอื่น</option>
+          </select>
+        </div>
+        <div class="t-field">
+          <label for="f_students">จำนวนนักเรียนทั้งหมด (คน)</label>
+          <input type="number" id="f_students" data-save min="0" step="1" placeholder="เช่น 48">
+        </div>
+        <div class="t-field">
+          <label for="f_rooms">จำนวนห้องเรียนที่เปิดสอนจริง (ห้อง)</label>
+          <input type="number" id="f_rooms" data-save min="0" step="1" placeholder="เช่น 6">
+          <small>นับเฉพาะห้องที่ต้องเปิดสอนตามหลักสูตร</small>
+        </div>
+        <div class="t-field">
+          <label for="f_teachers">ครูที่ปฏิบัติงานจริง (คน)</label>
+          <input type="number" id="f_teachers" data-save min="0" step="0.5" placeholder="เช่น 3">
+          <small>รวมครูอัตราจ้างที่สอนประจำ ไม่รวมผู้บริหาร</small>
+        </div>
+        <div class="t-field">
+          <label for="f_ratio">อัตราส่วนที่ใช้เทียบเพื่อสาธิต (นักเรียนต่อครู)</label>
+          <input type="number" id="f_ratio" data-save min="1" step="1" value="20">
+          <small>ค่าเริ่มต้น 20 ใช้เพื่อสาธิตกลไกเท่านั้น ไม่ใช่เกณฑ์ ก.ค.ศ. สพฐ. หรือ GCES</small>
+        </div>
+      </div>
+
+      <div class="t-results" id="calcResults">
+        <div class="t-res"><b id="r_spr">—</b><span>นักเรียนต่อห้อง</span></div>
+        <div class="t-res"><b id="r_tpr">—</b><span>ครูต่อห้องเรียน</span></div>
+        <div class="t-res"><b id="r_headcount">—</b><span>ครูหากคิดตามอัตราส่วนที่กรอก</span></div>
+        <div class="t-res"><b id="r_need">—</b><span>ครูหากมีหนึ่งคนต่อหนึ่งห้อง</span></div>
+        <div class="t-res" id="gapCell"><b id="r_gap">—</b><span>ส่วนต่างจากข้อสมมติหนึ่งครูต่อห้อง</span></div>
+      </div>
+
+      <div class="t-verdict" id="verdict">
+        <h4>กรอกข้อมูลให้ครบเพื่อดูผลสรุป</h4>
+        <p>หน้านี้จะแปลตัวเลขเป็นประโยคช่วยคิด ไม่ใช่คำวินิจฉัยอัตรากำลัง</p>
+      </div>
+
+      <div class="t-actions">
+        <button class="t-btn primary" id="btnCopyCalc" type="button">คัดลอกผลสรุปเป็นข้อความ</button>
+        <button class="t-btn ghost" type="button" onclick="window.print()">พิมพ์</button>
+      </div>
+    </div>
+
+    <div class="t-note">
+      <strong>ข้อควรระวังในการนำไปใช้:</strong>
+      ตัวเลขนี้เป็นการเทียบเชิงหลักการเพื่อให้เห็นช่องว่างของสองฐานคิด
+      ไม่ใช่เกณฑ์อัตรากำลังอย่างเป็นทางการของ ก.ค.ศ. สพฐ. หรือสูตร GCES
+      และไม่ใช่ช่องทางยื่นเรื่องไปยังเขตพื้นที่
+      เวลานำเสนอ ให้ระบุเสมอว่าเป็น “การคำนวณเบื้องต้นจากข้อมูลของโรงเรียน บนเว็บไซต์อยุธยาเรียนรู้”
+    </div>
+  </div>
+</section>
+
+<!-- ================= เครื่องมือ 2 ================= -->
+<section class="t-sec alt" id="tool2">
+  <div class="wrap">
+    <div class="t-tool-head">
+      <div class="t-tool-no">2</div>
+      <h2 class="t-h">แบบสำรวจห้องเรียนที่ไม่มีครูประจำ</h2>
+    </div>
+    <p class="t-p">
+      หลักฐานที่มีน้ำหนักเวลาคุยเรื่องครูไม่ครบ คือ
+      <strong>ตารางที่ระบุได้ว่าห้องไหน วิชาอะไร กระทบนักเรียนกี่คน และมานานเท่าไร</strong>
+      กรอกที่นี่แล้วพิมพ์ไปคุยได้ — อย่ากรอกชื่อผู้เรียนรายคน ให้ใช้ชั้น/ห้องและจำนวนคน
+    </p>
+
+    <div class="t-table-wrap">
+      <table class="t-table">
+        <thead>
+          <tr>
+            <th style="width:110px">ชั้น / ห้อง</th>
+            <th style="width:140px">วิชาที่ขาดครู</th>
+            <th style="width:110px">นักเรียน (คน)</th>
+            <th style="width:120px">ขาดมาแล้ว (สัปดาห์)</th>
+            <th>วิธีแก้ชั่วคราวที่ใช้อยู่</th>
+            <th style="width:70px"></th>
+          </tr>
+        </thead>
+        <tbody id="gapRows"></tbody>
+      </table>
+    </div>
+
+    <div class="t-actions">
+      <button class="t-btn amber" id="btnAddRow" type="button">เพิ่มแถว</button>
+      <button class="t-btn primary" id="btnCopyTable" type="button">คัดลอกเป็นข้อความ</button>
+      <button class="t-btn ghost" type="button" onclick="window.print()">พิมพ์แบบสำรวจ</button>
+    </div>
+
+    <div class="t-note blue">
+      <strong>เคล็ดลับ:</strong>
+      ช่อง “วิธีแก้ชั่วคราวที่ใช้อยู่” สำคัญ เพราะแสดงว่าโรงเรียนพยายามแก้เองแล้ว
+      เช่น “ครูสอนควบ 2 ชั้น” หรือ “ใช้ครูวิชาอื่นสอนแทน”
+      อย่าใส่ชื่อนักเรียนในตารางนี้ ข้อมูลจำไว้บนเครื่องท่านเท่านั้น
+    </div>
+  </div>
+</section>
+
+<!-- ================= เครื่องมือ 3 ================= -->
+<section class="t-sec" id="tool3">
+  <div class="wrap">
+    <div class="t-tool-head">
+      <div class="t-tool-no">3</div>
+      <h2 class="t-h">แผ่นสรุปโรงเรียน 1 หน้า สำหรับคุยกับชุมชน</h2>
+    </div>
+    <p class="t-p">
+      ใช้ในประชุมผู้ปกครอง เวทีประชาคมตำบล หรือเวลาไปขอการสนับสนุนจาก อบต.
+      ข้อมูลจะดึงมาจากเครื่องมือที่ 1 อัตโนมัติ เติมเพิ่มแค่สองช่องล่าง
+    </p>
+
+    <div class="t-card">
+      <div class="t-form">
+        <div class="t-field">
+          <label for="f_need1">สิ่งที่โรงเรียนต้องการความช่วยเหลือ ข้อที่ 1</label>
+          <input type="text" id="f_need1" data-save placeholder="เช่น อาสาสมัครช่วยฟังเด็กอ่านหนังสือ สัปดาห์ละ 2 วัน">
+        </div>
+        <div class="t-field">
+          <label for="f_need2">สิ่งที่โรงเรียนต้องการความช่วยเหลือ ข้อที่ 2</label>
+          <input type="text" id="f_need2" data-save placeholder="เช่น ไฟส่องสว่างเส้นทางหน้าโรงเรียน">
+        </div>
+      </div>
+
+      <div class="t-onepager" id="onePager">
+        <div class="t-op-head">
+          <div>
+            <h3 id="op_school">ชื่อโรงเรียน</h3>
+            <small id="op_area">สังกัด —</small>
+          </div>
+          <small id="op_date">ข้อมูล ณ วันที่ —</small>
+        </div>
+
+        <div class="t-op-grid">
+          <div class="t-op-cell"><b id="op_students">—</b><span>นักเรียน (คน)</span></div>
+          <div class="t-op-cell"><b id="op_rooms">—</b><span>ห้องเรียนที่เปิดสอน</span></div>
+          <div class="t-op-cell"><b id="op_teachers">—</b><span>ครูปฏิบัติงานจริง</span></div>
+          <div class="t-op-cell"><b id="op_tpr">—</b><span>ครูต่อห้องเรียน</span></div>
+        </div>
+
+        <div class="t-op-ask">
+          <h4>สถานการณ์ปัจจุบัน</h4>
+          <p id="op_status">กรอกข้อมูลในเครื่องมือที่ 1 เพื่อให้ระบบสรุปให้อัตโนมัติ</p>
+        </div>
+
+        <div class="t-op-ask" style="background:var(--t-green-soft);border-color:#b9e0c9">
+          <h4 style="color:#14532d">สิ่งที่ชุมชนช่วยได้ทันที</h4>
+          <p style="color:#14532d" id="op_needs">— ยังไม่ได้ระบุ —</p>
+        </div>
+      </div>
+
+      <div class="t-actions">
+        <button class="t-btn primary" type="button" onclick="window.print()">พิมพ์แผ่นสรุป</button>
+        <button class="t-btn ghost" id="btnCopyOnePager" type="button">คัดลอกเป็นข้อความ</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= เครื่องมือ 4 ================= -->
+<section class="t-sec alt" id="tool4">
+  <div class="wrap">
+    <div class="t-tool-head">
+      <div class="t-tool-no">4</div>
+      <h2 class="t-h">สคริปต์คุยกับชุมชน 5 สถานการณ์</h2>
+    </div>
+    <p class="t-p">
+      ปรับชื่อโรงเรียนและตัวเลขให้ตรงกับของจริงก่อนใช้
+      ทุกสคริปต์ออกแบบให้ <strong>ขอสิ่งที่เฉพาะเจาะจง</strong> เพราะคำขอกว้าง ๆ มักไม่มีใครรับไปทำ
+    </p>
+
+    <div class="t-script">
+      <h4>① เปิดประชุมผู้ปกครอง</h4>
+      <div class="when">ใช้ตอนต้นเทอม · ประมาณ 1 นาที</div>
+      <div class="body" data-copy>
+        <p>สวัสดีครับ/ค่ะ ขอบคุณทุกท่านที่สละเวลามาวันนี้</p>
+        <p>ก่อนเข้าเรื่องอื่น ผมขออนุญาตเล่าภาพรวมของโรงเรียนเราสั้น ๆ ครับ ปีนี้เรามีนักเรียนทั้งหมด [จำนวน] คน เปิดสอน [จำนวน] ห้อง และมีครูปฏิบัติงานจริง [จำนวน] คน</p>
+        <p>ที่ผมเล่าตัวเลขนี้ให้ฟัง ไม่ใช่เพื่อขอความเห็นใจ แต่เพราะอยากให้ทุกท่านเห็นภาพเดียวกันกับเรา ว่าครูแต่ละคนกำลังดูแลอะไรอยู่บ้าง</p>
+        <p>และสิ่งที่ช่วยเด็กได้มากที่สุด ไม่ใช่เงินบริจาคครับ แต่เป็นการที่ผู้ปกครองถามลูกทุกวันว่าวันนี้เรียนอะไรมา และให้เขาอ่านหนังสือให้ฟังวันละหนึ่งหน้า</p>
+        <p>สองอย่างนี้ไม่มีค่าใช้จ่ายเลย แต่ได้ผลกว่าทุกอย่างที่โรงเรียนทำได้ตามลำพังครับ</p>
+      </div>
+      <button class="t-copy" type="button">คัดลอกสคริปต์</button>
+    </div>
+
+    <div class="t-script" style="border-left-color:var(--t-blue)">
+      <h4 style="color:var(--t-blue)">② เสนอเรื่องในเวทีประชาคมตำบล หรือที่ประชุม อบต.</h4>
+      <div class="when">ใช้ตอนทำแผนพัฒนาตำบล · ประมาณ 2 นาที</div>
+      <div class="body" data-copy>
+        <p>เรียนท่านประธานและท่านสมาชิกครับ ผมขออนุญาตเสนอเรื่องของโรงเรียน [ชื่อโรงเรียน] ในตำบลเราครับ</p>
+        <p>ขอเรียนข้อมูลก่อนสามบรรทัด โรงเรียนเรามีนักเรียน [จำนวน] คน ต้องเปิดสอน [จำนวน] ห้องเรียนตามหลักสูตร และมีครูปฏิบัติงานจริง [จำนวน] คน</p>
+        <p>เรื่องอัตรากำลังครูเป็นอำนาจของเขตพื้นที่ ซึ่งเราได้เสนอไปตามขั้นตอนแล้วครับ</p>
+        <p>แต่มีอีกส่วนหนึ่งที่อยู่ในมือของท้องถิ่นโดยตรง และช่วยเด็กได้ทันทีในปีนี้ คือเรื่อง [ระบุให้ชัด เช่น รถรับส่งนักเรียนสายบ้าน... / ไฟส่องสว่างเส้นทางเข้าโรงเรียน / การปรับปรุงถนนหน้าโรงเรียนช่วงหน้าน้ำ]</p>
+        <p>เรื่องนี้กระทบนักเรียนประมาณ [จำนวน] คน และถ้าบรรจุในแผนปีนี้ได้ จะช่วยให้เด็กมาเรียนได้สม่ำเสมอขึ้นครับ</p>
+        <p>ผมเตรียมข้อมูลสรุปหนึ่งหน้าไว้แล้ว ขออนุญาตส่งให้ท่านพิจารณาครับ ขอบคุณครับ</p>
+      </div>
+      <button class="t-copy" type="button">คัดลอกสคริปต์</button>
+    </div>
+
+    <div class="t-script" style="border-left-color:var(--t-green)">
+      <h4 style="color:var(--t-green)">③ ชวนอาสาสมัครในชุมชนมาช่วย</h4>
+      <div class="when">ใช้ที่วัด ที่ประชุมหมู่บ้าน หรือกลุ่มไลน์ชุมชน · 1 นาที</div>
+      <div class="body" data-copy>
+        <p>ขออนุญาตประชาสัมพันธ์เรื่องโรงเรียน [ชื่อโรงเรียน] สักครู่ครับ</p>
+        <p>ตอนนี้โรงเรียนกำลังหาผู้ใหญ่ในชุมชนมาช่วยงานหนึ่งอย่างครับ คือมา <strong>นั่งฟังเด็กอ่านหนังสือ</strong> สัปดาห์ละหนึ่งหรือสองวัน วันละประมาณหนึ่งชั่วโมง</p>
+        <p>ไม่ต้องเป็นครู ไม่ต้องเตรียมอะไรมาเลยครับ แค่นั่งฟังเด็กอ่านออกเสียง แล้วชมเขาเมื่ออ่านได้</p>
+        <p>ฟังดูเหมือนเรื่องเล็ก แต่เด็กที่อ่านไม่คล่อง สิ่งที่เขาขาดที่สุดคือ <strong>คนที่มีเวลาฟังเขาอ่านจนจบ</strong> ซึ่งครูที่ดูแลเด็กทั้งห้องทำให้ได้ไม่ทั่วถึงครับ</p>
+        <p>ท่านใดสนใจ ติดต่อที่โรงเรียนได้เลยครับ หรือบอกผ่าน [ชื่อผู้ประสานงาน] ก็ได้ครับ</p>
+      </div>
+      <button class="t-copy" type="button">คัดลอกสคริปต์</button>
+    </div>
+
+    <div class="t-script" style="border-left-color:var(--t-amber)">
+      <h4 style="color:#9a6a11">④ ขอการสนับสนุนจากร้านค้าหรือสถานประกอบการ</h4>
+      <div class="when">ใช้เวลาเข้าพบเจ้าของกิจการ · 1 นาที</div>
+      <div class="body" data-copy>
+        <p>สวัสดีครับ ผมมาจากโรงเรียน [ชื่อโรงเรียน] ขออนุญาตรบกวนเวลาสักครู่ครับ</p>
+        <p>ผมไม่ได้มาขอเงินบริจาคครับ แต่มาปรึกษาว่ามีเรื่องหนึ่งที่ทางร้านอาจช่วยได้โดยไม่เป็นภาระมากนัก</p>
+        <p>เรื่องแรกคือ ถ้าทางร้านสะดวก อยากขอให้เด็กเข้ามาดูงานสักครั้งหนึ่งในหนึ่งเทอมครับ เพื่อให้เขาเห็นว่าวิชาที่เรียนอยู่ใช้ทำอะไรได้จริงบ้าง</p>
+        <p>อีกเรื่องคือ ถ้าในอนาคตทางร้านรับคนทำงาน อยากฝากพิจารณาเด็กที่จบจากพื้นที่เราด้วยครับ</p>
+        <p>ส่วนถ้าทางร้านอยากสนับสนุนของ ขอรบกวนสอบถามทางโรงเรียนก่อนว่าตอนนี้ขาดอะไรจริง ๆ ครับ จะได้ตรงกับที่เด็กต้องใช้</p>
+      </div>
+      <button class="t-copy" type="button">คัดลอกสคริปต์</button>
+    </div>
+
+    <div class="t-script" style="border-left-color:var(--t-red)">
+      <h4 style="color:var(--t-red)">⑤ คุยกับผู้ปกครองของเด็กที่เริ่มขาดเรียนบ่อย</h4>
+      <div class="when">ใช้เมื่อเห็นสัญญาณเตือน · คุยส่วนตัว ไม่ใช่ในที่ประชุม</div>
+      <div class="body" data-copy>
+        <p>สวัสดีครับ ผมครู [ชื่อ] ครูประจำชั้นของน้อง [ชื่อเด็ก] ครับ</p>
+        <p>ที่โทรมาวันนี้ไม่ได้มีเรื่องอะไรร้ายแรงนะครับ และไม่ได้โทรมาต่อว่าเลย</p>
+        <p>คือผมสังเกตว่าช่วงนี้น้องขาดเรียนบ่อยกว่าเดิม เลยอยากโทรมาถามว่าทางบ้านมีอะไรที่โรงเรียนพอช่วยได้บ้างไหมครับ</p>
+        <p>บางครั้งเป็นเรื่องค่าเดินทาง บางครั้งเป็นเรื่องที่บ้านต้องการแรงช่วย หรือบางทีเด็กเองมีเรื่องที่โรงเรียนที่เขายังไม่ได้เล่า</p>
+        <p>ถ้าเป็นเรื่องค่าใช้จ่าย โรงเรียนมีช่องทางช่วยเหลืออยู่ครับ ผมขอนัดคุยรายละเอียดอีกครั้งได้ไหมครับ</p>
+        <p>ผมอยากให้น้องเรียนจบไปพร้อมเพื่อน ๆ ครับ เลยอยากรีบคุยตั้งแต่ตอนนี้ ดีกว่ามาคุยตอนที่แก้ยากแล้ว</p>
+      </div>
+      <button class="t-copy" type="button">คัดลอกสคริปต์</button>
+    </div>
+    <div class="t-note red">
+      <strong>เวลาโทรจริง:</strong>
+      ใช้ชื่อเด็กได้ในการสนทนาส่วนตัว แต่ห้ามกรอกชื่อผู้เรียนลงในช่องของหน้านี้
+    </div>
+  </div>
+</section>
+
+<!-- ================= เครื่องมือ 5 ================= -->
+<section class="t-sec" id="tool5">
+  <div class="wrap">
+    <div class="t-tool-head">
+      <div class="t-tool-no">5</div>
+      <h2 class="t-h">ร่างบันทึกข้อความเสนอขออัตรากำลัง</h2>
+    </div>
+    <p class="t-p">
+      ระบบจะประกอบร่างให้จากข้อมูลในเครื่องมือที่ 1
+      <strong>ใช้เป็นตัวตั้งต้นเท่านั้น</strong> ต้องปรับถ้อยคำและรูปแบบให้ตรงระเบียบของหน่วยงานก่อนเสนอจริง
+      หน้านี้ไม่ส่งหนังสือไปที่ใด
+    </p>
+
+    <div class="t-card">
+      <div class="t-form" style="margin-bottom:16px">
+        <div class="t-field">
+          <label for="f_director">ชื่อผู้เสนอ / ตำแหน่ง</label>
+          <input type="text" id="f_director" data-save placeholder="เช่น นาย... ผู้อำนวยการโรงเรียน...">
+        </div>
+        <div class="t-field">
+          <label for="f_phone">เบอร์ติดต่อกลับ</label>
+          <input type="tel" id="f_phone" data-save placeholder="เช่น 08x-xxx-xxxx" autocomplete="tel">
+          <small>บันทึกบนเครื่องท่านเท่านั้น อย่าใส่ชื่อผู้เรียนในช่องนี้</small>
+        </div>
+      </div>
+
+      <div class="t-letter" id="letterBody">กรอกข้อมูลในเครื่องมือที่ 1 เพื่อให้ระบบร่างหนังสือให้</div>
+
+      <div class="t-actions">
+        <button class="t-btn primary" id="btnCopyLetter" type="button">คัดลอกร่างหนังสือ</button>
+        <button class="t-btn ghost" type="button" onclick="window.print()">พิมพ์</button>
+      </div>
+    </div>
+
+    <div class="t-note red">
+      <strong>อย่าลืม:</strong>
+      ร่างนี้เป็นการช่วยเรียบเรียงเนื้อหาเท่านั้น ไม่ใช่แบบฟอร์มราชการที่ถูกต้องตามระเบียบงานสารบรรณ
+      ไม่ใช่การยื่นเรื่องผ่านเว็บนี้ และไม่ใช่เกณฑ์อัตรากำลังที่หน่วยงานต้องใช้
+      กรุณาให้เจ้าหน้าที่ธุรการจัดรูปแบบหนังสือให้ถูกต้องก่อนเสนอลงนามทุกครั้ง
+    </div>
+  </div>
+</section>
+
+<!-- ================= เครื่องมือ 6 ================= -->
+<section class="t-sec alt" id="tool6">
+  <div class="wrap">
+    <div class="t-tool-head">
+      <div class="t-tool-no">6</div>
+      <h2 class="t-h">สัญญาณเตือนว่าเด็กกำลังจะหลุดจากระบบ</h2>
+    </div>
+    <p class="t-p big">
+      เด็กแทบไม่เคยหายไปแบบกะทันหัน แต่มักส่งสัญญาณล่วงหน้าหลายสัปดาห์
+      ถ้าเห็นสัญญาณกลุ่มแดงตั้งแต่ 2 ข้อขึ้นไป ควรติดต่อผู้ปกครองภายในสัปดาห์นั้น
+    </p>
+
+    <h3 style="margin:22px 0 12px;font-size:1.1rem;color:var(--t-red)">🔴 สัญญาณเร่งด่วน — ติดต่อภายในสัปดาห์นี้</h3>
+    <div class="t-signals">
+      <div class="t-signal">
+        <div class="ico">📅</div>
+        <h4>ขาดเรียนติดกัน 3 วันโดยไม่แจ้ง</h4>
+        <p>โดยเฉพาะถ้าเป็นช่วงต้นเทอม หรือหลังกลับจากปิดเทอมยาว</p>
+        <div class="do">→ โทรหาผู้ปกครองวันเดียวกัน</div>
+      </div>
+      <div class="t-signal">
+        <div class="ico">📉</div>
+        <h4>ขาดเรียนเกิน 20% ของเวลาเรียน</h4>
+        <p>ขาดประมาณ 1 วันต่อสัปดาห์อย่างต่อเนื่อง ทำให้ตามเนื้อหาไม่ทันจนท้อ</p>
+        <div class="do">→ นัดคุยกับผู้ปกครองที่โรงเรียน</div>
+      </div>
+      <div class="t-signal">
+        <div class="ico">🏠</div>
+        <h4>ครอบครัวเปลี่ยนกะทันหัน</h4>
+        <p>ผู้ปกครองย้ายไปทำงานต่างจังหวัด พ่อแม่แยกทาง หรือผู้ดูแลหลักเจ็บป่วย</p>
+        <div class="do">→ ประเมินความเสี่ยงและเสนอช่องทางช่วยเหลือ</div>
+      </div>
+      <div class="t-signal">
+        <div class="ico">💬</div>
+        <h4>พูดถึงการออกกลางคัน</h4>
+        <p>เช่น พูดว่าจะไปทำงาน หรือบอกว่าเรียนไปก็ไม่มีประโยชน์</p>
+        <div class="do">→ คุยตัวต่อตัวทันที อย่าปล่อยผ่าน</div>
+      </div>
+    </div>
+
+    <h3 style="margin:26px 0 12px;font-size:1.1rem;color:#9a6a11">🟡 สัญญาณเฝ้าระวัง — ติดตามภายใน 2 สัปดาห์</h3>
+    <div class="t-signals">
+      <div class="t-signal mid">
+        <div class="ico">📖</div>
+        <h4>อ่านไม่คล่องเมื่อเทียบกับชั้น</h4>
+        <p>เด็กที่อ่านไม่ทันเพื่อน จะเริ่มเลี่ยงการมาโรงเรียนเพราะอาย</p>
+        <div class="do">→ จัดสอนซ่อมเสริมและหาอาสาสมัครฟังอ่าน</div>
+      </div>
+      <div class="t-signal mid">
+        <div class="ico">🍚</div>
+        <h4>ไม่มีอาหารเช้ามาบ่อย</h4>
+        <p>มักเป็นสัญญาณของปัญหาเศรษฐกิจในครอบครัว</p>
+        <div class="do">→ ประสานอาหารเช้าและตรวจสอบสิทธิ์ทุน</div>
+      </div>
+      <div class="t-signal mid">
+        <div class="ico">👕</div>
+        <h4>ขาดอุปกรณ์การเรียนต่อเนื่อง</h4>
+        <p>ไม่มีสมุด ปากกา หรือชุดที่ใช้ได้ ติดกันหลายสัปดาห์</p>
+        <div class="do">→ ช่วยเหลือโดยไม่ทำให้เด็กเสียหน้าต่อหน้าเพื่อน</div>
+      </div>
+      <div class="t-signal mid">
+        <div class="ico">😔</div>
+        <h4>แยกตัว เงียบผิดปกติ</h4>
+        <p>เปลี่ยนจากเดิมชัดเจน อาจเป็นสัญญาณการถูกกลั่นแกล้ง</p>
+        <div class="do">→ ส่งต่อครูแนะแนวและสังเกตช่วงพัก</div>
+      </div>
+    </div>
+
+    <div class="t-note green" style="margin-top:22px">
+      <strong>หลักการสำคัญ:</strong>
+      การติดต่อครั้งแรกควรเป็นการ <strong>ถามว่าโรงเรียนช่วยอะไรได้</strong>
+      ไม่ใช่การแจ้งว่าเด็กทำผิดอะไร เพราะถ้าครั้งแรกเป็นการตำหนิ
+      ผู้ปกครองจะเลี่ยงการติดต่อในครั้งต่อไป และเราจะเสียช่องทางช่วยเด็กไปเลย
+    </div>
+  </div>
+</section>
+
+<!-- ================= เครื่องมือ 7 ================= -->
+<section class="t-sec" id="tool7">
+  <div class="wrap">
+    <div class="t-tool-head">
+      <div class="t-tool-no">7</div>
+      <h2 class="t-h">เช็กลิสต์ตามช่วงเวลาของเทอม</h2>
+    </div>
+    <p class="t-p">ติ๊กได้ เครื่องจะจำไว้ให้ แยกตามช่วงที่ควรทำจริง ไม่ใช่ทำทีเดียวทั้งปี</p>
+
+    <div class="t-phase-tabs" id="phaseTabs" role="tablist" aria-label="ช่วงเวลาของเทอม">
+      <button class="t-ptab on" type="button" data-ph="ph1" aria-pressed="true">ต้นเทอม</button>
+      <button class="t-ptab" type="button" data-ph="ph2" aria-pressed="false">ระหว่างเทอม</button>
+      <button class="t-ptab" type="button" data-ph="ph3" aria-pressed="false">ปลายเทอม</button>
+      <button class="t-ptab" type="button" data-ph="ph4" aria-pressed="false">ช่วงหน้าน้ำ</button>
+    </div>
+
+    <div class="t-phase on" id="ph1">
+      <ul class="t-check">
+        <li><label><input type="checkbox" data-k="a1"><span class="txt"><strong>นับห้องเรียนที่เปิดสอนจริงและครูที่มี</strong><span>ใช้เครื่องมือที่ 1 แล้วเก็บผลไว้เป็นฐานเทียบตลอดปี</span></span></label></li>
+        <li><label><input type="checkbox" data-k="a2"><span class="txt"><strong>ตรวจว่ามีห้องใดยังไม่มีครูประจำ</strong><span>ถ้ามี ให้กรอกลงแบบสำรวจในเครื่องมือที่ 2 ทันที</span></span></label></li>
+        <li><label><input type="checkbox" data-k="a3"><span class="txt"><strong>คัดกรองเด็กที่ยังไม่มารายงานตัว</strong><span>โดยเฉพาะเด็กที่ย้ายมาใหม่หรืออยู่กับปู่ย่าตายาย</span></span></label></li>
+        <li><label><input type="checkbox" data-k="a4"><span class="txt"><strong>ประเมินการอ่านของนักเรียนทุกคน</strong><span>รู้ตั้งแต่ต้นเทอมว่าใครต้องช่วย ดีกว่ามารู้ตอนสอบปลายภาค</span></span></label></li>
+        <li><label><input type="checkbox" data-k="a5"><span class="txt"><strong>ใช้สคริปต์ที่ 1 ในการประชุมผู้ปกครอง</strong><span>ขอสองอย่างที่ไม่ต้องใช้เงิน คือถามลูกและฟังลูกอ่าน</span></span></label></li>
+        <li><label><input type="checkbox" data-k="a6"><span class="txt"><strong>ทำแผ่นสรุปโรงเรียน 1 หน้าไว้ล่วงหน้า</strong><span>เพื่อให้หยิบใช้ได้ทันทีเมื่อมีโอกาสเข้าพบผู้ใหญ่</span></span></label></li>
+      </ul>
+    </div>
+
+    <div class="t-phase" id="ph2">
+      <ul class="t-check">
+        <li><label><input type="checkbox" data-k="b1"><span class="txt"><strong>ตรวจสถิติการขาดเรียนทุกสัปดาห์</strong><span>ดูว่ามีใครเข้าเกณฑ์สัญญาณแดงในเครื่องมือที่ 6</span></span></label></li>
+        <li><label><input type="checkbox" data-k="b2"><span class="txt"><strong>ติดต่อผู้ปกครองของเด็กกลุ่มเสี่ยง</strong><span>ใช้สคริปต์ที่ 5 เปิดด้วยการถามว่าช่วยอะไรได้</span></span></label></li>
+        <li><label><input type="checkbox" data-k="b3"><span class="txt"><strong>เสนอเรื่องอัตรากำลังไปยังเขตพื้นที่</strong><span>ใช้ร่างในเครื่องมือที่ 5 แนบตารางจากเครื่องมือที่ 2</span></span></label></li>
+        <li><label><input type="checkbox" data-k="b4"><span class="txt"><strong>เข้าเวทีประชาคมตำบลเมื่อมีการจัดทำแผน</strong><span>เป็นจังหวะเดียวในปีที่จะฝากเรื่องเข้าแผนท้องถิ่นได้</span></span></label></li>
+        <li><label><input type="checkbox" data-k="b5"><span class="txt"><strong>เริ่มระบบอาสาสมัครฟังเด็กอ่าน</strong><span>ใช้สคริปต์ที่ 3 ประกาศที่วัดหรือกลุ่มไลน์ชุมชน</span></span></label></li>
+      </ul>
+    </div>
+
+    <div class="t-phase" id="ph3">
+      <ul class="t-check">
+        <li><label><input type="checkbox" data-k="c1"><span class="txt"><strong>ประเมินการอ่านซ้ำแล้วเทียบกับต้นเทอม</strong><span>เพื่อดูว่าสิ่งที่ทำไปได้ผลจริงหรือไม่ ไม่ใช่เดา</span></span></label></li>
+        <li><label><input type="checkbox" data-k="c2"><span class="txt"><strong>ติดตามเด็กที่ยังไม่แน่ใจว่าจะเรียนต่อ</strong><span>โดยเฉพาะช่วงรอยต่อ ป.6 ขึ้น ม.1 และ ม.3 ขึ้น ม.4</span></span></label></li>
+        <li><label><input type="checkbox" data-k="c3"><span class="txt"><strong>ให้ข้อมูลเส้นทางเรียนต่อให้ครบทุกทาง</strong><span>รวมสายอาชีพ ทวิภาคี และการศึกษานอกระบบ ไม่ใช่เฉพาะสายสามัญ</span></span></label></li>
+        <li><label><input type="checkbox" data-k="c4"><span class="txt"><strong>สรุปผลการช่วยเหลือให้ชุมชนรับทราบ</strong><span>คนที่มาช่วยควรได้เห็นผล เขาจะกลับมาช่วยอีกในปีหน้า</span></span></label></li>
+        <li><label><input type="checkbox" data-k="c5"><span class="txt"><strong>บันทึกข้อมูลไว้ส่งต่อครูปีถัดไป</strong><span>เพื่อไม่ให้ครูคนใหม่ต้องเริ่มทำความรู้จักเด็กใหม่ทั้งหมด</span></span></label></li>
+      </ul>
+    </div>
+
+    <div class="t-phase" id="ph4">
+      <ul class="t-check">
+        <li><label><input type="checkbox" data-k="d1"><span class="txt"><strong>สำรวจเส้นทางเดินทางของนักเรียนทุกสาย</strong><span>อยุธยาเป็นพื้นที่น้ำ ควรรู้ล่วงหน้าว่าสายไหนเสี่ยงถูกตัดขาด อ่าน<a href="knowledge.html?article=flood-continuity">บทความความต่อเนื่องเมื่อน้ำท่วม</a>ได้</span></span></label></li>
+        <li><label><input type="checkbox" data-k="d2"><span class="txt"><strong>ทำแผนการเรียนสำรองกรณีมาโรงเรียนไม่ได้</strong><span>เตรียมใบงานหรือช่องทางติดต่อไว้ล่วงหน้า</span></span></label></li>
+        <li><label><input type="checkbox" data-k="d3"><span class="txt"><strong>ประสาน อบต. เรื่องการเดินทางช่วงน้ำมาก</strong><span>เป็นเรื่องที่ท้องถิ่นช่วยได้เร็วกว่าการรอส่วนกลาง</span></span></label></li>
+        <li><label><input type="checkbox" data-k="d4"><span class="txt"><strong>ย้ำเรื่องความปลอดภัยทางน้ำกับนักเรียน</strong><span>ทบทวนก่อนถึงช่วงน้ำหลากทุกปี ไม่ใช่หลังเกิดเหตุ</span></span></label></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section class="t-sec alt">
+  <div class="wrap">
+    <div class="t-tool-head">
+      <div class="t-tool-no">?</div>
+      <h2 class="t-h">คำถามที่ครูถามบ่อย</h2>
+    </div>
+
+    <div class="t-faq" style="margin-top:18px">
+      <details open>
+        <summary>เสนอเรื่องครูไม่ครบไปแล้วหลายรอบ แต่ไม่เคยได้ ควรทำยังไงต่อ</summary>
+        <div class="ans">
+          <p>สิ่งที่มักทำให้ผลต่างกันคือ <strong>รูปแบบของข้อมูล</strong> ไม่ใช่ความถี่ในการเสนอ</p>
+          <p>ข้อเสนอที่เขียนว่า “โรงเรียนขาดครู ขอความอนุเคราะห์พิจารณา” จะแข่งกับโรงเรียนอื่นอีกหลายสิบแห่งที่เขียนเหมือนกัน</p>
+          <p>แต่ข้อเสนอที่ระบุว่า ห้องไหน วิชาอะไร กระทบนักเรียนกี่คน ขาดมากี่สัปดาห์ และโรงเรียนแก้ปัญหาเฉพาะหน้าด้วยวิธีใดไปแล้วบ้าง จะอยู่ในกลุ่มที่พิจารณาได้ง่ายกว่า เพราะผู้พิจารณาเอาไปใช้ประกอบเหตุผลต่อได้ทันที</p>
+          <p>เครื่องมือที่ 2 ออกแบบมาเพื่อให้ได้ข้อมูลชุดนี้พอดี</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>ครูงานล้นอยู่แล้ว จะเอาเวลาที่ไหนมาทำเรื่องชุมชนอีก</summary>
+        <div class="ans">
+          <p>เป็นข้อจำกัดที่จริงมากครับ ข้อเสนอคืออย่าทำทุกเครื่องมือพร้อมกัน</p>
+          <p>ถ้ามีเวลาจำกัดจริง ๆ ให้เลือกทำแค่สองอย่างคือ <strong>เครื่องมือที่ 1</strong> (ใช้เวลาประมาณ 5 นาที แต่ได้ตัวเลขใช้ได้ทั้งปี) และ <strong>สัญญาณเตือนในเครื่องมือที่ 6</strong> (ไม่ต้องทำอะไรเพิ่ม แค่รู้ว่าต้องสังเกตอะไร)</p>
+          <p>ส่วนงานชุมชน ถ้าทำได้ปีละครั้งตอนประชุมผู้ปกครอง ก็ถือว่าคุ้มแล้ว เพราะอาสาสมัครหนึ่งคนที่มาช่วยฟังเด็กอ่าน จะช่วยแบ่งเบาครูได้ตลอดทั้งเทอม</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>กลัวว่าถ้าเปิดเผยว่าโรงเรียนขาดครู ผู้ปกครองจะย้ายเด็กออก</summary>
+        <div class="ans">
+          <p>เป็นความกังวลที่มีเหตุผล และเป็นเหตุผลที่หลายโรงเรียนเลือกเงียบไว้</p>
+          <p>แต่ในทางปฏิบัติ ผู้ปกครองมักรู้อยู่แล้วว่าลูกเรียนกับครูคนไหนบ้าง สิ่งที่เขาไม่รู้คือโรงเรียนกำลังทำอะไรอยู่</p>
+          <p>วิธีที่ปลอดภัยกว่าคือเล่าพร้อมกับสิ่งที่กำลังทำ เช่น “ตอนนี้ห้องนี้ยังไม่มีครูประจำ เราได้เสนอเรื่องไปที่เขตแล้ว และระหว่างนี้ใช้วิธีนี้ดูแลอยู่” ซึ่งจะทำให้ผู้ปกครองเห็นว่าโรงเรียนไม่ได้นิ่งเฉย</p>
+          <p>สคริปต์ที่ 1 เขียนตามหลักนี้ คือให้ข้อมูลพร้อมกับการขอความร่วมมือ ไม่ใช่ให้ข้อมูลลอย ๆ</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>ข้อมูลที่กรอกในหน้านี้ จะถูกส่งไปไหนหรือเปล่า</summary>
+        <div class="ans">
+          <p>ไม่ถูกส่งไปที่ใดทั้งสิ้นครับ ทุกอย่างบันทึกอยู่ในเบราว์เซอร์ของเครื่องที่ใช้เท่านั้น</p>
+          <p>หมายความว่าถ้าเปลี่ยนเครื่องหรือล้างข้อมูลเบราว์เซอร์ ข้อมูลจะหายไป จึงควรกดพิมพ์เก็บไว้เมื่อกรอกเสร็จ</p>
+          <p>และไม่ควรกรอกชื่อนักเรียนรายคนลงในตารางหรือร่างหนังสือ ให้ใช้เป็นจำนวนคนและชั้น/ห้องแทน เพื่อไม่ให้เป็นข้อมูลส่วนบุคคลบนเครื่องที่ใช้ร่วมกับผู้อื่น</p>
+          <p>ชื่อโรงเรียน ชื่อผู้เสนอ และเบอร์โทรที่กรอกจะอยู่ในเครื่องท่านเท่านั้น กดล้างข้อมูลได้จากแถบบน</p>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ปิดท้าย ================= -->
+<div class="t-end">
+  <div class="wrap">
+    <h2>ครูแก้ปัญหาเชิงระบบคนเดียวไม่ได้<br><em>แต่ครูคือคนที่ทำให้ระบบมองเห็นปัญหาได้</em></h2>
+    <p>ข้อมูลที่เก็บจากหน้างาน คือสิ่งที่ทำให้คนตัดสินใจเห็นภาพจริงได้ แต่เว็บนี้ไม่ใช่ช่องทางรายงานราชการ</p>
+    <div class="t-actions" style="justify-content:center">
+      <button class="t-btn amber" type="button" onclick="window.print()">พิมพ์ชุดเครื่องมือทั้งหมด</button>
+    </div>
+  </div>
+</div>
+
+<footer class="t-foot">
+  <div class="wrap">
+    <p style="margin:0 0 6px">จัดทำโดย บูรพาทิศ พลอยสุวรรณ์ ผู้วิจัยอิสระ · เพื่อประโยชน์สาธารณะ ไม่ใช่เว็บราชการ ไม่ใช่เอกสารราชการ และไม่ใช่เกณฑ์อัตรากำลังอย่างเป็นทางการ</p>
+    <p style="margin:0 0 6px">ข้อมูลทั้งหมดบันทึกในเครื่องของผู้ใช้เท่านั้น อย่ากรอกชื่อผู้เรียนรายคน · ตรวจเนื้อหา 24 กันยายน 2569</p>
+    <p style="margin:0">
+      <a href="index.html">หน้าภาพรวม</a> ·
+      <a href="community.html">ทางเข้าฉบับอ่านง่าย</a> ·
+      <a href="knowledge.html">คลังความรู้</a> ·
+      <a href="ayutthaya-sdg4-students.html">ฉบับผู้เรียน</a> ·
+      <a href="about.html#privacy">ความเป็นส่วนตัว</a>
+    </p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  'use strict';
+
+  var $ = function(id){ return document.getElementById(id); };
+  var KEY_FORM='ayt_toolkit_form';
+  var KEY_ROWS='ayt_toolkit_rows';
+  var KEY_CHK='ayt_toolkit_check';
+
+  /* ================= บันทึก/โหลดฟอร์ม ================= */
+  var fields = Array.prototype.slice.call(document.querySelectorAll('[data-save]'));
+
+  function saveForm(){
+    var o={};
+    fields.forEach(function(f){ o[f.id]=f.value; });
+    try{ localStorage.setItem(KEY_FORM, JSON.stringify(o)); }catch(e){}
+  }
+  function loadForm(){
+    try{
+      var o=JSON.parse(localStorage.getItem(KEY_FORM)||'{}');
+      fields.forEach(function(f){ if(o[f.id]!==undefined) f.value=o[f.id]; });
+    }catch(e){}
+  }
+
+  /* ================= เครื่องคำนวณ ================= */
+  function num(id){
+    var v=parseFloat(($(id)||{}).value);
+    return isNaN(v)?0:v;
+  }
+  function fmt(n,d){
+    d = (d===undefined)?1:d;
+    return Number(n).toLocaleString('th-TH',{minimumFractionDigits:d,maximumFractionDigits:d});
+  }
+
+  function calc(){
+    var students=num('f_students');
+    var rooms=num('f_rooms');
+    var teachers=num('f_teachers');
+    var ratio=num('f_ratio')||20;
+
+    var spr = rooms>0 ? students/rooms : 0;
+    var tpr = rooms>0 ? teachers/rooms : 0;
+    var headcount = students/ratio;
+    var need = rooms;
+    var gap = rooms - teachers;
+
+    $('r_spr').textContent  = rooms>0 ? fmt(spr,1) : '—';
+    $('r_tpr').textContent  = rooms>0 ? fmt(tpr,2) : '—';
+    $('r_headcount').textContent = students>0 ? fmt(headcount,1) : '—';
+    $('r_need').textContent = rooms>0 ? fmt(need,0) : '—';
+    $('r_gap').textContent  = rooms>0 ? (gap>0?'ขาด '+fmt(gap,1):(gap<0?'เกิน '+fmt(Math.abs(gap),1):'พอดี')) : '—';
+
+    var cell=$('gapCell'), vd=$('verdict');
+    cell.className='t-res';
+    vd.className='t-verdict';
+
+    if(!(rooms>0 && students>0)){
+      vd.innerHTML='<h4>กรอกข้อมูลให้ครบเพื่อดูผลสรุป</h4><p>ต้องมีอย่างน้อยจำนวนนักเรียนและจำนวนห้องเรียน</p>';
+      return;
+    }
+
+    var school=($('f_school').value||'โรงเรียน').trim();
+    var html='';
+
+    if(gap>0.5){
+      cell.className='t-res bad';
+      vd.className='t-verdict is-bad';
+      html+='<h4>ยังไม่ครบตามข้อสมมติหนึ่งครูต่อหนึ่งห้องเรียน</h4>';
+      html+='<p>'+school+' เปิดสอน '+fmt(rooms,0)+' ห้อง แต่มีครูปฏิบัติงานจริง '+fmt(teachers,1)+' คน '+
+            'จึงยังขาดอีกประมาณ <strong>'+fmt(gap,1)+' อัตรา</strong> จึงจะมีครูประจำครบทุกห้อง ตามข้อสมมตินี้</p>';
+      html+='<p>หากเทียบด้วยอัตราส่วนที่กรอกไว้เพื่อสาธิต '+fmt(ratio,0)+' คนต่อครู 1 คน จะได้ครูประมาณ '+fmt(headcount,1)+' คน '+
+            'ซึ่ง'+(headcount<rooms?'<strong>น้อยกว่า</strong>':'ไม่น้อยกว่า')+'จำนวนห้องที่เปิดสอนจริง</p>';
+      if(headcount<rooms){
+        html+='<p>ส่วนต่างตรงนี้ช่วยอธิบายว่าช่องว่างอาจมาจากฐานคิดคนละอย่าง ไม่ใช่ข้อสรุปว่าหน่วยงานต้องจัดสรรตามตัวเลขนี้ และไม่ใช่คำวินิจฉัยว่าโรงเรียนบริหารผิด</p>';
+      }
+    }else if(gap<-0.5){
+      cell.className='t-res good';
+      vd.className='t-verdict is-good';
+      html+='<h4>มีครูมากกว่าจำนวนห้องเรียน</h4>';
+      html+='<p>'+school+' มีครู '+fmt(teachers,1)+' คน ต่อ '+fmt(rooms,0)+' ห้องเรียน '+
+            'มากกว่าข้อสมมติหนึ่งครูต่อหนึ่งห้องอยู่ประมาณ '+fmt(Math.abs(gap),1)+' อัตรา</p>';
+      html+='<p>ควรตรวจสอบต่อว่าครูตรงสาขากับวิชาที่ต้องสอนหรือไม่ เพราะมีครูครบไม่ได้แปลว่าไม่มีปัญหาการสอนไม่ตรงเอก</p>';
+    }else{
+      cell.className='t-res warn';
+      html+='<h4>ครูพอดีกับจำนวนห้องเรียน</h4>';
+      html+='<p>'+school+' มีครู '+fmt(teachers,1)+' คน ต่อ '+fmt(rooms,0)+' ห้อง ถือว่าพอดีตามข้อสมมติหนึ่งครูต่อหนึ่งห้อง</p>';
+      html+='<p>ข้อควรระวังคือ หากมีครูลาหรือเกษียณเพียงหนึ่งคน จะกลับเข้าสู่ภาวะขาดทันที ควรวางแผนล่วงหน้า</p>';
+    }
+
+    if(spr>0 && spr<15){
+      html+='<p>นักเรียนต่อห้องอยู่ที่ '+fmt(spr,1)+' คน ซึ่งค่อนข้างต่ำ '+
+            'เมื่อเทียบด้วยอัตราส่วนรายหัวที่กรอก อาจได้ครูไม่ครบห้อง — นี่เป็นการเทียบเพื่อคุย ไม่ใช่สูตรราชการที่เว็บนี้ประกาศใช้</p>';
+    }
+
+    vd.innerHTML=html;
+    syncOnePager();
+    buildLetter();
+  }
+
+  /* ================= แผ่นสรุป 1 หน้า ================= */
+  function syncOnePager(){
+    var school=($('f_school').value||'').trim();
+    var area=$('f_area').value;
+    var students=num('f_students'), rooms=num('f_rooms'), teachers=num('f_teachers');
+    var tpr = rooms>0 ? teachers/rooms : 0;
+    var gap = rooms - teachers;
+
+    $('op_school').textContent = school || 'ชื่อโรงเรียน';
+    $('op_area').textContent = 'สังกัด ' + area;
+
+    var d=new Date();
+    $('op_date').textContent = 'ข้อมูล ณ วันที่ ' +
+      d.toLocaleDateString('th-TH',{day:'numeric',month:'long',year:'numeric'});
+
+    $('op_students').textContent = students>0?students.toLocaleString('th-TH'):'—';
+    $('op_rooms').textContent    = rooms>0?rooms.toLocaleString('th-TH'):'—';
+    $('op_teachers').textContent = teachers>0?fmt(teachers,1):'—';
+    $('op_tpr').textContent      = rooms>0?fmt(tpr,2):'—';
+
+    var st='';
+    if(rooms>0 && teachers>=0){
+      if(gap>0.5){
+        st='โรงเรียนเปิดสอน '+fmt(rooms,0)+' ห้องเรียน แต่มีครูปฏิบัติงานจริง '+fmt(teachers,1)+' คน '+
+           'จึงยังมีห้องที่ไม่มีครูประจำ และครูบางคนต้องรับผิดชอบมากกว่าหนึ่งชั้นเรียน';
+      }else if(gap<-0.5){
+        st='โรงเรียนมีครูครบทุกห้องเรียนแล้ว ประเด็นที่ควรติดตามต่อคือความตรงสาขาของครูกับวิชาที่สอน';
+      }else{
+        st='โรงเรียนมีครูพอดีกับจำนวนห้องเรียน แต่ยังไม่มีอัตราสำรองหากมีครูลาหรือเกษียณ';
+      }
+    }else{
+      st='กรอกข้อมูลในเครื่องมือที่ 1 เพื่อให้ระบบสรุปให้อัตโนมัติ';
+    }
+    $('op_status').textContent = st;
+
+    var n1=($('f_need1').value||'').trim();
+    var n2=($('f_need2').value||'').trim();
+    var needs=[];
+    if(n1) needs.push('1. '+n1);
+    if(n2) needs.push('2. '+n2);
+    $('op_needs').textContent = needs.length?needs.join('   •   '):'— ยังไม่ได้ระบุ —';
+  }
+
+  /* ================= ตารางสำรวจ ================= */
+  var tbody=$('gapRows');
+
+  function rowHTML(d){
+    d=d||{};
+    return '<td><input type="text" data-c="room" value="'+(d.room||'')+'" placeholder="ป.3/1"></td>'+
+           '<td><input type="text" data-c="subj" value="'+(d.subj||'')+'" placeholder="คณิตศาสตร์"></td>'+
+           '<td><input type="number" data-c="stu" value="'+(d.stu||'')+'" min="0" placeholder="28"></td>'+
+           '<td><input type="number" data-c="wk" value="'+(d.wk||'')+'" min="0" placeholder="6"></td>'+
+           '<td><input type="text" data-c="fix" value="'+(d.fix||'')+'" placeholder="ครูสอนควบ 2 ชั้น"></td>'+
+           '<td><button class="t-row-del" type="button">ลบ</button></td>';
+  }
+
+  function addRow(d){
+    var tr=document.createElement('tr');
+    tr.innerHTML=rowHTML(d);
+    tr.querySelector('.t-row-del').addEventListener('click',function(){
+      tr.remove(); saveRows();
+    });
+    tr.querySelectorAll('input').forEach(function(i){
+      i.addEventListener('input',saveRows);
+    });
+    tbody.appendChild(tr);
+  }
+
+  function saveRows(){
+    var out=[];
+    Array.prototype.slice.call(tbody.querySelectorAll('tr')).forEach(function(tr){
+      var o={};
+      tr.querySelectorAll('input').forEach(function(i){ o[i.dataset.c]=i.value; });
+      out.push(o);
+    });
+    try{ localStorage.setItem(KEY_ROWS, JSON.stringify(out)); }catch(e){}
+  }
+
+  function loadRows(){
+    var arr=[];
+    try{ arr=JSON.parse(localStorage.getItem(KEY_ROWS)||'[]'); }catch(e){}
+    if(!arr.length){ addRow(); addRow(); }
+    else arr.forEach(function(d){ addRow(d); });
+  }
+
+  function tableToText(){
+    var lines=['ตารางห้องเรียนที่ไม่มีครูประจำ',''];
+    var n=0;
+    Array.prototype.slice.call(tbody.querySelectorAll('tr')).forEach(function(tr){
+      var o={};
+      tr.querySelectorAll('input').forEach(function(i){ o[i.dataset.c]=i.value.trim(); });
+      if(!o.room && !o.subj) return;
+      n++;
+      lines.push(n+'. ชั้น/ห้อง '+(o.room||'-')+
+        ' | วิชา '+(o.subj||'-')+
+        ' | นักเรียน '+(o.stu||'-')+' คน'+
+        ' | ขาดมาแล้ว '+(o.wk||'-')+' สัปดาห์'+
+        ' | แก้ชั่วคราวโดย '+(o.fix||'-'));
+    });
+    if(!n) lines.push('(ยังไม่มีข้อมูล)');
+    return lines.join('\n');
+  }
+
+  /* ================= ร่างหนังสือ ================= */
+  function buildLetter(){
+    var school=($('f_school').value||'[ชื่อโรงเรียน]').trim();
+    var area=$('f_area').value;
+    var students=num('f_students'), rooms=num('f_rooms'), teachers=num('f_teachers');
+    var ratio=num('f_ratio')||20;
+    var gap=rooms-teachers;
+    var headcount=students/ratio;
+    var who=($('f_director').value||'[ชื่อ-ตำแหน่งผู้เสนอ]').trim();
+    var tel=($('f_phone').value||'[เบอร์ติดต่อ]').trim();
+
+    if(!(rooms>0 && students>0)){
+      $('letterBody').textContent='กรอกข้อมูลในเครื่องมือที่ 1 เพื่อให้ระบบร่างหนังสือให้';
+      return;
+    }
+
+    var t='';
+    t+='(ร่างช่วยเรียบเรียงจากเว็บไซต์อยุธยาเรียนรู้ · sdg.thamdee.com\n';
+    t+='ไม่ใช่แบบฟอร์มราชการ ไม่ใช่เกณฑ์อัตรากำลังอย่างเป็นทางการ และไม่ใช่การยื่นเรื่องผ่านเว็บนี้)\n\n';
+    t+='เรื่อง  ขอรับการสนับสนุนอัตรากำลังครู ประจำปีการศึกษา ______\n\n';
+    t+='เรียน  ผู้อำนวยการ'+area+'\n\n';
+    t+='สิ่งที่ส่งมาด้วย  ตารางห้องเรียนที่ยังไม่มีครูผู้สอนประจำ  จำนวน ๑ ฉบับ\n\n';
+
+    t+='ด้วย '+school+' มีความจำเป็นต้องขอรับการสนับสนุนอัตรากำลังครู ';
+    t+='เนื่องจากปัจจุบันมีจำนวนห้องเรียนที่ต้องจัดการเรียนการสอนตามหลักสูตรมากกว่าจำนวนครูที่ปฏิบัติงานจริง ';
+    t+='ส่งผลให้ครูบางรายต้องรับผิดชอบการสอนมากกว่าหนึ่งระดับชั้นในเวลาเดียวกัน\n\n';
+
+    t+='ข้อมูลพื้นฐานของสถานศึกษา มีดังนี้\n';
+    t+='   ๑. จำนวนนักเรียนทั้งหมด '+students.toLocaleString('th-TH')+' คน\n';
+    t+='   ๒. จำนวนห้องเรียนที่เปิดสอนจริงตามหลักสูตร '+rooms.toLocaleString('th-TH')+' ห้อง\n';
+    t+='   ๓. จำนวนครูที่ปฏิบัติงานจริง '+fmt(teachers,1)+' คน\n';
+    t+='   ๔. อัตราส่วนครูต่อห้องเรียน '+fmt(rooms>0?teachers/rooms:0,2)+' คนต่อห้อง\n\n';
+
+    if(gap>0.5){
+      t+='จากข้อมูลข้างต้น หากเทียบตามข้อสมมติจัดครูผู้สอนอย่างน้อยหนึ่งคนต่อหนึ่งห้องเรียน ';
+      t+='สถานศึกษายังมีความต้องการอัตรากำลังเพิ่มเติมประมาณ '+fmt(gap,1)+' อัตรา ';
+      t+='จึงจะสามารถจัดครูผู้สอนประจำได้ครบทุกห้องเรียน ทั้งนี้เป็นเพียงการเทียบเบื้องต้น ไม่ใช่เกณฑ์ราชการ\n\n';
+    }
+
+    if(headcount<rooms){
+      t+='ทั้งนี้ หากเทียบด้วยอัตราส่วนนักเรียนต่อครูที่กรอกไว้เพื่อสาธิต '+fmt(ratio,0)+' ต่อ ๑ ';
+      t+='จะได้ครูประมาณ '+fmt(headcount,1)+' คน ';
+      t+='ซึ่งน้อยกว่าจำนวนห้องเรียนที่ต้องเปิดสอนจริง ';
+      t+='อันเป็นข้อจำกัดเชิงโครงสร้างของสถานศึกษาที่มีจำนวนนักเรียนต่อห้องต่ำ ';
+      t+='มิได้เป็นข้อสรุปว่าเกิดจากการบริหารจัดการภายในของสถานศึกษา และมิใช่สูตรจัดสรรที่เว็บไซต์นี้ประกาศใช้\n\n';
+    }
+
+    t+='ในระหว่างนี้ สถานศึกษาได้ดำเนินการแก้ไขปัญหาเฉพาะหน้าตามที่ปรากฏในสิ่งที่ส่งมาด้วยแล้ว ';
+    t+='แต่ยังไม่สามารถแก้ไขได้อย่างยั่งยืน\n\n';
+
+    t+='จึงเรียนมาเพื่อโปรดพิจารณาให้การสนับสนุนอัตรากำลังครูแก่สถานศึกษาต่อไป จะขอบคุณยิ่ง\n\n';
+    t+='ผู้ประสานงาน  '+who+'  โทร. '+tel+'\n';
+
+    $('letterBody').textContent=t;
+  }
+
+  /* ================= คัดลอก ================= */
+  function copyText(text, btn, okLabel){
+    function done(){
+      if(!btn) return;
+      var old=btn.textContent;
+      btn.textContent = okLabel||'✅ คัดลอกแล้ว';
+      btn.classList.add('done');
+      setTimeout(function(){ btn.textContent=old; btn.classList.remove('done'); },1800);
+    }
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(done).catch(function(){ fallback(); });
+    }else{ fallback(); }
+
+    function fallback(){
+      var ta=document.createElement('textarea');
+      ta.value=text;
+      ta.style.position='fixed'; ta.style.opacity='0';
+      document.body.appendChild(ta); ta.select();
+      try{ document.execCommand('copy'); done(); }catch(e){ alert('คัดลอกไม่สำเร็จ กรุณาเลือกข้อความแล้วคัดลอกเอง'); }
+      document.body.removeChild(ta);
+    }
+  }
+
+  /* ================= เช็กลิสต์ ================= */
+  var checks=Array.prototype.slice.call(document.querySelectorAll('.t-check input[type=checkbox]'));
+  function loadChecks(){
+    var o={};
+    try{ o=JSON.parse(localStorage.getItem(KEY_CHK)||'{}'); }catch(e){}
+    checks.forEach(function(c){
+      if(o[c.dataset.k]) c.checked=true;
+      paint(c);
+      c.addEventListener('change',function(){ paint(c); saveChecks(); });
+    });
+  }
+  function paint(c){
+    var li=c.closest('li');
+    if(li) li.classList.toggle('done', c.checked);
+  }
+  function saveChecks(){
+    var o={};
+    checks.forEach(function(c){ o[c.dataset.k]=c.checked; });
+    try{ localStorage.setItem(KEY_CHK, JSON.stringify(o)); }catch(e){}
+  }
+
+  /* ================= แท็บช่วงเทอม ================= */
+  var ptabs=Array.prototype.slice.call(document.querySelectorAll('#phaseTabs .t-ptab'));
+  ptabs.forEach(function(b){
+    b.addEventListener('click',function(){
+      ptabs.forEach(function(x){ x.classList.remove('on'); x.setAttribute('aria-pressed','false'); });
+      b.classList.add('on');
+      b.setAttribute('aria-pressed','true');
+      document.querySelectorAll('.t-phase').forEach(function(p){ p.classList.remove('on'); });
+      var el=$(b.dataset.ph);
+      if(el) el.classList.add('on');
+    });
+  });
+
+  /* ================= ผูก event ================= */
+  fields.forEach(function(f){
+    f.addEventListener('input',function(){ saveForm(); calc(); });
+    f.addEventListener('change',function(){ saveForm(); calc(); });
+  });
+
+  $('btnAddRow').addEventListener('click',function(){ addRow(); saveRows(); });
+
+  $('btnCopyCalc').addEventListener('click',function(){
+    var school=($('f_school').value||'โรงเรียน').trim();
+    var txt='สรุปข้อมูลอัตรากำลัง '+school+'\n'+
+      '- นักเรียน '+num('f_students').toLocaleString('th-TH')+' คน\n'+
+      '- ห้องเรียนที่เปิดสอนจริง '+num('f_rooms').toLocaleString('th-TH')+' ห้อง\n'+
+      '- ครูปฏิบัติงานจริง '+fmt(num('f_teachers'),1)+' คน\n'+
+      '- นักเรียนต่อห้อง '+$('r_spr').textContent+' คน\n'+
+      '- ครูต่อห้องเรียน '+$('r_tpr').textContent+'\n'+
+      '- ส่วนต่างจากข้อสมมติหนึ่งครูต่อหนึ่งห้อง: '+$('r_gap').textContent+' อัตรา\n\n'+
+      ($('verdict').innerText||'')+
+      '\n\nหมายเหตุ: การคำนวณเบื้องต้นจากข้อมูลที่กรอกบนเว็บไซต์อยุธยาเรียนรู้ ไม่ใช่เกณฑ์ราชการ และไม่ใช่การยื่นเรื่องผ่านเว็บนี้';
+    copyText(txt,this);
+  });
+
+  $('btnCopyTable').addEventListener('click',function(){ copyText(tableToText(),this); });
+
+  $('btnCopyOnePager').addEventListener('click',function(){
+    copyText(($('onePager').innerText||''),this);
+  });
+
+  $('btnCopyLetter').addEventListener('click',function(){
+    copyText(($('letterBody').textContent||''),this);
+  });
+
+  document.querySelectorAll('.t-copy').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var box=btn.parentElement.querySelector('[data-copy]');
+      if(box) copyText(box.innerText.trim(),btn);
+    });
+  });
+
+  $('btnSaveAll').addEventListener('click',function(){
+    saveForm(); saveRows(); saveChecks();
+    var old=this.textContent;
+    this.textContent='✅ บันทึกแล้ว';
+    var self=this;
+    setTimeout(function(){ self.textContent=old; },1600);
+  });
+
+  $('btnPrint').addEventListener('click',function(){
+    document.querySelectorAll('.t-faq details').forEach(function(d){ d.open=true; });
+    window.print();
+  });
+
+  $('btnClear').addEventListener('click',function(){
+    if(!confirm('ต้องการล้างข้อมูลทั้งหมดในเครื่องนี้ใช่หรือไม่\n(ข้อมูลที่พิมพ์เก็บไว้แล้วจะไม่หาย)')) return;
+    try{
+      localStorage.removeItem(KEY_FORM);
+      localStorage.removeItem(KEY_ROWS);
+      localStorage.removeItem(KEY_CHK);
+    }catch(e){}
+    location.reload();
+  });
+
+  /* ================= เริ่มทำงาน ================= */
+  loadForm();
+  loadRows();
+  loadChecks();
+  calc();
+})();
+</script>
+</body>
+</html>

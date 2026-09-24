@@ -8,7 +8,7 @@ const SITE = {
   author: 'บูรพาทิศ พลอยสุวรรณ์',
   role: 'ผู้วิจัยอิสระ',
   email: 'burapatis@gmail.com',
-  reviewed: '22 กันยายน 2569',
+  reviewed: '24 กันยายน 2569',
   navHeading: 'สำรวจและร่วมพัฒนา',
   nav: [
     {id: 'index', href: 'index.html', n: '01', label: 'ภาพรวม'},
