@@ -46,9 +46,11 @@ async function markdown(el, file) {
   el.querySelectorAll('h1').forEach(h => {
     const h2 = document.createElement('h2');
     h2.innerHTML = h.innerHTML;
+    if (h.id) h2.id = h.id;
     h.replaceWith(h2);
   });
   bindCiteCopy(el);
+  if (el.isConnected) scrollToPageHash();
 }
 
 $$('[data-print]').forEach(b => b.addEventListener('click', () => window.print()));
@@ -69,6 +71,16 @@ async function copyText(text) {
     ta.remove();
     return ok;
   }
+}
+
+function scrollToPageHash() {
+  const id = decodeURIComponent((location.hash || '').replace(/^#/, ''));
+  if (!id) return false;
+  const target = document.getElementById(id);
+  if (!target) return false;
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  target.scrollIntoView({behavior: reduce ? 'auto' : 'smooth', block: 'start'});
+  return true;
 }
 
 function bindCiteCopy(root = document) {
@@ -371,11 +383,15 @@ async function knowledge() {
     const temp = document.createElement('article');
     try {
       await markdown(temp, item.file);
-      if (current === ticket) $('#knowledge-body').replaceChildren(...temp.childNodes);
+      if (current === ticket) {
+        $('#knowledge-body').replaceChildren(...temp.childNodes);
+        if (!scrollToPageHash()) {
+          reader.scrollIntoView({behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start'});
+        }
+      }
     } catch (e) {
       if (current === ticket) fail($('#knowledge-body'), e);
     }
-    reader.scrollIntoView({behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start'});
   }
 
   if (searchEl) searchEl.addEventListener('input', drawCards);

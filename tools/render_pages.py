@@ -134,7 +134,7 @@ pages["index.html"] = wrap(
 <div id="data-notice" class="notice" role="status">กำลังโหลดข้อมูล…</div>
 <div id="stats-cards" class="stats-grid" aria-live="polite"></div>
 <div class="section-title"><h2>สถานะข้อมูลตามเป้าหมาย SDG 4</h2></div>
-<p class="small muted">แผงนี้บอกว่าเว็บไซต์มีหลักฐานชนิดใด ไม่เปลี่ยนตามชุดข้อมูลจำลอง และไม่ใช่คะแนนผลงานจังหวัด</p>
+<p class="small muted">แผงนี้บอกว่าเว็บไซต์มีหลักฐานชนิดใด ไม่เปลี่ยนตามชุดข้อมูลจำลอง และไม่ใช่คะแนนผลงานจังหวัด กรอบตัวชี้วัดประเทศที่ได้รับจาก ศธจ. อยู่ที่ <a href="knowledge.html?article=sdg4-national-indicators">คลังความรู้</a> ไม่ใช้แทน I01–I10</p>
 <div id="sdg-coverage" class="coverage-grid"></div>
 <section class="panel watch-panel" aria-labelledby="watch-title">
 <h2 id="watch-title">รายการรอตรวจตารางต้นฉบับ</h2>
@@ -205,7 +205,7 @@ pages["knowledge.html"] = wrap(
 <div class="search-bar">
 <div class="field">
 <label for="article-q">ค้นหาบทความ</label>
-<input id="article-q" type="search" placeholder="เช่น น้ำท่วม, อาชีวะ, คณะทำงาน" autocomplete="off" aria-controls="article-cards">
+<input id="article-q" type="search" placeholder="เช่น น้ำท่วม, อาชีวะ, ตัวชี้วัด, คณะทำงาน" autocomplete="off" aria-controls="article-cards">
 </div>
 </div>
 <div id="article-tags" class="tag-row" role="group" aria-label="กรองตามแท็ก"></div>
