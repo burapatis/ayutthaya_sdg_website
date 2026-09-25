@@ -35,10 +35,11 @@
 | sdg-thamdee-slides.html | สไลด์แนะนำเว็บไซต์ 10 แผ่น โหมดนำเสนอเต็มจอ |
 | sdg4-slides.html | สไลด์ SDG 4 ในอยุธยา 10 แผ่น เชื่อมเป้าหมายย่อยกับหลักฐานและข้อเสนอบนเว็บนี้ |
 | sdg4-duty-slides.html | สไลด์ข้อเสนอตามหน้าที่คณะทำงาน 12 แผ่น พร้อมบทพูดรายข้อ 2.1–2.7 |
-| community.html | ทางเข้าฉบับชาวบ้าน ฉบับผู้เรียน ชุดเครื่องมือครู และแผ่นพับพิมพ์แจก |
+| community.html | ทางเข้าฉบับชาวบ้าน ฉบับผู้เรียน ชุดเครื่องมือครู ใบกรอกสถานศึกษา และแผ่นพับพิมพ์แจก |
 | ayutthaya-sdg4.html | ฉบับภาษาชาวบ้าน อ่านบนจอ พิมพ์ได้ |
 | ayutthaya-sdg4-students.html | ฉบับผู้เรียน รู้สิทธิ์ เส้นทางเรียน และโครงงานที่เริ่มได้ |
 | ayutthaya-teacher-toolkit.html | ชุดเครื่องมือครูและผู้บริหาร คำนวณช่องว่างครูต่อห้อง แบบสำรวจ และร่างข้อความ |
+| ayutthaya-school-sdg4.html | ใบกรอกตัวชี้วัด SDG 4 ระดับสถานศึกษา คำนวณบนเครื่องผู้ใช้ แล้วพิมพ์ใบสรุป |
 | ayutthaya-flyer.html | แผ่นพับพับสามตอน A4 แนวนอน สำหรับพิมพ์แจกชุมชน |
 | about.html | ผู้จัดทำและการติดต่อ |
 
@@ -60,7 +61,7 @@
 - ผู้จัดทำ: แก้ `content/about.md`; ภาพผู้จัดทำอยู่ที่ `assets/author.jpg` และใส่ใน `about.html` ชื่อ/อีเมลในส่วนท้ายให้แก้ `js/site.js`
 - โลโกและไอคอน: `assets/logo.png`, `assets/favicon-32.png`, `assets/apple-touch-icon.png` แสดงในส่วนหัว ส่วนท้าย และแท็บเบราว์เซอร์; `assets/og-image.png` ใช้ตอนแชร์ลิงก์
 - สไลด์นำเสนอ: แก้เนื้อหาใน `sdg-thamdee-slides.html`, `sdg4-slides.html` และ `sdg4-duty-slides.html`; หน้าทางเข้าคือ `slides.html`; สไตล์และปุ่มเลื่อนอยู่ที่ `css/slides.css` กับ `js/slides.js`
-- ฉบับอ่านง่าย: แก้ `ayutthaya-sdg4.html`, `ayutthaya-sdg4-students.html`, `ayutthaya-teacher-toolkit.html` และ `ayutthaya-flyer.html`; หน้าทางเข้าคือ `community.html`; ใช้ตัวเลขอ้างอิงชุดเดียวกับหน้าแรก คงตัวอย่างสมมติให้ชัดว่าไม่ใช่รายงานโรงเรียนจริง และเครื่องคำนวณครูเป็นข้อสมมติเพื่อเทียบ ไม่ใช่เกณฑ์อัตรากำลังราชการ
+- ฉบับอ่านง่าย: แก้ `ayutthaya-sdg4.html`, `ayutthaya-sdg4-students.html`, `ayutthaya-teacher-toolkit.html`, `ayutthaya-school-sdg4.html` และ `ayutthaya-flyer.html`; หน้าทางเข้าคือ `community.html`; ใช้ตัวเลขอ้างอิงชุดเดียวกับหน้าแรก คงตัวอย่างสมมติให้ชัดว่าไม่ใช่รายงานโรงเรียนจริง เครื่องคำนวณครูเป็นข้อสมมติเพื่อเทียบ ไม่ใช่เกณฑ์อัตรากำลังราชการ และใบกรอก SDG 4 ของสถานศึกษาคำนวณบนเครื่องผู้ใช้ ไม่ส่งขึ้นเซิร์ฟเวอร์
 - ที่มา: แก้ `data/sources.json` และบทความ `content/source-notes.md`; `data/provenance.json` เก็บชื่อและ SHA-256 ของไฟล์ใน Projects ที่ใช้ในการสร้างฉบับนี้ ไม่ใช่หลักฐานรับรองเนื้อหาต้นทาง
 - กรอบตัวชี้วัดประเทศจาก ศธจ.: บทความ `content/sdg4-national-indicators.md` และสำเนาสแกน `documents/sdg4-indicators-ayutthaya-peo-scan.pdf` ใช้เทียบรหัส ไม่ใส่ค่าลง Dashboard และไม่แทน I01–I10
 

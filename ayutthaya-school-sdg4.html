@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ใบกรอกตัวชี้วัด SDG 4 ระดับสถานศึกษา | อยุธยาเรียนรู้</title>
+<meta name="description" content="แบบกรอกตัวชี้วัด SDG 4 ที่สถานศึกษาให้ข้อมูลได้ คำนวณบนเครื่องผู้ใช้ แล้วพิมพ์ใบสรุปส่งต้นสังกัด — ไม่ใช่แบบฟอร์มราชการและไม่ส่งข้อมูลขึ้นเซิร์ฟเวอร์">
+<meta name="theme-color" content="#8c402a">
+<meta name="author" content="บูรพาทิศ พลอยสุวรรณ์">
+<link rel="canonical" href="https://sdg.thamdee.com/ayutthaya-school-sdg4.html">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="th_TH">
+<meta property="og:site_name" content="อยุธยาเรียนรู้ · SDG 4">
+<meta property="og:title" content="ใบกรอกตัวชี้วัด SDG 4 ระดับสถานศึกษา">
+<meta property="og:description" content="กรอกตัวตั้งตัวหารตามสูตรกรอบประเทศ คำนวณบนเครื่อง แล้วพิมพ์ใบสรุป — ไม่ใช่แบบฟอร์มราชการ">
+<meta property="og:url" content="https://sdg.thamdee.com/ayutthaya-school-sdg4.html">
+<meta property="og:image" content="https://sdg.thamdee.com/assets/og-image.png">
+<style>
+@font-face{font-family:'Noto Sans Thai';font-style:normal;font-weight:400;font-display:swap;src:url('vendor/fonts/NotoSansThai-400.ttf') format('truetype')}
+@font-face{font-family:'Noto Sans Thai';font-style:normal;font-weight:600;font-display:swap;src:url('vendor/fonts/NotoSansThai-600.ttf') format('truetype')}
+@font-face{font-family:'Noto Sans Thai';font-style:normal;font-weight:700;font-display:swap;src:url('vendor/fonts/NotoSansThai-700.ttf') format('truetype')}
+:root{
+  --t-bg:#f5f7fa;--t-paper:#fff;--t-ink:#16202f;--t-soft:#51607a;--t-line:#dfe6f0;
+  --t-navy:#12233f;--t-blue:#2563c9;--t-amber:#e8a33d;--t-green:#2e8b57;--t-red:#c9483c;
+  --t-blue-soft:#eaf1fd;--t-amber-soft:#fff5e3;--t-green-soft:#e8f5ed;--t-red-soft:#fdecea;
+}
+*{box-sizing:border-box}
+body.school{margin:0;background:var(--t-bg);color:var(--t-ink);font-family:"Noto Sans Thai",sans-serif;font-size:16px;line-height:1.75}
+.skip{position:absolute;top:-100px;left:20px;z-index:9999;background:#fff;padding:10px}
+.skip:focus{top:10px}
+.wrap{width:min(100% - 28px,1100px);margin-inline:auto}
+.t-brand{display:flex;align-items:center;gap:10px;color:#fff;text-decoration:none}
+.t-brand img{width:32px;height:32px;border-radius:8px;background:#fff}
+.t-top{position:sticky;top:0;z-index:70;background:var(--t-navy);color:#fff;padding:10px 0;box-shadow:0 2px 12px rgba(0,0,0,.18)}
+.t-top-in{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.t-top-btns{display:flex;gap:8px;flex-wrap:wrap}
+.t-tbtn{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3);color:#fff;padding:8px 14px;border-radius:999px;cursor:pointer;font:600 .8rem/1 "Noto Sans Thai",sans-serif;min-height:44px;display:inline-flex;align-items:center;text-decoration:none}
+.t-hero{background:linear-gradient(160deg,#12233f,#28466f);color:#fff;padding:44px 0 36px}
+.t-hero .badge{display:inline-block;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);padding:6px 18px;border-radius:999px;font-size:.84rem;margin-bottom:14px}
+.t-hero h1{font-size:clamp(1.7rem,4.6vw,2.5rem);line-height:1.25;margin:0 0 12px}
+.t-hero h1 em{color:#f7c977;font-style:normal}
+.t-hero p{color:rgba(255,255,255,.88);max-width:62ch;margin:0 0 10px}
+.scope{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));margin-top:22px}
+.scope article{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:14px;padding:14px 16px}
+.scope h2{margin:0 0 6px;font-size:1rem}
+.scope p{margin:0;font-size:.86rem;color:rgba(255,255,255,.8)}
+section.t-sec{padding:36px 0;scroll-margin-top:66px}
+section.t-sec.alt{background:var(--t-paper);border-block:1px solid var(--t-line)}
+.t-card{background:var(--t-paper);border:1px solid var(--t-line);border-radius:16px;padding:22px}
+.t-form{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(190px,1fr))}
+.t-field label{display:block;font-size:.88rem;font-weight:600;margin-bottom:5px;color:var(--t-soft)}
+.t-field input,.t-field select,.t-field textarea{width:100%;padding:11px 14px;font-size:1rem;border:1px solid var(--t-line);border-radius:10px;font-family:"Noto Sans Thai",sans-serif;background:#fff;color:var(--t-ink)}
+.t-field input:focus,.t-field select:focus,.t-field textarea:focus{outline:3px solid #126d9a;outline-offset:2px}
+.t-note{background:var(--t-amber-soft);border-left:5px solid var(--t-amber);padding:14px 18px;border-radius:0 10px 10px 0;margin:16px 0;font-size:.94rem;color:#6b4a0c}
+.t-note.blue{background:var(--t-blue-soft);border-left-color:var(--t-blue);color:#12386f}
+.t-note.red{background:var(--t-red-soft);border-left-color:var(--t-red);color:#7f1d1d}
+.lv-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.lv-chip{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--t-line);border-radius:999px;padding:8px 14px;min-height:44px;font-size:.9rem;cursor:pointer}
+.lv-chip input{width:18px;height:18px;accent-color:var(--t-green)}
+#fillCount{font-weight:600;color:var(--t-navy);margin:8px 0 0}
+.ind-group{margin:28px 0}
+.ind-group h2{font-size:1.2rem;margin:0 0 12px;color:var(--t-navy)}
+.ind-grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.ind-card{background:#fff;border:1px solid var(--t-line);border-radius:16px;padding:18px;display:flex;flex-direction:column;gap:8px}
+.ind-top{display:flex;justify-content:space-between;gap:8px;align-items:center}
+.badge{display:inline-block;background:var(--t-navy);color:#fff;border-radius:999px;padding:3px 10px;font-size:.78rem;font-weight:700}
+.src{font-size:.78rem;color:var(--t-soft)}
+.ind-card h3{margin:0;font-size:1.02rem;line-height:1.4}
+.formula{margin:0;font-size:.82rem;color:var(--t-soft)}
+.ind-out{margin-top:8px;padding:12px;border-radius:12px;background:#f7f9fc;border:1px solid var(--t-line);text-align:center}
+.ind-out b{display:block;font-size:1.45rem;color:var(--t-navy)}
+.ind-out span{font-size:.82rem;color:var(--t-soft)}
+.ind-out.ok{background:var(--t-green-soft);border-color:#b9e0c9}
+.ind-out.warn{background:var(--t-amber-soft);border-color:#f0d8a8}
+.ind-out.bad{background:var(--t-red-soft);border-color:#f2bcb6}
+.hint{margin:0;font-size:.8rem;color:#6b4a0c}
+.is-hidden{display:none!important}
+.info-list{margin:0;padding-left:1.1em}
+.info-list li{margin:0 0 10px}
+#printSheet{background:#fff;border:2px solid var(--t-navy);border-radius:14px;padding:24px;margin-top:12px}
+.sheet-head{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;border-bottom:2px solid var(--t-navy);padding-bottom:12px;margin-bottom:14px}
+.sheet-head h3{margin:4px 0;font-size:1.25rem;color:var(--t-navy)}
+.sheet-head p,.sheet-meta{font-size:.85rem;color:var(--t-soft);margin:0}
+.sheet-id{display:grid;gap:4px 16px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));margin-bottom:14px}
+.sheet-id p{margin:0;font-size:.95rem}
+.sheet-table{width:100%;border-collapse:collapse;font-size:.82rem}
+.sheet-table th,.sheet-table td{border:1px solid var(--t-line);padding:7px 8px;text-align:left;vertical-align:top}
+.sheet-table th{background:#f3f6fb}
+.sheet-note{font-size:.84rem;color:var(--t-soft);margin:14px 0}
+.sheet-sign{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:28px;text-align:center;font-size:.92rem}
+.t-end{background:linear-gradient(160deg,#12233f,#28466f);color:#fff;padding:40px 0;text-align:center}
+.t-end a{color:#f7c977}
+footer.t-foot{background:#0b1626;color:rgba(255,255,255,.6);padding:22px 0;font-size:.84rem;text-align:center}
+footer.t-foot a{color:#f7c977}
+.t-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+.t-btn{border:none;border-radius:10px;padding:11px 20px;cursor:pointer;font:600 .92rem/1 "Noto Sans Thai",sans-serif;min-height:44px}
+.t-btn.primary{background:var(--t-navy);color:#fff}
+.t-btn.ghost{background:#fff;color:var(--t-navy);border:1px solid var(--t-line)}
+.t-btn.amber{background:var(--t-amber);color:#3d2a06}
+@media print{
+  .t-top,.t-hero .scope,.t-actions,.skip,.no-print,.t-end .t-btn{display:none!important}
+  body.school{background:#fff;font-size:11pt}
+  section.t-sec{padding:10px 0}
+  .ind-card,#printSheet{break-inside:avoid}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  @page{size:A4;margin:12mm}
+  body.print-sheet-only .no-print-sheet{display:none!important}
+  body.print-sheet-only #printBlock{display:block!important}
+}
+@media (max-width:640px){.sheet-sign{grid-template-columns:1fr}}
+</style>
+</head>
+<body class="school">
+<a class="skip" href="#main">ข้ามไปยังเนื้อหา</a>
+<div class="t-top no-print">
+  <div class="wrap t-top-in">
+    <a class="t-brand" href="index.html">
+      <img src="assets/logo.png" alt="" width="32" height="32">
+      <strong>อยุธยาเรียนรู้ · ใบกรอกสถานศึกษา</strong>
+    </a>
+    <div class="t-top-btns">
+      <a class="t-tbtn" href="community.html">ทางเข้า</a>
+      <a class="t-tbtn" href="knowledge.html?article=sdg4-national-indicators">กรอบประเทศ</a>
+      <button class="t-tbtn" id="btnSave" type="button">บันทึกบนเครื่องนี้</button>
+      <button class="t-tbtn" id="btnPrint" type="button">พิมพ์ใบสรุป</button>
+      <button class="t-tbtn" id="btnClear" type="button">ล้างข้อมูล</button>
+    </div>
+  </div>
+</div>
+
+<header class="t-hero no-print-sheet" id="main">
+  <div class="wrap">
+    <span class="badge">สำหรับโรงเรียน ศูนย์เด็กเล็ก อาชีวะ และ กศน. · ไม่ใช่แบบฟอร์มราชการ</span>
+    <h1>กรอกที่สถานศึกษาได้<br>แล้วเห็น<em>ค่าตามชื่อตัวชี้วัด</em></h1>
+    <p>หน้านี้ถอดสูตรจากเอกสารกรอบตัวชี้วัด SDG 4 ที่สำนักงานศึกษาธิการจังหวัดให้มา แล้วเปิดช่องกรอกเฉพาะรายการที่สถานศึกษาเป็นผู้มีข้อมูล ค่าคำนวณอยู่บนเครื่องท่าน พิมพ์เป็นใบสรุปให้ต้นสังกัดได้ แต่<strong>ไม่ใช่ช่องทางยื่นเรื่อง</strong> และไม่แทนแบบของหน่วยงาน</p>
+    <p>ห้ามกรอกชื่อผู้เรียนรายคน ค่าที่ยังไม่กรอกไม่ใช่ศูนย์ และค่าของโรงเรียนหนึ่งแห่งไม่ใช่ค่าจังหวัด</p>
+    <div class="scope">
+      <article>
+        <h2>คำนวณได้ที่สถานศึกษา</h2>
+        <p>NT/O-NET ของผู้เข้าสอบในโรงเรียน, สัดส่วนสายอาชีวะในแห่งนี้, หลักสูตร ม.ต้น, สิ่งอำนวย (มี/ไม่มี), การรังแกแบบไม่ระบุตัว, ใบประกอบและการอบรมครู</p>
+      </article>
+      <article>
+        <h2>กรอกได้บางส่วน</h2>
+        <p>อัตราสำเร็จและปฐมวัยตามสูตรประเทศใช้ประชากรวัยเป็นตัวหาร หากไม่มีตัวหารเขตบริการ หน้านี้จะไม่แต่งร้อยละ ดัชนีทางเพศคำนวณจากหัวในโรงเรียน ไม่ใช่ NER</p>
+      </article>
+      <article>
+        <h2>กรอกไม่ได้ที่สถานศึกษา</h2>
+        <p>ผู้สำเร็จอุดมศึกษาอายุ 25–34 ปี, การใช้อินเทอร์เน็ตของประชากร, ดัชนีสำเร็จอุดมศึกษา และทุน ODA ระดับประเทศ — ไม่เปิดช่องให้เข้าใจผิด</p>
+      </article>
+    </div>
+  </div>
+</header>
+
+<section class="t-sec no-print-sheet">
+  <div class="wrap">
+    <h2>1. ข้อมูลสถานศึกษา</h2>
+    <p class="t-note blue">บันทึกในเครื่องนี้เท่านั้น ไม่ส่งไปยังต้นสังกัดผ่านเว็บไซต์ หากจะส่ง ให้พิมพ์หรือคัดลอกใบสรุป แล้วใช้ช่องทางของหน่วยงาน</p>
+    <div class="t-card">
+      <div class="t-form">
+        <div class="t-field">
+          <label for="f_school">ชื่อสถานศึกษา</label>
+          <input id="f_school" type="text" autocomplete="organization" placeholder="เช่น โรงเรียน...">
+        </div>
+        <div class="t-field">
+          <label for="f_area">สังกัด</label>
+          <select id="f_area">
+            <option value="สพป.พระนครศรีอยุธยา เขต 1">สพป.พระนครศรีอยุธยา เขต 1</option>
+            <option value="สพป.พระนครศรีอยุธยา เขต 2">สพป.พระนครศรีอยุธยา เขต 2</option>
+            <option value="สพม.พระนครศรีอยุธยา">สพม.พระนครศรีอยุธยา</option>
+            <option value="สำนักงานการศึกษาเอกชน">สำนักงานการศึกษาเอกชน</option>
+            <option value="อาชีวศึกษาจังหวัด">อาชีวศึกษาจังหวัด</option>
+            <option value="สำนักงานส่งเสริมการเรียนรู้">สำนักงานส่งเสริมการเรียนรู้</option>
+            <option value="องค์กรปกครองส่วนท้องถิ่น">องค์กรปกครองส่วนท้องถิ่น</option>
+            <option value="สังกัดอื่น">สังกัดอื่น</option>
+          </select>
+        </div>
+        <div class="t-field">
+          <label for="f_year">ปีการศึกษาที่นับ</label>
+          <input id="f_year" type="text" placeholder="เช่น 2568">
+        </div>
+        <div class="t-field">
+          <label for="f_who">ชื่อผู้กรอก</label>
+          <input id="f_who" type="text" autocomplete="name">
+        </div>
+        <div class="t-field">
+          <label for="f_role">ตำแหน่ง</label>
+          <input id="f_role" type="text" placeholder="เช่น รองผู้อำนวยการฝ่ายวิชาการ">
+        </div>
+        <div class="t-field" style="grid-column:1/-1">
+          <label for="f_remark">หมายเหตุของสถานศึกษา (ไม่ใส่ชื่อผู้เรียน)</label>
+          <textarea id="f_remark" rows="2" placeholder="เช่น ใช้ผล NT ปีการศึกษา 2568 ตามประกาศของสถานศึกษา"></textarea>
+        </div>
+      </div>
+      <p>เลือกประเภทที่จัดสอน เพื่อแสดงเฉพาะตัวชี้วัดที่เกี่ยวข้อง หากไม่เลือก หน้านี้จะแสดงทุกรายการที่อาจใช้ได้</p>
+      <div class="lv-row" id="levelPicks"></div>
+      <p id="fillCount"></p>
+    </div>
+  </div>
+</section>
+
+<section class="t-sec alt no-print-sheet">
+  <div class="wrap">
+    <h2>2. กรอกตัวตั้ง–ตัวหาร แล้วดูค่าตามชื่อตัวชี้วัด</h2>
+    <p class="t-note">สูตรถอดจากภาพสแกนของ ศธจ. การถอดตัวย่ออาจคลาดเคลื่อน ให้เทียบ<a href="knowledge.html?article=sdg4-national-indicators">บทความกรอบประเทศ</a>ก่อนส่งเป็นรายงานทางการ</p>
+    <div id="indMount"></div>
+  </div>
+</section>
+
+<section class="t-sec no-print-sheet">
+  <div class="wrap">
+    <h2>3. รายการที่สถานศึกษาคำนวณตามสูตรประเทศไม่ได้</h2>
+    <ul class="info-list" id="infoMount"></ul>
+    <p class="t-note red">อย่าใส่ชื่อผู้เรียน ผลการเรียนรายบุคคล หรือจำนวนที่ระบุตัวได้ในกลุ่มเล็ก เรื่องการรังแกถ้ากลุ่มสำรวจน้อยกว่า 10 คน ใบพิมพ์จะไม่แสดงจำนวนคน</p>
+  </div>
+</section>
+
+<section class="t-sec alt" id="printBlock">
+  <div class="wrap">
+    <h2 class="no-print">4. ใบสรุปสำหรับพิมพ์ส่งต้นสังกัด</h2>
+    <p class="no-print">จัดหน้า A4 มีช่องลงชื่อผู้กรอกและผู้อำนวยการ ต้นสังกัดอาจมีแบบของตนเอง ให้ยึดแบบนั้นหากกำหนดไว้</p>
+    <div class="t-actions no-print">
+      <button class="t-btn primary" id="btnPrintAll" type="button">พิมพ์ทั้งหน้ากรอก</button>
+      <button class="t-btn amber" type="button" onclick="document.getElementById('btnPrint').click()">พิมพ์เฉพาะใบสรุป</button>
+      <button class="t-btn ghost" id="btnCopy" type="button">คัดลอกข้อความสรุป</button>
+    </div>
+    <div id="printSheet"></div>
+  </div>
+</section>
+
+<div class="t-end no-print">
+  <div class="wrap">
+    <p>อ่านสูตรทั้งชุดที่ <a href="knowledge.html?article=sdg4-national-indicators">กรอบตัวชี้วัด SDG 4</a> · ชุดเครื่องมือครูคนละเรื่องอยู่ที่ <a href="ayutthaya-teacher-toolkit.html">หน้าเครื่องมือครู</a></p>
+  </div>
+</div>
+<footer class="t-foot no-print">
+  <div class="wrap">
+    <p style="margin:0 0 6px">จัดทำโดย บูรพาทิศ พลอยสุวรรณ์ ผู้วิจัยอิสระ · ไม่ใช่เว็บราชการ ไม่ใช่แบบฟอร์มของต้นสังกัด และไม่ใช่ช่องทางรายงาน</p>
+    <p style="margin:0 0 6px">ข้อมูลบันทึกในเครื่องผู้ใช้เท่านั้น · ตรวจเนื้อหา 25 กันยายน 2569</p>
+    <p style="margin:0">
+      <a href="index.html">หน้าภาพรวม</a> ·
+      <a href="community.html">ทางเข้าฉบับอ่านง่าย</a> ·
+      <a href="knowledge.html?article=sdg4-national-indicators">กรอบประเทศ</a> ·
+      <a href="about.html#privacy">ความเป็นส่วนตัว</a>
+    </p>
+  </div>
+</footer>
+<script src="js/school-sdg4.js"></script>
+</body>
+</html>
