@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <title>A-LEARN อยุธยา | อยุธยาเรียนรู้ · SDG 4</title>
+  <meta name="description" content="ร่างโครงการ A-LEARN อยุธยา เพื่อเสนอ ศธจ. และ กศจ. พิจารณา เป็นกรณีศึกษาบนเว็บนี้ ไม่ใช่โครงการอนุมัติและไม่ใช่ผลดำเนินงานจริง">
+  <meta name="theme-color" content="#8c402a">
+  <meta name="author" content="บูรพาทิศ พลอยสุวรรณ์">
+  <link rel="canonical" href="https://sdg.thamdee.com/a-learn-ayutthaya-project.html">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="th_TH">
+  <meta property="og:site_name" content="อยุธยาเรียนรู้ · SDG 4">
+  <meta property="og:title" content="A-LEARN อยุธยา | อยุธยาเรียนรู้ · SDG 4">
+  <meta property="og:description" content="ร่างโครงการระบบข้อมูลและกลไกความร่วมมือเชิงพื้นที่ เป็นกรณีศึกษาเพื่อแลกเปลี่ยน ไม่ใช่โครงการอนุมัติ">
+  <meta property="og:url" content="https://sdg.thamdee.com/a-learn-ayutthaya-project.html">
+  <meta property="og:image" content="https://sdg.thamdee.com/assets/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <style type="text/css">
+@font-face{font-family:'Noto Sans Thai';font-style:normal;font-weight:400;font-display:swap;src:url('vendor/fonts/NotoSansThai-400.ttf') format('truetype')}
+@font-face{font-family:'Noto Sans Thai';font-style:normal;font-weight:600;font-display:swap;src:url('vendor/fonts/NotoSansThai-600.ttf') format('truetype')}
+@font-face{font-family:'Noto Sans Thai';font-style:normal;font-weight:700;font-display:swap;src:url('vendor/fonts/NotoSansThai-700.ttf') format('truetype')}
+.skip{position:absolute;top:-100px;left:20px;z-index:9999;background:#fff;padding:10px}.skip:focus{top:10px}
+nav .brand{display:flex;align-items:center;gap:8px;text-decoration:none;color:var(--clay);font-weight:700;font-size:14px}
+nav .brand img{width:32px;height:32px;border-radius:8px;background:#fff}
+:root{--bg:#fbf7ef;--paper:#fffdf9;--ink:#293831;--muted:#68736e;--clay:#994b31;--gold:#c79a3d;--green:#3d6956;--line:#e7dccb}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:"Noto Sans Thai",Tahoma,system-ui,sans-serif;line-height:1.72}.wrap{width:min(1160px,calc(100% - 32px));margin:auto}a{color:inherit}header{position:sticky;top:0;z-index:20;background:#fbf7eff2;backdrop-filter:blur(10px);border-bottom:1px solid #e7dccb}nav{min-height:64px;display:flex;align-items:center;justify-content:space-between}nav b{color:var(--clay);font-size:20px}nav div{display:flex;gap:16px;font-size:13px}nav a{text-decoration:none}.hero{padding:80px 0 66px;background:radial-gradient(circle at 90% 0,#e7c98355,transparent 32%),linear-gradient(135deg,#fffaf0,#f1e4d1)}.tag{display:inline-block;border:1px solid #c9a66c;padding:6px 11px;border-radius:99px;color:var(--clay);font-weight:700;font-size:12px}h1{font-size:clamp(44px,8vw,78px);line-height:1;margin:20px 0 8px;color:var(--clay)}.hero h2{font-size:clamp(23px,3.6vw,38px);line-height:1.3;margin:0;max-width:950px}.lead{max-width:860px;font-size:18px;color:#526159}.notice{max-width:940px;background:#fff9;border-left:4px solid var(--gold);padding:14px 17px;border-radius:0 12px 12px 0;font-size:13px}.facts{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:28px}.fact{background:#fff;border:1px solid var(--line);border-radius:15px;padding:17px}.fact b{display:block;font-size:25px;color:var(--clay)}.fact small{color:var(--muted)}section{padding:70px 0}.head{display:grid;grid-template-columns:.75fr 1.25fr;gap:34px;margin-bottom:28px}.eyebrow{font-size:12px;color:var(--gold);font-weight:800;letter-spacing:.08em}h2{font-size:clamp(28px,4vw,43px);line-height:1.2;margin:5px 0}.head p{color:var(--muted)}.contexts{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}.context,.card,.obj,.gov,.benefit{background:var(--paper);border:1px solid var(--line);border-radius:17px;padding:19px}.context b{display:block;color:var(--clay);font-size:17px;margin-bottom:7px}.context p,.card p,.gov p,.benefit p{color:var(--muted);font-size:13px}.dark{background:#263a31;color:#f8f3e9}.dark .head p{color:#d7dfda}.flow{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:18px}.flow div:not(.arrow){border:1px solid #ffffff25;background:#ffffff0b;padding:25px;border-radius:18px}.flow h3{color:#e7bd63}.arrow{font-size:34px;color:#e7bd63}.objectives{display:grid;grid-template-columns:1fr 1fr;gap:12px}.obj{display:flex;gap:14px}.obj>b{display:grid;place-items:center;min-width:57px;height:57px;background:var(--clay);color:white;border-radius:14px}.obj h3{margin:0}.obj p{font-size:13px;color:var(--muted);margin:4px 0 8px}.obj span{font-size:11px;background:#e5eee8;color:var(--green);padding:4px 8px;border-radius:99px;font-weight:700}.theory{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}.step{background:#f7edde;border:1px solid var(--line);border-radius:14px;padding:16px;font-size:13px}.step b{display:block;color:var(--clay);margin-bottom:5px}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.top{display:flex;align-items:center;justify-content:space-between}.top strong{font-size:32px;color:#dfd1bd}.top em{font-style:normal;font-size:11px;background:#f2e6d4;color:var(--clay);padding:5px 8px;border-radius:99px}.card h3{font-size:18px}.lnob{background:linear-gradient(120deg,#f2e2ce,#e9f0eb)}.chips{display:flex;gap:8px;flex-wrap:wrap}.chips span{background:white;border:1px solid #ddcfbc;border-radius:99px;padding:8px 12px;font-size:12px}.years,.governance,.benefits{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.year{background:#fff;border-radius:16px;border-top:5px solid var(--gold);padding:20px}.year:nth-child(2){border-color:#bd6947}.year:nth-child(3){border-color:var(--green)}.year h3{font-size:23px;margin:0}.year li{color:var(--muted);font-size:13px;margin:7px 0}.budget{background:#fff}table{width:100%;border-collapse:collapse}th,td{padding:12px;border-bottom:1px solid var(--line);text-align:left}th{background:#f4eadb;color:var(--clay)}td:nth-child(2),th:nth-child(2){text-align:right}.callouts{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px}.call{background:#f5ecdf;padding:20px;border-radius:16px}.call b{display:block;color:var(--clay);font-size:25px}.governance{grid-template-columns:repeat(4,1fr)}.gov small{color:var(--gold);font-weight:800}.mel{display:grid;grid-template-columns:1fr 1fr;gap:14px}.mel>div{background:#fff;border:1px solid var(--line);border-radius:17px;padding:22px}.mel li{color:var(--muted);margin:7px 0}.success{background:#263a31;color:#fff}.successgrid{display:grid;grid-template-columns:1fr 1fr;gap:24px}.success li{margin:10px 0}.warn{border:1px solid #ffffff25;background:#ffffff0c;padding:22px;border-radius:17px}.warn h3{color:#e7bd63}.benefits{grid-template-columns:repeat(4,1fr)}.benefit h3{color:var(--clay)}.source{margin-top:22px;border:1px dashed #c7b79f;padding:13px;border-radius:12px;font-size:12px;color:var(--muted)}footer{background:#1f2e27;color:#cad4cf;padding:40px 0;font-size:12px}footer b{color:#fff}@media(max-width:900px){nav .page-anchors{display:none}.facts,.contexts,.cards,.governance,.benefits{grid-template-columns:repeat(2,1fr)}.head,.flow,.mel,.successgrid{grid-template-columns:1fr}.arrow{transform:rotate(90deg);text-align:center}.theory{grid-template-columns:repeat(2,1fr)}}@media(max-width:620px){.facts,.contexts,.objectives,.theory,.cards,.years,.governance,.benefits,.callouts{grid-template-columns:1fr}section{padding:50px 0}.table{overflow-x:auto}}@media print{header,.skip,.modal-backdrop{display:none!important}body{background:#fff}}
+
+  .interactive-card{cursor:pointer;transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease}
+  .interactive-card:hover,.interactive-card:focus-visible{transform:translateY(-3px);box-shadow:0 14px 30px #493a2720;border-color:#c79a3d;outline:3px solid #c79a3d55;outline-offset:3px}
+  .interactive-card:after{content:"คลิกหรือกด Enter เพื่อดูรายละเอียด";display:block;margin-top:10px;font-size:10px;color:var(--gold);font-weight:700}
+  .modal-backdrop{position:fixed;inset:0;background:#16221dcc;z-index:100;display:none;align-items:center;justify-content:center;padding:18px}
+  .modal-backdrop.open{display:flex}.modal{width:min(760px,100%);max-height:min(84vh,850px);overflow:auto;background:#fffdf9;border-radius:20px;box-shadow:0 30px 90px #0007;padding:28px;position:relative}
+  .modal h2{color:var(--clay);font-size:28px;margin:0 42px 12px 0}.modal-body{color:#4f5d56}.modal-body h3{color:var(--green);font-size:17px;margin:22px 0 7px}.modal-body ul{padding-left:22px}.modal-body li{margin:7px 0}
+  .modal-close{position:absolute;right:16px;top:14px;width:38px;height:38px;border:0;border-radius:50%;background:#f1e5d4;color:var(--clay);font-size:22px;cursor:pointer}.modal-close:focus-visible{outline:3px solid #c79a3d66}
+  footer a{color:#e7bd63}
+  nav{flex-wrap:wrap;gap:10px}
+  @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.interactive-card{transition:none}}
+  </style>
+</head>
+
+<body>
+  <a class="skip" href="#main">ข้ามไปยังเนื้อหา</a>
+  <header>
+    <div class="wrap">
+      <nav>
+        <a class="brand" href="index.html"><img src="assets/logo.png" alt="" width="32" height="32">อยุธยาเรียนรู้</a>
+        <a href="projects.html">โครงการ</a>
+        <b>A-LEARN อยุธยา</b>
+
+        <div class="page-anchors">
+          <a href="projects.html">โครงการ</a>
+          <a href="implementation.html">กลไกขับเคลื่อน</a>
+          <a href="#context">บริบท</a><a href="#objectives">เป้าหมาย</a><a href="#components">6 องค์ประกอบ</a><a href="#budget">งบประมาณ</a><a href="#mel">MEL</a><a href="#success">เงื่อนไขสำเร็จ</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="wrap">
+        <span class="tag">SDG 4 · Area-based Strategic Project</span>
+
+        <h1>A-LEARN อยุธยา</h1>
+
+        <h2>อยุธยาเรียนรู้ไม่ทิ้งใครไว้ข้างหลัง</h2>
+
+        <p class="lead">ระบบข้อมูลและกลไกความร่วมมือเชิงพื้นที่เพื่อความเสมอภาคและคุณภาพการศึกษาที่ยั่งยืน — Ayutthaya Learning Equity and Resilience Network</p>
+
+        <p class="notice"><b>สถานะ:</b> ร่างโครงการกรณีศึกษาเพื่อแลกเปลี่ยนเรียนรู้ และเพื่อเสนอสำนักงานศึกษาธิการจังหวัดกับคณะกรรมการศึกษาธิการจังหวัดพิจารณา <b>ไม่ใช่โครงการที่อนุมัติแล้ว ไม่ใช่งบจัดสรร และไม่ใช่ผลดำเนินงานจริง</b> เป้าจำนวนและร้อยละในหน้านี้เป็นเป้าที่ร่างเสนอ ต้องมีค่าฐานที่ยืนยันก่อนใช้รายงาน รายการที่ต้นฉบับระบุ <b>[ยืนยันข้อมูล]</b> ยังไม่มีบนเว็บนี้ และไม่ถูกนำไปใส่กราฟหรือยอดภาพระบบบนหน้าแรก อ่านการเทียบกับตัวอย่าง E1–E6 ที่ <a href="knowledge.html?article=a-learn-ayutthaya">บทความกรณีศึกษา</a></p>
+
+        <div class="facts">
+          <div class="fact">
+            <b>3 ปี</b><small>ปีงบประมาณ 2570–2572</small>
+          </div>
+
+          <div class="fact">
+            <b>16 อำเภอ</b><small>ครอบคลุมทุกสังกัดการศึกษา</small>
+          </div>
+
+          <div class="fact">
+            <b>≤ 150,000 บาท</b><small>กรอบงบสนับสนุนตลอด 3 ปี</small>
+          </div>
+
+          <div class="fact">
+            <b>6 แกน</b><small>องค์ประกอบการเปลี่ยนแปลง</small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="context">
+      <div class="wrap">
+        <div class="head">
+          <div>
+            <span class="eyebrow">WHY AYUTTHAYA?</span>
+
+            <h2>5 เงื่อนไขเฉพาะของพื้นที่</h2>
+          </div>
+
+          <p>ร่างโครงการเสนอว่าบริบทของพระนครศรีอยุธยาต้องการกลไกเชิงพื้นที่ที่เชื่อมหลายสังกัดและหลายภาคส่วนเข้าด้วยกัน</p>
+        </div>
+
+        <div class="contexts">
+          <div class="context" data-detail="context-industry">
+            <b>⚙ จังหวัดอุตสาหกรรม</b>
+
+            <p>แรงงานเคลื่อนย้ายสูง เด็กย้ายตามครอบครัว และมีความเสี่ยงหลุดระหว่างรอยต่อ</p>
+          </div>
+
+          <div class="context" data-detail="context-small-schools">
+            <b>🏫 โรงเรียนขนาดเล็ก</b>
+
+            <p>ชุมชนเกษตรริมน้ำกระจายตัวและมีข้อจำกัดด้านทรัพยากร</p>
+          </div>
+
+          <div class="context" data-detail="context-flood">
+            <b>🌊 อุทกภัยซ้ำซาก</b>
+
+            <p>เกิดเวลาเรียนสูญหายและต้องมีระบบความต่อเนื่องทางการศึกษา</p>
+          </div>
+
+          <div class="context" data-detail="context-multi-agency">
+            <b>🔗 หลายสังกัด</b>
+
+            <p>ฐานข้อมูลแยกส่วน ทำให้ภาพรวมผู้เรียนระดับจังหวัดไม่เชื่อมถึงกัน</p>
+          </div>
+
+          <div class="context" data-detail="context-heritage">
+            <b>🏛 ทุนมรดกโลก</b>
+
+            <p>มีศักยภาพต่อ ESD และการเรียนรู้ตลอดชีวิตที่สามารถพัฒนาได้มากขึ้น</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="dark">
+      <div class="wrap">
+        <div class="head">
+          <div>
+            <span class="eyebrow">CORE PROBLEM</span>
+
+            <h2>จากข้อมูลแยกส่วน สู่การช่วยเหลือที่ไปถึงผู้เรียน</h2>
+          </div>
+
+          <p>ปัญหาแกนกลางในร่างโครงการคือ จังหวัดยังไม่สามารถรับประกันได้ว่าเด็กและเยาวชนทุกคนจะเรียนอย่างต่อเนื่องและมีคุณภาพ เพราะขาดข้อมูลกลางและกลไกความร่วมมือข้ามสังกัด</p>
+        </div>
+
+        <div class="flow">
+          <div>
+            <h3>ช่องว่าง</h3>
+
+            <p>ฐานข้อมูลแยกส่วน · referral owner ระดับตำบลไม่ชัด · การติดตามพื้นฐานไม่เป็นมาตรฐานเดียว · การเชื่อมอาชีพเป็นรายกรณี · ยังไม่มี Education Continuity Plan เฉพาะด้าน</p>
+          </div>
+
+          <div class="arrow">
+            →
+          </div>
+
+          <div>
+            <h3>A-LEARN เติมระบบ</h3>
+
+            <p>แพลตฟอร์มข้อมูลกลาง · ทีมตำบล · ระบบส่งต่อ · เครื่องมือพื้นฐานร่วม · Local Skills Pathway · แผนความต่อเนื่องทางการศึกษา</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="objectives">
+      <div class="wrap">
+        <div class="head">
+          <div>
+            <span class="eyebrow">OBJECTIVES</span>
+
+            <h2>6 วัตถุประสงค์เชิงผลลัพธ์</h2>
+          </div>
+
+          <p>เป้าหมายรวมคือให้จังหวัดมีระบบข้อมูลและกลไกความร่วมมือเชิงพื้นที่ที่ทำให้เด็กและเยาวชนได้รับการศึกษาอย่างต่อเนื่อง มีคุณภาพ และเชื่อมโยงโอกาสดำรงชีวิตอย่างยั่งยืนภายในปี 2572</p>
+        </div>
+
+        <div class="objectives">
+          <article class="obj" data-detail="objective-data">
+            <b>SO1</b>
+
+            <div>
+              <h3>ระบบข้อมูลกลาง</h3>
+
+              <p>เชื่อมข้อมูลผู้เรียนข้ามสังกัดอย่างถูกต้องตามกฎหมายคุ้มครองข้อมูลส่วนบุคคล</p><span>SDG 4.5 · 4.a</span>
+            </div>
+          </article>
+
+          <article class="obj" data-detail="objective-lnob">
+            <b>SO2</b>
+
+            <div>
+              <h3>ไม่ทิ้งใครไว้ข้างหลัง</h3>
+
+              <p>ลดเด็กและเยาวชนวัยเรียนที่อยู่นอกระบบไม่น้อยกว่า 50% จากค่าฐานปีที่ 1 พร้อมกลไกติดตามระดับตำบล</p><span>SDG 4.1 · 4.5</span>
+            </div>
+          </article>
+
+          <article class="obj" data-detail="objective-foundation">
+            <b>SO3</b>
+
+            <div>
+              <h3>ทักษะพื้นฐาน</h3>
+
+              <p>เพิ่มสัดส่วนผู้เรียนประถมศึกษาในโรงเรียนเป้าหมายที่ผ่านเกณฑ์ขั้นต่ำไม่น้อยกว่า 15 จุดร้อยละ</p><span>SDG 4.1.1 · 4.6</span>
+            </div>
+          </article>
+
+          <article class="obj" data-detail="objective-career">
+            <b>SO4</b>
+
+            <div>
+              <h3>ทักษะสู่อาชีพ</h3>
+
+              <p>สร้าง Local Skills Pathway ครอบคลุมผู้เรียนช่วงรอยต่อไม่น้อยกว่า 6,000 คน</p><span>SDG 4.3 · 4.4 · 4.7</span>
+            </div>
+          </article>
+
+          <article class="obj" data-detail="objective-resilience">
+            <b>SO5</b>
+
+            <div>
+              <h3>การศึกษาที่ยืดหยุ่น</h3>
+
+              <p>ลดวันเรียนที่สูญหายจากอุทกภัยไม่น้อยกว่า 40% เทียบค่าฐานในสถานศึกษากลุ่มเสี่ยง</p><span>SDG 4.a · 13.1</span>
+            </div>
+          </article>
+
+          <article class="obj" data-detail="objective-policy">
+            <b>SO6</b>
+
+            <div>
+              <h3>หลักฐานสู่นโยบาย</h3>
+
+              <p>ข้อเสนอเชิงนโยบายอย่างน้อย 3 ฉบับที่ กศจ. เห็นชอบและนำไปใช้วางแผน</p><span>SDG 4.7 · 17.19</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="head">
+          <div>
+            <span class="eyebrow">THEORY OF CHANGE</span>
+
+            <h2>ตรรกะการเปลี่ยนแปลง</h2>
+          </div>
+
+          <p>เชื่อมกิจกรรมกับผลลัพธ์ ไม่หยุดเพียงการรายงานว่าดำเนินกิจกรรมครบ</p>
+        </div>
+
+        <div class="theory">
+          <div class="step" data-detail="toc-inputs">
+            <b>01 · Inputs</b>งบ บุคลากร ภาคี ฐานข้อมูล และมหาวิทยาลัย
+          </div>
+
+          <div class="step" data-detail="toc-activities">
+            <b>02 · Activities</b>เชื่อมข้อมูล ค้นหา/ส่งต่อ อ่าน ทักษะอาชีพ และรับภัยพิบัติ
+          </div>
+
+          <div class="step" data-detail="toc-outputs">
+            <b>03 · Outputs</b>แพลตฟอร์ม ทีมตำบล ครูแกนนำ MOU หลักสูตร และแผน
+          </div>
+
+          <div class="step" data-detail="toc-outcomes">
+            <b>04 · Outcomes</b>เด็กกลับและคงอยู่ การอ่านดีขึ้น รอยต่อมั่นคงขึ้น
+          </div>
+
+          <div class="step" data-detail="toc-impact">
+            <b>05 · Impact</b>ลดความเหลื่อมล้ำ ทักษะตรงเศรษฐกิจ และเมืองแห่งการเรียนรู้
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="components">
+      <div class="wrap">
+        <div class="head">
+          <div>
+            <span class="eyebrow">SIX COMPONENTS</span>
+
+            <h2>6 องค์ประกอบที่ทำงานเป็นระบบเดียวกัน</h2>
+          </div>
+
+          <p>เริ่มจากการมองเห็นผู้เรียนด้วยข้อมูล ไปสู่การช่วยเหลือ พัฒนาทักษะ สร้างความยืดหยุ่น และเรียนรู้จากหลักฐาน</p>
+        </div>
+
+        <div class="cards">
+          <article class="card" data-detail="component-data">
+            <div class="top">
+              <strong>01</strong><em>บูรณาการภารกิจประจำ</em>
+            </div>
+
+            <h3>ระบบข้อมูลกลางความเสมอภาค</h3>
+
+            <p>ข้อตกลงแบ่งปันข้อมูล แพลตฟอร์ม/แดชบอร์ด เทียบข้อมูลค้นหาเด็กนอกระบบ และรายงานสถานการณ์</p>
+          </article>
+
+          <article class="card" data-detail="component-lnob">
+            <div class="top">
+              <strong>02</strong><em>บูรณาการภารกิจประจำ</em>
+            </div>
+
+            <h3>กลไกไม่ทิ้งใครระดับตำบล</h3>
+
+            <p>ทีมประสาน ระบบเตือนล่วงหน้า เยี่ยมบ้าน ส่งต่อ ช่วยเหลือฉุกเฉิน และติดตามการคงอยู่ 6–12 เดือน</p>
+          </article>
+
+          <article class="card" data-detail="component-foundation">
+            <div class="top">
+              <strong>03</strong><em>บูรณาการภารกิจประจำ</em>
+            </div>
+
+            <h3>ทักษะพื้นฐานที่มั่นคง</h3>
+
+            <p>เครื่องมือประเมินการอ่านมาตรฐาน ซ่อมเสริม ครูแกนนำ อาสาสมัครฟังเด็กอ่าน และประเมินซ้ำ</p>
+          </article>
+
+          <article class="card" data-detail="component-career">
+            <div class="top">
+              <strong>04</strong><em>บูรณาการภารกิจประจำ</em>
+            </div>
+
+            <h3>เส้นทางทักษะสู่อาชีพเชิงพื้นที่</h3>
+
+            <p>เชื่อมสถานศึกษา นายจ้าง อาชีวศึกษา หลักสูตรระยะสั้น และ ESD มรดกโลก</p>
+          </article>
+
+          <article class="card" data-detail="component-resilience">
+            <div class="top">
+              <strong>05</strong><em>บูรณาการภารกิจประจำ</em>
+            </div>
+
+            <h3>การศึกษาที่ยืดหยุ่นและเรียนรู้ตลอดชีวิต</h3>
+
+            <p>แผนความต่อเนื่องทางการศึกษา ฟื้นฟูหลังภัยพิบัติ และศูนย์เรียนรู้แรงงาน/ผู้ใหญ่</p>
+          </article>
+
+          <article class="card" data-detail="component-mel">
+            <div class="top">
+              <strong>06</strong><em>งบสนับสนุนการประสาน</em>
+            </div>
+
+            <h3>บริหาร วิจัย และ MEL</h3>
+
+            <p>บริหารโครงการ ติดตาม ประเมินผลภายนอก วิจัยเชิงสาเหตุ และถอดบทเรียน</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="lnob">
+      <div class="wrap">
+        <div class="head">
+          <div>
+            <span class="eyebrow">LEAVE NO ONE BEHIND</span>
+
+            <h2>กลุ่มที่ต้องมองเห็นเป็นพิเศษ</h2>
+          </div>
+
+          <p>โครงการกำหนดให้รายงานผลแยกกลุ่ม เพื่อไม่ให้ค่าเฉลี่ยบดบังความเหลื่อมล้ำ</p>
+        </div>
+
+        <div class="chips">
+          <span>ครัวเรือนยากจน/ยากจนพิเศษ</span><span>เด็กย้ายถิ่นตามงานอุตสาหกรรม</span><span>สถานะทะเบียน/สัญชาติไม่ชัดเจน</span><span>ผู้เรียนที่มีความต้องการจำเป็นพิเศษ</span><span>เด็กที่อยู่กับผู้สูงอายุ</span><span>โรงเรียนขนาดเล็กริมน้ำ/พื้นที่เสี่ยงอุทกภัย</span>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="head">
+          <div>
+            <span class="eyebrow">IMPLEMENTATION</span>
+
+            <h2>3 ปี: วางฐาน → ขยายผล → ฝังระบบ</h2>
+          </div>
+
+          <p>เริ่มจากข้อตกลงข้อมูลและค่าฐาน ก่อนขยายกลไกพื้นที่และประเมินผลอย่างเป็นระบบ</p>
+        </div>
+
+        <div class="years">
+          <div class="year" data-detail="year-2570">
+            <h3>ปี 1 · 2570</h3>
+
+            <ul>
+              <li>กรอบ PDPA และข้อตกลงข้อมูล</li>
+
+              <li>แพลตฟอร์ม/ค่าฐาน</li>
+
+              <li>ทีมตำบลและระบบเตือน</li>
+
+              <li>เครื่องมือประเมินการอ่าน</li>
+
+              <li>สำรวจทักษะนายจ้าง</li>
+            </ul>
+          </div>
+
+          <div class="year" data-detail="year-2571">
+            <h3>ปี 2 · 2571</h3>
+
+            <ul>
+              <li>ค้นหา เยี่ยมบ้าน ส่งต่อ</li>
+
+              <li>ซ่อมเสริมและอาสาสมัคร</li>
+
+              <li>หลักสูตรระยะสั้น/ESD</li>
+
+              <li>แผนความต่อเนื่อง</li>
+
+              <li>ประเมินกลางโครงการ</li>
+            </ul>
+          </div>
+
+          <div class="year" data-detail="year-2572">
+            <h3>ปี 3 · 2572</h3>
+
+            <ul>
+              <li>มาตรการเต็มรูปแบบ</li>
+
+              <li>ติดตามการคงอยู่/เส้นทางผู้เรียน</li>
+
+              <li>วิจัยและวิเคราะห์ต้นทุน</li>
+
+              <li>ส่งมอบระบบและเครือข่าย</li>
+
+              <li>ประเมินสิ้นสุด/เผยแพร่บทเรียน</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="budget" class="budget">
+      <div class="wrap">
+        <div class="head">
+          <div>
+            <span class="eyebrow">BUDGET</span>
+
+            <h2>กรอบงบสนับสนุนไม่เกิน 150,000 บาท</h2>
+          </div>
+
+          <p>ปีงบประมาณ 2570–2572 กำหนดเพดานปีละไม่เกิน 50,000 บาท เป็นงบสนับสนุนการประสานและบริหารโครงการ ส่วนการดำเนินงานหลักใช้การบูรณาการภารกิจประจำ บุคลากร ระบบข้อมูล สถานที่ วัสดุ อุปกรณ์ และกิจกรรมที่หน่วยงานภาคีมีอยู่แล้ว</p>
+        </div>
+
+        <div class="table">
+          <table>
+            <thead>
+              <tr>
+                <th>ปีงบประมาณ</th>
+
+                <th>กรอบวงเงิน (บาท)</th>
+
+                <th>จุดเน้นการสนับสนุน</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>2570</td>
+
+                <td>ไม่เกิน 50,000</td>
+
+                <td>ตั้งกลไกประสานงาน ข้อตกลงข้อมูล จัดทำค่าฐาน และวางระบบติดตามร่วม</td>
+              </tr>
+
+              <tr>
+                <td>2571</td>
+
+                <td>ไม่เกิน 50,000</td>
+
+                <td>สนับสนุนการขยายการค้นหา ส่งต่อ ซ่อมเสริม เส้นทางทักษะ และแผนความต่อเนื่อง</td>
+              </tr>
+
+              <tr>
+                <td>2572</td>
+
+                <td>ไม่เกิน 50,000</td>
+
+                <td>ติดตามผล ถอดบทเรียน สังเคราะห์ข้อเสนอเชิงนโยบาย และส่งต่อระบบให้หน่วยงานเจ้าภาพ</td>
+              </tr>
+
+              <tr>
+                <th>รวม</th>
+
+                <th>ไม่เกิน 150,000</th>
+
+                <th>ตลอดระยะเวลา 3 ปี</th>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="callouts">
+          <div class="call">
+            สถานะของวงเงิน<b>งบประสานและบริหาร</b><small>ใช้สำหรับการประชุม/ประสานงาน เอกสารและสื่อ การจัดการข้อมูล การติดตาม และค่าใช้จ่ายจำเป็นตามระเบียบ ไม่ใช่งบสำหรับจัดทุกกิจกรรมของทั้ง 6 องค์ประกอบโดยลำพัง</small>
+          </div>
+
+          <div class="call">
+            ทรัพยากรหลัก<b>บูรณาการของภาคีเดิม</b><small>มูลค่าบุคลากร ระบบข้อมูล สถานที่ วัสดุ อุปกรณ์ และกิจกรรมที่ภาคีร่วมสมทบหรือดำเนินการตามภารกิจประจำ ไม่รวมอยู่ในกรอบ 150,000 บาทนี้</small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="head">
+          <div>
+            <span class="eyebrow">GOVERNANCE</span>
+
+            <h2>โครงสร้างบริหารหลายระดับ</h2>
+          </div>
+
+          <p>แยกบทบาทด้านนโยบาย อำนวยการ ปฏิบัติ และพื้นที่</p>
+        </div>
+
+        <div class="governance">
+          <div class="gov" data-detail="gov-steering">
+            <small>ระดับนโยบาย</small>
+
+            <h3>คณะกรรมการอำนวยการ</h3>
+
+            <p>กำหนดทิศทางและแก้ปัญหาเชิงระบบ</p>
+          </div>
+
+          <div class="gov" data-detail="gov-management">
+            <small>ระดับอำนวยการ</small>
+
+            <h3>คณะทำงานบริหาร</h3>
+
+            <p>กำกับแผนปฏิบัติการและกิจกรรม</p>
+          </div>
+
+          <div class="gov" data-detail="gov-office">
+            <small>ระดับปฏิบัติ</small>
+
+            <h3>สำนักงานบริหารโครงการ</h3>
+
+            <p>งานประจำ ข้อมูล พื้นที่ การเงินและธุรการ</p>
+          </div>
+
+          <div class="gov" data-detail="gov-local">
+            <small>ระดับพื้นที่</small>
+
+            <h3>ทีมประสานระดับตำบล</h3>
+
+            <p>ค้นหา ติดตาม และส่งต่อรายกรณี</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="mel">
+      <div class="wrap">
+        <div class="head">
+          <div>
+            <span class="eyebrow">MONITORING · EVALUATION · LEARNING</span>
+
+            <h2>วัดผลเพื่อเรียนรู้</h2>
+          </div>
+
+          <p>ร่างโครงการฝังการประเมินและการวิจัยไว้ตั้งแต่ต้น เพื่อดูทั้งความก้าวหน้า ผลลัพธ์ ผลกระทบ และความคุ้มค่า</p>
+        </div>
+
+        <div class="mel">
+          <div>
+            <h3>กรอบประเมิน 3 ชั้น</h3>
+
+            <ul>
+              <li>CIPP Model</li>
+
+              <li>OECD-DAC 6 เกณฑ์</li>
+
+              <li>UNESCO SDG 4 Monitoring Framework</li>
+            </ul>
+          </div>
+
+          <div>
+            <h3>Research Component</h3>
+
+            <ul>
+              <li>Mixed-Methods Explanatory Design</li>
+
+              <li>Stepped-Wedge Cluster Design</li>
+
+              <li>Difference-in-Differences + Multilevel Model</li>
+
+              <li>Cost-Effectiveness Analysis</li>
+
+              <li>กรณีศึกษา 6 ตำบล + Participatory Action Research</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="source">
+          <b>ข้อมูลและจริยธรรม:</b> ร่างกำหนดให้เผยแพร่เฉพาะข้อมูลระดับรวมตั้งแต่ระดับตำบลขึ้นไป ไม่จัดอันดับรายโรงเรียน ใช้ข้อมูลส่วนบุคคลเท่าที่จำเป็น และงานวิจัยประเมินผลต้องผ่านการรับรองจริยธรรมการวิจัยในมนุษย์ของสถาบันร่วมวิจัย
+        </div>
+      </div>
+    </section>
+
+    <section id="success" class="success">
+      <div class="wrap">
+        <div class="head">
+          <div>
+            <span class="eyebrow">CRITICAL SUCCESS FACTORS</span>
+
+            <h2>5 เงื่อนไขที่ขาดไม่ได้</h2>
+          </div>
+
+          <p>เอกสารระบุทั้งเงื่อนไขสำเร็จและข้อจำกัดอย่างตรงไปตรงมา</p>
+        </div>
+
+        <div class="successgrid">
+          <ol>
+            <li>ข้อตกลงแบ่งปันข้อมูลต้องสำเร็จก่อน</li>
+
+            <li>ลดภาระครูจริง — Collect Once, Use Many Times</li>
+
+            <li>ต้องมีค่าฐานที่เชื่อถือได้</li>
+
+            <li>เจ้าภาพระดับตำบลต้องชัดเจนเป็นรายบุคคล</li>
+
+            <li>รายงานต่อ กศจ. อย่างสม่ำเสมอ</li>
+          </ol>
+
+          <div class="warn">
+            <h3>ข้อจำกัด</h3>
+
+            <p>ไม่สามารถแก้ปัญหาอัตรากำลังครูโดยตรง ไม่ควรคาดหวังผลสัมฤทธิ์ระดับชาติให้เปลี่ยนภายใน 3 ปี และการติดตามเด็กที่ย้ายออกนอกจังหวัดยังต้องอาศัยกลไกระดับชาติ</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="head">
+          <div>
+            <span class="eyebrow">EXPECTED BENEFITS</span>
+
+            <h2>ปลายทางคือระบบพื้นที่ที่เรียนรู้ได้</h2>
+          </div>
+
+          <p>A-LEARN มุ่งให้ข้อมูล การช่วยเหลือ การพัฒนาทักษะ และการตัดสินใจเชิงนโยบายเชื่อมถึงกัน</p>
+        </div>
+
+        <div class="benefits">
+          <div class="benefit" data-detail="benefit-learner">
+            <h3>ผู้เรียน</h3>
+
+            <p>กลับและคงอยู่ในรูปแบบการเรียนที่เหมาะสม มีพื้นฐานและทางเลือกชีวิต</p>
+          </div>
+
+          <div class="benefit" data-detail="benefit-school">
+            <h3>ครู/สถานศึกษา</h3>
+
+            <p>ลดรายงานซ้ำ มีเครื่องมือร่วม และเครือข่ายช่วยดูแลผู้เรียน</p>
+          </div>
+
+          <div class="benefit" data-detail="benefit-province">
+            <h3>จังหวัด</h3>
+
+            <p>มีข้อมูลกลาง กลไกข้ามสังกัด และหลักฐานสำหรับแผนรอบถัดไป</p>
+          </div>
+
+          <div class="benefit" data-detail="benefit-sdg">
+            <h3>SDG Localization</h3>
+
+            <p>ติดตาม SDG 4 ระดับพื้นที่และสร้างบทเรียนสำหรับการประยุกต์ใช้</p>
+          </div>
+        </div>
+
+        <div class="source">
+          <b>หมายเหตุ:</b> หน้านี้เป็นการสังเคราะห์สาระจากร่างโครงการเพื่อการนำเสนอบนเว็บไซต์ ไม่ใช่ประกาศอนุมัติโครงการหรือรายงานผลการดำเนินงานจริง ไม่ได้เติมค่าฐานที่ต้นฉบับระบุว่า [ยืนยันข้อมูล] และไม่แทนตัวอย่างโครงการ E1–E6
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="modal-backdrop" id="detailModal" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-describedby="modalBody" tabindex="-1">
+      <button class="modal-close" type="button" aria-label="ปิดหน้าต่าง">×</button>
+
+      <h2 id="modalTitle"></h2>
+
+      <div class="modal-body" id="modalBody"></div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="wrap">
+      <b>A-LEARN อยุธยา</b><br>
+      ร่างโครงการกรณีศึกษาบนอยุธยาเรียนรู้ · SDG 4 · จัดทำโดย บูรพาทิศ พลอยสุวรรณ์ ผู้วิจัยอิสระ · ไม่ใช่เว็บราชการ ไม่ใช่มติ กศจ. และไม่ใช่ช่องทางยื่นเรื่อง<br>
+      <a href="index.html">หน้าภาพรวม</a> ·
+      <a href="projects.html">หน้าโครงการ</a> ·
+      <a href="knowledge.html?article=a-learn-ayutthaya">บทความกรณีศึกษา</a> ·
+      <a href="about.html#privacy">ความเป็นส่วนตัว</a><br>
+      ตรวจเนื้อหา 25 กันยายน 2569
+    </div>
+  </footer>
+  <script>
+  const D=(title,html)=>({title,html});
+  const DETAIL={
+    'context-industry':D('จังหวัดอุตสาหกรรม',`<h3>เหตุผลเชิงพื้นที่</h3><p>พระนครศรีอยุธยาเป็นฐานอุตสาหกรรมสำคัญ มีแรงงานเคลื่อนย้ายและครอบครัวย้ายถิ่นตามการจ้างงาน เด็กจึงอาจเปลี่ยนสถานศึกษาหรือหลุดจากระบบในช่วงรอยต่อได้ง่าย</p><h3>นัยต่อโครงการ</h3><p>เชื่อมข้อมูลข้ามสังกัด ติดตามรายกรณี และสร้างเส้นทางทักษะที่เชื่อมการศึกษากับโลกอาชีพในพื้นที่ โดยใช้เครือข่ายสถานศึกษา นายจ้าง และหน่วยงานเดิม</p>`),
+    'context-small-schools':D('โรงเรียนขนาดเล็ก',`<h3>เหตุผลเชิงพื้นที่</h3><p>โรงเรียนขนาดเล็กและชุมชนเกษตรริมน้ำมีข้อจำกัดด้านทรัพยากรและการจัดการเรียนรู้แตกต่างจากพื้นที่เมือง</p><h3>นัยต่อโครงการ</h3><p>ใช้เครือข่ายพื้นที่ เครื่องมือพื้นฐานร่วม และทรัพยากรของภาคีตามภารกิจประจำ โดยออกแบบการสนับสนุนให้เหมาะกับขนาดและบริบทของแต่ละแห่ง</p>`),
+    'context-flood':D('อุทกภัยซ้ำซาก',`<h3>ปัญหา</h3><p>อุทกภัยทำให้เกิดวันเรียนสูญหาย การเดินทางหยุดชะงัก และต้องฟื้นฟูการเรียนรู้ภายหลังเหตุการณ์</p><h3>คำตอบของโครงการ</h3><p>ประสานสถานศึกษาและหน่วยงานภัยพิบัติเพื่อจัดทำ Education Continuity Plan ระบบเรียนรู้ทดแทน และแนวทางฟื้นฟูหลังภัย โดยตั้งเป้าลดวันเรียนที่สูญหายอย่างน้อย 40% เทียบค่าฐาน</p>`),
+    'context-multi-agency':D('หลายสังกัด',`<h3>ช่องว่าง</h3><p>ข้อมูลผู้เรียนอยู่ในหลายหน่วยงานและหลายสังกัด ทำให้การเห็นภาพรวมและติดตามเด็กที่ย้ายหรือหลุดจากระบบทำได้ยาก</p><h3>คำตอบของโครงการ</h3><p>จัดทำข้อตกลงแบ่งปันข้อมูล กรอบ PDPA และชุดข้อมูลกลางที่จำเป็น โดยเชื่อมระบบเดิมเท่าที่ทำได้ ไม่สร้างภาระการรายงานซ้ำแก่ครู</p>`),
+    'context-heritage':D('ทุนมรดกโลก',`<h3>โอกาส</h3><p>อยุธยามีทุนประวัติศาสตร์ วัฒนธรรม และมรดกโลกที่เชื่อมกับ Education for Sustainable Development และการเรียนรู้ตลอดชีวิตได้</p><h3>การใช้ประโยชน์</h3><p>บูรณาการหลักสูตรและกิจกรรมเดิมของสถานศึกษา ชุมชน มหาวิทยาลัย และหน่วยงานวัฒนธรรมให้เชื่อมกับทักษะอาชีพและการพัฒนาชุมชนอย่างยั่งยืน</p>`),
+
+    'objective-data':D('SO1 · ระบบข้อมูลกลาง',`<h3>เป้าหมาย</h3><p>เชื่อมข้อมูลผู้เรียนข้ามสังกัดอย่างถูกต้องตามกฎหมายคุ้มครองข้อมูลส่วนบุคคล</p><h3>แนวดำเนินงาน</h3><ul><li>ข้อตกลงแบ่งปันข้อมูลและธรรมาภิบาลข้อมูล</li><li>ใช้หรือเชื่อมระบบข้อมูลเดิมก่อนพัฒนาระบบใหม่</li><li>รายงานข้อมูลรวมเพื่อการวางแผนและช่วยเหลือ</li></ul>`),
+    'objective-lnob':D('SO2 · ไม่ทิ้งใครไว้ข้างหลัง',`<h3>เป้าหมาย</h3><p>ลดเด็กและเยาวชนวัยเรียนที่อยู่นอกระบบไม่น้อยกว่า 50% จากค่าฐานปีแรก</p><h3>กลไก</h3><ul><li>ทีมประสานและเจ้าภาพรายกรณีระดับพื้นที่</li><li>ระบบเตือนล่วงหน้า ค้นหา เยี่ยมบ้าน และส่งต่อ</li><li>ติดตามการกลับเข้าและคงอยู่ในรูปแบบการเรียน 6–12 เดือน</li></ul>`),
+    'objective-foundation':D('SO3 · ทักษะพื้นฐาน',`<h3>เป้าหมาย</h3><p>เพิ่มสัดส่วนผู้เรียนประถมศึกษาในโรงเรียนเป้าหมายที่ผ่านเกณฑ์ขั้นต่ำไม่น้อยกว่า 15 จุดร้อยละภายใน 3 ปี</p><h3>กลไก</h3><p>ใช้เครื่องมือประเมินร่วม การสอนซ่อมเสริม ครูแกนนำ อาสาสมัครชุมชน และการประเมินซ้ำ โดยบูรณาการในงานปกติของสถานศึกษาและภาคี</p>`),
+    'objective-career':D('SO4 · ทักษะสู่อาชีพ',`<h3>เป้าหมาย</h3><p>สร้าง Ayutthaya Local Skills Pathway ครอบคลุมผู้เรียนช่วงรอยต่อไม่น้อยกว่า 6,000 คน</p><h3>กลไก</h3><p>เชื่อมการแนะแนว หลักสูตรระยะสั้น และกิจกรรมที่มีอยู่ของสถานศึกษา อาชีวศึกษา นายจ้าง และเครือข่ายมรดกวัฒนธรรม</p>`),
+    'objective-resilience':D('SO5 · การศึกษาที่ยืดหยุ่น',`<h3>เป้าหมาย</h3><p>ให้สถานศึกษาเสี่ยงอุทกภัยมีแผนความต่อเนื่องที่ใช้ได้จริง และลดวันเรียนที่สูญหายอย่างน้อย 40% เทียบค่าฐาน</p><h3>ขอบเขต</h3><p>ครอบคลุมการเตรียมพร้อม การเรียนรู้ระหว่างเหตุ การฟื้นฟูหลังภัย และการเรียนรู้ตลอดชีวิตสำหรับแรงงานและผู้ใหญ่</p>`),
+    'objective-policy':D('SO6 · หลักฐานสู่นโยบาย',`<h3>เป้าหมาย</h3><p>จัดทำข้อเสนอเชิงนโยบายอย่างน้อย 3 ฉบับที่ กศจ. เห็นชอบและนำไปใช้วางแผน</p><h3>วิธีการ</h3><p>ใช้ข้อมูลติดตามผล การประเมิน การวิจัยที่ทำร่วมกับภาคี และบทเรียนจากพื้นที่เป็นฐาน โดยเลือกวิธีที่เหมาะกับทรัพยากรจริง</p>`),
+
+    'toc-inputs':D('01 · Inputs',`<h3>ทรัพยากรตั้งต้น</h3><p>กรอบงบสนับสนุนไม่เกิน 150,000 บาทตลอด 3 ปีทำหน้าที่เป็นตัวเชื่อม ขณะที่ทรัพยากรหลักมาจากบุคลากร ระบบข้อมูล สถานที่ วัสดุ อุปกรณ์ ความเชี่ยวชาญ และกิจกรรมตามภารกิจประจำของหน่วยงานภาคี</p>`),
+    'toc-activities':D('02 · Activities',`<h3>กิจกรรมสำคัญ</h3><p>เชื่อมข้อมูล ค้นหาและส่งต่อผู้เรียน พัฒนาทักษะพื้นฐาน เชื่อมเส้นทางอาชีพ วางแผนรับภัยพิบัติ และติดตามผล โดยบูรณาการเข้าในแผนงานเดิมของแต่ละหน่วยงาน</p>`),
+    'toc-outputs':D('03 · Outputs',`<h3>ผลผลิต</h3><p>ข้อตกลงข้อมูล ชุดข้อมูลกลาง ทีมประสานระดับพื้นที่ เครื่องมือร่วม เครือข่ายเส้นทางทักษะ แผนความต่อเนื่อง และรายงานบทเรียนที่มีเจ้าภาพดูแลต่อ</p>`),
+    'toc-outcomes':D('04 · Outcomes',`<h3>ผลลัพธ์</h3><p>ผู้เรียนถูกค้นพบและช่วยเหลือเร็วขึ้น คงอยู่ในการศึกษา ทักษะพื้นฐานดีขึ้น รอยต่อสู่การเรียนหรืออาชีพมั่นคงขึ้น และสถานศึกษารับมือเหตุหยุดชะงักได้ดีขึ้น</p>`),
+    'toc-impact':D('05 · Impact',`<h3>ผลกระทบระยะยาว</h3><p>ความเหลื่อมล้ำทางการศึกษาลดลง ทักษะเชื่อมกับเศรษฐกิจและทุนวัฒนธรรมของพื้นที่ และจังหวัดมีกลไกเรียนรู้ร่วมที่ดำเนินต่อได้หลังสิ้นสุดกรอบโครงการ</p>`),
+
+    'component-data':D('01 · ระบบข้อมูลกลางความเสมอภาค',`<h3>งานหลัก</h3><ul><li>ข้อตกลงแบ่งปันข้อมูลและกรอบ PDPA</li><li>เชื่อมระบบ/แดชบอร์ดเดิมและจัดทำชุดข้อมูลจำเป็น</li><li>เทียบข้อมูลเพื่อค้นหาเด็กนอกระบบ</li><li>รายงานสถานการณ์ระดับจังหวัด</li></ul><h3>รูปแบบทรัพยากร</h3><p>ใช้ระบบและบุคลากรข้อมูลของภาคีเดิมเป็นหลัก งบโครงการใช้สนับสนุนการประสาน การออกแบบข้อตกลง และค่าใช้จ่ายจำเป็นเท่านั้น</p>`),
+    'component-lnob':D('02 · กลไกไม่ทิ้งใครระดับตำบล',`<h3>งานหลัก</h3><ul><li>กำหนดทีมประสานและ referral owner จากหน่วยงานที่มีหน้าที่อยู่แล้ว</li><li>ใช้ระบบเตือนล่วงหน้าและค้นหาเชิงรุก</li><li>เยี่ยมบ้าน ส่งต่อ และช่วยเหลือตามสาเหตุ</li><li>ติดตามการคงอยู่ 6–12 เดือน</li></ul><h3>รูปแบบทรัพยากร</h3><p>บูรณาการงานของสถานศึกษา ท้องถิ่น สาธารณสุข พัฒนาสังคม และชุมชน โดยไม่ตั้งโครงสร้างบุคลากรซ้ำซ้อน</p>`),
+    'component-foundation':D('03 · ทักษะพื้นฐานที่มั่นคง',`<h3>งานหลัก</h3><ul><li>ใช้เครื่องมือประเมินการอ่านมาตรฐานร่วม</li><li>ซ่อมเสริมตามระดับความต้องการ</li><li>พัฒนาครูแกนนำผ่านเครือข่ายเดิม</li><li>อาสาสมัครชุมชนฟังเด็กอ่านและประเมินซ้ำ</li></ul><h3>รูปแบบทรัพยากร</h3><p>บูรณาการในเวลาเรียน การนิเทศ และกิจกรรมพัฒนาผู้เรียน พร้อมใช้สื่อและสถานที่ของภาคี</p>`),
+    'component-career':D('04 · เส้นทางทักษะสู่อาชีพเชิงพื้นที่',`<h3>งานหลัก</h3><ul><li>สำรวจความต้องการทักษะจากนายจ้าง</li><li>เชื่อมสถานศึกษา อาชีวศึกษา และสถานประกอบการ</li><li>ใช้หลักสูตรระยะสั้นและกิจกรรมแนะแนวที่มีอยู่</li><li>เชื่อม ESD กับทุนมรดกโลกของอยุธยา</li></ul><h3>รูปแบบทรัพยากร</h3><p>ภาคีร่วมสมทบวิทยากร พื้นที่เรียนรู้ เครื่องมือ และโอกาสฝึกประสบการณ์ตามภารกิจหรือความร่วมมือเดิม</p>`),
+    'component-resilience':D('05 · การศึกษาที่ยืดหยุ่นและเรียนรู้ตลอดชีวิต',`<h3>งานหลัก</h3><ul><li>Education Continuity Plan</li><li>ระบบเรียนรู้ทดแทนเมื่อเกิดภัย</li><li>ฟื้นฟูการเรียนรู้หลังอุทกภัย</li><li>กิจกรรมเรียนรู้สำหรับแรงงานและผู้ใหญ่</li></ul><h3>รูปแบบทรัพยากร</h3><p>เชื่อมแผนภัยพิบัติ ระบบสื่อสาร สถานที่ และกิจกรรมการเรียนรู้ของสถานศึกษา ท้องถิ่น กศน./สกร. และภาคีเดิม</p>`),
+    'component-mel':D('06 · บริหาร วิจัย และ MEL',`<h3>งานหลัก</h3><p>ประสานแผนงาน ติดตามผล จัดทำรายงาน ถอดบทเรียน และสังเคราะห์ข้อเสนอเชิงนโยบาย ส่วนงานวิจัยหรือการประเมินเชิงลึกดำเนินผ่านมหาวิทยาลัยหรือภาคีตามความพร้อม</p><h3>รูปแบบทรัพยากร</h3><p>กรอบงบปีละไม่เกิน 50,000 บาทใช้สนับสนุนการประสานและบริหารภาพรวม ไม่ใช่มูลค่าทรัพยากรรวมของทุกภาคี</p>`),
+
+    'year-2570':D('ปี 1 · 2570',`<h3>วางฐานระบบ</h3><ul><li>จัดทำข้อตกลงข้อมูลและกรอบ PDPA</li><li>สำรวจระบบเดิมและจัดทำค่าฐาน</li><li>แต่งตั้งเจ้าภาพและทีมประสาน</li><li>เตรียมเครื่องมือทักษะพื้นฐานและสำรวจทักษะนายจ้าง</li></ul><h3>กรอบงบ</h3><p>ไม่เกิน 50,000 บาท สำหรับการประสาน จัดประชุม เอกสาร/สื่อ และการจัดการข้อมูลที่จำเป็น</p>`),
+    'year-2571':D('ปี 2 · 2571',`<h3>ขยายการดำเนินงาน</h3><ul><li>ค้นหา เยี่ยมบ้าน และส่งต่อ</li><li>ซ่อมเสริมและใช้เครือข่ายอาสาสมัคร</li><li>เชื่อมหลักสูตรระยะสั้นและ ESD</li><li>ทดลองใช้แผนความต่อเนื่องและทบทวนกลางโครงการ</li></ul><h3>กรอบงบ</h3><p>ไม่เกิน 50,000 บาท โดยกิจกรรมหลักใช้ทรัพยากรและแผนงานเดิมของภาคี</p>`),
+    'year-2572':D('ปี 3 · 2572',`<h3>ฝังระบบและส่งต่อ</h3><ul><li>ติดตามการคงอยู่และเส้นทางผู้เรียน</li><li>ประเมินผลและวิเคราะห์บทเรียนตามข้อมูลที่มี</li><li>จัดทำข้อเสนอเชิงนโยบาย</li><li>ส่งต่อระบบ เครื่องมือ และเครือข่ายแก่หน่วยงานเจ้าภาพ</li></ul><h3>กรอบงบ</h3><p>ไม่เกิน 50,000 บาท สำหรับการติดตาม ถอดบทเรียน สื่อสารผล และค่าใช้จ่ายประสานที่จำเป็น</p>`),
+
+    'gov-steering':D('คณะกรรมการอำนวยการ',`<h3>บทบาท</h3><p>กำหนดทิศทางเชิงนโยบาย รับทราบผล และแก้ปัญหาข้ามหน่วยงาน พร้อมผลักดันให้แต่ละภาคีนำงานที่รับผิดชอบเข้าแผนและงบภารกิจประจำของตน</p>`),
+    'gov-management':D('คณะทำงานบริหาร',`<h3>บทบาท</h3><p>จัดทำแผนปฏิบัติการร่วม กำหนดเจ้าภาพ ประสานกิจกรรม ติดตามความก้าวหน้า และป้องกันการทำงานซ้ำซ้อนระหว่างหน่วยงาน</p>`),
+    'gov-office':D('สำนักงานบริหารโครงการ',`<h3>บทบาท</h3><p>ทำหน้าที่เลขานุการและศูนย์ประสานงาน ดูแลข้อมูล นัดหมาย ติดตาม และรายงาน โดยใช้บุคลากรและระบบสำนักงานที่มีอยู่เป็นหลัก</p>`),
+    'gov-local':D('ทีมประสานระดับตำบล',`<h3>บทบาท</h3><p>ค้นหา ติดตาม ประเมินสาเหตุ ประสานการส่งต่อ และติดตามผลรายกรณี โดยระบุเจ้าภาพรายบุคคลจากกลไกพื้นที่ที่ปฏิบัติงานอยู่แล้ว</p>`),
+
+    'benefit-learner':D('ผู้เรียน',`<h3>ผลที่คาดหวัง</h3><p>เด็กและเยาวชนที่เสี่ยงหลุดได้รับการค้นหาและช่วยเหลือเร็วขึ้น กลับสู่รูปแบบการเรียนที่เหมาะสม คงอยู่ในระบบ มีพื้นฐานดีขึ้น และเห็นเส้นทางเรียนรู้หรืออาชีพที่หลากหลาย</p>`),
+    'benefit-school':D('ครู/สถานศึกษา',`<h3>ผลที่คาดหวัง</h3><p>ลดการรายงานซ้ำด้วยหลัก Collect Once, Use Many Times มีเครื่องมือร่วม และมีเครือข่ายช่วยดูแลกรณีที่โรงเรียนแก้ไขลำพังไม่ได้</p>`),
+    'benefit-province':D('จังหวัด',`<h3>ผลที่คาดหวัง</h3><p>มีภาพรวมข้อมูลผู้เรียน กลไกข้ามสังกัด และหลักฐานสำหรับกำหนดมาตรการ จัดลำดับทรัพยากร และบูรณาการแผนการศึกษารอบถัดไป</p>`),
+    'benefit-sdg':D('SDG Localization',`<h3>ผลที่คาดหวัง</h3><p>จังหวัดเชื่อมตัวชี้วัดโครงการกับ SDG 4 ระดับพื้นที่ เรียนรู้จากข้อมูลจริง และถอดบทเรียนที่พื้นที่อื่นนำไปปรับใช้ตามบริบทได้</p>`)
+  };
+
+  const backdrop=document.getElementById('detailModal');
+  const dialog=backdrop.querySelector('.modal');
+  const title=document.getElementById('modalTitle');
+  const body=document.getElementById('modalBody');
+  const closeBtn=backdrop.querySelector('.modal-close');
+  let lastFocus=null;
+
+  function openModal(card){
+    const detail=DETAIL[card.dataset.detail];
+    if(!detail)return;
+    lastFocus=document.activeElement;
+    title.textContent=detail.title;
+    body.innerHTML=detail.html;
+    backdrop.classList.add('open');
+    backdrop.setAttribute('aria-hidden','false');
+    document.body.style.overflow='hidden';
+    closeBtn.focus();
+  }
+
+  function closeModal(){
+    if(!backdrop.classList.contains('open'))return;
+    backdrop.classList.remove('open');
+    backdrop.setAttribute('aria-hidden','true');
+    document.body.style.overflow='';
+    if(lastFocus)lastFocus.focus();
+  }
+
+  const cards=[...document.querySelectorAll('[data-detail]')];
+  cards.forEach(card=>{
+    const detail=DETAIL[card.dataset.detail];
+    if(!detail){console.warn('Missing modal detail:',card.dataset.detail);return;}
+    card.classList.add('interactive-card');
+    card.tabIndex=0;
+    card.setAttribute('role','button');
+    card.setAttribute('aria-haspopup','dialog');
+    card.setAttribute('aria-label','ดูรายละเอียด '+detail.title);
+    card.addEventListener('click',()=>openModal(card));
+    card.addEventListener('keydown',event=>{
+      if(event.key==='Enter'||event.key===' '){event.preventDefault();openModal(card);}
+    });
+  });
+
+  closeBtn.addEventListener('click',closeModal);
+  backdrop.addEventListener('click',event=>{if(event.target===backdrop)closeModal();});
+  document.addEventListener('keydown',event=>{
+    if(!backdrop.classList.contains('open'))return;
+    if(event.key==='Escape'){closeModal();return;}
+    if(event.key==='Tab'){
+      const focusable=[...dialog.querySelectorAll('button,[href],input,select,textarea,[tabindex]:not([tabindex="-1"])')].filter(el=>!el.disabled);
+      if(!focusable.length){event.preventDefault();dialog.focus();return;}
+      const first=focusable[0],last=focusable[focusable.length-1];
+      if(event.shiftKey&&document.activeElement===first){event.preventDefault();last.focus();}
+      else if(!event.shiftKey&&document.activeElement===last){event.preventDefault();first.focus();}
+    }
+  });
+  </script>
+</body>
+</html>
