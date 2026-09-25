@@ -64,6 +64,7 @@
 - ฉบับอ่านง่าย: แก้ `ayutthaya-sdg4.html`, `ayutthaya-sdg4-students.html`, `ayutthaya-teacher-toolkit.html`, `ayutthaya-school-sdg4.html` และ `ayutthaya-flyer.html`; หน้าทางเข้าคือ `community.html`; ใช้ตัวเลขอ้างอิงชุดเดียวกับหน้าแรก คงตัวอย่างสมมติให้ชัดว่าไม่ใช่รายงานโรงเรียนจริง เครื่องคำนวณครูเป็นข้อสมมติเพื่อเทียบ ไม่ใช่เกณฑ์อัตรากำลังราชการ และใบกรอก SDG 4 ของสถานศึกษาคำนวณบนเครื่องผู้ใช้ ไม่ส่งขึ้นเซิร์ฟเวอร์
 - ที่มา: แก้ `data/sources.json` และบทความ `content/source-notes.md`; `data/provenance.json` เก็บชื่อและ SHA-256 ของไฟล์ใน Projects ที่ใช้ในการสร้างฉบับนี้ ไม่ใช่หลักฐานรับรองเนื้อหาต้นทาง
 - กรอบตัวชี้วัดประเทศจาก ศธจ.: บทความ `content/sdg4-national-indicators.md` และสำเนาสแกน `documents/sdg4-indicators-ayutthaya-peo-scan.pdf` ใช้เทียบรหัส ไม่ใส่ค่าลง Dashboard และไม่แทน I01–I10
+- การศึกษาพิเศษในจังหวัด: ระบุศูนย์การศึกษาพิเศษประจำจังหวัดและเส้นทางบริการใน `content/special-ed-21st.md` กับ `content/agencies.md` ยังไม่มีจำนวนผู้เรียนพิการ และไม่บวกลงยอดภาพระบบ
 
 ลิงก์ภายใน Markdown สำหรับแสดงบนเว็บไซต์ให้เขียนจากรากเว็บ เช่น `projects.html` เพราะแสดงเนื้อหาอยู่ในหน้า HTML ที่ราก ส่วนเอกสารอ้างอิงภายนอกควรใช้ URL เต็ม
 
