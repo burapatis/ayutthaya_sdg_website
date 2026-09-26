@@ -41,6 +41,7 @@
 | ayutthaya-teacher-toolkit.html | ชุดเครื่องมือครูและผู้บริหาร คำนวณช่องว่างครูต่อห้อง แบบสำรวจ และร่างข้อความ |
 | ayutthaya-school-sdg4.html | ใบกรอกตัวชี้วัด SDG 4 ระดับสถานศึกษา คำนวณบนเครื่องผู้ใช้ แล้วพิมพ์ใบสรุป |
 | a-learn-ayutthaya-project.html | ร่างโครงการ A-LEARN อยุธยา กรณีศึกษาเพื่อแลกเปลี่ยน ไม่ใช่โครงการอนุมัติ |
+| documents/a-learn-ayutthaya-2570-2572.pdf | ฉบับ PDF 28 หน้าของร่างเดียวกัน ให้ดาวน์โหลดจากหน้าโครงการ |
 | ayutthaya-flyer.html | แผ่นพับพับสามตอน A4 แนวนอน สำหรับพิมพ์แจกชุมชน |
 | about.html | ผู้จัดทำและการติดต่อ |
 
@@ -66,7 +67,7 @@
 - ที่มา: แก้ `data/sources.json` และบทความ `content/source-notes.md`; `data/provenance.json` เก็บชื่อและ SHA-256 ของไฟล์ใน Projects ที่ใช้ในการสร้างฉบับนี้ ไม่ใช่หลักฐานรับรองเนื้อหาต้นทาง
 - กรอบตัวชี้วัดประเทศจาก ศธจ.: บทความ `content/sdg4-national-indicators.md` และสำเนาสแกน `documents/sdg4-indicators-ayutthaya-peo-scan.pdf` ใช้เทียบรหัส ไม่ใส่ค่าลง Dashboard และไม่แทน I01–I10
 - การศึกษาพิเศษในจังหวัด: ระบุศูนย์การศึกษาพิเศษประจำจังหวัดและเส้นทางบริการใน `content/special-ed-21st.md` กับ `content/agencies.md` ยังไม่มีจำนวนผู้เรียนพิการ และไม่บวกลงยอดภาพระบบ
-- ร่างโครงการ A-LEARN: หน้า `a-learn-ayutthaya-project.html` และบทความ `content/a-learn-ayutthaya.md` เป็นกรณีศึกษา ยังไม่ใช่โครงการอนุมัติ และไม่ใส่เป้าในร่างลง Dashboard
+- ร่างโครงการ A-LEARN: หน้า `a-learn-ayutthaya-project.html` บทความ `content/a-learn-ayutthaya.md` และไฟล์ `documents/a-learn-ayutthaya-2570-2572.pdf` เป็นกรณีศึกษา ยังไม่ใช่โครงการอนุมัติ และไม่ใส่เป้าในร่างลง Dashboard
 
 ลิงก์ภายใน Markdown สำหรับแสดงบนเว็บไซต์ให้เขียนจากรากเว็บ เช่น `projects.html` เพราะแสดงเนื้อหาอยู่ในหน้า HTML ที่ราก ส่วนเอกสารอ้างอิงภายนอกควรใช้ URL เต็ม
 
