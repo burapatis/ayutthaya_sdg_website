@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>สไลด์ร่าง A-LEARN อยุธยา | อยุธยาเรียนรู้ · SDG 4</title>
+<meta name="description" content="สไลด์ 16 แผ่นของร่างโครงการ A-LEARN อยุธยา เป็นกรณีศึกษาเพื่อแลกเปลี่ยนและเพื่อเสนอ กศจ. พิจารณา ไม่ใช่โครงการอนุมัติและไม่ใช่มติที่ประชุม">
+<meta name="theme-color" content="#8c402a">
+<meta name="author" content="บูรพาทิศ พลอยสุวรรณ์">
+<link rel="canonical" href="https://sdg.thamdee.com/alearn-project-slides.html">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="256x256" href="assets/logo.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="th_TH">
+<meta property="og:site_name" content="อยุธยาเรียนรู้ · SDG 4">
+<meta property="og:title" content="สไลด์ร่าง A-LEARN อยุธยา | อยุธยาเรียนรู้ · SDG 4">
+<meta property="og:description" content="สไลด์นำเสนอร่างโครงการกรณีศึกษาเพื่อแลกเปลี่ยน ไม่ใช่โครงการอนุมัติและไม่ใช่มติ กศจ.">
+<meta property="og:url" content="https://sdg.thamdee.com/alearn-project-slides.html">
+<meta property="og:image" content="https://sdg.thamdee.com/assets/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<style>
+@font-face{font-family:'Noto Sans Thai';font-style:normal;font-weight:400;font-display:swap;src:url('vendor/fonts/NotoSansThai-400.ttf') format('truetype')}
+@font-face{font-family:'Noto Sans Thai';font-style:normal;font-weight:500;font-display:swap;src:url('vendor/fonts/NotoSansThai-500.ttf') format('truetype')}
+@font-face{font-family:'Noto Sans Thai';font-style:normal;font-weight:600;font-display:swap;src:url('vendor/fonts/NotoSansThai-600.ttf') format('truetype')}
+@font-face{font-family:'Noto Sans Thai';font-style:normal;font-weight:700;font-display:swap;src:url('vendor/fonts/NotoSansThai-700.ttf') format('truetype')}
+/* ============================================================
+   A-LEARN AYUTTHAYA — PRESENTATION DECK (16:9)
+   ใช้ฟอนต์ในเว็บ · ไม่พึ่ง Google Fonts
+   ============================================================ */
+:root{
+  --navy-900:#0b1626;
+  --navy-800:#12233f;
+  --navy-700:#1d3660;
+  --navy-600:#2b4d80;
+  --amber:#e8a33d;
+  --amber-l:#f7c977;
+  --amber-s:#fff5e3;
+  --green:#2e8b57;
+  --green-s:#e8f5ed;
+  --red:#c9483c;
+  --red-s:#fdecea;
+  --blue:#2563c9;
+  --blue-s:#eaf1fd;
+  --violet:#6b4fa8;
+  --violet-s:#f1ecfa;
+
+  --bg:#eef1f6;
+  --card:#ffffff;
+  --ink:#16202f;
+  --sub:#51607a;
+  --line:#dfe6f0;
+  --shadow:0 18px 50px rgba(9,20,36,.16);
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Noto Sans Thai",Tahoma,sans-serif;
+  overflow:hidden;display:flex;flex-direction:column;
+}
+
+/* ---------- TOPBAR ---------- */
+.topbar{
+  min-height:52px;flex:none;background:var(--navy-800);color:#fff;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:8px 20px;gap:12px;z-index:60;flex-wrap:wrap;
+  box-shadow:0 2px 12px rgba(0,0,0,.2);
+}
+.skip{position:absolute;top:-100px;left:20px;z-index:9999;background:#fff;color:#12233f;padding:10px}
+.skip:focus{top:10px}
+.brand-wrap{display:flex;align-items:center;gap:10px;min-width:0}
+.brand{display:flex;align-items:center;gap:8px;text-decoration:none;color:#fff;font-weight:700;font-size:.92rem;letter-spacing:-.01em}
+.brand img{width:28px;height:28px;border-radius:6px;background:#fff}
+.brand span{color:var(--amber-l)}
+.status{font-size:.68rem;color:rgba(255,255,255,.78);font-weight:500;white-space:nowrap}
+.tb-right{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+a.tbtn{text-decoration:none;display:inline-flex;align-items:center}
+.counter{
+  font-family:"Noto Sans Thai",Tahoma,sans-serif;font-size:.85rem;font-weight:600;
+  background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);
+  padding:4px 12px;border-radius:999px;
+}
+.tbtn{
+  background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.24);color:#fff;
+  padding:6px 13px;border-radius:999px;cursor:pointer;
+  font:600 .78rem/1 "Noto Sans Thai",Tahoma,sans-serif;transition:.18s;
+}
+.tbtn:hover{background:rgba(255,255,255,.26)}
+
+/* ---------- PROGRESS ---------- */
+.progress{height:3px;background:rgba(255,255,255,.08);flex:none}
+.progress i{display:block;height:100%;width:0;background:var(--amber);transition:width .35s ease}
+
+/* ---------- STAGE ---------- */
+.stage{flex:1;position:relative;display:grid;place-items:center;padding:18px;overflow:hidden}
+
+.slide{
+  position:absolute;width:min(100%,1240px);aspect-ratio:16/9;
+  max-height:calc(100vh - 150px);
+  background:var(--card);border:1px solid var(--line);border-radius:18px;
+  box-shadow:var(--shadow);padding:clamp(24px,3.6vw,52px);
+  display:flex;flex-direction:column;
+  opacity:0;pointer-events:none;transform:scale(.975) translateY(6px);
+  transition:opacity .3s ease,transform .3s ease;
+  overflow:hidden;
+}
+.slide.on{opacity:1;pointer-events:auto;transform:none}
+
+.s-head{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;margin-bottom:14px;flex:none}
+.tag{
+  font-size:.72rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;
+  color:var(--navy-700);background:var(--blue-s);padding:5px 13px;border-radius:6px;
+}
+.tag.g{color:#1c6b42;background:var(--green-s)}
+.tag.a{color:#8a5c11;background:var(--amber-s)}
+.tag.r{color:#93322a;background:var(--red-s)}
+.tag.v{color:#4b3480;background:var(--violet-s)}
+.s-no{font-family:"Noto Sans Thai",Tahoma,sans-serif;font-size:.8rem;color:#93a0b4;flex:none}
+
+.slide h2{font-size:clamp(1.3rem,2.7vw,2.05rem);line-height:1.3;margin:0 0 10px;letter-spacing:-.02em}
+.slide h2 em{color:var(--amber);font-style:normal}
+.lead{font-size:clamp(.92rem,1.35vw,1.06rem);color:var(--sub);line-height:1.62;margin:0 0 14px;max-width:80ch}
+
+.s-body{flex:1;min-height:0;display:flex;flex-direction:column;justify-content:center;overflow:hidden}
+
+/* ---------- GRIDS ---------- */
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.g5{display:grid;grid-template-columns:repeat(5,1fr);gap:11px}
+.g6{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+
+.card{
+  background:#fbfcfe;border:1px solid var(--line);border-radius:13px;padding:15px 16px;
+}
+.card h3{margin:0 0 6px;font-size:.99rem;line-height:1.35}
+.card p{margin:0;font-size:.85rem;color:var(--sub);line-height:1.6}
+.card .ico{font-size:1.5rem;line-height:1;margin-bottom:7px}
+.card.t-amber{border-top:4px solid var(--amber)}
+.card.t-green{border-top:4px solid var(--green)}
+.card.t-blue{border-top:4px solid var(--blue)}
+.card.t-red{border-top:4px solid var(--red)}
+.card.t-violet{border-top:4px solid var(--violet)}
+.card.t-navy{border-top:4px solid var(--navy-700)}
+.card.fill-r{background:var(--red-s);border-color:#f2bcb6}
+.card.fill-g{background:var(--green-s);border-color:#b9e0c9}
+.card.fill-a{background:var(--amber-s);border-color:#f0d8a8}
+.card.fill-b{background:var(--blue-s);border-color:#c3d8f7}
+
+/* ---------- STAT ---------- */
+.stat{text-align:center;background:#fbfcfe;border:1px solid var(--line);border-radius:13px;padding:14px 10px}
+.stat b{display:block;font-size:clamp(1.3rem,2.4vw,1.95rem);color:var(--navy-700);line-height:1.12;letter-spacing:-.02em}
+.stat span{display:block;margin-top:5px;font-size:.79rem;color:var(--sub);line-height:1.45}
+.stat.hi{background:var(--navy-800);border-color:var(--navy-800)}
+.stat.hi b{color:var(--amber-l)}
+.stat.hi span{color:rgba(255,255,255,.8)}
+
+/* ---------- TABLE ---------- */
+table.t{width:100%;border-collapse:collapse;font-size:.85rem}
+table.t th,table.t td{padding:8px 11px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+table.t th{background:#f2f6fb;font-weight:600;color:var(--sub);font-size:.78rem;letter-spacing:.02em}
+table.t tr:last-child td{border-bottom:none}
+table.t td b{color:var(--ink)}
+table.t tr.total td{background:var(--navy-800);color:#fff;font-weight:700}
+table.t tr.total td b{color:var(--amber-l)}
+
+/* ---------- FLOW ---------- */
+.flow{display:flex;align-items:stretch;gap:9px;flex-wrap:nowrap}
+.flow-step{
+  flex:1;background:#fbfcfe;border:1px solid var(--line);border-radius:12px;
+  padding:13px 12px;position:relative;min-width:0;
+}
+.flow-step h4{margin:0 0 5px;font-size:.87rem;color:var(--navy-700)}
+.flow-step p{margin:0;font-size:.77rem;color:var(--sub);line-height:1.5}
+.flow-arrow{align-self:center;color:var(--amber);font-size:1.2rem;flex:none;font-weight:700}
+
+/* ---------- LIST ---------- */
+ul.tight{margin:6px 0 0;padding-left:18px;font-size:.86rem;color:var(--sub);line-height:1.62}
+ul.tight li{margin-bottom:5px}
+ul.tight li b{color:var(--ink)}
+ul.tight li:last-child{margin-bottom:0}
+
+.quote{
+  background:var(--amber-s);border-left:5px solid var(--amber);
+  padding:13px 17px;border-radius:0 11px 11px 0;
+  font-size:.95rem;font-weight:600;color:#6b4a0c;line-height:1.6;
+}
+.quote.b{background:var(--blue-s);border-left-color:var(--blue);color:#173a6d}
+.quote.g{background:var(--green-s);border-left-color:var(--green);color:#14532d}
+.quote.r{background:var(--red-s);border-left-color:var(--red);color:#7f1d1d}
+
+.pill{
+  display:inline-block;font-size:.74rem;font-weight:600;padding:2px 9px;
+  border-radius:999px;background:var(--blue-s);color:#1a4a9c;margin-right:5px;
+}
+.pill.g{background:var(--green-s);color:#1c6b42}
+.pill.a{background:var(--amber-s);color:#8a5c11}
+.pill.r{background:var(--red-s);color:#93322a}
+
+/* ---------- COVER ---------- */
+.slide.cover{
+  background:
+    radial-gradient(circle at 86% 16%,rgba(232,163,61,.24),transparent 46%),
+    linear-gradient(158deg,var(--navy-800),var(--navy-600));
+  border-color:var(--navy-800);color:#fff;
+  justify-content:center;text-align:center;align-items:center;
+}
+.slide.cover h1{font-size:clamp(1.5rem,3.4vw,2.65rem);line-height:1.24;margin:0 0 12px;letter-spacing:-.025em}
+.slide.cover h1 em{color:var(--amber-l);font-style:normal}
+.slide.cover .sub{color:rgba(255,255,255,.86);font-size:clamp(.9rem,1.4vw,1.08rem);max-width:62ch;line-height:1.6;margin:0 auto 18px}
+.badge{
+  display:inline-block;background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.26);
+  padding:6px 17px;border-radius:999px;font-size:.82rem;margin-bottom:14px;
+}
+.cover-facts{display:flex;gap:9px;flex-wrap:wrap;justify-content:center;margin-top:6px}
+.cfact{
+  background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);
+  border-radius:11px;padding:9px 16px;font-size:.78rem;color:rgba(255,255,255,.82);
+}
+.cfact b{display:block;font-size:1.12rem;color:var(--amber-l);line-height:1.25;margin-bottom:1px}
+
+.slide.closing{
+  background:linear-gradient(158deg,var(--navy-800),var(--navy-600));
+  border-color:var(--navy-800);color:#fff;justify-content:center;text-align:center;align-items:center;
+}
+.slide.closing h2{font-size:clamp(1.35rem,2.9vw,2.15rem);max-width:30ch;margin-bottom:14px}
+.slide.closing .lead{color:rgba(255,255,255,.85);text-align:center;max-width:52ch;margin-inline:auto}
+
+/* ---------- NOTES ---------- */
+.notes{
+  position:fixed;left:0;right:0;bottom:0;max-height:42vh;overflow-y:auto;
+  background:var(--navy-900);color:#fff;border-top:3px solid var(--amber);
+  padding:16px 26px 20px;transform:translateY(101%);
+  transition:transform .28s ease;z-index:90;
+  box-shadow:0 -12px 36px rgba(0,0,0,.34);
+}
+.notes.open{transform:none}
+.notes-head{
+  display:flex;justify-content:space-between;align-items:center;gap:12px;
+  padding-bottom:8px;margin-bottom:10px;border-bottom:1px solid rgba(255,255,255,.14);
+}
+.notes-head strong{color:var(--amber-l);font-size:.8rem;letter-spacing:.07em;text-transform:uppercase}
+.notes-head button{background:transparent;border:none;color:#fff;font-size:1.15rem;cursor:pointer}
+.notes-body{font-size:.94rem;line-height:1.78;color:rgba(255,255,255,.9);max-width:96ch}
+
+/* ---------- OVERVIEW ---------- */
+.overview{
+  position:fixed;inset:0;background:rgba(11,22,38,.96);z-index:95;
+  padding:70px 26px 26px;overflow-y:auto;display:none;
+}
+.overview.open{display:block}
+.ov-head{
+  position:absolute;top:0;left:0;right:0;height:56px;display:flex;
+  align-items:center;justify-content:space-between;padding:0 26px;color:#fff;
+  border-bottom:1px solid rgba(255,255,255,.12);
+}
+.ov-head strong{font-size:.92rem}
+.ov-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:13px;max-width:1200px;margin:0 auto}
+.ov-item{
+  background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);
+  border-radius:11px;padding:13px;cursor:pointer;color:#fff;transition:.18s;
+}
+.ov-item:hover{background:rgba(255,255,255,.16);transform:translateY(-2px)}
+.ov-item.cur{border-color:var(--amber);background:rgba(232,163,61,.18)}
+.ov-item b{display:block;font-size:.72rem;color:var(--amber-l);margin-bottom:5px}
+.ov-item span{font-size:.85rem;line-height:1.45;display:block}
+
+/* ---------- FOOTER ---------- */
+.footbar{
+  height:46px;flex:none;background:var(--card);border-top:1px solid var(--line);
+  display:flex;align-items:center;justify-content:center;gap:14px;padding:0 18px;
+}
+.nav{
+  background:var(--navy-700);color:#fff;border:none;padding:8px 17px;border-radius:9px;
+  font:600 .82rem/1 "Noto Sans Thai",Tahoma,sans-serif;cursor:pointer;transition:.18s;
+}
+.nav:hover:not(:disabled){background:var(--navy-600)}
+.nav:disabled{opacity:.3;cursor:not-allowed}
+.hint{font-size:.78rem;color:#7d8aa0}
+
+@media(max-width:820px){
+  .g2,.g3,.g4,.g5,.g6{grid-template-columns:1fr;gap:10px}
+  .flow{flex-wrap:wrap}
+  .flow-arrow{display:none}
+  .slide{aspect-ratio:auto;height:calc(100vh - 150px);overflow-y:auto}
+  .hint{display:none}
+  .status{display:none}
+}
+
+@media print{
+  body{overflow:visible;height:auto;display:block}
+  body::before{content:"ร่างกรณีศึกษาบน sdg.thamdee.com · ไม่ใช่โครงการอนุมัติ และไม่ใช่มติ กศจ.";display:block;padding:8px 12px;font-size:12px;color:#12233f}
+  .topbar,.footbar,.notes,.overview,.progress,.skip{display:none!important}
+  .stage{display:block;padding:0;overflow:visible}
+  .slide{
+    position:relative;opacity:1;transform:none;pointer-events:auto;
+    page-break-after:always;break-after:page;box-shadow:none;
+    max-height:none;width:100%;margin-bottom:0;
+  }
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  @page{size:A4 landscape;margin:9mm}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#stage">ข้ามไปยังสไลด์</a>
+<!-- ============ TOPBAR ============ -->
+<header class="topbar">
+  <div class="brand-wrap">
+    <a class="brand" href="index.html"><img src="assets/logo.png" alt="" width="28" height="28">อยุธยาเรียนรู้ · <span>A-LEARN</span></a>
+    <span class="status">ร่างกรณีศึกษา · ไม่ใช่มติ กศจ.</span>
+  </div>
+  <div class="tb-right">
+    <a class="tbtn" href="projects.html">โครงการ</a>
+    <a class="tbtn" href="slides.html">ชุดสไลด์</a>
+    <span class="counter" id="counter">01 / 16</span>
+    <button class="tbtn" type="button" id="btnOverview" title="กด O">ภาพรวม</button>
+    <button class="tbtn" type="button" id="btnNotes" title="กด N">บทพูด</button>
+    <button class="tbtn" type="button" id="btnFull" title="กด F">เต็มจอ</button>
+  </div>
+</header>
+<div class="progress"><i id="progress"></i></div>
+
+<!-- ============ STAGE ============ -->
+<main class="stage" id="stage">
+
+<!-- ========== 1 · COVER ========== -->
+<section class="slide cover on" data-title="หน้าปก"
+data-notes="เรียนท่านประธานและคณะกรรมการศึกษาธิการจังหวัดทุกท่านครับ วันนี้ผมขออนุญาตนำเสนอโครงการ A-LEARN อยุธยา หรือชื่อเต็มว่า โครงการอยุธยาเรียนรู้ไม่ทิ้งใครไว้ข้างหลัง ซึ่งเป็นโครงการขับเคลื่อนเป้าหมายการพัฒนาที่ยั่งยืนด้านการศึกษา หรือ SDG 4 ในระดับจังหวัด ดำเนินการสามปีงบประมาณ ตั้งแต่ปี 2570 ถึง 2572 ด้วยกรอบวงเงินปีละไม่เกินห้าหมื่นบาท รวมสามปีหนึ่งแสนห้าหมื่นบาท ผมจะใช้เวลาประมาณยี่สิบนาทีครับ">
+  <span class="badge">ร่างกรณีศึกษา · เสนอ กศจ. พิจารณา · ไม่ใช่มติอนุมัติ</span>
+  <h1>โครงการอยุธยาเรียนรู้<br><em>ไม่ทิ้งใครไว้ข้างหลัง</em></h1>
+  <p class="sub">
+    กลไกข้อมูลและความร่วมมือเชิงพื้นที่<br>
+    เพื่อความเสมอภาคและคุณภาพการศึกษาที่ยั่งยืน
+  </p>
+  <div class="cover-facts">
+    <div class="cfact"><b>2570–2572</b>3 ปีงบประมาณ</div>
+    <div class="cfact"><b>150,000</b>บาท (ปีละ 50,000)</div>
+    <div class="cfact"><b>16</b>อำเภอ · นำร่อง 2 อำเภอ</div>
+    <div class="cfact"><b>SDG 4</b>8 เป้าประสงค์ย่อย</div>
+  </div>
+</section>
+
+<!-- ========== 2 · บริบท ========== -->
+<section class="slide" data-title="บริบท 5 เงื่อนไข"
+data-notes="ก่อนเข้าเนื้อหาโครงการ ผมขออนุญาตเรียนบริบทของจังหวัดเราก่อนครับ เพราะอยุธยามีเงื่อนไขเฉพาะห้าประการที่ทำให้เราใช้ชุดมาตรการแบบเดียวกับจังหวัดอื่นไม่ได้ ประการแรกคือเราเป็นจังหวัดอุตสาหกรรมที่มีแรงงานย้ายถิ่นสูง เด็กย้ายเข้าออกระหว่างปีการศึกษา และมีเด็กจำนวนมากอยู่กับปู่ย่าตายายเพราะพ่อแม่ทำงานกะ ประการที่สองคือฝั่งตะวันตกและใต้ของจังหวัดมีโรงเรียนขนาดเล็กจำนวนมาก ประการที่สามคือเราเป็นพื้นที่รับน้ำ ประการที่สี่คือเรามีสถานศึกษาหลายสังกัดที่ข้อมูลไม่เชื่อมกัน และประการที่ห้าคือเรามีทุนมรดกโลกที่ยังใช้ทางการศึกษาไม่เต็มศักยภาพครับ">
+  <div class="s-head"><span class="tag r">Situation Analysis</span><span class="s-no">02 / 16</span></div>
+  <h2>อยุธยามี <em>5 เงื่อนไขเฉพาะ</em> ที่ทำให้ใช้สูตรสำเร็จของจังหวัดอื่นไม่ได้</h2>
+  <div class="s-body">
+    <div class="g5">
+      <div class="card t-red">
+        <div class="ico">🏭</div>
+        <h3>จังหวัดอุตสาหกรรม</h3>
+        <p>แรงงานย้ายถิ่นสูง เด็กย้ายเข้า-ออกระหว่างปี และเด็กอยู่กับผู้สูงอายุเพราะพ่อแม่ทำงานกะ</p>
+      </div>
+      <div class="card t-red">
+        <div class="ico">🏫</div>
+        <h3>โรงเรียนเล็กริมน้ำ</h3>
+        <p>ต้องเปิดครบชั้นตามหลักสูตร แต่ได้ทรัพยากรตามหัวนักเรียน เกิดภาวะครูสอนควบชั้น</p>
+      </div>
+      <div class="card t-red">
+        <div class="ico">🌊</div>
+        <h3>อุทกภัยซ้ำซาก</h3>
+        <p>เวลาเรียนสูญหายเกือบทุกปี ยังไม่มีระบบจังหวัดที่วัดได้ว่าสูญเสียวันเรียนเท่าใด</p>
+      </div>
+      <div class="card t-red">
+        <div class="ico">🧩</div>
+        <h3>หลายสังกัดในจังหวัดเดียว</h3>
+        <p>สพป. สพม. อาชีวะ สกร. เอกชน อปท. ต่างมีฐานข้อมูลของตน และไม่เชื่อมต่อกัน</p>
+      </div>
+      <div class="card t-amber">
+        <div class="ico">🏛️</div>
+        <h3>ทุนมรดกโลก</h3>
+        <p>เอื้อต่อการศึกษาเพื่อการพัฒนาที่ยั่งยืน แต่ยังใช้แบบทัศนศึกษาเป็นครั้งคราว</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 3 · ปัญหาแกนกลาง ========== -->
+<section class="slide" data-title="ปัญหาแกนกลาง"
+data-notes="เมื่อวิเคราะห์ด้วยผังต้นไม้ปัญหา เราพบว่าปัญหาแกนกลางไม่ได้อยู่ที่การขาดมาตรการที่ดีครับ เพราะทุกหน่วยงานมีโครงการดีๆ อยู่แล้ว แต่ปัญหาอยู่ที่ระบบมองไม่เห็นเด็กที่ต้องการความช่วยเหลือมากที่สุด เพราะฐานข้อมูลแยกส่วนกันตามสังกัด ทำให้เด็กที่หลุดระหว่างรอยต่อชั้นหรือระหว่างสังกัด ไม่ปรากฏในสถิติของหน่วยงานใดเลย และไม่มีเจ้าภาพที่ชัดเจนในระดับตำบล ผลที่ตามมาคือมาตรการที่ดีไปไม่ถึงตัวเด็กครับ">
+  <div class="s-head"><span class="tag r">Problem Tree</span><span class="s-no">03 / 16</span></div>
+  <h2>ปัญหาแกนกลาง: <em>ระบบมองไม่เห็นเด็กที่ต้องการความช่วยเหลือที่สุด</em></h2>
+  <div class="s-body">
+    <div class="quote r" style="margin-bottom:14px">
+      ระบบการศึกษาจังหวัดยังไม่สามารถรับประกันได้ว่าเด็กทุกคนจะได้เรียนอย่างต่อเนื่องและมีคุณภาพ
+      เพราะขาดกลไกข้อมูลกลางและกลไกความร่วมมือข้ามสังกัดในระดับพื้นที่
+    </div>
+    <table class="t">
+      <thead><tr><th style="width:130px">ระดับ</th><th>สาเหตุ</th><th>ผลกระทบที่เกิดขึ้น</th></tr></thead>
+      <tbody>
+        <tr><td><b>ระบบ</b></td><td>ฐานข้อมูลแยกส่วนตามสังกัด ไม่มีเลขอ้างอิงกลาง</td><td>มองไม่เห็นเด็กที่หลุดระหว่างรอยต่อชั้นและระหว่างสังกัด</td></tr>
+        <tr><td><b>พื้นที่</b></td><td>ไม่มีกลไกส่งต่อที่มีเจ้าภาพชัดเจนระดับตำบล</td><td>เด็กเสี่ยงหลุดไม่ได้รับการช่วยเหลือทันเวลา</td></tr>
+        <tr><td><b>สถานศึกษา</b></td><td>โรงเรียนเล็กครูไม่ครบชั้น เวลาเรียนหายจากอุทกภัย</td><td>ทักษะการอ่านและคณิตศาสตร์ต่ำกว่าเกณฑ์</td></tr>
+        <tr><td><b>ผู้เรียน</b></td><td>ข้อมูลเส้นทางเรียนต่อและอาชีพไม่ทั่วถึง</td><td>เลือกเส้นทางไม่ตรงศักยภาพ ออกกลางคันช่วงรอยต่อ</td></tr>
+        <tr><td><b>ครอบครัว</b></td><td>ผู้ปกครองทำงานกะ เด็กอยู่กับผู้สูงอายุ</td><td>การสนับสนุนการเรียนที่บ้านมีจำกัด</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ========== 4 · ช่องว่าง ========== -->
+<section class="slide" data-title="ช่องว่างที่เข้าไปเติม"
+data-notes="คำถามสำคัญคือ ในเมื่อมีโครงการอยู่แล้วมากมาย ทำไมยังต้องมีโครงการนี้อีก คำตอบอยู่ในตารางนี้ครับ ทุกช่องด้านซ้ายคือสิ่งที่เรามีอยู่แล้ว แต่ช่องตรงกลางคือช่องว่างที่ยังไม่มีหน่วยงานใดทำ และช่องขวาคือสิ่งที่โครงการนี้เข้าไปเติม จะเห็นว่าโครงการนี้ไม่ได้ไปทำซ้ำกับใคร แต่ไปเติมในจุดที่ ศธจ. เท่านั้นที่ทำได้ เพราะเป็นบทบาทการบูรณาการข้ามสังกัดในระดับจังหวัดครับ">
+  <div class="s-head"><span class="tag">Gap Analysis</span><span class="s-no">04 / 16</span></div>
+  <h2>โครงการนี้ <em>ไม่ทำซ้ำกับใคร</em> แต่เติมช่องว่างที่ยังไม่มีเจ้าภาพ</h2>
+  <div class="s-body">
+    <table class="t">
+      <thead><tr><th style="width:30%">สิ่งที่มีอยู่แล้ว</th><th style="width:34%">ช่องว่างที่ยังไม่มีใครทำ</th><th>สิ่งที่โครงการนี้เติม</th></tr></thead>
+      <tbody>
+        <tr><td>แต่ละสังกัดมีฐานข้อมูลนักเรียนของตน</td><td>ไม่มีภาพรวมระดับจังหวัดข้ามสังกัด</td><td><b>ข้อตกลงแบ่งปันข้อมูลและชุดข้อมูลกลางจังหวัด</b></td></tr>
+        <tr><td>มีโครงการพาน้องกลับมาเรียนระดับชาติ</td><td>ไม่มีกลไกติดตามระดับตำบลที่ทำงานต่อเนื่องทั้งปี</td><td><b>ทีมประสานระดับตำบลและระบบส่งต่อ</b></td></tr>
+        <tr><td>มีการประเมินการอ่านรายโรงเรียน</td><td>ไม่มีมาตรฐานเดียวกันทั้งจังหวัด</td><td><b>ชุดเครื่องมือประเมินการอ่านมาตรฐานจังหวัด</b></td></tr>
+        <tr><td>มีสถานประกอบการจำนวนมาก</td><td>ความเชื่อมโยงกับสถานศึกษายังเป็นรายกรณี</td><td><b>แผนที่เส้นทางอาชีพและเวทีความร่วมมือ</b></td></tr>
+        <tr><td>มีแผนเผชิญเหตุอุทกภัยระดับจังหวัด</td><td>ไม่มีแผนต่อเนื่องทางการศึกษาเฉพาะ</td><td><b>แผนความต่อเนื่องทางการศึกษา (ECP) ต้นแบบ</b></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ========== 5 · FACT SHEET ========== -->
+<section class="slide" data-title="ข้อมูลโครงการ"
+data-notes="นี่คือภาพรวมโครงการในหน้าเดียวครับ ชื่อย่อ A-LEARN ย่อมาจาก Ayutthaya Learning Equity and Resilience Network เจ้าของโครงการคือสำนักงานศึกษาธิการจังหวัด กำกับโดย กศจ. ระยะเวลาสามปีงบประมาณ ตั้งแต่ตุลาคม 2569 ถึงกันยายน 2572 พื้นที่แบ่งเป็นสองระดับ คือระดับข้อมูลและนโยบายครอบคลุมทั้งสิบหกอำเภอ ส่วนระดับปฏิบัติการนำร่องสองอำเภอ สิบตำบล งบประมาณรวมหนึ่งแสนห้าหมื่นบาท และมีการสนับสนุนในรูปสิ่งของ บุคลากร และสถานที่จากภาคี ประเมินมูลค่าประมาณหนึ่งจุดหกห้าล้านบาทครับ">
+  <div class="s-head"><span class="tag">Project Fact Sheet</span><span class="s-no">05 / 16</span></div>
+  <h2>ภาพรวมโครงการในหน้าเดียว</h2>
+  <div class="s-body">
+    <div class="g2" style="align-items:start">
+      <table class="t">
+        <tbody>
+          <tr><td style="width:36%"><b>ชื่อย่อ</b></td><td>โครงการ A-LEARN อยุธยา</td></tr>
+          <tr><td><b>เจ้าของโครงการ</b></td><td>สำนักงานศึกษาธิการจังหวัดพระนครศรีอยุธยา</td></tr>
+          <tr><td><b>กำกับนโยบาย</b></td><td>คณะกรรมการศึกษาธิการจังหวัด (กศจ.อย.)</td></tr>
+          <tr><td><b>ประเภท</b></td><td>กลไกประสานและจัดการความรู้เชิงพื้นที่</td></tr>
+          <tr><td><b>ระยะเวลา</b></td><td>1 ต.ค. 2569 – 30 ก.ย. 2572 (3 ปีงบประมาณ)</td></tr>
+          <tr><td><b>พื้นที่</b></td><td>ข้อมูลและนโยบาย 16 อำเภอ · ปฏิบัติการนำร่อง 2 อำเภอ 10 ตำบล</td></tr>
+          <tr><td><b>SDG หลัก</b></td><td>SDG 4 — เป้าประสงค์ย่อย 4.1, 4.3, 4.4, 4.5, 4.6, 4.7, 4.a, 4.c</td></tr>
+          <tr><td><b>SDG รอง</b></td><td>SDG 1 · 8 · 10 · 11 · 13 · 17</td></tr>
+        </tbody>
+      </table>
+      <div>
+        <div class="g2" style="gap:11px">
+          <div class="stat hi"><b>150,000</b><span>งบประมาณรวม 3 ปี (บาท)</span></div>
+          <div class="stat hi"><b>~1.65 ล.</b><span>มูลค่าทรัพยากร In-kind (บาท)</span></div>
+          <div class="stat"><b>6</b><span>องค์ประกอบหลัก</span></div>
+          <div class="stat"><b>6</b><span>วัตถุประสงค์เฉพาะ (SO)</span></div>
+        </div>
+        <div class="quote b" style="margin-top:12px;font-size:.88rem">
+          หลักการสำคัญ: ศธจ. ไม่มีอำนาจจัดสรรอัตรากำลังหรือสั่งการสถานศึกษาต่างสังกัด
+          โครงการนี้จึงทำเฉพาะสิ่งที่ <b>ศธจ. ทำได้จริงและไม่มีใครทำแทนได้</b> คือเป็นเจ้าภาพข้อมูลกลาง
+          ประสานข้ามสังกัด และสังเคราะห์หลักฐานเสนอ กศจ.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 6 · จุดเปลี่ยนงบประมาณ ========== -->
+<section class="slide" data-title="ทำไมงบน้อยจึงยังทำได้"
+data-notes="สไลด์นี้เป็นสไลด์ที่สำคัญที่สุดครับ เพราะเป็นคำถามแรกที่ท่านกรรมการจะถามว่า งบปีละห้าหมื่นบาทจะทำอะไรได้ ผมขอเรียนตรงๆ ว่าเราไม่ได้ใช้วิธีคงเป้าหมายเดิมแล้วหั่นงบ ซึ่งจะทำให้โครงการไม่สมเหตุสมผล แต่เราเปลี่ยนสถานะโครงการ จากโครงการลงทุน มาเป็นโครงการกลไกประสานและจัดการความรู้ ซึ่งตรงกับภารกิจจริงของ ศธจ. มากกว่า และทำได้ด้วยงบนี้ โดยยึดหลักห้าข้อ คือไม่จัดซื้อระบบใหม่ ไม่จ้างคนเพิ่ม ใช้กลไกที่มีอยู่แล้ว ระดมทรัพยากรแบบ In-kind และนำร่องก่อนขยายผลครับ">
+  <div class="s-head"><span class="tag a">Design Rationale</span><span class="s-no">06 / 16</span></div>
+  <h2>งบปีละ 50,000 บาท ทำอะไรได้? — <em>เราเปลี่ยนสถานะโครงการ ไม่ใช่แค่หั่นงบ</em></h2>
+  <div class="s-body">
+    <div class="g2" style="margin-bottom:12px">
+      <div class="card fill-r">
+        <h3 style="color:#93322a">❌ วิธีที่ทำให้โครงการถูกตีตก</h3>
+        <p style="color:var(--ink)">คงเป้าหมายเดิมทั้งหมดไว้ แล้วหั่นงบลง 100 เท่า
+        ผลคือเป้าหมายไม่สมเหตุสมผลกับทรัพยากร และทำไม่สำเร็จตั้งแต่ปีแรก</p>
+      </div>
+      <div class="card fill-g">
+        <h3 style="color:#1c6b42">✅ วิธีที่โครงการนี้ใช้</h3>
+        <p style="color:var(--ink)">เปลี่ยนสถานะจาก <b>โครงการลงทุน</b> เป็น <b>กลไกประสานและจัดการความรู้</b>
+        ซึ่งตรงกับภารกิจจริงของ ศธจ. และทำได้ด้วยงบนี้</p>
+      </div>
+    </div>
+    <div class="g5">
+      <div class="card t-green"><div class="ico">🚫</div><h3>ไม่ซื้อระบบใหม่</h3><p>ใช้เครื่องมือดิจิทัลที่มีอยู่แล้วหรือไม่มีค่าใช้จ่าย</p></div>
+      <div class="card t-green"><div class="ico">👥</div><h3>ไม่จ้างคนเพิ่ม</h3><p>ใช้บุคลากรประจำ ศธจ. และผู้แทนภาคีในรูปคณะทำงาน</p></div>
+      <div class="card t-green"><div class="ico">⚙️</div><h3>ใช้กลไกที่มีอยู่</h3><p>ประชุม กศจ. · การนิเทศของศึกษานิเทศก์ · เวทีประชาคม อปท.</p></div>
+      <div class="card t-green"><div class="ico">🤝</div><h3>ระดม In-kind</h3><p>บุคลากร สถานที่ วิทยากร จากภาคี แทนการใช้เงินงบประมาณ</p></div>
+      <div class="card t-green"><div class="ico">🎯</div><h3>นำร่องก่อนขยาย</h3><p>ทำพื้นที่จำกัดให้เห็นผลจริง แล้วใช้หลักฐานขอขยายผล</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 7 · วัตถุประสงค์ ========== -->
+<section class="slide" data-title="วัตถุประสงค์ SO1-SO6"
+data-notes="โครงการมีวัตถุประสงค์เฉพาะหกข้อ ทุกข้อเขียนตามหลัก SMART คือระบุได้ วัดได้ และมีกรอบเวลาชัดเจน ข้อที่หนึ่งคือจัดทำข้อตกลงแบ่งปันข้อมูลให้เสร็จภายในปีแรก ข้อที่สองคือลดเด็กนอกระบบในพื้นที่นำร่องลงครึ่งหนึ่ง ข้อที่สามคือยกระดับการอ่านในโรงเรียนสามสิบแห่งให้เพิ่มขึ้นสิบห้าจุดร้อยละ ข้อที่สี่คือเส้นทางทักษะอาชีพแปดร้อยคน ข้อที่ห้าคือแผนรับภัยพิบัติยี่สิบโรงเรียน และข้อที่หกคือข้อเสนอเชิงนโยบายสามฉบับที่ผ่าน กศจ. ครับ">
+  <div class="s-head"><span class="tag g">Specific Objectives</span><span class="s-no">07 / 16</span></div>
+  <h2>วัตถุประสงค์เฉพาะ 6 ข้อ — <em>วัดผลได้ทุกข้อ</em></h2>
+  <div class="s-body">
+    <div class="g3">
+      <div class="card t-blue">
+        <span class="pill">SO1</span>
+        <h3 style="margin-top:7px">ข้อมูลกลางข้ามสังกัด</h3>
+        <p>จัดทำข้อตกลงแบ่งปันข้อมูลและชุดข้อมูลกลางที่ถูกต้องตาม PDPA โดยไม่มีค่าใช้จ่ายจัดหาระบบใหม่ <b>ภายในปี 2570</b></p>
+      </div>
+      <div class="card t-red">
+        <span class="pill r">SO2</span>
+        <h3 style="margin-top:7px">ลดเด็กนอกระบบ</h3>
+        <p>ลดเด็กนอกระบบในพื้นที่นำร่อง <b>ไม่น้อยกว่า 50%</b> พร้อมมีข้อมูลสถานการณ์ครบทั้ง 16 อำเภอ</p>
+      </div>
+      <div class="card t-green">
+        <span class="pill g">SO3</span>
+        <h3 style="margin-top:7px">ทักษะการอ่าน</h3>
+        <p>ผู้เรียน ป.1–ป.3 ใน <b>30 โรงเรียน</b> ผ่านเกณฑ์การอ่านเพิ่มขึ้น <b>≥ 15 จุดร้อยละ</b></p>
+      </div>
+      <div class="card t-violet">
+        <span class="pill">SO4</span>
+        <h3 style="margin-top:7px">เส้นทางสู่อาชีพ</h3>
+        <p>เชื่อมสถานศึกษากับอุตสาหกรรม บริการ และมรดกวัฒนธรรม ครอบคลุมผู้เรียนรอยต่อ <b>≥ 800 คน</b></p>
+      </div>
+      <div class="card t-amber">
+        <span class="pill a">SO5</span>
+        <h3 style="margin-top:7px">ยืดหยุ่นต่อภัยพิบัติ</h3>
+        <p>สถานศึกษาเสี่ยงอุทกภัย <b>≥ 20 แห่ง</b> มีแผน ECP ที่ผ่านการซักซ้อมจริง และมีระบบบันทึกวันเรียนที่สูญหาย</p>
+      </div>
+      <div class="card t-navy">
+        <span class="pill">SO6</span>
+        <h3 style="margin-top:7px">ข้อเสนอเชิงนโยบาย</h3>
+        <p>สร้างองค์ความรู้เชิงประจักษ์และข้อเสนอ <b>≥ 3 ฉบับ</b> ที่ กศจ. เห็นชอบและนำไปใช้วางแผนจังหวัด</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 8 · Theory of Change ========== -->
+<section class="slide" data-title="ทฤษฎีการเปลี่ยนแปลง"
+data-notes="สไลด์นี้แสดงตรรกะของการเปลี่ยนแปลง หรือ Theory of Change ครับ อ่านจากซ้ายไปขวา เริ่มจากปัจจัยนำเข้าที่เรามี คืองบประมาณจำกัดแต่มีบุคลากรและภาคี นำไปสู่กิจกรรมหลัก ได้ผลผลิตที่จับต้องได้ เกิดผลลัพธ์ระยะสั้นในปีแรกคือจังหวัดรู้ตัวตนเด็กนอกระบบเป็นรายคน ผลลัพธ์ระยะกลางคือเด็กกลับเข้าระบบและอ่านดีขึ้น และผลกระทบระยะยาวคือความเหลื่อมล้ำในจังหวัดลดลง จุดสำคัญคือ เราไม่ได้สัญญาว่าจะเปลี่ยนคะแนนสอบระดับชาติภายในสามปี เพราะนั่นเป็นผลสะสมระยะยาวครับ">
+  <div class="s-head"><span class="tag v">Theory of Change</span><span class="s-no">08 / 16</span></div>
+  <h2>ตรรกะของการเปลี่ยนแปลง — <em>จากทรัพยากรที่มี สู่ผลกระทบระยะยาว</em></h2>
+  <div class="s-body">
+    <div class="flow" style="margin-bottom:13px">
+      <div class="flow-step" style="border-top:4px solid var(--navy-700)">
+        <h4>ปัจจัยนำเข้า</h4>
+        <p>งบปีละ 50,000 บาท · บุคลากรประจำ ศธจ. · ภาคีข้ามสังกัด · ฐานข้อมูลเดิม · ทรัพยากร In-kind</p>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-top:4px solid var(--blue)">
+        <h4>กิจกรรม</h4>
+        <p>ทำข้อตกลงข้อมูล → เทียบข้อมูลหาเด็กนอกระบบ → ตั้งทีมตำบล → ส่งต่อรายกรณี → พัฒนาครูการอ่าน</p>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-top:4px solid var(--violet)">
+        <h4>ผลผลิต</h4>
+        <p>ชุดข้อมูลกลาง · ทีมตำบล 10 แห่ง · ครูแกนนำ 80 คน · เครื่องมือประเมินการอ่าน · แผน ECP 20 แห่ง</p>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-top:4px solid var(--green)">
+        <h4>ผลลัพธ์</h4>
+        <p><b>ปีที่ 1:</b> รู้ตัวตนเด็กนอกระบบรายคน<br><b>ปีที่ 2–3:</b> เด็กกลับเข้าระบบ · อ่านดีขึ้น · มีต้นแบบพิสูจน์ผล</p>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border-top:4px solid var(--amber)">
+        <h4>ผลกระทบ</h4>
+        <p><b>5–10 ปี:</b> ความเหลื่อมล้ำในจังหวัดลดลง · แรงงานรุ่นใหม่มีทักษะตรงเศรษฐกิจจังหวัด</p>
+      </div>
+    </div>
+    <div class="quote">
+      <b>สมมติฐานที่เสี่ยงที่สุด 2 ข้อ:</b> ① ทุกสังกัดยินยอมแบ่งปันข้อมูลภายใต้ PDPA
+      ② ภาคีสนับสนุนทรัพยากร In-kind ตามที่ตกลง — หากสองข้อนี้ไม่เป็นจริง โครงการจะเดินต่อไม่ได้
+    </div>
+  </div>
+</section>
+
+<!-- ========== 9 · องค์ประกอบ 6 ด้าน ========== -->
+<section class="slide" data-title="องค์ประกอบ 6 ด้าน"
+data-notes="โครงการแบ่งเป็นหกองค์ประกอบครับ องค์ประกอบที่หนึ่งคือกลไกข้อมูลกลาง ซึ่งเป็นแกนกลางของทุกอย่าง องค์ประกอบที่สองคือกลไกระดับตำบลที่ค้นหาและส่งต่อเด็ก องค์ประกอบที่สามคือทักษะพื้นฐานการอ่าน ซึ่งได้งบมากที่สุดคือสี่หมื่นห้าพันสามร้อยบาท องค์ประกอบที่สี่คือเส้นทางสู่อาชีพ องค์ประกอบที่ห้าคือความยืดหยุ่นต่อภัยพิบัติ และองค์ประกอบที่หกคือการบริหารและประเมินผล สังเกตว่าเราจัดสรรงบให้องค์ประกอบที่หนึ่ง สอง และสามรวมกันกว่าเจ็ดสิบเปอร์เซ็นต์ เพราะเป็นแกนที่สร้างผลลัพธ์โดยตรงครับ">
+  <div class="s-head"><span class="tag">Project Components</span><span class="s-no">09 / 16</span></div>
+  <h2>6 องค์ประกอบหลัก และการจัดสรรงบประมาณ</h2>
+  <div class="s-body">
+    <div class="g6">
+      <div class="card t-blue">
+        <h3>① กลไกข้อมูลกลาง</h3>
+        <p>ข้อตกลงแบ่งปันข้อมูล · ชุดข้อมูลกลาง · เทียบทะเบียนราษฎรหาเด็กนอกระบบปีละ 2 รอบ · รายงานสถานการณ์รายปี</p>
+        <div style="margin-top:8px"><span class="pill">28,000 บาท · 18.7%</span></div>
+      </div>
+      <div class="card t-red">
+        <h3>② ไม่ทิ้งใครระดับตำบล</h3>
+        <p>ทีมตำบลนำร่อง 10 แห่ง · ระบบสัญญาณเตือนล่วงหน้า · เยี่ยมบ้าน · ส่งต่อรายกรณี · ติดตามการคงอยู่ 12 เดือน</p>
+        <div style="margin-top:8px"><span class="pill r">33,000 บาท · 22.0%</span></div>
+      </div>
+      <div class="card t-green">
+        <h3>③ ทักษะพื้นฐาน</h3>
+        <p>เครื่องมือประเมินการอ่านมาตรฐานจังหวัด · ครูแกนนำ 80 คน · ซ่อมเสริมเข้มข้น 8 สัปดาห์ · อาสาสมัครฟังเด็กอ่าน</p>
+        <div style="margin-top:8px"><span class="pill g">45,300 บาท · 30.2%</span></div>
+      </div>
+      <div class="card t-violet">
+        <h3>④ เส้นทางสู่อาชีพ</h3>
+        <p>สำรวจความต้องการนายจ้าง · แผนที่เส้นทางอาชีพจังหวัด · เวทีแนะแนวระดับอำเภอ · ESD มรดกโลก · Tracer Study</p>
+        <div style="margin-top:8px"><span class="pill">17,000 บาท · 11.3%</span></div>
+      </div>
+      <div class="card t-amber">
+        <h3>⑤ ยืดหยุ่นต่อภัยพิบัติ</h3>
+        <p>ทะเบียนโรงเรียนเสี่ยง · แผน ECP รายโรงเรียน · ซักซ้อมก่อนฤดูน้ำหลาก · ระบบบันทึกวันเรียนที่สูญหาย</p>
+        <div style="margin-top:8px"><span class="pill a">12,000 บาท · 8.0%</span></div>
+      </div>
+      <div class="card t-navy">
+        <h3>⑥ บริหารและประเมินผล</h3>
+        <p>คณะทำงาน (ไม่จ้างคนเพิ่ม) · แผน MEL · ทบทวนกลางโครงการ · ประเมินตาม OECD-DAC · เวทีถอดบทเรียน</p>
+        <div style="margin-top:8px"><span class="pill">14,700 บาท · 9.8%</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 10 · TIMELINE ========== -->
+<section class="slide" data-title="แผนดำเนินงาน 3 ปี"
+data-notes="แผนสามปีแบ่งบทบาทชัดเจนครับ ปีแรก 2570 คือปีวางระบบและจัดทำค่าฐาน สิ่งสำคัญที่สุดคือข้อตกลงแบ่งปันข้อมูลต้องเสร็จในไตรมาสหนึ่งถึงสอง เพราะถ้าเรื่องนี้ไม่ผ่าน องค์ประกอบหนึ่งและสองจะทำไม่ได้เลย ปีที่สอง 2571 คือปีขยายผลและพัฒนาครู มีการอบรมครูแกนนำและเวทีแนะแนว ส่วนปีที่สาม 2572 คือปีประเมินผลและส่งมอบ เราจะทำการประเมินปลายโครงการ ถอดบทเรียน และส่งมอบให้หน่วยงานเจ้าภาพรับไปทำต่อครับ">
+  <div class="s-head"><span class="tag">Implementation Timeline</span><span class="s-no">10 / 16</span></div>
+  <h2>แผนดำเนินงาน 3 ปี — <em>แต่ละปีมีบทบาทต่างกันชัดเจน</em></h2>
+  <div class="s-body">
+    <div class="g3" style="margin-bottom:13px">
+      <div class="card fill-b">
+        <h3 style="color:#173a6d">ปี 2570 · วางระบบและค่าฐาน</h3>
+        <ul class="tight">
+          <li><b>Q1–Q2</b> ข้อตกลงแบ่งปันข้อมูลและกรอบ PDPA</li>
+          <li><b>Q2</b> ออกแบบชุดข้อมูลกลาง · เครื่องมือประเมินการอ่าน</li>
+          <li><b>Q3</b> ตั้งทีมตำบลนำร่อง 10 ตำบล · เทียบข้อมูลรอบแรก</li>
+          <li><b>Q3–Q4</b> ประเมินการอ่าน Baseline 30 โรงเรียน</li>
+          <li><b>Q4</b> รายงานสถานการณ์การศึกษาจังหวัด ฉบับที่ 1</li>
+        </ul>
+      </div>
+      <div class="card fill-a">
+        <h3 style="color:#8a5c11">ปี 2571 · ขยายผลและพัฒนาครู</h3>
+        <ul class="tight">
+          <li>อบรมครูแกนนำการสอนอ่าน 1 รุ่น (50 คน)</li>
+          <li>นิเทศติดตามในชั้นเรียน 6 ครั้ง</li>
+          <li>เริ่มอาสาสมัครชุมชนฟังเด็กอ่าน</li>
+          <li>แผนที่เส้นทางอาชีพ · เวทีแนะแนว 2 ครั้ง</li>
+          <li>ประเมินการอ่าน Midline · ทบทวนผลกลางโครงการ</li>
+        </ul>
+      </div>
+      <div class="card fill-g">
+        <h3 style="color:#14532d">ปี 2572 · ประเมินผลและส่งมอบ</h3>
+        <ul class="tight">
+          <li>ประเมินการอ่าน Endline เทียบกับค่าฐาน</li>
+          <li>ติดตามผลผู้จบการศึกษา (Tracer Study)</li>
+          <li>ประเมินผลสิ้นสุดตามเกณฑ์ OECD-DAC</li>
+          <li>เวทีถอดบทเรียนระดับจังหวัด</li>
+          <li>ส่งมอบให้หน่วยงานเจ้าภาพ · เสนอ กศจ. 3 ฉบับ</li>
+        </ul>
+      </div>
+    </div>
+    <div class="quote r">
+      <b>เงื่อนไขที่ขาดไม่ได้:</b> ข้อตกลงแบ่งปันข้อมูลต้องสำเร็จก่อนสิ่งอื่นทั้งหมด
+      จึงกำหนดให้เป็นวาระแรกของคณะกรรมการอำนวยการในไตรมาสที่ 1
+    </div>
+  </div>
+</section>
+
+<!-- ========== 11 · งบประมาณ ========== -->
+<section class="slide" data-title="งบประมาณ"
+data-notes="ตารางงบประมาณรายปีครับ ปีแรกเน้นการวางระบบ มีค่าประชุมจัดทำข้อตกลง ค่าเดินทางลงพื้นที่นำร่อง และค่าจัดทำเครื่องมือประเมินการอ่าน ปีที่สองเน้นการอบรมครูและการนิเทศ ปีที่สามเน้นการเก็บข้อมูลประเมินผลและเวทีถอดบทเรียน ทุกปีอยู่ในกรอบห้าหมื่นบาทพอดี และขอเรียนย้ำว่าไม่มีรายการจัดซื้อครุภัณฑ์ ไม่มีการจ้างพัฒนาระบบ และไม่มีการจ้างบุคลากรเพิ่มแม้แต่อัตราเดียวครับ สิ่งที่ทำให้โครงการเดินได้จริงคือทรัพยากร In-kind จากภาคี ซึ่งประเมินมูลค่าไว้ประมาณหนึ่งจุดหกห้าล้านบาท">
+  <div class="s-head"><span class="tag a">Budget</span><span class="s-no">11 / 16</span></div>
+  <h2>งบประมาณ 150,000 บาท + ทรัพยากร In-kind ~1.65 ล้านบาท</h2>
+  <div class="s-body">
+    <div class="g2" style="align-items:start">
+      <div>
+        <table class="t">
+          <thead><tr><th>ปีงบประมาณ</th><th>จุดเน้น</th><th style="text-align:right">วงเงิน (บาท)</th></tr></thead>
+          <tbody>
+            <tr><td><b>2570</b></td><td>วางระบบ · จัดทำค่าฐาน</td><td style="text-align:right">50,000</td></tr>
+            <tr><td><b>2571</b></td><td>ขยายผล · พัฒนาครู</td><td style="text-align:right">50,000</td></tr>
+            <tr><td><b>2572</b></td><td>ประเมินผล · ส่งมอบ</td><td style="text-align:right">50,000</td></tr>
+            <tr class="total"><td colspan="2"><b>รวมทั้งสิ้น</b></td><td style="text-align:right"><b>150,000</b></td></tr>
+          </tbody>
+        </table>
+        <div class="quote g" style="margin-top:11px;font-size:.86rem">
+          <b>ไม่มีในโครงการนี้:</b> ไม่จัดซื้อครุภัณฑ์ · ไม่จ้างพัฒนาระบบสารสนเทศ · ไม่จ้างบุคลากรเพิ่ม
+        </div>
+      </div>
+      <div>
+        <table class="t">
+          <thead><tr><th>แหล่งทรัพยากร</th><th style="text-align:right">มูลค่า (บาท)</th></tr></thead>
+          <tbody>
+            <tr><td>งบดำเนินงาน ศธจ.อย. <span class="pill a">เงินสด</span></td><td style="text-align:right">150,000</td></tr>
+            <tr><td>บุคลากรประจำของหน่วยงานภาคี</td><td style="text-align:right">~600,000</td></tr>
+            <tr><td>การสนับสนุนจาก อปท. พื้นที่นำร่อง</td><td style="text-align:right">~300,000</td></tr>
+            <tr><td>วิทยากรจากสถาบันอุดมศึกษา</td><td style="text-align:right">~250,000</td></tr>
+            <tr><td>สถานที่ประชุมและอบรมของราชการ</td><td style="text-align:right">~200,000</td></tr>
+            <tr><td>ภาคเอกชนและสถานประกอบการ</td><td style="text-align:right">~150,000</td></tr>
+            <tr class="total"><td><b>ทรัพยากรที่ขับเคลื่อนจริง</b></td><td style="text-align:right"><b>~1,650,000</b></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 12 · โครงสร้างบริหาร ========== -->
+<section class="slide" data-title="โครงสร้างการบริหาร"
+data-notes="โครงสร้างการบริหารแบ่งเป็นสี่ระดับครับ ระดับนโยบายคือคณะกรรมการอำนวยการที่มีผู้ว่าราชการจังหวัดเป็นประธาน ประชุมปีละหนึ่งครั้ง ระดับอำนวยการคือคณะทำงานบริหารที่มีศึกษาธิการจังหวัดเป็นประธาน ประชุมปีละสามครั้ง ระดับปฏิบัติคือทีมเลขานุการซึ่งใช้บุคลากรประจำของ ศธจ. ไม่มีการจ้างเพิ่ม และระดับพื้นที่คือทีมประสานระดับตำบลที่ประกอบด้วยครู อปท. ผู้นำชุมชน และ อสม. ประชุมรายเดือน จุดสำคัญคือต้องกำหนดเจ้าภาพระดับตำบลเป็นรายชื่อบุคคล ไม่ใช่มอบหมายให้หน่วยงาน เพราะในทางปฏิบัติมักไม่มีใครรับผิดชอบจริงครับ">
+  <div class="s-head"><span class="tag">Governance</span><span class="s-no">12 / 16</span></div>
+  <h2>โครงสร้างการบริหาร 4 ระดับ — <em>ไม่มีการจ้างบุคลากรเพิ่ม</em></h2>
+  <div class="s-body">
+    <table class="t" style="margin-bottom:12px">
+      <thead><tr><th style="width:15%">ระดับ</th><th style="width:22%">องค์คณะ</th><th>องค์ประกอบสำคัญ</th><th style="width:15%">บทบาท</th><th style="width:12%">ความถี่</th></tr></thead>
+      <tbody>
+        <tr><td><b>นโยบาย</b></td><td>คณะกรรมการอำนวยการ</td><td>ผู้ว่าราชการจังหวัด (ประธาน) · ศึกษาธิการจังหวัด (เลขานุการ) · ผอ.สพป./สพม. · อาชีวศึกษา · สกร. · พมจ. · ท้องถิ่นจังหวัด · อุดมศึกษา · ภาคเอกชน</td><td>อนุมัติทิศทาง แก้ปัญหาเชิงระบบ</td><td>ปีละ 1 ครั้ง</td></tr>
+        <tr><td><b>อำนวยการ</b></td><td>คณะทำงานบริหารโครงการ</td><td>ศึกษาธิการจังหวัด (ประธาน) · หัวหน้ากลุ่มงาน ศธจ. · ผู้แทนทุกสังกัด · ศึกษานิเทศก์</td><td>กำกับแผนปฏิบัติการ</td><td>ปีละ 3 ครั้ง</td></tr>
+        <tr><td><b>ปฏิบัติ</b></td><td>ทีมเลขานุการโครงการ</td><td>บุคลากรประจำของ ศธจ. (ไม่มีการจ้างเพิ่ม)</td><td>ดำเนินงานและจัดทำรายงาน</td><td>ตามภารกิจ</td></tr>
+        <tr><td><b>พื้นที่</b></td><td>ทีมประสานระดับตำบล</td><td>ครูผู้ประสาน · อปท. · ผู้นำชุมชน · อสม.</td><td>ค้นหา ติดตาม ส่งต่อรายกรณี</td><td>รายเดือน</td></tr>
+      </tbody>
+    </table>
+    <div class="quote">
+      <b>บทเรียนที่ยึดไว้:</b> ต้องกำหนดเจ้าภาพระดับตำบลเป็น <b>รายชื่อบุคคล</b>
+      ไม่ใช่มอบหมายให้ “หน่วยงาน” ซึ่งในทางปฏิบัติมักไม่มีผู้รับผิดชอบที่แท้จริง
+    </div>
+  </div>
+</section>
+
+<!-- ========== 13 · ความเสี่ยง ========== -->
+<section class="slide" data-title="ความเสี่ยงสำคัญ"
+data-notes="เราวิเคราะห์ความเสี่ยงไว้สิบข้อ แต่ขอนำเสนอห้าข้อที่อยู่ในระดับสูงถึงวิกฤตครับ ความเสี่ยงอันดับหนึ่งที่ถือว่าวิกฤตคือ หน่วยงานไม่แบ่งปันข้อมูลเพราะกังวลเรื่อง PDPA ถ้าเรื่องนี้เกิดขึ้น โครงการล้มทั้งระบบ มาตรการคือต้องทำข้อตกลงและกรอบกฎหมายให้เสร็จก่อนเริ่มกิจกรรมหลัก อันดับสองคืองบประมาณจำกัด ซึ่งเราแก้ด้วยการออกแบบให้พึ่งทรัพยากรเดิมและนำร่องพื้นที่จำกัด อันดับสามคือครูมองว่าเพิ่มภาระ ซึ่งเราแก้ด้วยหลักเก็บข้อมูลครั้งเดียวใช้หลายทาง และจะยกเลิกแบบรายงานซ้ำซ้อนอย่างน้อยสองรายการเป็นข้อผูกพันครับ">
+  <div class="s-head"><span class="tag r">Risk Management</span><span class="s-no">13 / 16</span></div>
+  <h2>ความเสี่ยงระดับสูง 5 อันดับ และมาตรการรองรับ</h2>
+  <div class="s-body">
+    <table class="t">
+      <thead><tr><th style="width:6%">รหัส</th><th style="width:26%">ความเสี่ยง</th><th style="width:11%">ระดับ</th><th>มาตรการป้องกันและลดผลกระทบ</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><b>R1</b></td>
+          <td>หน่วยงานไม่แบ่งปันข้อมูลเพราะกังวลเรื่อง PDPA</td>
+          <td><span class="pill r">วิกฤต</span></td>
+          <td>ทำข้อตกลงและกรอบกฎหมายให้เสร็จ<b>ก่อน</b>เริ่มกิจกรรมหลัก · ใช้ข้อมูลเท่าที่จำเป็น · มอบหมายผู้รับผิดชอบคุ้มครองข้อมูล</td>
+        </tr>
+        <tr>
+          <td><b>R2</b></td>
+          <td>งบประมาณจำกัดทำให้ดำเนินการได้ไม่ครบตามแผน</td>
+          <td><span class="pill r">สูง</span></td>
+          <td>ออกแบบกิจกรรมให้พึ่งทรัพยากรที่มีอยู่เดิม · นำร่องพื้นที่จำกัด · ระดมการสนับสนุน In-kind</td>
+        </tr>
+        <tr>
+          <td><b>R3</b></td>
+          <td>สถานศึกษามองว่าโครงการเพิ่มภาระงาน</td>
+          <td><span class="pill r">สูง</span></td>
+          <td>ยึดหลัก <b>เก็บข้อมูลครั้งเดียว ใช้ได้หลายทาง</b> · ยกเลิกแบบรายงานซ้ำซ้อนอย่างน้อย 2 รายการเป็นข้อผูกพัน</td>
+        </tr>
+        <tr>
+          <td><b>R4</b></td>
+          <td>ภาคีไม่สนับสนุนทรัพยากรตามที่ตกลงไว้</td>
+          <td><span class="pill r">สูง</span></td>
+          <td>ระบุการสนับสนุนเป็น<b>ลายลักษณ์อักษร</b>ในบันทึกข้อตกลง · รายงานความคืบหน้าต่อคณะกรรมการอำนวยการ</td>
+        </tr>
+        <tr>
+          <td><b>R5</b></td>
+          <td>เปลี่ยนผู้บริหารทำให้นโยบายไม่ต่อเนื่อง</td>
+          <td><span class="pill r">สูง</span></td>
+          <td>ผูกกับ<b>มติ กศจ.</b>และแผนพัฒนาการศึกษาจังหวัด ไม่ผูกกับตัวบุคคล · จัดทำคู่มือส่งมอบงาน</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ========== 14 · MEL ========== -->
+<section class="slide" data-title="การติดตามประเมินผล"
+data-notes="ด้านการประเมินผล เราใช้กรอบผสมผสานสามชั้น คือ CIPP Model สำหรับการบริหารภายใน เกณฑ์ OECD-DAC หกข้อสำหรับการประเมินสรุปผล และกรอบติดตาม SDG 4 ของ UNESCO เพื่อให้ตัวชี้วัดของเราเทียบเคียงกับระดับโลกได้ ตารางด้านซ้ายแสดงว่าตัวชี้วัดของโครงการเชื่อมกับตัวชี้วัด SDG ข้อใดบ้าง ส่วนด้านขวาคือจังหวะการประเมิน ซึ่งมีการเก็บค่าฐานในปีแรก ทบทวนกลางโครงการปลายปีที่สอง และประเมินสิ้นสุดในปีที่สาม พร้อมติดตามความยั่งยืนอีกหนึ่งปีหลังโครงการจบครับ">
+  <div class="s-head"><span class="tag g">Monitoring, Evaluation & Learning</span><span class="s-no">14 / 16</span></div>
+  <h2>การประเมินผลที่เทียบเคียงกับ <em>ตัวชี้วัด SDG 4 ระดับโลก</em></h2>
+  <div class="s-body">
+    <div class="g2" style="align-items:start">
+      <div>
+        <table class="t">
+          <thead><tr><th>ตัวชี้วัดโครงการ</th><th style="width:22%">SDG ที่เทียบเคียง</th></tr></thead>
+          <tbody>
+            <tr><td>ผู้เรียน ป.3 ที่ผ่านเกณฑ์การอ่านขั้นต่ำ</td><td><b>4.1.1(a)</b></td></tr>
+            <tr><td>อัตราการสำเร็จการศึกษาแต่ละระดับ</td><td><b>4.1.2</b></td></tr>
+            <tr><td>อัตราเด็กนอกระบบการศึกษา</td><td><b>4.1.4</b></td></tr>
+            <tr><td>อัตราการเข้าร่วมการศึกษาปฐมวัย</td><td><b>4.2.2</b></td></tr>
+            <tr><td>การเข้าร่วมการศึกษา/ฝึกอบรมของเยาวชน</td><td><b>4.3.1</b></td></tr>
+            <tr><td>ดัชนีความเสมอภาค (เพศ ฐานะ พื้นที่ ความพิการ)</td><td><b>4.5.1</b></td></tr>
+            <tr><td>การบูรณาการ ESD ในหลักสูตร</td><td><b>4.7.1</b></td></tr>
+            <tr><td>สถานศึกษาที่มีแผนความต่อเนื่องทางการศึกษา</td><td><b>4.a.1</b></td></tr>
+            <tr><td>ครูที่ผ่านการพัฒนาตามแนวทางโครงการ</td><td><b>4.c.1</b></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div>
+        <div class="card fill-b" style="margin-bottom:10px">
+          <h3 style="color:#173a6d">กรอบการประเมิน 3 ชั้น</h3>
+          <ul class="tight">
+            <li><b>CIPP Model</b> — บริบท ปัจจัยนำเข้า กระบวนการ ผลผลิต สำหรับบริหารภายใน</li>
+            <li><b>OECD-DAC 6 เกณฑ์</b> — สอดคล้อง เชื่อมโยง ประสิทธิผล ประสิทธิภาพ ผลกระทบ ยั่งยืน</li>
+            <li><b>UNESCO SDG 4 Framework</b> — เทียบเคียงตัวชี้วัดระดับโลก</li>
+          </ul>
+        </div>
+        <table class="t">
+          <thead><tr><th>ช่วงเวลา</th><th>การประเมิน</th></tr></thead>
+          <tbody>
+            <tr><td><b>Q3–Q4 / 2570</b></td><td>สำรวจค่าฐาน (Baseline)</td></tr>
+            <tr><td><b>ทุกไตรมาส</b></td><td>ติดตามความก้าวหน้า</td></tr>
+            <tr><td><b>ปลายปี 2571</b></td><td>ทบทวนผลกลางโครงการ</td></tr>
+            <tr><td><b>Q3–Q4 / 2572</b></td><td>ประเมินสิ้นสุดตาม OECD-DAC</td></tr>
+            <tr><td><b>ปี 2573</b></td><td>ติดตามความยั่งยืนหลังสิ้นสุด</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 15 · ความยั่งยืน ========== -->
+<section class="slide" data-title="ความยั่งยืนและการขยายผล"
+data-notes="เรื่องความยั่งยืนเราออกแบบไว้ตั้งแต่วันแรก ไม่ใช่ค่อยมาคิดตอนโครงการใกล้จบครับ มีสี่มิติ เชิงสถาบันคือบรรจุเป็นภารกิจประจำของ ศธจ. และผูกกับแผนพัฒนาการศึกษาจังหวัด เชิงงบประมาณคือผลักดันกิจกรรมเข้าแผนท้องถิ่นของ อปท. เชิงศักยภาพคนคือสร้างครูแกนนำแปดสิบคนที่ทำงานต่อได้เองโดยไม่ต้องมีงบโครงการ และเชิงเทคนิคคือใช้เครื่องมือที่ไม่มีค่าบำรุงรักษา ส่วนการขยายผลในระยะถัดไป เราจะใช้หลักฐานจากพื้นที่นำร่องไปขอรับการสนับสนุนจากสี่แหล่ง ซึ่งนี่คือยุทธศาสตร์สำคัญ คือเปลี่ยนข้อจำกัดด้านงบประมาณให้กลายเป็นการพิสูจน์ผลก่อนลงทุนใหญ่ครับ">
+  <div class="s-head"><span class="tag v">Sustainability & Scale-up</span><span class="s-no">15 / 16</span></div>
+  <h2>ความยั่งยืนออกแบบไว้ตั้งแต่วันแรก — <em>ไม่ใช่คิดตอนใกล้จบ</em></h2>
+  <div class="s-body">
+    <div class="g4" style="margin-bottom:13px">
+      <div class="card t-navy">
+        <div class="ico">🏛️</div>
+        <h3>เชิงสถาบัน</h3>
+        <p>บรรจุกลไกข้อมูลกลางและกลไกตำบลเป็นภารกิจประจำของ ศธจ. · ผูกกับแผนพัฒนาการศึกษาจังหวัด</p>
+        <div style="margin-top:7px"><span class="pill">มติ กศจ. ภายในปี 2571</span></div>
+      </div>
+      <div class="card t-amber">
+        <div class="ico">💰</div>
+        <h3>เชิงงบประมาณ</h3>
+        <p>ต้นทุนดำเนินการต่อเนื่องต่ำ · ผลักดันกิจกรรมพื้นที่เข้าแผนพัฒนาท้องถิ่นของ อปท.</p>
+        <div style="margin-top:7px"><span class="pill a">≥ 3 รายการในแผน อปท.</span></div>
+      </div>
+      <div class="card t-green">
+        <div class="ico">👩‍🏫</div>
+        <h3>เชิงศักยภาพคน</h3>
+        <p>สร้างครูแกนนำและทีมตำบลที่ทำงานต่อได้เองโดยไม่ต้องมีงบโครงการ</p>
+        <div style="margin-top:7px"><span class="pill g">ครูแกนนำ ≥ 80 คน</span></div>
+      </div>
+      <div class="card t-blue">
+        <div class="ico">🔧</div>
+        <h3>เชิงเทคนิค</h3>
+        <p>ใช้เครื่องมือที่ไม่มีค่าใช้จ่ายและบำรุงรักษาง่าย ไม่ผูกกับผู้รับจ้างรายใด</p>
+        <div style="margin-top:7px"><span class="pill">ไม่มีค่าบำรุงรักษารายปี</span></div>
+      </div>
+    </div>
+    <div class="quote g">
+      <b>ยุทธศาสตร์ขยายผล:</b> ใช้หลักฐานเชิงประจักษ์จากพื้นที่นำร่องไปขอรับการสนับสนุนจาก
+      ① งบพัฒนาจังหวัดผ่าน กบจ. ② แผนพัฒนาท้องถิ่นของ อปท. ③ กสศ. และภาคเอกชน ④ งบของต้นสังกัดที่เห็นผลลัพธ์แล้ว
+      — เปลี่ยนข้อจำกัดด้านงบประมาณให้เป็น <b>การพิสูจน์ผลก่อนลงทุนใหญ่</b>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 16 · CLOSING ========== -->
+<section class="slide closing" data-title="สรุปและข้อเสนอ"
+data-notes="ขอสรุปครับ โครงการนี้มีจุดเด่นห้าข้อ หนึ่ง อยู่ในอำนาจหน้าที่จริงของ ศธจ. ไม่ก้าวล่วงใคร สอง เริ่มจากข้อมูลก่อนมาตรการ เพราะถ้าไม่รู้ว่าเด็กอยู่ที่ไหน มาตรการที่ดีที่สุดก็ไปไม่ถึงตัวเด็ก สาม ออกแบบให้สมดุลกับงบประมาณที่มีจริง สี่ ยึดหลักลดภาระผู้ปฏิบัติ และห้า ออกแบบความยั่งยืนไว้ตั้งแต่ต้น ทั้งนี้ ขอเรียนข้อจำกัดอย่างตรงไปตรงมาว่า โครงการนี้แก้ปัญหาอัตรากำลังครูโดยตรงไม่ได้ เพราะอยู่นอกอำนาจ ศธจ. สิ่งที่ทำได้คือผลิตหลักฐานเชิงประจักษ์เสนอต่อหน่วยงานที่มีอำนาจ จึงขอเสนอต่อที่ประชุมเพื่อโปรดพิจารณาให้ความเห็นชอบ ขอบพระคุณครับ">
+  <h2>โครงการที่ <em>ทำได้จริง</em> ภายใต้ทรัพยากรที่มีจริง</h2>
+  <p class="lead">
+    เริ่มจากข้อมูลก่อนมาตรการ เพราะถ้าไม่รู้ว่าเด็กอยู่ที่ไหน<br>
+    มาตรการที่ดีที่สุดก็ไปไม่ถึงตัวเด็ก
+  </p>
+  <div class="cover-facts" style="margin-top:4px;margin-bottom:16px">
+    <div class="cfact"><b>อยู่ในอำนาจ ศธจ.</b>ไม่ก้าวล่วงสังกัดอื่น</div>
+    <div class="cfact"><b>ข้อมูลนำมาตรการ</b>เห็นเด็กก่อนจึงช่วยได้</div>
+    <div class="cfact"><b>สมดุลกับงบจริง</b>ไม่ตั้งเป้าเกินกำลัง</div>
+    <div class="cfact"><b>ลดภาระครู</b>เก็บครั้งเดียวใช้หลายทาง</div>
+    <div class="cfact"><b>ยั่งยืนตั้งแต่ต้น</b>มีแผนส่งมอบชัดเจน</div>
+  </div>
+  <p style="color:rgba(255,255,255,.72);font-size:.86rem;max-width:64ch;line-height:1.6;margin:0 auto">
+    <b style="color:var(--amber-l)">ข้อจำกัดที่ขอเรียนตรงไปตรงมา:</b>
+    โครงการนี้แก้ปัญหาอัตรากำลังครูโดยตรงไม่ได้ เพราะอยู่นอกอำนาจของ ศธจ.
+    สิ่งที่ทำได้คือผลิตหลักฐานเชิงประจักษ์เสนอต่อหน่วยงานที่มีอำนาจตัดสินใจ
+  </p>
+  <div style="margin-top:20px;font-weight:600;color:var(--amber-l);font-size:1rem">
+    จึงเรียนมาเพื่อโปรดพิจารณาให้ความเห็นชอบ
+  </div>
+  <div style="margin-top:6px;font-size:.84rem;color:rgba(255,255,255,.66)">
+    สำนักงานศึกษาธิการจังหวัดพระนครศรีอยุธยา
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footbar">
+  <button class="nav" id="prev" disabled>← ก่อนหน้า</button>
+  <span class="hint">ลูกศร ← → เลื่อนสไลด์ · <b>N</b> บทพูด · <b>O</b> ภาพรวม · <b>F</b> เต็มจอ</span>
+  <button class="nav" id="next">ถัดไป →</button>
+</footer>
+
+<!-- ============ NOTES ============ -->
+<div class="notes" id="notes">
+  <div class="notes-head">
+    <strong>🎙️ บทพูด — สไลด์ <span id="noteNo">1</span>: <span id="noteTitle"></span></strong>
+    <button id="notesClose">✕</button>
+  </div>
+  <div class="notes-body" id="notesBody"></div>
+</div>
+
+<!-- ============ OVERVIEW ============ -->
+<div class="overview" id="overview">
+  <div class="ov-head">
+    <strong>▦ ภาพรวมสไลด์ทั้งหมด — คลิกเพื่อกระโดดไปยังสไลด์</strong>
+    <button class="tbtn" id="ovClose">✕ ปิด</button>
+  </div>
+  <div class="ov-grid" id="ovGrid"></div>
+</div>
+
+<script>
+(function(){
+  'use strict';
+  var slides = Array.prototype.slice.call(document.querySelectorAll('.slide'));
+  var total = slides.length, cur = 0;
+
+  var $ = function(id){ return document.getElementById(id); };
+  var counter=$('counter'), progress=$('progress'),
+      prev=$('prev'), next=$('next'),
+      notes=$('notes'), notesBody=$('notesBody'),
+      noteNo=$('noteNo'), noteTitle=$('noteTitle'),
+      overview=$('overview'), ovGrid=$('ovGrid');
+
+  /* ---- สร้างภาพรวม ---- */
+  slides.forEach(function(s,i){
+    var d=document.createElement('div');
+    d.className='ov-item';
+    d.innerHTML='<b>'+String(i+1).padStart(2,'0')+'</b><span>'+(s.dataset.title||'สไลด์ '+(i+1))+'</span>';
+    d.addEventListener('click',function(){ go(i); overview.classList.remove('open'); });
+    ovGrid.appendChild(d);
+  });
+  var ovItems = Array.prototype.slice.call(ovGrid.children);
+
+  function pad(n){ return String(n).padStart(2,'0'); }
+
+  function render(){
+    slides.forEach(function(s,i){ s.classList.toggle('on', i===cur); });
+    ovItems.forEach(function(d,i){ d.classList.toggle('cur', i===cur); });
+    counter.textContent = pad(cur+1)+' / '+pad(total);
+    progress.style.width = ((cur+1)/total*100)+'%';
+    prev.disabled = cur===0;
+    next.disabled = cur===total-1;
+    var s=slides[cur];
+    notesBody.textContent = s.dataset.notes || 'ไม่มีบทพูดสำหรับสไลด์นี้';
+    noteNo.textContent = cur+1;
+    noteTitle.textContent = s.dataset.title || '';
+  }
+
+  function go(i){ cur = Math.max(0, Math.min(total-1, i)); render(); }
+  function nextS(){ if(cur<total-1) go(cur+1); }
+  function prevS(){ if(cur>0) go(cur-1); }
+
+  prev.addEventListener('click', prevS);
+  next.addEventListener('click', nextS);
+
+  /* ---- คีย์บอร์ด ---- */
+  document.addEventListener('keydown', function(e){
+    var k = e.key.toLowerCase();
+    if(e.key==='ArrowRight'||e.key==='ArrowDown'||e.key===' '||e.key==='PageDown'){ e.preventDefault(); nextS(); }
+    else if(e.key==='ArrowLeft'||e.key==='ArrowUp'||e.key==='PageUp'){ e.preventDefault(); prevS(); }
+    else if(e.key==='Home'){ e.preventDefault(); go(0); }
+    else if(e.key==='End'){ e.preventDefault(); go(total-1); }
+    else if(k==='n'){ notes.classList.toggle('open'); }
+    else if(k==='o'){ overview.classList.toggle('open'); }
+    else if(k==='f'){ toggleFull(); }
+    else if(e.key==='Escape'){ notes.classList.remove('open'); overview.classList.remove('open'); }
+  });
+
+  /* ---- ปุ่ม ---- */
+  $('btnNotes').addEventListener('click', function(){ notes.classList.toggle('open'); });
+  $('notesClose').addEventListener('click', function(){ notes.classList.remove('open'); });
+  $('btnOverview').addEventListener('click', function(){ overview.classList.toggle('open'); });
+  $('ovClose').addEventListener('click', function(){ overview.classList.remove('open'); });
+
+  function toggleFull(){
+    if(!document.fullscreenElement){
+      (document.documentElement.requestFullscreen||function(){}).call(document.documentElement);
+    }else if(document.exitFullscreen){ document.exitFullscreen(); }
+  }
+  $('btnFull').addEventListener('click', toggleFull);
+
+  /* ---- ปัดหน้าจอสัมผัส ---- */
+  var x0=null;
+  document.addEventListener('touchstart', function(e){ x0=e.touches[0].clientX; }, {passive:true});
+  document.addEventListener('touchend', function(e){
+    if(x0===null) return;
+    var dx=e.changedTouches[0].clientX-x0;
+    if(Math.abs(dx)>60){ dx<0 ? nextS() : prevS(); }
+    x0=null;
+  }, {passive:true});
+
+  render();
+})();
+</script>
+</body>
+</html>

@@ -35,6 +35,7 @@
 | sdg-thamdee-slides.html | สไลด์แนะนำเว็บไซต์ 10 แผ่น โหมดนำเสนอเต็มจอ |
 | sdg4-slides.html | สไลด์ SDG 4 ในอยุธยา 10 แผ่น เชื่อมเป้าหมายย่อยกับหลักฐานและข้อเสนอบนเว็บนี้ |
 | sdg4-duty-slides.html | สไลด์ข้อเสนอตามหน้าที่คณะทำงาน 12 แผ่น พร้อมบทพูดรายข้อ 2.1–2.7 |
+| alearn-project-slides.html | สไลด์ร่างโครงการ A-LEARN 16 แผ่น สำหรับเสนอ กศจ. ไม่ใช่มติอนุมัติ |
 | community.html | ทางเข้าฉบับชาวบ้าน ฉบับผู้เรียน ชุดเครื่องมือครู ใบกรอกสถานศึกษา และแผ่นพับพิมพ์แจก |
 | ayutthaya-sdg4.html | ฉบับภาษาชาวบ้าน อ่านบนจอ พิมพ์ได้ |
 | ayutthaya-sdg4-students.html | ฉบับผู้เรียน รู้สิทธิ์ เส้นทางเรียน และโครงงานที่เริ่มได้ |
@@ -42,6 +43,7 @@
 | ayutthaya-school-sdg4.html | ใบกรอกตัวชี้วัด SDG 4 ระดับสถานศึกษา คำนวณบนเครื่องผู้ใช้ แล้วพิมพ์ใบสรุป |
 | a-learn-ayutthaya-project.html | ร่างโครงการ A-LEARN อยุธยา กรณีศึกษาเพื่อแลกเปลี่ยน ไม่ใช่โครงการอนุมัติ |
 | documents/a-learn-ayutthaya-2570-2572.pdf | ฉบับ PDF 28 หน้าของร่างเดียวกัน ให้ดาวน์โหลดจากหน้าโครงการ |
+| documents/board-brief-a-learn-ayutthaya.docx | สรุป 1 หน้าสำหรับกรรมการ ให้ดาวน์โหลดจากหน้าโครงการ |
 | ayutthaya-flyer.html | แผ่นพับพับสามตอน A4 แนวนอน สำหรับพิมพ์แจกชุมชน |
 | about.html | ผู้จัดทำและการติดต่อ |
 
@@ -62,12 +64,12 @@
 - ส่วนหัว เมนู ส่วนท้าย และโดเมน: แก้ `js/site.js` (และ `data/site.json` สำหรับ Giscus)
 - ผู้จัดทำ: แก้ `content/about.md`; ภาพผู้จัดทำอยู่ที่ `assets/author.jpg` และใส่ใน `about.html` ชื่อ/อีเมลในส่วนท้ายให้แก้ `js/site.js`
 - โลโกและไอคอน: `assets/logo.png`, `assets/favicon-32.png`, `assets/apple-touch-icon.png` แสดงในส่วนหัว ส่วนท้าย และแท็บเบราว์เซอร์; `assets/og-image.png` ใช้ตอนแชร์ลิงก์
-- สไลด์นำเสนอ: แก้เนื้อหาใน `sdg-thamdee-slides.html`, `sdg4-slides.html` และ `sdg4-duty-slides.html`; หน้าทางเข้าคือ `slides.html`; สไตล์และปุ่มเลื่อนอยู่ที่ `css/slides.css` กับ `js/slides.js`
+- สไลด์นำเสนอ: แก้เนื้อหาใน `sdg-thamdee-slides.html`, `sdg4-slides.html`, `sdg4-duty-slides.html` และ `alearn-project-slides.html`; หน้าทางเข้าคือ `slides.html`; สไตล์และปุ่มเลื่อนของชุด 01–03 อยู่ที่ `css/slides.css` กับ `js/slides.js` ส่วนชุด A-LEARN รวมสไตล์และปุ่มเลื่อนในไฟล์เดียวกัน
 - ฉบับอ่านง่าย: แก้ `ayutthaya-sdg4.html`, `ayutthaya-sdg4-students.html`, `ayutthaya-teacher-toolkit.html`, `ayutthaya-school-sdg4.html` และ `ayutthaya-flyer.html`; หน้าทางเข้าคือ `community.html`; ใช้ตัวเลขอ้างอิงชุดเดียวกับหน้าแรก คงตัวอย่างสมมติให้ชัดว่าไม่ใช่รายงานโรงเรียนจริง เครื่องคำนวณครูเป็นข้อสมมติเพื่อเทียบ ไม่ใช่เกณฑ์อัตรากำลังราชการ และใบกรอก SDG 4 ของสถานศึกษาคำนวณบนเครื่องผู้ใช้ ไม่ส่งขึ้นเซิร์ฟเวอร์
 - ที่มา: แก้ `data/sources.json` และบทความ `content/source-notes.md`; `data/provenance.json` เก็บชื่อและ SHA-256 ของไฟล์ใน Projects ที่ใช้ในการสร้างฉบับนี้ ไม่ใช่หลักฐานรับรองเนื้อหาต้นทาง
 - กรอบตัวชี้วัดประเทศจาก ศธจ.: บทความ `content/sdg4-national-indicators.md` และสำเนาสแกน `documents/sdg4-indicators-ayutthaya-peo-scan.pdf` ใช้เทียบรหัส ไม่ใส่ค่าลง Dashboard และไม่แทน I01–I10
 - การศึกษาพิเศษในจังหวัด: ระบุศูนย์การศึกษาพิเศษประจำจังหวัดและเส้นทางบริการใน `content/special-ed-21st.md` กับ `content/agencies.md` ยังไม่มีจำนวนผู้เรียนพิการ และไม่บวกลงยอดภาพระบบ
-- ร่างโครงการ A-LEARN: หน้า `a-learn-ayutthaya-project.html` บทความ `content/a-learn-ayutthaya.md` และไฟล์ `documents/a-learn-ayutthaya-2570-2572.pdf` เป็นกรณีศึกษา ยังไม่ใช่โครงการอนุมัติ และไม่ใส่เป้าในร่างลง Dashboard
+- ร่างโครงการ A-LEARN: หน้า `a-learn-ayutthaya-project.html` สไลด์ `alearn-project-slides.html` บทความ `content/a-learn-ayutthaya.md` ไฟล์ `documents/a-learn-ayutthaya-2570-2572.pdf` และ `documents/board-brief-a-learn-ayutthaya.docx` เป็นกรณีศึกษา ยังไม่ใช่โครงการอนุมัติ และไม่ใส่เป้าในร่างลง Dashboard
 
 ลิงก์ภายใน Markdown สำหรับแสดงบนเว็บไซต์ให้เขียนจากรากเว็บ เช่น `projects.html` เพราะแสดงเนื้อหาอยู่ในหน้า HTML ที่ราก ส่วนเอกสารอ้างอิงภายนอกควรใช้ URL เต็ม
 
